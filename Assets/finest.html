@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PURE FINEST Navigation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    nav {
+      background-color: white;
+      padding: 15px 20px;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+    
+    /* === Brand === */
+    .brand {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    
+    .brand .logo {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-30%);
+      height: 80px;
+      animation: spin 5s linear infinite;
+      z-index: 2;
+    }
+    
+    .brand .text-logo {
+      width: 200px;
+      height: auto;/*Edited*/
+      /*display: block;*/
+      margin-top: auto;
+      z-index: 1;
+    }
+    
+    @keyframes spin {
+      from { transform: translateX(-30%) rotate(0deg); }
+      to { transform: translateX(-30%) rotate(360deg); }
+    }
+    
+    /* === Hamburger Menu === */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: auto;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+    
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: black;
+      margin: 4px 0;
+    }
+    
+    /* === Navigation Menu === */
+    ul.nav {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    ul.nav > li {
+      position: relative;
+    }
+    
+    ul.nav > li > a {
+      color: black;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+    }
+    
+    ul.nav > li > a i {
+      margin-left: 5px;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      background-color: #f9f9f9;
+      min-width: 150px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 99;
+    }
+    
+    .dropdown-menu li a {
+      color: black;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+    }
+    
+    li:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* === Mobile === */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .menu-toggle {
+        display: flex;
+      }
+    
+      ul.nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        align-items: flex-start;
+        text-align: left;
+      }
+    
+      ul.nav.active {
+        display: flex;
+      }
+    
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: #f0f0f0;
+        width: 100%;
+      }
+    
+      li:hover .dropdown-menu {
+        display: none;
+      }
+    
+      li.active .dropdown-menu {
+        display: block;
+      }
+    
+      ul.nav > li {
+        width: 100%;
+      }
+    
+      ul.nav > li > a {
+        width: 100%;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <!-- Brand Section -->
+    <div class="brand">
+      <img src="/Vite + React_files/PFI_LOGO_SPIN_PNG-removebg-preview.png" alt="Logo" class="logo">
+<!----      <div class="text-logo">PURE FINEST</div>-->
+      <img src="./Assets/blog4.png" alt="" class="text-logo">
+    </div>
+
+    <!-- Toggle Button -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav" id="main-nav">
+      <li><a href="#">Brands</a></li>
+      <li><a href="#">Advocates</a></li>
+      <li class="dropdown">
+        <a href="#">Alcohol <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Gin</a></li>
+          <li><a href="#">Vodka</a></li>
+          <li><a href="#">Wine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Discovery <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Ingredients</a></li>
+          <li><a href="#">Flavours</a></li>
+          <li><a href="#">Nutritional Facts</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!----Start of Bannner-->
+<div class="container-fluid">
+  <video src="./Assets/food-video-1.mp4" width="100%" autoplay muted></video>
+</div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<img src="./Assets/" alt="">
+</div>
+<!-----<div class="col-sm-6">
+
+</div>-->
+</div>
+</div>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  const dropdowns = document.querySelectorAll('.dropdown > a');
+  dropdowns.forEach(drop => {
+    drop.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parent = drop.parentElement;
+        parent.classList.toggle('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
