@@ -163,7 +163,7 @@ ul.nav {
 ul.nav > li {
   position: static; /* Remove positioning so it doesn't anchor the dropdown */
 }
-.dropdown-menus {
+.dropdown-menu {
   display: none;
   position: absolute;
   top: 70px;
@@ -182,7 +182,7 @@ ul.nav > li {
 li.active .dropdown-menu {
 display: block;
 }*/
-li.active .dropdown-menus {
+li.active .dropdown-menu {
   display: block;
 }
 
@@ -829,19 +829,7 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   text-decoration: none;
 
 }
-@media(max-width:1500px){
-  .dropdown-menus {
-  display: none;
-  position: absolute;
-  top: 70px;
-  left: -490px;
-  width: 100vw;
-  background-color: #f9f9f9;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 100;
-}
-}
+
 
 
 @media (max-width: 1300px) {
@@ -904,7 +892,7 @@ position: relative;
 top:-23px;
   margin-left: 100%;
 }
-.dropdown-menus {
+.dropdown-menu {
   position: static;
   width: 100%;
   box-shadow: none;
@@ -1367,7 +1355,7 @@ left:0;
         <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
       </div>
     <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span></span>
+      <span></span><span></span><span></span>
     </div>
 
     <ul class="nav" id="main-nav">
@@ -1445,7 +1433,7 @@ left:0;
       </li>-->
 <li class="mobile-version-7">
   <a href="#">Labels <i class="fa fa-caret-down"></i></a>
-  <div class="dropdown-menus">
+  <div class="dropdown-menu">
     <div class="dropdown-content labels-1">
       
       <!-- Image -->
@@ -1883,12 +1871,12 @@ left:0;
 
   dropdownTriggers.forEach(item => {
     const link = item.querySelector("a");
-    const dropdownMenus = item.querySelector(".dropdown-menus");
+    const dropdownMenu = item.querySelector(".dropdown-menu");
 
     // MOBILE CLICK TOGGLE
     link.addEventListener("click", function (e) {
       if (!isDesktop()) {
-        const hasDropdown = item.querySelector(".dropdown-menus");
+        const hasDropdown = item.querySelector(".dropdown-menu");
         if (hasDropdown) {
           e.preventDefault();
           e.stopPropagation();
@@ -1907,7 +1895,7 @@ left:0;
     });
 
     // DESKTOP HOVER BEHAVIOR
-    if (dropdownMenus) {
+    if (dropdownMenu) {
       let hoverTimeout;
 
       item.addEventListener("mouseenter", () => {
@@ -1925,13 +1913,13 @@ left:0;
         }
       });
 
-      dropdownMenus.addEventListener("mouseenter", () => {
+      dropdownMenu.addEventListener("mouseenter", () => {
         if (isDesktop()) {
           clearTimeout(hoverTimeout);
         }
       });
 
-      dropdownMenus.addEventListener("mouseleave", () => {
+      dropdownMenu.addEventListener("mouseleave", () => {
         if (isDesktop()) {
           item.classList.remove("active");
         }
