@@ -163,7 +163,7 @@ ul.nav {
 ul.nav > li {
   position: static; /* Remove positioning so it doesn't anchor the dropdown */
 }
-.dropdown-menu {
+.dropdown-menus {
   display: none;
   position: absolute;
   top: 70px;
@@ -182,7 +182,7 @@ ul.nav > li {
 li.active .dropdown-menu {
 display: block;
 }*/
-li.active .dropdown-menu {
+li.active .dropdown-menus {
   display: block;
 }
 
@@ -829,7 +829,19 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   text-decoration: none;
 
 }
-
+@media(max-width:1500px){
+  .dropdown-menus {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -490px;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+}
 
 
 @media (max-width: 1300px) {
@@ -892,7 +904,7 @@ position: relative;
 top:-23px;
   margin-left: 100%;
 }
-.dropdown-menu {
+.dropdown-menus {
   position: static;
   width: 100%;
   box-shadow: none;
@@ -1355,12 +1367,12 @@ left:0;
         <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
       </div>
     <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
+      <span></span><span></span><span></span></span>
     </div>
 
     <ul class="nav" id="main-nav">
       <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu " style="border-top: 10px solid #6ccb35;">
+
           <!-- repeat content as above -->
           <div class="dropdown-content company-1" >
             <div><img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px"></div>
@@ -1433,7 +1445,7 @@ left:0;
       </li>-->
 <li class="mobile-version-7">
   <a href="#">Labels <i class="fa fa-caret-down"></i></a>
-  <div class="dropdown-menu">
+  <div class="dropdown-menus">
     <div class="dropdown-content labels-1">
       
       <!-- Image -->
@@ -1488,7 +1500,7 @@ left:0;
 
       <li class="mobile-version-8">
         <a href="#">Social<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu " style="border-top: 10px solid #c04141">
+
           <!-- repeat content as above -->
           <div class="dropdown-content social-1">
             <div><img src="./Assets/social-logo.jpg" alt="" width="200px" height="200px"></div>
@@ -1523,7 +1535,7 @@ left:0;
 
       <li class="mobile-version-9">
         <a href="#">Media Center<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu" style="border-top: 10px solid #755353">
+
           <!-- repeat content as above -->
           <div class="dropdown-content media-center-1">
             <div><img src="./Assets/media-center-logo.jpg" alt="" width="200px" height="200px"></div>
@@ -1554,7 +1566,7 @@ left:0;
 
       <li class="mobile-version-10">
         <a href="#">Careers<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu"style="border-top: 10px solid #0000ff">
+
           <!-- repeat content as above -->
           <div class="dropdown-content careers-1">
             <div><img src="./Assets/careers-logo.jpg" alt="" width="200px" height="200px"></div>
@@ -1871,12 +1883,12 @@ left:0;
 
   dropdownTriggers.forEach(item => {
     const link = item.querySelector("a");
-    const dropdownMenu = item.querySelector(".dropdown-menu");
+    const dropdownMenus = item.querySelector(".dropdown-menus");
 
     // MOBILE CLICK TOGGLE
     link.addEventListener("click", function (e) {
       if (!isDesktop()) {
-        const hasDropdown = item.querySelector(".dropdown-menu");
+        const hasDropdown = item.querySelector(".dropdown-menus");
         if (hasDropdown) {
           e.preventDefault();
           e.stopPropagation();
@@ -1895,7 +1907,7 @@ left:0;
     });
 
     // DESKTOP HOVER BEHAVIOR
-    if (dropdownMenu) {
+    if (dropdownMenus) {
       let hoverTimeout;
 
       item.addEventListener("mouseenter", () => {
@@ -1913,13 +1925,13 @@ left:0;
         }
       });
 
-      dropdownMenu.addEventListener("mouseenter", () => {
+      dropdownMenus.addEventListener("mouseenter", () => {
         if (isDesktop()) {
           clearTimeout(hoverTimeout);
         }
       });
 
-      dropdownMenu.addEventListener("mouseleave", () => {
+      dropdownMenus.addEventListener("mouseleave", () => {
         if (isDesktop()) {
           item.classList.remove("active");
         }
