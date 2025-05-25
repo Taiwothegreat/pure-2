@@ -1391,7 +1391,7 @@ left:0;
         <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
       </div>
     <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
+      <span></span><span></span><span></span></span>
     </div>
 
     <ul class="nav" id="main-nav">
@@ -1907,7 +1907,7 @@ left:0;
 
   dropdownTriggers.forEach(item => {
     const link = item.querySelector("a");
-    const dropdownMenu = item.querySelector(".dropdown-menus");
+    const dropdownMenus = item.querySelector(".dropdown-menus");
 
     // MOBILE CLICK TOGGLE
     link.addEventListener("click", function (e) {
@@ -1931,7 +1931,7 @@ left:0;
     });
 
     // DESKTOP HOVER BEHAVIOR
-    if (dropdownMenu) {
+    if (dropdownMenus) {
       let hoverTimeout;
 
       item.addEventListener("mouseenter", () => {
@@ -1949,13 +1949,13 @@ left:0;
         }
       });
 
-      dropdownMenu.addEventListener("mouseenter", () => {
+      dropdownMenus.addEventListener("mouseenter", () => {
         if (isDesktop()) {
           clearTimeout(hoverTimeout);
         }
       });
 
-      dropdownMenu.addEventListener("mouseleave", () => {
+      dropdownMenus.addEventListener("mouseleave", () => {
         if (isDesktop()) {
           item.classList.remove("active");
         }
