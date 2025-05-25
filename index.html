@@ -49,6 +49,11 @@ color: white !important;
   font-size: 17px;
   
 }
+ .company       { border-top: 10px solid #6ccb35; }
+  .labels        { border-top: 10px solid #ffa500; }
+  .social        { border-top: 10px solid #c04141; }
+  .media-center  { border-top: 10px solid #755353; }
+  .careers       { border-top: 10px solid #0000ff; }
 .cut{
    font-size: 28px;
       font-family: 'Saira Stencil One', sans-serif;
@@ -165,7 +170,7 @@ ul.nav > li {
   display: none;
   position: absolute;
   top: 70px;
-  left: -490px;
+  left: -610px !important;
   width: 100vw;
   background-color: #f9f9f9;
   padding: 20px;
@@ -271,13 +276,14 @@ margin-top: 10px;
   gap: 0;
 }
 
+
 .dropdown-content .alcohol{
   width: 200px;
-  margin-left: 50px !important ;
+  margin-left: 100px !important ;
 }
 .dropdown-content .snacks{
   width: 200px;
-  margin-left: -50px !important ;
+  margin-left: -25px !important ;
 }
 .dropdown-content .juice{
   width: 200px;
@@ -285,19 +291,16 @@ margin-top: 10px;
 }
 .dropdown-content .edi{
   width: 200px;
-  margin-left: 80px !important ;
+  margin-left: 100px !important ;
 }
 .dropdown-content .people{
   width: 500px !important;
   margin-left: 0 !important ;
-}
-  /*
+
 .dropdown-content .human{
   margin-left: -170px !important ;
 }
-.dropdown-content .sports{
-  margin-left: -100px;
-}
+
 .dropdown-content .foundation{
   margin-left: -20px;
 }*/
@@ -335,7 +338,6 @@ margin-left: 10px;
   background: #0000ff !important;
 }
   
-
 
 
 
@@ -532,6 +534,7 @@ body, html {
 
 .footee {
   font-size: 20px;
+  text-align: center !important;
 }
 .form-control{
   margin-left: 15px !important;
@@ -574,7 +577,7 @@ overflow-x: hidden;
 }
 .text-white {
 color: white !important;
-margin-left: 10px !important;
+margin: 10px !important;
 }
 
 
@@ -801,19 +804,26 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   text-decoration: none;
   list-style: none;
 }
-/*.col-sm-3 .b{
-  margin-top: 70px !important;
-  margin-left: -50px !important;
-  text-decoration: none;
-  list-style: none;
-} */
+
 .list-unstyled li a:hover{
   color: #6ccb35 !important;
   list-style: none;
   text-decoration: none;
 
 }
-
+@media(max-width: 1500px){
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -490px !important;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+}
 
 @media (max-width: 1300px) {
   
@@ -824,7 +834,7 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   flex-wrap: wrap;
   gap: 0;
 }
-.dropdown-content .vision{
+/*.dropdown-content .vision{
   width: 200px;
   margin-left: -350px;
 }
@@ -839,7 +849,7 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
 .dropdown-content .juice{
   width: 200px;
   margin-left: 50px !important ;
-}
+}*/
 .mobile-version-6,.mobile-version-7,
 .mobile-version-8,.mobile-version-9,.mobile-version-10{
   width: 100%;
@@ -907,6 +917,7 @@ font-family: Arial, sans-serif;
   flex-wrap: wrap;
   gap: 0;
 }
+/*
 .dropdown-content .vision{
   width: 200px;
   margin-left: 0;
@@ -922,10 +933,10 @@ font-family: Arial, sans-serif;
 .dropdown-content .juice{
   width: 200px;
   margin-left: 0 !important ;
-}
-  /*.dropdown-content.labels {
-    flex-direction: column;
-  }*/
+}*/
+  .dropdown-content.labels {
+    flex-direction: row;
+  }
 }
 
     /*-----------------------------------------------------------------*/
@@ -1333,9 +1344,9 @@ left:0;
 
     <ul class="nav" id="main-nav">
       <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu ">
+        <div class="dropdown-menu " style="border-top: 10px solid #6ccb35;">
           <!-- repeat content as above -->
-          <div class="dropdown-content company-1">
+          <div class="dropdown-content company-1" >
             <div><img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px"></div>
             <div>
               <h2>15+ <br>Years of Crafting Excellence</h2>
@@ -1372,7 +1383,7 @@ left:0;
 
       <li class="mobile-version-7">
         <a href="#">Labels<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" style="border-top: 10px solid #ffa500">
       
         <div class="dropdown-content labels-1">
   <div>
@@ -1407,7 +1418,7 @@ left:0;
 
       <li class="mobile-version-8">
         <a href="#">Social<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu ">
+        <div class="dropdown-menu " style="border-top: 10px solid #c04141">
           <!-- repeat content as above -->
           <div class="dropdown-content social-1">
             <div><img src="./Assets/social-logo.jpg" alt="" width="200px" height="200px"></div>
@@ -1416,7 +1427,7 @@ left:0;
               <p>At Pure Finest Inc., we believe that people are our greatest asset. 
                  From empowering our employees to fostering meaningful connections with partners and supporting the communities 
                 we call home, we are committed to improving lives and creating a positive impact wherever we operate.</p>
-              <button style="background-color: rgb(192, 65, 65);border-radius:10px;">PEOPLE FIRST</button>
+              <button style="background-color: #c04141;border-radius:10px;">PEOPLE FIRST</button>
             </div>
             <div class="edi">
               <h5 >EDI</h5>
@@ -1442,9 +1453,9 @@ left:0;
 
       <li class="mobile-version-9">
         <a href="#">Media Center<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" style="border-top: 10px solid #755353">
           <!-- repeat content as above -->
-          <div class="dropdown-content media-center-1">\
+          <div class="dropdown-content media-center-1">
             <div><img src="./Assets/media-center-logo.jpg" alt="" width="200px" height="200px"></div>
             <div>
               <h2>STAY UPDATED </h2>
@@ -1473,7 +1484,7 @@ left:0;
 
       <li class="mobile-version-10">
         <a href="#">Careers<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu"style="border-top: 10px solid #0000ff">
           <!-- repeat content as above -->
           <div class="dropdown-content careers-1">
             <div><img src="./Assets/careers-logo.jpg" alt="" width="200px" height="200px"></div>
@@ -1516,8 +1527,8 @@ left:0;
     
     <!-- Text Column -->
     <div class="col-xs-12 col-sm-6" style="display: flex; flex-direction: column; justify-content: center;">
-      <h1 style="font-weight: 900; margin-top: 140px; text-align: center;" class="cut">A CUT ABOVE THE REST</h1>
-      <p style="word-spacing: 10px; font-size: 20px; text-align: justify; padding: 20px;margin-left:0">
+      <h1 style="font-weight: 900; margin-top: 140px; text-align: center !important;" class="cut">A CUT ABOVE THE REST</h1>
+      <p style="word-spacing: 10px; font-size: 20px; text-align: center !important; padding: 20px;margin-left:0">
         At Pure Finest Inc., caring for life is at the core of everything we do. We believe in creating food and drinks that nourish the Body, Mind, and spirit and inspire a healthier, more sustainable future. By refusing to cut corners, we ensure that every product is crafted with the finest premium ingredients, upholding our commitment to quality and well-being. From our sourcing practices to the final product, we prioritize excellence to deliver brands that truly make a difference in every sip and bite.
       </p>
     </div>
@@ -1730,8 +1741,8 @@ left:0;
       </div>
 
     </div>
-    <p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center;" > 
-            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p>
+    <div style="text-align: center;"><p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center !important;" > 
+            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p></div>
   </div>
 </footer>
 
