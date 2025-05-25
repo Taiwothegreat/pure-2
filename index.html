@@ -267,7 +267,10 @@ margin-top: 10px;
   flex-wrap: wrap;
   gap: 0;
 }
-
+/*.dropdown-content .vision{
+  width: 200px;
+  margin-left: -550px;
+}
 .dropdown-content .alcohol{
   width: 200px;
   margin-left: 50px !important ;
@@ -287,14 +290,12 @@ margin-top: 10px;
 .dropdown-content .people{
   width: 500px !important;
   margin-left: 0 !important ;
-}
+}*/
   /*
 .dropdown-content .human{
   margin-left: -170px !important ;
 }
-.dropdown-content .sports{
-  margin-left: -100px;
-}
+
 .dropdown-content .foundation{
   margin-left: -20px;
 }*/
@@ -529,6 +530,7 @@ body, html {
 
 .footee {
   font-size: 20px;
+  text-align: center !important;
 }
 .form-control{
   margin-left: 15px !important;
@@ -571,7 +573,7 @@ overflow-x: hidden;
 }
 .text-white {
 color: white !important;
-margin-left: 10px !important;
+margin: 10px !important;
 }
 
 
@@ -821,7 +823,7 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   flex-wrap: wrap;
   gap: 0;
 }
-.dropdown-content .vision{
+/*.dropdown-content .vision{
   width: 200px;
   margin-left: -350px;
 }
@@ -836,7 +838,7 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
 .dropdown-content .juice{
   width: 200px;
   margin-left: 50px !important ;
-}
+}*/
 .mobile-version-6,.mobile-version-7,
 .mobile-version-8,.mobile-version-9,.mobile-version-10{
   width: 100%;
@@ -904,6 +906,7 @@ font-family: Arial, sans-serif;
   flex-wrap: wrap;
   gap: 0;
 }
+/*
 .dropdown-content .vision{
   width: 200px;
   margin-left: 0;
@@ -919,10 +922,10 @@ font-family: Arial, sans-serif;
 .dropdown-content .juice{
   width: 200px;
   margin-left: 0 !important ;
-}
-  /*.dropdown-content.labels {
-    flex-direction: column;
-  }*/
+}*/
+  .dropdown-content.labels {
+    flex-direction: row;
+  }
 }
 
     /*-----------------------------------------------------------------*/
@@ -1513,8 +1516,8 @@ left:0;
     
     <!-- Text Column -->
     <div class="col-xs-12 col-sm-6" style="display: flex; flex-direction: column; justify-content: center;">
-      <h1 style="font-weight: 900; margin-top: 140px; text-align: center;" class="cut">A CUT ABOVE THE REST</h1>
-      <p style="word-spacing: 10px; font-size: 20px; text-align: justify; padding: 20px;margin-left:0">
+      <h1 style="font-weight: 900; margin-top: 140px; text-align: center !important;" class="cut">A CUT ABOVE THE REST</h1>
+      <p style="word-spacing: 10px; font-size: 20px; text-align: center !important; padding: 20px;margin-left:0">
         At Pure Finest Inc., caring for life is at the core of everything we do. We believe in creating food and drinks that nourish the Body, Mind, and spirit and inspire a healthier, more sustainable future. By refusing to cut corners, we ensure that every product is crafted with the finest premium ingredients, upholding our commitment to quality and well-being. From our sourcing practices to the final product, we prioritize excellence to deliver brands that truly make a difference in every sip and bite.
       </p>
     </div>
@@ -1727,8 +1730,8 @@ left:0;
       </div>
 
     </div>
-    <p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center;" > 
-            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p>
+    <div style="text-align: center;"><p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center !important;" > 
+            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p></div>
   </div>
 </footer>
 
