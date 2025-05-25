@@ -261,12 +261,71 @@ margin-top: 10px;
 /*}*/
 
 /* Right column - text and links */
-.dropdown-content.labels-1 > div:nth-child(2) {
-  flex: 1; /* take up the remaining space */
+.dropdown-content.labels-1 {
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
 }
+
+/* Individual blocks */
+.dropdown-content.labels-1 > div {
+  flex-shrink: 0;
+}
+
+.label-image img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.vision {
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.hydration, .juice, .snacks, .alcohol {
+  flex: 1 1 150px;
+  min-width: 120px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .dropdown-content.labels-1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label-image,
+  .vision,
+  .hydration,
+  .juice,
+  .snacks,
+  .alcohol {
+    flex: 1 1 100%;
+  }
+
+  .label-image img {
+    margin: 0 auto;
+  }
+
+  .vision {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*.dropdown-content .vision{
   width: 200px;
   margin-left: -550px;
@@ -823,6 +882,15 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   flex-wrap: wrap;
   gap: 0;
 }
+.dropdown-content.labels-1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* reduce space between inner content sections if needed */
+}
+ .dropdown-content.vision{
+  width: 200px;
+  margin-left: 0 !important;
+}
 /*.dropdown-content .vision{
   width: 200px;
   margin-left: -350px;
@@ -1370,7 +1438,7 @@ left:0;
           </div>
         </div></li>
 
-      <li class="mobile-version-7">
+    <!-------  <li class="mobile-version-7">
         <a href="#">Labels<i class="fa fa-caret-down"></i></a>
         <div class="dropdown-menu">
       
@@ -1403,7 +1471,61 @@ left:0;
   </div>
 </div>
 
-      </li>
+      </li>-->
+<li class="mobile-version-7">
+  <a href="#">Labels <i class="fa fa-caret-down"></i></a>
+  <div class="dropdown-menu">
+    <div class="dropdown-content labels-1">
+      
+      <!-- Image -->
+      <div class="label-image">
+        <img src="./Assets/labels-logo.jpg" alt="Labels Logo" width="200px" height="200px">
+      </div>
+
+      <!-- Vision Section -->
+      <div class="vision">
+        <h2>10+ <br> BRANDS, ONE VISION</h2>
+        <p>Pure Finest Inc. has built a portfolio of 10 premium brands designed to thrive in today’s dynamic marketplace.</p>
+        <button style="background: #ffa500; border-radius:10px;">DISCOVER OUR BRANDS</button>
+      </div>
+
+      <!-- Other Categories -->
+      <div class="hydration">
+        <h5 style="text-decoration: underline;">Hydration & Vitality</h5>
+        <ul>
+          <li>PureFinest®</li>
+          <li>Elysium Alps®</li>
+          <li>AlpineGlow®</li>
+        </ul>
+      </div>
+
+      <div class="juice">
+        <h5 style="text-decoration: underline;">Juice & Dairy</h5>
+        <ul>
+          <li>PureLife</li>
+        </ul>
+      </div>
+
+      <div class="snacks">
+        <h5>Snacks</h5>
+        <ul>
+          <li>PureLife</li>
+          <li>Taste Me! - Feel Me!®</li>
+        </ul>
+      </div>
+
+      <div class="alcohol">
+        <h5>Alcohol</h5>
+        <ul>
+          <li>Gin</li>
+          <li>Vodka</li>
+          <li>Wine</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</li>
 
       <li class="mobile-version-8">
         <a href="#">Social<i class="fa fa-caret-down"></i></a>
