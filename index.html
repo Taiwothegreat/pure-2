@@ -57,16 +57,29 @@
       font-size: 14px;
       color: #444;
     }
+    .cookie-section {
+      margin-bottom: 15px;
+    }
     .toggle-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 0;
       border-bottom: 1px solid #eee;
+      cursor: pointer;
     }
     .toggle-label {
       font-weight: bold;
       font-size: 16px;
+    }
+    .toggle-switch-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .always-active {
+      font-size: 12px;
+      color: #888;
     }
     .toggle-switch {
       position: relative;
@@ -102,6 +115,10 @@
     }
     input:checked + .slider:before {
       transform: translateX(26px);
+    }
+    .cookie-description {
+      display: none;
+      margin-top: 10px;
     }
     .buttons {
       display: flex;
@@ -1456,82 +1473,61 @@ left:0;
 </head>
 <body>
   <!--------cookies instruction-->
-  <div class="overlay" id="cookieOverlay">
+  
+<div class="overlay" id="cookieOverlay">
   <div class="popup">
     <h2>Privacy Preference Center</h2>
-    <p style="text-align: justify;">When you visit any website, it may store or retrieve information on your browser,
-       mostly in the form of cookies. This information might be about you, your preferences 
-       or your device and is mostly used to make the site work as you expect it to. 
-       The information does not usually directly identify you, but it can give you
-        a more personalized web experience. Because we respect your right to privacy, 
-        you can choose not to allow some types of cookies. Click on the different 
-        category headings to find out more and change our default settings. However,
-       blocking some types of cookies may impact your experience of the site and
-        the services we are able to offer.</p>
+    <p style="text-align: justify;">When you visit any website, it may store or retrieve
+       information on your browser, mostly in the form of cookies. This information might
+        be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies 
+      may impact your experience of the site and the services we are able to offer.</p>
 
-    <div class="toggle-row">
-      <span class="toggle-label">Strictly Necessary Cookies <strong>(Always Active)</strong></span>
-      <div class="toggle-switch">
-        <input type="checkbox" checked disabled>
-        <span class="slider"></span>
+    <!-- Strictly Necessary Cookies -->
+    <div class="cookie-section">
+      <div class="toggle-row" onclick="toggleSection('necessaryDesc')">
+        <span class="toggle-label">Strictly Necessary Cookies</span>
+        <div class="toggle-switch-group">
+          <div class="toggle-switch">
+            <input type="checkbox" checked disabled>
+            <span class="slider"></span>
+          </div>
+          <span class="always-active">Always Active</span>
+        </div>
+      </div>
+      <div class="cookie-description" id="necessaryDesc">
+        <p style="text-align: justify;">
+These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. 
+These cookies do not store any personally identifiable information.</p>
       </div>
     </div>
-    <p style="text-align: justify;">These cookies are necessary for the website to function and cannot be switched off 
-      in our systems. They are usually only set in response to actions made by you which
-       amount to a request for services, such as setting your privacy preferences,
-        logging in or filling in forms. You can set your browser to block or alert
-         you about these cookies,
-       but some parts of the site will not then work. These cookies do not store 
-       any personally identifiable information.</p>
 
-    <div class="toggle-row">
-      <span class="toggle-label">Performance Cookies</span>
-      <div class="toggle-switch">
-        <input type="checkbox" id="performanceToggle">
-        <span class="slider"></span>
+    <!-- Performance Cookies -->
+    <div class="cookie-section">
+      <div class="toggle-row" onclick="toggleSection('performanceDesc')">
+        <span class="toggle-label">Performance Cookies</span>
+        <div class="toggle-switch">
+          <input type="checkbox" id="performanceToggle">
+          <span class="slider"></span>
+        </div>
+      </div>
+      <div class="cookie-description" id="performanceDesc">
+        <p style="text-align: justify;">These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies
+           we will not know when you have visited our site, and will not be able to monitor its performance.</p>
       </div>
     </div>
-    <p style="text-align: justify;">These cookies allow us to count visits and traffic sources so we can measure
-       and improve the performance of our site. They help us to know which pages
-        are the most and least popular and see how visitors move around the site.
-         All information these cookies collect is aggregated and therefore anonymous. 
-         If you do not allow these cookies we will not know when you have visited our
-          site, and will not be able to monitor its performance.</p>
 
-    <div class="toggle-row">
-      <span class="toggle-label">Third Party Consent Cookies</span>
-      <div class="toggle-switch">
-        <input type="checkbox" id="thirdPartyToggle">
-        <span class="slider"></span>
+    <!-- Third Party Consent Cookies -->
+    <div class="cookie-section">
+      <div class="toggle-row" onclick="toggleSection('thirdPartyDesc')">
+        <span class="toggle-label">Third Party Consent Cookies</span>
+        <div class="toggle-switch">
+          <input type="checkbox" id="thirdPartyToggle">
+          <span class="slider"></span>
+        </div>
       </div>
-    </div>
-    <p style="text-align: justify;">These cookies allow us to count visits and traffic sources so we can measure and
-       improve the performance of our site. They help us to know which pages are the
-        most and least popular and see how visitors move around the site. All
-         information these cookies collect is aggregated and therefore anonymous.
-         If you do not allow these cookies we will not know when you have visited our site,
-          and will not be able to monitor its performance.</p>
-
-    <!-- Duplicate toggles under last instruction -->
-    <div class="toggle-row">
-      <span class="toggle-label">Strictly Necessary Cookies <strong>(Always Active)</strong></span>
-      <div class="toggle-switch">
-        <input type="checkbox" checked disabled>
-        <span class="slider"></span>
-      </div>
-    </div>
-    <div class="toggle-row">
-      <span class="toggle-label">Performance Cookies</span>
-      <div class="toggle-switch">
-        <input type="checkbox" id="performanceToggle2">
-        <span class="slider"></span>
-      </div>
-    </div>
-    <div class="toggle-row">
-      <span class="toggle-label">Third Party Consent Cookies</span>
-      <div class="toggle-switch">
-        <input type="checkbox" id="thirdPartyToggle2">
-        <span class="slider"></span>
+      <div class="cookie-description" id="thirdPartyDesc">
+        <p style="text-align: justify;">These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies 
+          we will not know when you have visited our site, and will not be able to monitor its performance.</p>
       </div>
     </div>
 
@@ -1543,29 +1539,29 @@ left:0;
   </div>
 </div>
 
-
 <script>
   const performanceToggle = document.getElementById('performanceToggle');
-  const performanceToggle2 = document.getElementById('performanceToggle2');
   const thirdPartyToggle = document.getElementById('thirdPartyToggle');
-  const thirdPartyToggle2 = document.getElementById('thirdPartyToggle2');
-
-  performanceToggle.addEventListener('change', () => performanceToggle2.checked = performanceToggle.checked);
-  performanceToggle2.addEventListener('change', () => performanceToggle.checked = performanceToggle2.checked);
-  thirdPartyToggle.addEventListener('change', () => thirdPartyToggle2.checked = thirdPartyToggle.checked);
-  thirdPartyToggle2.addEventListener('change', () => thirdPartyToggle.checked = thirdPartyToggle2.checked);
 
   function setCookies(acceptAll) {
     performanceToggle.checked = acceptAll;
-    performanceToggle2.checked = acceptAll;
     thirdPartyToggle.checked = acceptAll;
-    thirdPartyToggle2.checked = acceptAll;
   }
 
   function confirmCookies() {
-    // Store cookie preferences logic here
     document.getElementById('cookieOverlay').style.display = 'none';
   }
+
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.cookie-description').forEach(div => {
+      div.style.display = 'none';
+    });
+  });
 </script>
 <!--------Cookies instruction-->
   <div class="marquee-wrapper">
