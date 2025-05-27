@@ -28,165 +28,121 @@
      /*Cookies Instructions*/
     /* Overlay and Popup */
 .overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: block;
-  z-index: 1000;
-}
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
 
-.popup {
-  position: relative;
-  background: #fff;
-  width: 90%;
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 8px;
-  font-family: sans-serif;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
+    .popup {
+      background: #fff;
+      padding: 2em;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 10px;
+      position: relative;
+    }
 
-.popup .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #aaa;
-  cursor: pointer;
-}
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-.popup .close-btn:hover {
-  color: #000;
-}
+    .cookie-section {
+      border-top: 1px solid #ddd;
+      margin-top: 1em;
+      padding-top: 1em;
+    }
 
-/* Cookie Section */
-.cookie-section {
-  margin-top: 20px;
-}
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
 
-.toggle-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .cookie-description {
+      display: none;
+      font-size: 14px;
+      margin-top: 0.5em;
+      color: #444;
+    }
 
-.toggle-label {
-  font-weight: bold;
-}
+    .toggle-switch {
+      position: relative;
+      width: 40px;
+      height: 20px;
+    }
 
-.cookie-description {
-  font-size: 18px;
-  color: #555;
-  margin-top: 8px;
-  display: none;
-}
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
-.always-active {
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .allow-all-button {
+      display: none;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1em;
+    }
+
+    .reject {
+      background-color: #333;
+      color: #fff;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .reject:hover {
+      background-color: #555;
+    }
+    .always-active {
   color: green;
   font-weight: bold;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-/* Toggle Switch */
-.toggle-switch {
-  position: relative;
-  width: 40px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.toggle-switch input[type="checkbox"] {
-  display: none;
-  pointer-events: none; /* Prevent actual toggling */
-}
-
-.slider {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  background-color: #ccc;
-  border-radius: 20px;
-  position: absolute;
-  transition: background-color 0.3s ease;
-}
-
-.slider:before {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background-color: white;
-  border-radius: 50%;
-  top: 1px;
-  left: 1px;
-  transition: transform 0.3s ease;
-}
-
-input:checked + .slider {
-  background-color: #4caf50;
-}
-
-input:checked + .slider:before {
-  transform: translateX(20px);
-}
-
-/* Buttons */
-.buttons {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.buttons button {
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.confirm {
-  background-color: #2196F3;
-  color: white;
-}
-
-.reject {
-  background-color: #ccc;
-  color: #000;
-}
-
-.allow-all-button {
-  display: none;
-  margin-top: 15px;
-}
-
-/* Utilities */
-.clickable-toggle {
-  cursor: pointer;
-}
-/*additional*/
-.allow-all-button {
-  display: none;
-  margin-top: 15px;
-}
-
-.reject {
-  background-color: #ccc;
-  color: #000;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
 }
 
      /*Cookies Instructions*/
@@ -1529,7 +1485,8 @@ left:0;
 </head>
 <body>
   <!--------cookies instruction-->
- <div class="overlay" id="cookieOverlay">
+
+<div class="overlay" id="cookieOverlay">
   <div class="popup">
     <span class="close-btn" onclick="closeOverlay()">&times;</span>
     <h2>Privacy Preference Center</h2>
@@ -1554,7 +1511,7 @@ left:0;
       <div class="toggle-row clickable-toggle" data-target="analyticsDesc">
         <span class="toggle-label">ANALYTIC COOKIES</span>
         <label class="toggle-switch">
-          <input type="checkbox" checked disabled>
+          <input type="checkbox" class="cookie-toggle" data-desc="analyticsDesc">
           <span class="slider"></span>
         </label>
       </div>
@@ -1567,7 +1524,7 @@ left:0;
       <div class="toggle-row clickable-toggle" data-target="advertisingDesc">
         <span class="toggle-label">ADVERTISING</span>
         <label class="toggle-switch">
-          <input type="checkbox" checked disabled>
+          <input type="checkbox" class="cookie-toggle" data-desc="advertisingDesc">
           <span class="slider"></span>
         </label>
       </div>
@@ -1580,7 +1537,7 @@ left:0;
       <div class="toggle-row clickable-toggle" data-target="thirdPartyDesc">
         <span class="toggle-label">THIRD PARTY CONSENT COOKIES</span>
         <label class="toggle-switch">
-          <input type="checkbox" checked disabled>
+          <input type="checkbox" class="cookie-toggle" data-desc="thirdPartyDesc">
           <span class="slider"></span>
         </label>
       </div>
@@ -1589,59 +1546,82 @@ left:0;
       </div>
     </div>
 
-    <div class="allow-all-button" id="allowAllBtn">
-      <button class="reject" onclick="allowAllCookies()">Allow All</button>
-    </div>
-
     <div class="buttons">
+      <button class="reject" id="allowAllBtn" onclick="allowAllCookies()">Allow All</button>
       <button class="reject" onclick="confirmCookies()">Confirm My Choices</button>
       <button class="reject" onclick="setCookies(false)">Reject All</button>
     </div>
   </div>
 </div>
+
 <script>
-  document.querySelector('.always-active').addEventListener('click', () => {
-  const desc = document.getElementById('strictlyDesc');
-  desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-});
-
-const toggles = document.querySelectorAll('.clickable-toggle');
-const allowAllBtn = document.getElementById('allowAllBtn');
-
-toggles.forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    const targetId = toggle.getAttribute('data-target');
-    const desc = document.getElementById(targetId);
-    const isVisible = desc.style.display === 'block';
-    desc.style.display = isVisible ? 'none' : 'block';
-
-    // Show Allow All button only if any descriptions are open
-    const anyVisible = [...document.querySelectorAll('.cookie-description')].some(el => el.style.display === 'block');
-    allowAllBtn.style.display = anyVisible ? 'block' : 'none';
+  // Strictly Necessary toggle
+  document.querySelector('.always-active-toggle').addEventListener('click', () => {
+    const desc = document.getElementById('strictlyDesc');
+    desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
   });
-});
 
-function allowAllCookies() {
-  document.getElementById('cookieOverlay').style.display = 'none';
-  alert('All cookies allowed.');
-}
+  const toggles = document.querySelectorAll('.cookie-toggle');
+  const allowAllBtn = document.getElementById('allowAllBtn');
 
-function confirmCookies() {
-  document.getElementById('cookieOverlay').style.display = 'none';
-  alert('Choices confirmed.');
-}
+  function updateAllowAllVisibility() {
+    const anyChecked = [...toggles].some(input => input.checked);
+    allowAllBtn.style.display = anyChecked ? 'inline-block' : 'none';
+  }
 
-function setCookies(acceptAll) {
-  document.getElementById('cookieOverlay').style.display = 'none';
-  alert('All non-essential cookies rejected.');
-}
+  toggles.forEach(input => {
+    const descId = input.getAttribute('data-desc');
+    const desc = document.getElementById(descId);
 
-function closeOverlay() {
-  document.getElementById('cookieOverlay').style.display = 'none';
-}
+    input.closest('.toggle-row').addEventListener('click', (e) => {
+      // Prevent checkbox click from also toggling description
+      if (e.target.tagName !== 'INPUT') {
+        desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+      }
+    });
 
+    input.addEventListener('change', () => {
+      desc.style.display = input.checked ? 'block' : 'none';
+      updateAllowAllVisibility();
+    });
+  });
+
+  updateAllowAllVisibility();
+
+  function allowAllCookies() {
+    toggles.forEach(input => {
+      input.checked = true;
+      document.getElementById(input.getAttribute('data-desc')).style.display = 'block';
+    });
+    updateAllowAllVisibility();
+    alert('All cookies allowed.');
+    document.getElementById('cookieOverlay').style.display = 'none';
+  }
+
+  function confirmCookies() {
+    const choices = [...toggles].map(input => ({
+      cookie: input.getAttribute('data-desc'),
+      allowed: input.checked
+    }));
+    console.log('Confirmed choices:', choices);
+    alert('Choices confirmed.');
+    document.getElementById('cookieOverlay').style.display = 'none';
+  }
+
+  function setCookies(acceptAll) {
+    toggles.forEach(input => {
+      input.checked = false;
+      document.getElementById(input.getAttribute('data-desc')).style.display = 'none';
+    });
+    updateAllowAllVisibility();
+    alert('All non-essential cookies rejected.');
+    document.getElementById('cookieOverlay').style.display = 'none';
+  }
+
+  function closeOverlay() {
+    document.getElementById('cookieOverlay').style.display = 'none';
+  }
 </script>
-
 <!--------Cookies instruction-->
   <div class="marquee-wrapper">
     <div class="marquee-inner" id="marquee-track">
