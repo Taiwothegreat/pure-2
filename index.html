@@ -1292,15 +1292,28 @@ left:0;
 /* ========== Desktop Styles (≥ 1200px) ========== */
 @media (min-width: 1200px) {
   .crafting {
-    margin-left: -100px;
+    min-width: 200px;
+   position: relative;
+   left:-140px;
     text-align: justify;
   }
+  .we{
+position: relative;
+left: -100px;
+  }
+  .peef{
+position: relative;
+left: -80px;
+  }
    .med {
-    margin-left: -40px;
-    width: 400px;
+    position: relative;
+    left:-60px;
+    min-width: 400px;
+    text-align: justify;
   }
   .ben{
-    margin-left: 100px;
+    position: relative;
+    left: 30px;
   }
   .watch {
     margin-left: -100px;
@@ -1324,6 +1337,9 @@ left:0;
     margin-left: 50px;
   }*/
   .visions{
+    position: relative;
+    left: 0;
+      min-width: 350px;
     text-align: justify;
   }
   .one{
@@ -1333,30 +1349,56 @@ left:0;
     text-align: justify;
   }
   .recruit{
-margin-left: -500px;
+margin-left: -200px;
   }
   .purpose{
-    margin-right: 520px;
+    position: relative;
+    left: -270px;
+    min-width: 100px;
     text-align: justify;
+  }
+  .edi{
+     position: relative;
+    left:40px;
   }
   .foundation {
-    margin-left: -70px;
+  margin-left: -195px;
   }
   .sports {
-    margin-left: -70px;
+     position: relative;
+    left:-120px;
   }
  .human {
-    margin-left: -150px;
+    position: relative;
+    left:-60px;
+  
   }
-  .people.peev{
-    width: 300px;
-    margin-right: 25rem !important;
+  .people,.peev{
+      min-width: 400px;
     text-align: justify;
+  /*  width: 450px;
+    margin-right: 100rem !important;
+    text-align: justify;*/
   }
   .peef{
     margin-left: -200px;
   }
-}
+  .alcohols{
+    margin-left: -58px;
+  }
+  .snackss{
+  position: relative;
+  left: -70px !important;
+  }
+  .juices{
+  position: relative;
+  left: -5px;
+  }
+  .hydrations{
+     position: relative;
+  left:40px;
+  }
+  }
 
   
 @media (max-width: 1024px) {
@@ -1764,7 +1806,7 @@ left:0;
                  that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
               <button style="background-color: #6ccb35;border-radius:10px;">LEARN MORE</button>
             </div>
-            <div style="margin-left: 30px;">
+            <div style="margin-left: 30px;" class="we">
               <h5>Who We Are</h5>
               <ul><li title="We are focused on foods and beverages 
                 creating premium, plant-based, 
