@@ -148,12 +148,7 @@
      /*Cookies Instructions*/
 
 /*For labels*/
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      text-align: center;
-    }
-
+ 
     h2 {
       margin-top: 0;
       font-size: 2em;
@@ -162,13 +157,13 @@
     .filter-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       position: relative;
     }
 
     .filter-dropdown {
       position: relative;
-      text-align: left;
+      text-align: center;
     }
 
     .filter-dropdown button {
@@ -191,19 +186,20 @@
 
     .radio-options {
       display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      background-color: white;
-      border: 1px solid #ccc;
-      z-index: 1;
-      padding: 10px;
-      width: 200px;
+      position: static; /* Not absolute, so it doesn’t overlap */
+      margin-top: 10px;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .radio-options label {
-      display: block;
-      margin: 5px 0;
+      margin: 5px 15px;
+      white-space: nowrap;
+    }
+
+    .radio-options input[type="radio"] {
+      margin-right: 5px;
     }
 
     .images {
@@ -211,6 +207,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      margin-top: 30px;
     }
 
     .images a {
@@ -227,6 +224,11 @@
     }
 
     @media screen and (max-width: 768px) {
+      .radio-options {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .images a {
         flex: 1 1 100%;
         max-width: 100%;
@@ -2318,7 +2320,7 @@ left:0;
     <h2 style="font-size: 2em; max-width: 800px;color:#ffffff">
       Stay tuned as we prepare to unveil the world of possibilities. Get ready for an extraordinary experience
     </h2>
-    <a href="#our-brands" style="
+    <a href="labels.html" style="
       margin-top: 20px;
       padding: 12px 24px;
       font-size:18px;
@@ -2329,7 +2331,7 @@ left:0;
       border-radius: 6px;
       transition: background 0.3s, color 0.3s;
     " onmouseover="this.style.background='#ddd'" onmouseout="this.style.background='white'">
-      Explore the world of Our Brands
+      Explore the world of Our Labels
     </a>
   </div>
 </div>
@@ -2337,12 +2339,12 @@ left:0;
 
 <!------  <div class="container-fluid">-->
  
-   <h2>LABELS</h2>
+ <h2 style="text-align: center;">LABELS</h2>
 
   <div class="filter-wrapper">
     <div class="filter-dropdown">
       <button onclick="toggleDropdown()">ALL <i class="caret"></i></button>
-      <div class="radio-options" id="radioContainer">
+      <div class="radio-options" id="radioContainer" style="display: flex;">
         <label><input type="radio" name="filter" value="all" checked onchange="filterImages()"> All</label>
         <label><input type="radio" name="filter" value="hydration" onchange="filterImages()"> Hydration & Vitality</label>
         <label><input type="radio" name="filter" value="juice" onchange="filterImages()"> Juice & Dairy</label>
@@ -2352,13 +2354,12 @@ left:0;
   </div>
 
   <div class="images" id="imageContainer">
-    <!-- ALL Images -->
-    <a href="#"><img src="./Assets/comingsoon-1.png" alt="All" data-category="all hydration"></a>
-    <a href="#"><img src="./Assets/comingsoon-2.png" alt="All" data-category="all hydration"></a>
-    <a href="#"><img src="./Assets/comingsoon-3.jpg" alt="All" data-category="all snacks"></a>
-    <a href="#"><img src="./Assets/comingsoon4.png" alt="All" data-category="all juice snacks"></a>
-    <a href="#"><img src="./Assets/comingsoon-5.png" alt="All" data-category="all hydration"></a>
-  </div>  
+    <a href="finest.html"><img src="./Assets/comingsoon-1.png" alt="All" data-category="all hydration"></a>
+    <a href="finest.html"><img src="./Assets/comingsoon-2.png" alt="All" data-category="all hydration"></a>
+    <a href="finest.html"><img src="./Assets/comingsoon-3.jpg" alt="All" data-category="all snacks"></a>
+    <a href="finest.html"><img src="./Assets/comingsoon4.png" alt="All" data-category="all juice snacks"></a>
+    <a href="finest.html"><img src="./Assets/comingsoon-5.png" alt="All" data-category="all hydration"></a>
+  </div>
   
 
        
@@ -2478,9 +2479,12 @@ left:0;
 <script>
  
 /*This is for Labels*/
-     function toggleDropdown() {
+   let dropdownVisible = true;
+
+    function toggleDropdown() {
       const radioBox = document.getElementById('radioContainer');
-      radioBox.style.display = radioBox.style.display === 'block' ? 'none' : 'block';
+      dropdownVisible = !dropdownVisible;
+      radioBox.style.display = dropdownVisible ? 'flex' : 'none';
     }
 
     function filterImages() {
@@ -2492,14 +2496,6 @@ left:0;
         img.style.display = (selected === 'all' || categories.includes(selected)) ? 'inline-block' : 'none';
       });
     }
-
-    // Close dropdown if clicked outside
-    document.addEventListener('click', function (event) {
-      const dropdown = document.querySelector('.filter-dropdown');
-      if (!dropdown.contains(event.target)) {
-        document.getElementById('radioContainer').style.display = 'none';
-      }
-    });
     /*End of Labels*/
  /*New JavaScript*/
  
