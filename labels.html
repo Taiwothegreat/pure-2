@@ -235,8 +235,57 @@
       }
     }
 /*For Labels*/
+ /* Animation Keyframes */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
 
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* Specific Icon Animations */
+  .glyphicon-glass {
+    animation: bounce 1s infinite;
+  }
+
+  .glyphicon-leaf {
+    animation: spin 2s linear infinite;
+  }
+
+  .glyphicon-fire {
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+    .carousel-global-message {
+    position: absolute;
+    top: 35%; /* Adjust this for vertical centering above arrows */
+    width: 100%;
+    text-align: center;
+    font-size: 44px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    pointer-events: none; /* ensures arrows are still clickable */
+     font-family: "Cinzel Decorative", serif;
+
+  }
+  .glyphicon-glass,
+.glyphicon-leaf,
+.glyphicon-fire {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+/*End of glyphicon animation*/
 
   * {
   margin: 0;
@@ -2233,7 +2282,9 @@ left:0;
 <div class="container-fluid">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-    
+     <div class="carousel-global-message">
+    OUR LABELS ARE CHERISHED GLOBALLY
+  </div>
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -2246,7 +2297,8 @@ left:0;
       <div class="item active">
         <img src="./Assets/elegant-cocktails-with-copyspace.jpg" alt="Banner 1">
         <div class="carousel-caption">
-          <span class="glyphicon glyphicon-glass"></span>
+          <span class="glyphicon glyphicon-glass animate-glass"></span>
+       
           <h3>Elegant Cocktails</h3>
           <p>Refreshing and stylish</p>
         </div>
@@ -2255,7 +2307,7 @@ left:0;
       <div class="item">
         <img src="./Assets/growth-co-mAj9Oe-CwFE-unsplash.jpg" alt="Banner 2">
         <div class="carousel-caption">
-          <span class="glyphicon glyphicon-leaf"></span>
+          <span class="glyphicon glyphicon-leaf animate-leaf"></span>
           <h3>Natural Growth</h3>
           <p>Flourish with nature</p>
         </div>
@@ -2264,7 +2316,7 @@ left:0;
       <div class="item">
         <img src="./Assets/jayjayli-wlSJqLSj34M-unsplash-min.jpg" alt="Banner 3">
         <div class="carousel-caption">
-          <span class="glyphicon glyphicon-fire"></span>
+          <span class="glyphicon glyphicon-fire animate-fire"></span>
           <h3>Bold Flavors</h3>
           <p>Ignite your senses</p>
         </div>
@@ -2320,7 +2372,7 @@ left:0;
     <h2 style="font-size: 2em; max-width: 800px;color:#ffffff">
       Stay tuned as we prepare to unveil the world of possibilities. Get ready for an extraordinary experience
     </h2>
-    <a href="labels.html" style="
+    <!-----<a href="labels.html" style="
       margin-top: 20px;
       padding: 12px 24px;
       font-size:18px;
@@ -2332,7 +2384,7 @@ left:0;
       transition: background 0.3s, color 0.3s;
     " onmouseover="this.style.background='#ddd'" onmouseout="this.style.background='white'">
       Explore the world of Our Labels
-    </a>
+    </a>-->
   </div>
 </div>
 
