@@ -264,9 +264,9 @@
     animation: pulse 1.5s ease-in-out infinite;
   }
 
-   .carousel-global-message {
+ .carousel-global-message {
   position: absolute;
-  top: 35%; /* Desktop default */
+  top: 200px; /* Places it above carousel controls */
   width: 100%;
   text-align: center;
   font-size: 44px;
@@ -274,9 +274,13 @@
   color: white;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   z-index: 10;
-  pointer-events: none; /* ensures arrows are still clickable */
+  pointer-events: none;
   font-family: "Cinzel Decorative", serif;
 }
+
+/* Responsive behavior for smaller screens */
+
+
 
 /* Make glass, leaf, fire icons bigger */
 .glyphicon-glass,
@@ -288,12 +292,12 @@
 
 /* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
-  .carousel-global-message {
-    font-size: 24px; /* Smaller text for mobile */
-    top: 25%;        /* Position it slightly higher on mobile */
-    padding: 0 10px; /* Add side padding to avoid text overflow */
+  
+ .carousel-global-message {
+    font-size: 22px;
+    top: 50px; /* Push higher on mobile to avoid overlapping */
+    padding: 0 10px;
   }
-
   .glyphicon-glass,
   .glyphicon-leaf,
   .glyphicon-fire {
@@ -2295,13 +2299,9 @@ left:0;
     </ul>
   </div>
 </nav>
-
 <div class="container-fluid">
-
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-     <div class="carousel-global-message">
-    OUR LABELS ARE CHERISHED GLOBALLY
-  </div>
+
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -2313,9 +2313,10 @@ left:0;
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <img src="./Assets/brand banner-2.jpg" alt="Banner 1">
+            <div class="carousel-global-message">OUR LABELS ARE CHERISHED GLOBALLY</div>
         <div class="carousel-caption">
+      
           <span class="glyphicon glyphicon-glass animate-glass"></span>
-       
           <h3>Elegant Cocktails</h3>
           <p>Refreshing and stylish</p>
         </div>
@@ -2349,6 +2350,7 @@ left:0;
     </a>
   </div>
 </div>
+
 
   <!----Start of Bannner-->
 
