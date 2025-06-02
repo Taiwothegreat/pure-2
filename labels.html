@@ -2312,7 +2312,7 @@ left:0;
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="./Assets/elegant-cocktails-with-copyspace.jpg" alt="Banner 1">
+        <img src="./Assets/brand banner-2.jpg" alt="Banner 1">
         <div class="carousel-caption">
           <span class="glyphicon glyphicon-glass animate-glass"></span>
        
@@ -2409,7 +2409,7 @@ left:0;
 
 <!------  <div class="container-fluid">-->
  
- <h2 style="text-align: center;">LABELS</h2>
+ <!-----<h2 style="text-align: center;">LABELS</h2>
 
   <div class="filter-wrapper">
     <div class="filter-dropdown">
@@ -2419,6 +2419,7 @@ left:0;
         <label><input type="radio" name="filter" value="hydration" onchange="filterImages()"> Hydration & Vitality</label>
         <label><input type="radio" name="filter" value="juice" onchange="filterImages()"> Juice & Dairy</label>
         <label><input type="radio" name="filter" value="snacks" onchange="filterImages()"> Snacks</label>
+        <label><input type="radio" name="filter" value="alcohol" onchange="filterImages()"> Alcohol</label>
       </div>
     </div>
   </div>
@@ -2429,8 +2430,37 @@ left:0;
     <a href="finest.html"><img src="./Assets/comingsoon-3.jpg" alt="All" data-category="all snacks"></a>
     <a href="finest.html"><img src="./Assets/comingsoon4.png" alt="All" data-category="all juice snacks"></a>
     <a href="finest.html"><img src="./Assets/comingsoon-5.png" alt="All" data-category="all hydration"></a>
+    <a href="finest.html"><img src="./Assets/comingsoon-5.png" alt="All" data-category="all alcohol"></a>
+  </div>-->
+  <h2 style="text-align: center;">LABELS</h2>
+
+<div class="filter-wrapper">
+  <div class="filter-dropdown">
+    <button onclick="toggleDropdown()">ALL <i class="caret"></i></button>
+    <div class="radio-options" id="radioContainer" style="display: flex;">
+      <label><input type="radio" name="filter" value="all" checked onchange="filterImages()"> All</label>
+      <label><input type="radio" name="filter" value="hydration" onchange="filterImages()"> Hydration & Vitality</label>
+      <label><input type="radio" name="filter" value="juice" onchange="filterImages()"> Juice & Dairy</label>
+      <label><input type="radio" name="filter" value="snacks" onchange="filterImages()"> Snacks</label>
+      <label><input type="radio" name="filter" value="alcohol" onchange="filterImages()"> Alcohol</label>
+    </div>
   </div>
-  
+</div>
+
+<div class="images" id="imageContainer">
+  <!-- Existing categories -->
+  <a href="finest.html"><img src="./Assets/comingsoon-1.png" alt="Hydration Label" data-category="all hydration"></a>
+  <a href="finest.html"><img src="./Assets/comingsoon-2.png" alt="Hydration Label" data-category="all hydration"></a>
+  <a href="finest.html"><img src="./Assets/comingsoon-3.jpg" alt="Snacks Label" data-category="all snacks"></a>
+  <a href="finest.html"><img src="./Assets/comingsoon4.png" alt="Juice and Snacks Label" data-category="all juice snacks"></a>
+  <a href="finest.html"><img src="./Assets/comingsoon-5.png" alt="Hydration Label" data-category="all hydration"></a>
+
+  <!-- Alcohol category (replace with real images when ready) -->
+  <a href="finest.html"><img src="./Assets/alcohol-comingsoon-1.png" alt="Alcohol Label 1" data-category="all alcohol"></a>
+  <a href="finest.html"><img src="./Assets/alcohol-comingsoon-2.png" alt="Alcohol Label 2" data-category="all alcohol"></a>
+  <a href="finest.html"><img src="./Assets/alcohol-comingsoon-3.png" alt="Alcohol Label 3" data-category="all alcohol"></a>
+</div>
+
 
        
 <!-- Footer Section (Full width, isolated, no side effects) -->
