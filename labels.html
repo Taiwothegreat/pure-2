@@ -252,56 +252,100 @@
   }
 
   /* Specific Icon Animations */
-  .glyphicon-glass {
-    animation: bounce 1s infinite;
-  }
-
-  .glyphicon-leaf {
-    animation: spin 2s linear infinite;
-  }
-
-  .glyphicon-fire {
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-
- .carousel-global-message {
-  position: absolute;
-  top: 200px; /* Places it above carousel controls */
+.carousel-wrapper {
   width: 100%;
-  text-align: center;
-  font-size: 44px;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-inner > .item > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carousel-caption h3, .carousel-caption p {
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.carousel .glyphicon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-glass {
+  animation: pulse 2s infinite;
+  color: #ffd700;
+}
+
+.animate-leaf {
+  animation: pulse 2s infinite;
+  color: #32cd32;
+}
+
+.animate-fire {
+  animation: pulse 2s infinite;
+  color: #ff4500;
+}
+
+.animate-globe {
+  animation: pulse 2s infinite;
+  color: #00bfff;
+}
+
+.animate-heart {
+  animation: pulse 2s infinite;
+  color: #ff1493;
+}
+.fix-banner-3 {
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Optional: matches height of others */
+  object-fit: cover; /* Fill space while preserving aspect ratio */
+  display: block;
+}
+
+
+.carousel-global-message {
+  position: absolute;
+  max-width: 100%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 38px;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-  z-index: 10;
-  pointer-events: none;
-  font-family: "Cinzel Decorative", serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Cinzel Decorative', serif;
+  white-space: nowrap; /* Force one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Responsive behavior for smaller screens */
-
-
-
-/* Make glass, leaf, fire icons bigger */
-.glyphicon-glass,
-.glyphicon-leaf,
-.glyphicon-fire {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-  
- .carousel-global-message {
-    font-size: 22px;
-    top: 50px; /* Push higher on mobile to avoid overlapping */
-    padding: 0 10px;
-  }
-  .glyphicon-glass,
-  .glyphicon-leaf,
-  .glyphicon-fire {
-    font-size: 36px; /* Slightly smaller icons for mobile */
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .carousel-global-message {
+    font-size: 20px;
+    top: 8%;
+    padding: 6px 12px;
   }
 }
 
@@ -2299,26 +2343,28 @@ left:0;
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
+<!-- Full-width carousel wrapper -->
+<div class="carousel-wrapper">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
 
-    <!-- Indicators -->
+    <!-- Indicators (Updated to 5) -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+    <!-- Slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <img src="./Assets/brand banner-2.jpg" alt="Banner 1">
-            <div class="carousel-global-message">OUR LABELS ARE CHERISHED GLOBALLY</div>
+          <div class="carousel-global-message">OUR LABELS ARE CHERISHED GLOBALLY</div>
         <div class="carousel-caption">
-      
-          <span class="glyphicon glyphicon-glass animate-glass"></span>
-          <h3>Elegant Cocktails</h3>
-          <p>Refreshing and stylish</p>
+          <span class="glyphicon glyphicon-globe animate-globe"></span>
+         <!----- <h3>Global Reach</h3>
+          <p>OUR LABELS ARE CHERISHED GLOBALLY</p>-->
         </div>
       </div>
 
@@ -2331,12 +2377,38 @@ left:0;
         </div>
       </div>
 
-      <div class="item">
-        <img src="./Assets/new-banner-label-3.jpg" alt="Banner 3">
+      <!------<div class="item">
+        <img src="./Assets/new-label-3.jpg" alt="Banner 3">
         <div class="carousel-caption">
           <span class="glyphicon glyphicon-fire animate-fire"></span>
           <h3>Bold Flavors</h3>
           <p>Ignite your senses</p>
+        </div>
+      </div>-->
+<div class="item">
+  <img src="./Assets/label333.jpg" alt="Banner 3" class="fix-banner-3">
+  <div class="carousel-caption">
+    <span class="glyphicon glyphicon-fire animate-fire"></span>
+    <h3>Bold Flavors</h3>
+    <p>Ignite your senses</p>
+  </div>
+</div>
+
+      <div class="item">
+        <img src="./Assets/jayjayli-wlSJqLSj34M-unsplash-min.jpg" alt="Banner 4">
+        <div class="carousel-caption">
+          <span class="glyphicon glyphicon-heart animate-heart"></span>
+          <h3>Passion</h3>
+          <p>Crafted with care</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./Assets/elegant-cocktails-with-copyspace.jpg" alt="Banner 5">
+        <div class="carousel-caption">
+          <span class="glyphicon glyphicon-glass animate-glass"></span>
+          <h3>Elegant Cocktails</h3>
+          <p>Refreshing and stylish</p>
         </div>
       </div>
     </div>
@@ -2350,6 +2422,7 @@ left:0;
     </a>
   </div>
 </div>
+
 
 
   <!----Start of Bannner-->
@@ -2390,7 +2463,7 @@ left:0;
     padding: 20px;
   ">
     <h2 style="font-size: 2em; max-width: 1200px;color:#ffffff;margin-left: 0;">
-      STAY TUNED AS WE PREPARE TO UNVEIL THE WORLD OF POSSIBILITIES <br>
+      STAY TUNED AS WE PREPARE TO UNVEIL THE WORLD OF POSSIBILITIES <br> <br>
       GET READY FOR AN EXTRAORDINARY EXPERIENCE
     </h2>
     <!-----<a href="labels.html" style="
