@@ -27,7 +27,32 @@
   <style>
      /*Cookies Instructions*/
     /* Overlay and Popup */
-.overlay {
+    .overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.popup {
+  background: white;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/************************************/
+/*.overlay {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
@@ -52,7 +77,7 @@
       top: 10px; right: 15px;
       font-size: 24px;
       cursor: pointer;
-    }
+    }*/
 
     .cookie-section {
       border-top: 1px solid #ddd;
@@ -327,14 +352,14 @@
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 38px;
-  font-weight: bold;
+  font-size: 55px;
+ /* font-weight: bold;*/
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   z-index: 1000;
   padding: 10px 20px;
   border-radius: 10px;
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Saira Stencil One', sans-serif;
   white-space: nowrap; /* Force one line */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1910,9 +1935,12 @@ left:0;
 <body>
   <!--------cookies instruction-->
 
-<div class="overlay" id="cookieOverlay">
+<!------<div class="overlay" id="cookieOverlay">
   <div class="popup">
-    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>-->
+    <div class="overlay" id="cookieOverlay" style="display: none;">
+  <div class="popup" style="font-family: 'Saira Stencil One', sans-serif;">
+    <span class="close-btn" onclick="dismissOverlayForOneDay()">&times;</span>
     <h2>Privacy Preference Center</h2>
     <p>
   Pure Finest Inc. and Partners use cookies, 
@@ -1990,82 +2018,20 @@ left:0;
       </div>
     </div>
 
-    <div class="buttons">
+ <!-----   <div class="buttons">
       <button class="reject" id="allowAllBtn" onclick="allowAllCookies()">Allow All</button>
       <button class="reject" onclick="confirmCookies()">Confirm My Choices</button>
       <button class="reject" onclick="setCookies(false)">Reject All</button>
+    </div>-->
+       <div class="buttons">
+      <button onclick="allowAllCookies()">Allow All</button>
+      <button onclick="confirmCookies()">Confirm My Choices</button>
+      <button onclick="rejectAllCookies()">Reject All</button>
     </div>
   </div>
 </div>
 
-<script>
-  // Strictly Necessary toggle
-  document.querySelector('.always-active-toggle').addEventListener('click', () => {
-    const desc = document.getElementById('strictlyDesc');
-    desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-  });
 
-  const toggles = document.querySelectorAll('.cookie-toggle');
-  const allowAllBtn = document.getElementById('allowAllBtn');
-
-  function updateAllowAllVisibility() {
-    const anyChecked = [...toggles].some(input => input.checked);
-    allowAllBtn.style.display = anyChecked ? 'inline-block' : 'none';
-  }
-
-  toggles.forEach(input => {
-    const descId = input.getAttribute('data-desc');
-    const desc = document.getElementById(descId);
-
-    input.closest('.toggle-row').addEventListener('click', (e) => {
-      // Prevent checkbox click from also toggling description
-      if (e.target.tagName !== 'INPUT') {
-        desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-      }
-    });
-
-    input.addEventListener('change', () => {
-      desc.style.display = input.checked ? 'block' : 'none';
-      updateAllowAllVisibility();
-    });
-  });
-
-  updateAllowAllVisibility();
-
-  function allowAllCookies() {
-    toggles.forEach(input => {
-      input.checked = true;
-      document.getElementById(input.getAttribute('data-desc')).style.display = 'block';
-    });
-    updateAllowAllVisibility();
-    alert('All cookies allowed.');
-    document.getElementById('cookieOverlay').style.display = 'none';
-  }
-
-  function confirmCookies() {
-    const choices = [...toggles].map(input => ({
-      cookie: input.getAttribute('data-desc'),
-      allowed: input.checked
-    }));
-    console.log('Confirmed choices:', choices);
-    alert('Choices confirmed.');
-    document.getElementById('cookieOverlay').style.display = 'none';
-  }
-
-  function setCookies(acceptAll) {
-    toggles.forEach(input => {
-      input.checked = false;
-      document.getElementById(input.getAttribute('data-desc')).style.display = 'none';
-    });
-    updateAllowAllVisibility();
-    alert('All non-essential cookies rejected.');
-    document.getElementById('cookieOverlay').style.display = 'none';
-  }
-
-  function closeOverlay() {
-    document.getElementById('cookieOverlay').style.display = 'none';
-  }
-</script>
 <!--------Cookies instruction-->
   <div class="marquee-wrapper">
     <div class="marquee-inner" id="marquee-track">
@@ -2792,6 +2758,9 @@ left:0;
     
 
 </script>
+<!-------For cookies-->
+
+
 
 </body>
 </html>
