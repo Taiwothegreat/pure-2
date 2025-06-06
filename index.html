@@ -29,7 +29,7 @@
     /* Overlay and Popup */
     
 /* Overlay and Popup */
-.overlay {
+/*.overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -37,8 +37,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
+}*/
+ .overlay {
+    display: none; /* Start hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
 .popup {
   background: #fff;
   max-width: 90%;
@@ -1828,112 +1839,96 @@ left:0;
     </div>
   </div>
 </div>
+
 <script>
-  // Set a cookie
-/*  function setCookie(name, value) {
-    document.cookie = name + "=" + value + "; path=/";
-  }*/
-function setCookie(name, value, days = 1) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString(); /* 864e5 = 86400000 ms = 1 day*/
+function setCookie(name, value, days = 365) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
 
-  // Get a cookie
-  function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i].trim();
-      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
-    }
-    return null;
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  if (getCookie("cookieConsentLifetime")) {
+    document.getElementById("cookieOverlay").style.display = "none";
+    return;
   }
 
-  // Run when DOM is loaded
-  window.addEventListener("DOMContentLoaded", function () {
-    const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
-    
-    // Show consent overlay only on homepage and if cookieConsent is not set
-    if (isHomepage && !getCookie("cookieConsent")) {
-      document.getElementById("cookieOverlay").style.display = "flex";
-    }
+  if (isHomepage) {
+    document.getElementById("cookieOverlay").style.display = "flex";
+  }
 
-    // Toggle cookie descriptions on checkbox change
- /*   const descriptions = document.querySelectorAll('.cookie-description');
-    document.querySelectorAll('.cookie-toggle').forEach((input, index) => {
+  document.querySelectorAll('.cookie-toggle').forEach((input) => {
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = input.checked ? 'block' : 'none';
       input.addEventListener('change', function () {
-        if (descriptions[index]) {
-          descriptions[index].style.display = this.checked ? 'block' : 'none';
-        }
+        descElement.style.display = this.checked ? 'block' : 'none';
       });
-    });*/
-// Toggle cookie descriptions on checkbox change — matched by data-desc
-// Toggle cookie descriptions (for checkboxes only)
-document.querySelectorAll('.cookie-toggle').forEach((input) => {
-  const descId = input.getAttribute('data-desc');
-  const descElement = document.getElementById(descId);
-  if (descElement) {
-    descElement.style.display = input.checked ? 'block' : 'none';
-    input.addEventListener('change', function () {
-      descElement.style.display = this.checked ? 'block' : 'none';
+    }
+  });
+
+  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
+  const strictlyDesc = document.getElementById("strictlyDesc");
+  if (alwaysActiveHeader && strictlyDesc) {
+    alwaysActiveHeader.addEventListener("click", function () {
+      const isVisible = strictlyDesc.style.display === "block";
+      strictlyDesc.style.display = isVisible ? "none" : "block";
+      alwaysActiveHeader.classList.toggle("open");
     });
   }
 });
 
-// Toggle "Always Active" (Strictly Necessary)
-const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
-const strictlyDesc = document.getElementById("strictlyDesc");
-
-if (alwaysActiveHeader && strictlyDesc) {
-  alwaysActiveHeader.addEventListener("click", function () {
-    const isVisible = strictlyDesc.style.display === "block";
-    strictlyDesc.style.display = isVisible ? "none" : "block";
-    alwaysActiveHeader.classList.toggle("open");
+function allowAllCookies() {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = true;
   });
+
+  setTimeout(() => {
+    if (confirm("All cookies allowed. Click OK to confirm.")) {
+      setCookie("cookieConsent", "accepted");
+      setCookie("cookieConsentLifetime", "true", 365);
+      document.getElementById("cookieOverlay").style.display = "none";
+    }
+  }, 300);
 }
 
-  });
-
-  // Handle "Allow All" button
-  function allowAllCookies() {
-    document.querySelectorAll(".cookie-toggle").forEach(input => {
-      input.checked = true;
-    });
-
-    setTimeout(() => {
-      if (confirm("All cookies allowed. Click OK to confirm.")) {
-        setCookie("cookieConsent", "accepted");
-        document.getElementById("cookieOverlay").style.display = "none";
-      }
-    }, 300);
-  }
-
-  // Handle "Confirm My Choices" button
-  function confirmCookies() {
-    const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
-    if (checkedCount > 0) {
-      alert("Your cookie preferences have been saved.");
-      setCookie("cookieConsent", "partial");
-      document.getElementById("cookieOverlay").style.display = "none";
-    } else {
-      alert("Please select at least one cookie or click 'Reject All'.");
-    }
-  }
-
-  // Handle "Reject All" or close action
-  function setCookies(acceptAll) {
-    document.querySelectorAll(".cookie-toggle").forEach(input => {
-      input.checked = false;
-    });
-    alert("All non-essential cookies rejected.");
-    setCookie("cookieConsent", "rejected");
+function confirmCookies() {
+  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
+  if (checkedCount > 0) {
+    alert("Your cookie preferences have been saved.");
+    setCookie("cookieConsent", "partial");
+    setCookie("cookieConsentLifetime", "true", 365);
     document.getElementById("cookieOverlay").style.display = "none";
+  } else {
+    alert("Please select at least one cookie or click 'Reject All'.");
   }
+}
 
-  // Handle close button
-  function closeOverlay() {
-    setCookies(false);
-  }
+function setCookies(acceptAll) {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = false;
+  });
+  alert("All non-essential cookies rejected.");
+  setCookie("cookieConsent", "rejected");
+  setCookie("cookieConsentLifetime", "true", 365);
+  document.getElementById("cookieOverlay").style.display = "none";
+}
+
+function closeOverlay() {
+  setCookies(false);
+}
 </script>
 
 <!--------Cookies instruction-->
@@ -2033,7 +2028,40 @@ if (alwaysActiveHeader && strictlyDesc) {
           </div>
         </div></li>
 
+    <!-------  <li class="mobile-version-7">
+        <a href="#">Labels<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu">
+      
+        <div class="dropdown-content labels-1">
+  <div>
+    <img src="./Assets/labels-logo.jpg" alt="" width="200px" height="200px">
+  </div>
+  <div>
+    <div class="vision">
+      <h2>10+ <br> BRANDS, ONE VISION</h2>
+      <p>Pure Finest Inc. has built a portfolio of 10 premium brands designed to thrive in today’s dynamic marketplace.</p>
+      <button style="background: #ffa500;border-radius:10px">DISCOVER OUR BRANDS</button>
+    </div>
+    <div class="hydration">
+      <h5  style="text-decoration: underline;">Hydration & Vitality</h5>
+      <ul><li>PureFinest®</li><li>Elysium Alps®</li><li>AlpineGlow®</li></ul>
+    </div>
+    <div class="juice">
+      <h5 style="text-decoration: underline;">Juice & Dairy</h5>
+      <ul><li>PureLife</li></ul>
+    </div>
+    <div class="snacks">
+      <h5>Snacks</h5>
+      <ul><li>PureLife</li><li>Taste Me! - Feel Me!®</li></ul>
+    </div>
+    <div class="alcohol">
+      <h5>Alcohol</h5>
+      <ul><li>Gin</li><li>Vodka</li><li>Wine</li></ul>
+    </div>
+  </div>
+</div>
 
+      </li>-->
 <li class="mobile-version-7">
   <a href="labels.html">Labels <i class="fa fa-caret-down"></i></a>
   <div class="dropdown-menu" style="border-top: 10px solid #ffa500 ;">
@@ -2203,7 +2231,13 @@ if (alwaysActiveHeader && strictlyDesc) {
     <div class="col-xs-12 col-sm-6" style="display: flex; flex-direction: column; justify-content: center;">
       <h1 style="font-weight: 900; margin-top: 140px; text-align: center !important;" class="cut">A CUT ABOVE THE REST</h1>
       <p style="word-spacing: 10px; font-size: 20px; text-align: justify !important; padding: 20px;margin-left:0">
-        At Pure Finest Inc., caring for life is at the core of everything we do. We believe in creating food and drinks that nourish the Body, Mind, and spirit and inspire a healthier, more sustainable future. By refusing to cut corners, we ensure that every product is crafted with the finest premium ingredients, upholding our commitment to quality and well-being. From our sourcing practices to the final product, we prioritize excellence to deliver brands that truly make a difference in every sip and bite.
+        At Pure Finest Inc., caring for life is at the core of everything we do.
+         We believe in creating food and drinks that nourish the Body, Mind, & Spirit, and to inspire a 
+         healthier, more sustainable future. By refusing to cut corners, 
+         we ensure that every product is crafted with the finest premium 
+         ingredients, upholding our commitment to quality and well-being.
+          From our sourcing practices to the final product, we prioritize excellence to deliver labels
+           that truly make a difference in every sip and bite.
       </p>
     </div>
 
