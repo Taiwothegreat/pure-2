@@ -16,6 +16,8 @@
  <link href="https://fonts.googleapis.com/css2?family=Open Sans&display=swap" rel="stylesheet">
 <!----- <link href="https://fonts.googleapis.com/css2?family=Playfair Display&display=swap" rel="stylesheet">-->
  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Precursive&display=swap" rel="stylesheet">
+
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -55,12 +57,13 @@
   padding: 20px;
 }
 
-.tagline-top {
+.banner-content,.tagline-top {
   font-size: 2.5rem;
-  font-weight: 300;
+ /* font-weight: 300;*/
   margin-bottom: 110px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+ /* text-transform: uppercase;
+  letter-spacing: 2px;*/
+font-family: 'Edu VIC WA NT Hand Precursive', sans-serif !important;
 }
 
 .logo-img {
@@ -68,6 +71,8 @@
   height: auto;
   margin: 10px auto;
   display: block;
+    filter: brightness(0) invert(1);
+
 }
 
 .tagline-bottom {
@@ -203,6 +208,17 @@ h1,h5,.mobile-version-6 a,.mobile-version-7 a,
   color: #000;
    font-family: 'Saira Stencil One', sans-serif;
 }
+h1 #headings{
+   font-size: 20px !important;
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif !important;
+}
+.overlay-content h1{
+  width: 600px;
+    font-size: 40px !important;
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif !important;
+}
 .nav-container {
 max-width: 1200px;
 margin: 0 auto;
@@ -256,10 +272,10 @@ height: 3px;
 background-color: #000;
 }
 
-h1,h2,h5 {
+/*h1,h2,h5 {
   color: #000;
    font-family: 'Saira Stencil One', sans-serif;
-}
+}*/
 .text-white {
 color: white !important;
 }
@@ -283,6 +299,61 @@ ul.nav {
 ul.nav > li {
   position: static; /* Remove positioning so it doesn't anchor the dropdown */
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .overlay-content {
+    padding: 40px;
+  }
+@media (max-width: 1024px) {
+    .overlay-content {
+      padding: 20px;
+    }
+
+    .row > div {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .row {
+      margin: 0 !important;
+    }
+
+    .container-fluid {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+  @media (max-width: 1024px) {
+    .overlay-content {
+      padding: 20px;
+    }
+  }
+
+  .rotating-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .rotating-image {
+    animation: rotate 10s linear infinite;
+    width: 100px;
+    height: 100px;
+  }
+
+  .rotating-label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 /* Overlay box */
 .overlay-content {
   background-color: rgba(255, 255, 255, 0.95);
@@ -1398,30 +1469,26 @@ left:0;
     </div>
   </div>
 </section>
+
 <section>
-  <div class="container-fluid" style="margin: 0; padding: 0;">
+  <div class="container-fluid" style="padding: 0; margin: 0;">
     <div class="row" style="margin: 0;">
       <!-- Text -->
-      <div class="col-sm-6" style="padding: 0px; display: flex; align-items: center;">
+      <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
         <div class="overlay-content">
-          <h1 style="font-weight: 900;">
-            Healthiest Plant-Based
-Vitamin Sports & Vitality
-Natural Drink on Planet
-Earth... In A Can.
-          </h1>
-          <p style="font-size: 20px;">
-        Welcome to the Oasis of Purity and Future of Wellness! Introducing the Healthiest Plant-Based Vitamin Sports & Vitality Natural Drink on Planet Earth. Indulge in PureFinest® – a beverage that truly lives up to its name! We believe that nourishing your Body Mind & Soul should be a delightful experience, and our revolutionary beverage is designed to elevate your well-being to new heights.
+          <h1 style="font-weight: 900;" id="headings">Healthiest Plant-Based<br>Vitamin Sports & Vitality<br>Natural Drink on Planet<br>Earth... In A Can.</h1>
+          <p style="font-size: 20px;width: 90%;">
+            Welcome to the Oasis of Purity and Future of Wellness! Introducing the Healthiest Plant-Based Vitamin Sports & Vitality Natural Drink on Planet Earth. Indulge in PureFinest® – a beverage that truly lives up to its name! We believe that nourishing your Body Mind & Soul should be a delightful experience, and our revolutionary beverage is designed to elevate your well-being to new heights.
           </p>
         </div>
       </div>
       <!-- Image -->
-      <div class="col-sm-6" style="padding: 0;">
-        <img src="./Assets/finest-image-1.jpg" alt="Finest Image"
-             style="width: 100%; height: 500px; object-fit: cover; object-position: center; display: block;">
+      <div class="col-md-6" style="padding: 0;">
+        <img src="./Assets/finest-image-1.jpg" alt="Finest Image" style="width: 100%; height: 500px; object-fit: cover; display: block;">
       </div>
     </div>
-      <!-- Rotating SVG -->
+
+    <!-- Rotating SVG -->
     <div class="rotating-wrapper">
       <img src="./Assets/download-great-vitality.svg" alt="Great Vitality" id="rotatingSvg" class="rotating-image">
       <div class="rotating-label">Great Vitality</div>
@@ -1431,21 +1498,18 @@ Earth... In A Can.
 
 <!-- SECTION 2 -->
 <section>
-  <div class="container-fluid" style="margin: 0; padding: 0;">
+  <div class="container-fluid" style="padding: 0; margin: 0;">
     <div class="row" style="margin: 0;">
       <!-- Image -->
-      <div class="col-sm-6" style="padding: 0;">
-        <img src="./Assets/finest-image-3.jpg" alt=""
-             style="width: 100%; height: 600px; object-fit: cover; object-position: center; display: block;">
+      <div class="col-md-6" style="padding: 0;">
+        <img src="./Assets/finest-image-3.jpg" alt="" style="width: 100%; height: 600px; object-fit: cover; display: block;">
       </div>
       <!-- Text -->
-      <div class="col-sm-6" style="padding: 0px; display: flex; align-items: center;">
+      <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
         <div class="overlay-content">
-          <h1 style="font-weight: 900;">
-            Revitalize Your<br>Body, Mind and<br>Soul
-          </h1>
+          <h1 style="font-weight: 900;" id="headings">Revitalize Your<br>Body, Mind and<br>Soul</h1>
           <p style="font-size: 20px;">
-          Crafted with natural ingredients, PureFinest® Natural Drinks help you push through mental and physical challenges and exertion. It has a natural goodness, by using medicinal plants and herbs that our ancestors used throughout history to combat mental and physical stress. Fuel your active lifestyle with the natural power of plants. Our beverage is crafted to boost your energy levels, enhance endurance, and promote overall vitality. Whether you're an athlete, fitness enthusiast, or just someone looking to infuse more vitality into your daily routine, our drinks are your perfect companions.
+            Crafted with natural ingredients, PureFinest® Natural Drinks help you push through mental and physical challenges and exertion. It has a natural goodness, by using medicinal plants and herbs that our ancestors used throughout history to combat mental and physical stress. Fuel your active lifestyle with the natural power of plants. Our beverage is crafted to boost your energy levels, enhance endurance, and promote overall vitality.
           </p>
           <button style="margin-top: 20px; padding: 10px 20px; background-color: #000; color: #fff; border: none; border-radius: 5px;">
             Meet Our Flavours
@@ -1458,16 +1522,14 @@ Earth... In A Can.
 
 <!-- SECTION 3 -->
 <section>
-  <div class="container-fluid" style="margin: 0; padding: 0;">
+  <div class="container-fluid" style="padding: 0; margin: 0;">
     <div class="row" style="margin: 0;">
       <!-- Text -->
-      <div class="col-sm-6" style="padding: 0px; display: flex; align-items: center;">
+      <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
         <div class="overlay-content">
-          <h1 style="font-weight: 900;">
-            Taste Me! Feel<br>Me!®
-          </h1>
+          <h1 style="font-weight: 900;" id="headings">Taste Me! Feel<br>Me!®</h1>
           <p style="font-size: 20px;">
-           "Taste Me! - Feel Me!" ® is not just a slogan; it's an invitation to embark on a sensory journey with our beverage, designed to leave you feeling refreshed, revitalized, and ready to take on the day. From the first sip to the last, our beverage promises an experience that will awaken your senses and leave you with a feeling of overall well-being. Taste the Goodness, Feel the Difference!
+            "Taste Me! - Feel Me!" ® is not just a slogan; it's an invitation to embark on a sensory journey with our beverage, designed to leave you feeling refreshed, revitalized, and ready to take on the day. From the first sip to the last, our beverage promises an experience that will awaken your senses and leave you with a feeling of overall well-being.
           </p>
           <button style="margin-top: 20px; padding: 10px 20px; background-color: #000; color: #fff; border: none; border-radius: 5px;">
             Meet Our Flavours
@@ -1475,13 +1537,21 @@ Earth... In A Can.
         </div>
       </div>
       <!-- Image -->
-      <div class="col-sm-6" style="padding: 0;">
-        <img src="./Assets/finest-image-6.jpg" alt=""
-             style="width: 100%; height: 780px; object-fit: cover; object-position: 30% center; display: block;">
+      <div class="col-md-6" style="padding: 0;">
+        <img src="./Assets/finest-image-6.jpg" alt="" style="width: 100%; height: 780px; object-fit: cover; object-position: 30% center; display: block;">
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
 
   
   </section>
