@@ -25,60 +25,210 @@
  
 
   <style>
-    body, html {
-    margin: 0;
-    padding: 0;
+    .fruit2,.fruit-over{
+      margin: auto;
+      width: 80% !important;
+    }
+    /* Specific image row layout */
+.scoped-overview-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.scoped-overview-section .image-col {
+  flex: 1 1 50%;
+  padding: 0;
+}
+
+.scoped-overview-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Collapse to column at max-width 768px */
+@media (max-width: 768px) {
+  .scoped-overview-section {
+    flex-direction: column;
   }
 
-  .edge-to-edge-img {
-    display: block;
-    margin: 0;
-    padding: 0;
+  .scoped-overview-section .image-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .scoped-overview-section .text-block {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .scoped-overview-section .text-block h3,
+  .scoped-overview-section .text-block p,
+  .scoped-overview-section .text-block span {
+    margin: 10px auto;
+    width: 90%;
+  }
+}
+
+  /* Base reset */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-width images */
+.edge-to-edge-img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Wrapper with no gap */
+.no-gap-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Row styling */
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  min-height: 400px;
+}
+
+/* Column styles */
+.image-row > .col-sm-6,
+.image-row > .col-md-6,
+.image-row > .col-xs-6 {
+  flex: 1 1 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text and image block spacing */
+.thumbnail,
+.thumbs,
+.whoweare-2,
+.whoweare-3 {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.thumbnail img,
+.image-row img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Text block styles */
+.text-block {
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.text-block h3,
+.text-block p,
+.text-block span {
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Make images larger where necessary */
+.larger-img img {
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive: Small screens stack */
+@media (max-width: 768px) {
+  .refresh{
+    /*position: relative;
+    top:-50px;
+    left: 150px;
+    font-weight: 900;
+    font-size: 60px;*/
+    margin-top: 50px;
+}
+.refresh-1{
+   /* position: relative;
+    top:-630px;
+    left: 150px;
+    font-weight: 900;
+    font-size: 30px;*/
+    margin-top: -28px;
+}
+  .image-row {
+    flex-direction: column;
+  }
+
+  .image-row > .col-sm-6,
+  .image-row > .col-md-6 {
+    flex: 1 1 100%;
+  }
+
+  .text-block {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .text-block h3,
+  .text-block p,
+  .text-block span {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+  }
+
+  .image-row img {
     width: 100%;
     height: auto;
+    object-fit: cover;
   }
+}
 
-  .no-gap-wrapper {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-/************************************/
+/* Responsive: Side-by-side layout for tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
   .image-row {
-      margin: 0;
-    }
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
 
-    .image-row .col-md-6,
-    .image-row .col-sm-6,
-    .image-row .col-xs-6 {
-      padding: 0;
-    }
+  .image-row > .col-sm-6,
+  .image-row > .col-md-6 {
+    flex: 1 1 50%;
+    display: flex;
+  }
 
-    .thumbnail,
-    .thumbs,
-    .whoweare-2,
-    .whoweare-3 {
-      margin: 0;
-      border: none;
-      border-radius: 0;
-    }
+  .text-block {
+    padding: 40px 50px;
+    justify-content: center;
+  }
 
-    .thumbnail img {
-      width: 100%;
-      display: block;
-    }
-
-    .text-block {
-      padding: 20px;
-    }
-
-    @media (max-width: 767px) {
-      .text-block {
-        padding: 15px;
-      }
-    }
-
+  .text-block h3,
+  .text-block p,
+  .text-block span {
+    margin-left: 10px !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
 
 
     
@@ -238,7 +388,10 @@ color: white !important;
   
 }
 
-
+.footer-wrapper{
+  width: 100vw !important;
+  margin-left: -15px !important;
+}
 h1,h2,h5 {
   color: #000;
    font-family: 'Saira Stencil One', sans-serif;
@@ -1070,25 +1223,25 @@ top:18px;
 }
 
 
-.cut-text p{
+/*.cut-text p{
 margin-left: 40px ;
 }
 .brew-1{
   margin-top: 0;
-}
-.container-fluid video{
+}*/
+/*.container-fluid video{
 position: relative;
 left:0;
   width:100%;
-}
+}*/
 
 .foot2 h4,ul li a,i{
   margin-left: 0;
    }
-   .container-fluid video{
+  /* .container-fluid video{
     margin-left: 25px;
     width:100%;
-  }
+  }*/
   .gold{
     margin-left:40px;
   }
@@ -1444,21 +1597,34 @@ left:0;
         Drinks For Vitality And Well-Being.</p>
   </div>
   <!-----Grid System-->
-  <div class="container-fluid" style="margin-top: -70px;">
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid" style="margin-top: -70px;">
     
     <!-- First Row -->
-  <div class="row image-row">
-    <div class="col-sm-6 thumbs text-block">
+  <div class="row image-row scoped-overview-section">
+    <div class="col-sm-6 thumbs text-block image-col">
       <h3 style="font-weight: 900;margin-left: 40px;width: 90%" class="fruit-over">OVERVIEW</h3>
-      <p class="fruit-over" style="margin-left: 40px;width: 90%">
+      <p class="fruit-over" style="margin-left: 40px;width: 90%;font-size: 18px;">
         We are focused on foods and beverages creating premium, plant-based, and natural foods and drinks. Offerings include REDEFINING REFRESHMENT WITH INTEGRITY AND INNOVATION vitality, vitamins, sports, drinks, and well-being foods made with organic ingredients to promote health and well-being. The company is known for using high-quality premium ingredients, alongside other carefully selected components designed to revitalize both body and soul. We ensure our brands are sustainable and beneficial for overall vitality, appealing to health-conscious consumers.
       </p>
       <span style="text-decoration: underline;text-underline-offset: 10px;margin-left: 40px;font-weight: 900;color: #000;"><a href="thepfiway.html">The PFI WAY </a></span>
     </div>
     
-    <div class="col-sm-6 thumbnail">
+   <!----- <div class="col-sm-6 thumbnail">
       <img src="./Assets/we-fruit-1.jpg" alt="">
-    </div>
+    </div>-->
+    <div class="col-sm-6 thumbnail larger-img image-col">
+  <img src="./Assets/we-fruit-1.jpg" alt="">
+</div>
+
   </div>
 
   <!-- Second Row -->
@@ -1468,9 +1634,9 @@ left:0;
     </div>
     <div class="col-md-6 text-block whoweare-2">
       <h3 style="font-weight: 900;margin-left: 40px;">PURE QUALITY</h3>
-      <p class="fruit2" style="margin-left: 40px;">Meticulously crafted products that embody natural excellence and authenticity.</p> <br>
+      <p class="fruit2" style="margin-left: 40px;font-size: 20px;">Meticulously crafted products that embody natural excellence and authenticity.</p> <br>
       <h3 style="font-weight: 900; margin-left: 40px;">INNOVATIVE TASTE</h3>
-      <p class="fruit2" style="margin-left: 40px;">Blending innovation with tradition to create truly unique, bold and refreshingly natural flavors.</p>
+      <p class="fruit2" style="margin-left: 40px;font-size: 18px;">Blending innovation with tradition to create truly unique, bold and refreshingly natural flavors.</p>
     </div>
   </div>
 
@@ -1478,7 +1644,7 @@ left:0;
   <div class="row image-row">
     <div class="col-md-6 text-block whoweare-3">
       <h3 style="font-weight: 900;margin-left: 40px;width: 90%">The Dawn of a Refreshing Concept</h3>
-      <p class="fruit2" style="margin-left: 40px;width: 90%">
+      <p class="fruit2" style="margin-left: 40px;width: 90%;font-size: 18px;">
         Driven by a passion for perfection, we've spent years perfecting every blend and exploring new flavor horizons. With thousands of satisfied customers and unique creations, our journey is just beginning. Discover a world where every sip and bite tells a story.
       </p>
     </div>
@@ -1494,7 +1660,7 @@ left:0;
     </div>
     <div class="col-md-6 text-block whoweare-2">
       <h3 style="font-weight: 900;margin-left: 40px;">OUR DRIVE <br>SINCE 2016.</h3>
-      <p class="fruit2" style="margin-left: 40px;">
+      <p class="fruit2" style="margin-left: 40px;font-size: 18px;">
         Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest® has ushered in a new era of wellness beverages, seamlessly blending ancient wisdom with modern vitality.
       </p>
     </div>
@@ -1504,7 +1670,7 @@ left:0;
   <div class="row image-row">
     <div class="col-md-6 text-block whoweare-2">
       <h3 style="font-weight: 900;margin-left: 40px;width: 90%">Early 2010s <br></h3>
-      <p class="fruit2" style="margin-left: 40px;width: 90%">
+      <p class="fruit2" style="margin-left: 40px;width: 90%;font-size: 18px;">
         PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and beverage industry, under the umbrella of Pure Finest Inc., known for its unwavering commitment to innovation, quality, and sustainability. Since its inception, the company has been dedicated to creating products that meet consumers' needs and exceed their expectations 'Taste Me! Feel Me!®'. With a rich history of successful product launches, Pure Finest Inc. has consistently pushed the boundaries of what is possible in the beverage and food industries.
       </p>
     </div>
@@ -1520,7 +1686,7 @@ left:0;
     </div>
     <div class="col-md-6 text-block whoweare-2">
       <h3 style="font-weight: 900;margin-left: 40px;">Company History and Background</h3>
-      <p class="fruit2" style="margin-left: 40px;">
+      <p class="fruit2" style="margin-left: 40px;font-size: 18px;">
         Founded in the early 2010s, PureFinest® has grown from a small startup into a globally recognized brand. The company began with a simple mission: to create beverages that are as beneficial to the body as they are delightful to the taste buds. Over the years, the PureFinest® brand has been dedicated to creating innovative and health-focused products that enhance the lives of consumers. With a commitment to quality, sustainability, and customer satisfaction, PureFinest® continues to lead the way in developing food and beverages that not only taste great but also provide essential health benefits.
       </p>
     </div>
@@ -1535,7 +1701,7 @@ left:0;
 <img src="./Assets/we-fruit-7.png" alt="" width="100%" max-height="200px">
 <h2>OUR STORY</h2>
 <h5>2016</h5>
-<p>Over nearly seven years, from 2016 to 2023, Beulah Group Inc. meticulously 
+<p style="font-size: 18px;">Over nearly seven years, from 2016 to 2023, Beulah Group Inc. meticulously 
   developed and crafted the PureFinest® range, focusing 
   on perfecting the ingredients, formulation, brand positioning, 
   design, packaging, and marketing strategy.</p>
@@ -1548,7 +1714,7 @@ left:0;
 <img src="./Assets/we-fruit-8.png" alt="" width="100%" max-height="200px">
 <h2>PRE-LAUNCHED</h2>
 <h5>March 15, 2023</h5>
-<p>On March 15, 2023, PureFinest® Drink was pre-launched 
+<p style="font-size: 18px;">On March 15, 2023, PureFinest® Drink was pre-launched 
   in the United Kingdom, introducing a groundbreaking new 
   product category: 3-in-1 Vitamin, Sports, and Vitality,
    beverages with our first 6 main ingredients:
@@ -1569,7 +1735,7 @@ left:0;
 
        
 <!-- Footer Section (Full width, isolated, no side effects) -->
-<div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
+<div class=" footer-wrapper" style="margin: 0; padding: 0; width: 100vw; overflow: hidden;">
   <!-- SVG Wave -->
   <div style="width: 100%; line-height: 0; overflow: hidden; margin-bottom: -5px;">
     <svg viewBox="0 0 1440 320"
@@ -1582,7 +1748,7 @@ left:0;
 
   <!-- Footer Content -->
 
- <footer class="footer" style="background-color:#254125;">
+ <footer class="footer" style="background-color:#254125;width: 100vw !important;">
   <div class="container">
     <div class="row text-white align-items-center">
       
