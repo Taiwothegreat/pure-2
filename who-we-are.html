@@ -169,17 +169,20 @@ font-family: Arial, sans-serif;
 } 
 .refresh{
     position: relative;
-    top:-290px;
-    left: 20px;
+    top:-290px !important;
+    left: 4px !important;
     font-weight: 900;
     font-size: 25px;
 }
 .refresh-1{
     position: relative;
-    top:-250px;
-    left: 0;
-    font-weight: 900;
-     font-size: 15px;
+    top:-250px !important;
+    left: 4px !important;
+ /*   font-weight: 900;*/
+     font-size: 20px !important;
+}
+.fruit-over{
+  margin-top: 45px !important;
 }
 .thumbs{
     margin-top: -130px;
@@ -876,7 +879,20 @@ font-family: Arial, sans-serif;
 
     /*-----------------------------------------------------------------*/
 @media (max-width: 1024px) {
-
+.refresh{
+    position: relative;
+    top:-390px;
+    left: 20px;
+    font-weight: 900;
+    font-size: 30px;
+}
+.refresh-1{
+    position: relative;
+    top:-390px;
+    left: 20px;
+    font-weight: 900;
+     font-size: 25px;
+}
 
 
   .footer {
@@ -1415,8 +1431,8 @@ left:0;
     <!-- First Row -->
   <div class="row image-row">
     <div class="col-sm-6 thumbs text-block">
-      <h3 style="font-weight: 900;margin-left: 40px;width: 90%">OVERVIEW</h3>
-      <p class="fruit1" style="margin-left: 40px;width: 90%">
+      <h3 style="font-weight: 900;margin-left: 40px;width: 90%" class="fruit-over">OVERVIEW</h3>
+      <p class="fruit-over" style="margin-left: 40px;width: 90%">
         We are focused on foods and beverages creating premium, plant-based, and natural foods and drinks. Offerings include REDEFINING REFRESHMENT WITH INTEGRITY AND INNOVATION vitality, vitamins, sports, drinks, and well-being foods made with organic ingredients to promote health and well-being. The company is known for using high-quality premium ingredients, alongside other carefully selected components designed to revitalize both body and soul. We ensure our brands are sustainable and beneficial for overall vitality, appealing to health-conscious consumers.
       </p>
     </div>
