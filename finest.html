@@ -39,31 +39,41 @@
   padding: 10px 20px;
   background-color: #fff;
 }
-
-.brand {
-  display: flex;
-  align-items: center;
+.brand a {
+  display: inline-block;
+  position: relative;
+  text-align: center; /* center contents */
 }
 
-.brand img.logo {
-  height: 50px;
-  animation: spin 10s linear infinite;
-}
-
-.brand .text-logo {
+/* Make the logo block and center it */
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
   height: auto;
-  margin-left: 10px;
+  animation: spin 10s linear infinite;
+  position: absolute;
+  top:40px;
+  /* Adjust left to position over N and E */
+  left: 125px; /* adjust this value for perfect alignment */
 }
+
+/* The text logo below */
+.text-logo {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 300px;
+  user-select: none;
+}
+
+/* Keep spin animation */
 @keyframes spin {
-  from { transform: translate(-50%, -30%) rotate(0deg); }
-  to { transform: translate(-50%, -30%) rotate(360deg); }
-}
-/*@keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}*/
+}
 
-/* Hamburger Menu */
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -78,10 +88,9 @@
   transition: 0.3s;
 }
 
-/* Nav styles */
 .nav {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 20px;
 }
 
@@ -96,35 +105,38 @@
   color: #000;
   font-weight: bold;
 }
+.dropdown a{
+     font-family: 'Saira Stencil One', sans-serif;
+     font-size: 20px;
+}
+.studio a, .promos a{
+     font-family: 'Saira Stencil One', sans-serif;
+     font-size: 20px;
+}
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 5px;
+  color: #000;
+  vertical-align: middle;
+  font-weight: bold;
+}
 
-/* Dropdown styling */
 .dropdown-menu {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  display: none;
-  background: #fff;
-  z-index: 1000;
-  padding: 10px 0;
+  background-color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.dropdown-content {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  padding: 10px 20px;
-}
-
-.dropdown-content div a {
-  white-space: nowrap;
+  z-index: 1000;
+  flex-direction: column;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: flex;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -132,16 +144,12 @@
 
   .nav {
     flex-direction: column;
-    width: 100%;
     display: none;
+    width: 100%;
   }
 
   .nav.active {
     display: flex;
-  }
-
-  .nav li {
-    width: 100%;
   }
 
   .dropdown-menu {
@@ -149,22 +157,12 @@
     box-shadow: none;
   }
 
-  .dropdown-content {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .dropdown > a:after {
-    content: ' ▼';
-    float: right;
-  }
-
-  .dropdown .dropdown-menu {
+  .dropdown:hover .dropdown-menu {
     display: none;
   }
 
   .dropdown.open .dropdown-menu {
-    display: block;
+    display: flex;
   }
 }
 
@@ -629,201 +627,6 @@ margin-top: 10px;
 
 
 
-/* Right column - text and links */
-/*.dropdown-content.labelss-1 {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 10px;
-}*/
-
-/* Individual blocks */
-/*.dropdown-content.labelss-1 > div {
-  flex-shrink: 0;
-}
-
-.label-images img {
-  max-width: 200px;
-  height: auto;
-  display: block;
-}
-
-.visions {
-  max-width: 300px;
-  flex: 1 1 300px;
-}
-
-.hydrations, .juices, .snackss, .alcohols {
-  flex: 1 1 150px;
-  min-width: 120px;
-}*/
-
-/* Responsive behavior for smaller screens */
-/*@media (max-width: 768px) {
-  .dropdown-content.labelss-1 {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .label-images,
-  .visions,
-  .hydrations,
-  .juices,
-  .snackss,
-  .alcohols {
-    flex: 1 1 100%;
-  }
-
-  .label-imagse img {
-    margin: 0 auto;
-  }
-
-  .visions {
-    text-align: center;
-  }
-}
-
-.we h5 a:hover{
-  background-color: #6ccb35;
-  text-decoration:none;
-}
-.we ul li a{
-  font-family: Arial, sans-serif;
-}
-.we ul li a:hover{
-   background-color: #6ccb35;
-  text-decoration:none;
-  font-weight: 100;
- 
-}
-.peef ul li a{
-  font-family: Arial, sans-serif;
-}
-.peef h5 a:hover{
-  background-color: #6ccb35;
-  text-decoration: none;
-}
-.peef ul li a:hover{
-  background-color: #6ccb35;
-  text-decoration: none;
-}
-.hydrations h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.hydrations ul li a{
-  font-family: Arial, sans-serif;
-}
-.hydrations ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.visions button a{
-  background-color: #ffa500;
-}
-.juices h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.snackss h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.alcohols h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.juices ul li a{
-  font-family: Arial, sans-serif;
-}
-.juices ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.snackss ul li a{
-  font-family: Arial, sans-serif;
-}
-.snackss ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.alcohols ul li a{
-  font-family: Arial, sans-serif;
-}
-.alcohols ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.edi h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.edi ul li a{
-  font-family: Arial, sans-serif;
-}
-.edi ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.human h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.human ul li a{
-  font-family: Arial, sans-serif;
-}
-.human ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.sports h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.sports ul li a{
-  font-family: Arial, sans-serif;
-}
-.sports ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.foundation h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.foundation ul li a{
-  font-family: Arial, sans-serif;
-}
-.foundation ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.recruit h5 a:hover{
-  background:#0000ff;
-   text-decoration: none;
-}*/
-/*New Hover Effect*/
-/*.mobile-version-6 a:hover {
-  color: #fff;
-  background-color: #6ccb35 !important;
-}
-.mobile-version-7 a:hover{
-  color:#fff;
-  background: orange !important;
-}
-.mobile-version-8 a:hover{
-  color:#fff;
-  background: rgb(192, 65, 65) !important;
-}
-.mobile-version-9 a:hover{
-  color:#fff;
-  background: rgb(117, 83, 83) !important;
-}
-.mobile-version-10 a:hover{
-  color:#fff;
-  background: #0000ff !important;
-}*/
 
 .form-control{
   margin-top: 50px !important;
@@ -1406,23 +1209,21 @@ left:0;
  
 <!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 -->
+
  <nav style="background-color: #fff;">
   <div class="nav-container">
-    <div class="brand" style="position: relative; display: inline-block;">
-      <a href="index.html" style="position: relative; display: inline-block;">
-        <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo" style="
-          position: absolute;
-          top: 30px;
-          left: 45%;
-          transform: translate(-50%, -30%) rotate(0deg);
-          width: 100px;
-          height: auto;
-          animation: spin 10s linear infinite;
-          z-index: 2;
-        ">
+    <!-----<div class="brand">
+      <a href="index.html" style="display: flex; align-items: center;">
+        <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo">
         <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
       </a>
-    </div>
+    </div>-->
+<div class="brand">
+  <a href="index.html" style="position: relative; display: inline-block;">
+    <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo">
+    <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
+  </a>
+</div>
 
     <div class="menu-toggle" id="menu-toggle">
       <span></span><span></span><span></span>
@@ -1430,45 +1231,34 @@ left:0;
 
     <ul class="nav" id="main-nav">
       <li class="dropdown">
-        <a href="#">LABELS <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu" style="border-top: 10px solid #ffa500;">
-          <div class="dropdown-content labels-1" style="flex-direction: column;">
-            <div><a href="#">PureFinest®</a></div>
-            <div><a href="#">Elysium Alps®</a></div>
-            <div><a href="#">AlpineGlow®</a></div>
-          </div>
+        <a href="#" class="dropdown-toggle">LABELS</a>
+        <div class="dropdown-menu">
+          <a href="#">PureFinest®</a>
+          <a href="#">Elysium Alps®</a>
+          <a href="#">AlpineGlow®</a>
         </div>
       </li>
-
       <li class="dropdown">
-        <a href="#">ADVOCATES <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu" style="border-top: 10px solid #6ccb35;">
-          <div class="dropdown-content advocates-1" style="flex-direction: column;">
-            <div><a href="#">INGREDIENTS</a></div>
-            <div><a href="#">FLAVOUR</a></div>
-            <div><a href="#">NUTRITIONAL FACTS</a></div>
-          </div>
+        <a href="#" class="dropdown-toggle">ADVOCATES</a>
+        <div class="dropdown-menu">
+          <a href="#">People First</a>
+          <a href="#">EDI</a>
+          <a href="#">The Pure Finest Foundation</a>
         </div>
       </li>
-
       <li class="dropdown">
-        <a href="#">DISCOVERY <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu" style="border-top: 10px solid #755353;">
-          <div class="dropdown-content discovery-1" style="flex-direction: column;">
-            <div><a href="#">News & Blogs</a></div>
-            <div><a href="#">Life Stream</a></div>
-            <div><a href="#">Radio & Podcast</a></div>
-          </div>
+        <a href="#" class="dropdown-toggle">DISCOVERY</a>
+        <div class="dropdown-menu">
+          <a href="#">News & Blogs</a>
+          <a href="#">Life Stream</a>
+          <a href="#">Radio & Podcast</a>
         </div>
       </li>
-
-      <li><a href="#">STUDIO</a></li>
-      <li><a href="#">PROMOS & OFFERS</a></li>
+      <li class="studio"><a href="#">STUDIO</a></li>
+      <li class="promos"><a href="#">PROMOS & OFFERS</a></li>
     </ul>
   </div>
 </nav>
- 
-
 
 
 
@@ -1799,163 +1589,42 @@ left:0;
     }
     /*End of Labels*/
  /*New JavaScript*/
- /*
- document.addEventListener("DOMContentLoaded", function () {
-  const dropdownTriggers = document.querySelectorAll(".nav > li");
-  const menuToggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("main-nav");
-  const isDesktop = () => window.innerWidth > 1200;
-*/
-  // Toggle mobile menu
-/*  menuToggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    nav.classList.toggle("active");*/
-
-    // Close all dropdowns on toggle for mobile
-   /* if (!isDesktop()) {
-      dropdownTriggers.forEach(item => item.classList.remove("active"));
-    }*/
- /* });
-
-  dropdownTriggers.forEach(item => {
-    const link = item.querySelector("a");
-    const dropdownMenu = item.querySelector(".dropdown-menu");
-*/
-    // MOBILE CLICK TOGGLE
-  /*  link.addEventListener("click", function (e) {
-      if (!isDesktop()) {
-        const hasDropdown = item.querySelector(".dropdown-menu");
-        if (hasDropdown) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const isActive = item.classList.contains("active");*/
-
-          // Close other dropdowns
-          dropdownTriggers.forEach(el => el.classList.remove("active"));
-
-          // Toggle current
-         /* if (!isActive) {
-            item.classList.add("active");
-          }
-        }
-      }
-    });
-
-    // DESKTOP HOVER BEHAVIOR
-    if (dropdownMenu) {
-      let hoverTimeout;
-
-      item.addEventListener("mouseenter", () => {
-        if (isDesktop()) {
-          clearTimeout(hoverTimeout);
-          item.classList.add("active");
-        }
-      });
-
-      item.addEventListener("mouseleave", () => {
-        if (isDesktop()) {
-          hoverTimeout = setTimeout(() => {
-            item.classList.remove("active");
-          }, 200); // slight delay to allow cursor to reach dropdown
-        }
-      });
-
-     /* dropdownMenu.addEventListener("mouseenter", () => {
-        if (isDesktop()) {
-          clearTimeout(hoverTimeout);
-        }
-      });
-
-      dropdownMenu.addEventListener("mouseleave", () => {
-        if (isDesktop()) {
-          item.classList.remove("active");
-        }
-      });
-    }
-  });*/
-
-  // Click outside to close (mobile only)
- /* document.addEventListener("click", function (e) {
-    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-      dropdownTriggers.forEach(item => item.classList.remove("active"));
-      nav.classList.remove("active");
-    }
-  });
-
-  // Optional: handle window resize to remove active states if switching to desktop
-  window.addEventListener("resize", () => {
-    if (isDesktop()) {
-      dropdownTriggers.forEach(item => item.classList.remove("active"));
-      nav.classList.remove("active");
-    }
-  });
-});
-*/
  
-/*For Mobile*/
- 
-
-
-
-
-
- /*Third party website*/
-   /* $(document).ready(function () {
-      $('.external-link').click(function (e) {
-        e.preventDefault();
-        var url = $(this).data('url');
-        $('#proceedBtn').attr('href', url);
-        $('#securityModal').modal('show');
-      });
-    
-      $('#proceedBtn').click(function () {
-        $('#securityModal').modal('hide');
-      });
-    });
- */
     
 
 </script>
-
-
-
-
-
-
-
-
 <script>
-  // Toggle nav on mobile
-  const toggle = document.getElementById('menu-toggle');
+  const menuToggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('main-nav');
-  toggle.addEventListener('click', () => {
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+  menuToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
   });
 
-  // Mobile dropdown toggle
-  const dropdowns = document.querySelectorAll('.dropdown');
+  function handleDropdownClick(e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const parent = e.target.closest('.dropdown');
+      const isOpen = parent.classList.contains('open');
 
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', function (e) {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        dropdowns.forEach(d => {
-          if (d !== dropdown) d.classList.remove('open');
-        });
-        dropdown.classList.toggle('open');
+      document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+      if (!isOpen) {
+        parent.classList.add('open');
       }
-    });
-  });
-
-  // Close dropdowns on resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
-      nav.classList.remove('active');
     }
+  }
+
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', handleDropdownClick);
   });
 </script>
+
+
+
+
+
+
 
 <script>
     const rotatingImage = document.getElementById('rotatingSvg');
