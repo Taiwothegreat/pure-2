@@ -13,6 +13,8 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 
 <!-----  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+
  <link href="https://fonts.googleapis.com/css2?family=Open Sans&display=swap" rel="stylesheet">
 <!----- <link href="https://fonts.googleapis.com/css2?family=Playfair Display&display=swap" rel="stylesheet">-->
  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
@@ -23,7 +25,7 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /**Video Banner*/
-       #home-banner {
+#home-banner {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -42,7 +44,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* dark overlay for readability */
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -55,16 +57,24 @@
   text-align: center;
   color: #fff;
   padding: 20px;
+
 }
 
-.banner-content,.tagline-top {
-  font-size: 2.5rem;
- /* font-weight: 300;*/
-  margin-bottom: 110px;
- /* text-transform: uppercase;
-  letter-spacing: 2px;*/
-font-family: 'Edu VIC WA NT Hand Precursive', sans-serif !important;
+@font-face {
+  font-family: 'Shell';
+  src: url('./Assets/Shell-Normal.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
+
+
+.tagline-top {
+  font-family: 'Shell', sans-serif !important;
+  font-size: 4.5rem;
+  color: #6ccb35;
+}
+
+
 
 .logo-img {
   max-width: 500px;
@@ -75,21 +85,23 @@ font-family: 'Edu VIC WA NT Hand Precursive', sans-serif !important;
 
 }
 
-.tagline-bottom {
-  font-size: 2.5rem;
-  font-weight: 500;
+.tagline-bottom p{
+  font-size: 70px;
+  font-weight: 900;
   margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
+  color: #6ccb35;
+ font-family: 'Baloo Tamma 2', sans-serif;
 }
 
 .highlight {
   color: #fff;
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 70px;
+
 }
 
 .orange-half-img {
@@ -1461,10 +1473,10 @@ left:0;
   <div class="video-overlay"></div>
 
   <div class="banner-content">
-    <div class="tagline-top">Yours sincerely</div>
+    <div class="tagline-top" >Yours sincerely</div>
     <img src="./Assets/logo-B-T5VAok.png" alt="PURE FINEST Logo" class="logo-img">
     <div class="tagline-bottom" >
-      Your Gateway <span class="highlight">to</span> Natural <span class="highlight">Vitality</span>
+     <p> Your Gateway</p> <br> <span class="highlight" >to</span> <span style="color: #6ccb35;font-size:70px; font-family: 'Baloo Tamma 2', sans-serif;">Natural</span> <span class="highlight">Vitality</span>
       <img src="./Assets/orange-half.png" alt="Half Orange" class="orange-half-img">
     </div>
   </div>
