@@ -247,9 +247,13 @@
 }
 
 .orange-half-img {
-  width: 40px;
+  margin-top: -10px !important;
+  width: 70px;
   height: auto;
   vertical-align: middle;
+}
+.white-icon {
+  filter: brightness(0) invert(1); /* turns dark areas to white */
 }
    /* Fade-in animation */
 .overlay-content h2,
@@ -278,7 +282,7 @@ body{
   background-attachment: fixed;
   z-index: 1;
   overflow-x: hidden;*/
-  background: url('./Assets/bg-image-finest.png') no-repeat center center;
+  background: url('./Assets/Finest-Background-Image.jpg') no-repeat center center;
   background-size:cover;
   background-attachment: scroll;
   background-repeat: no-repeat;
@@ -511,7 +515,7 @@ html, body {
   }
 /* Overlay box */
 .overlay-content {
-  background-color: rgba(255, 255, 255, 0.95);
+/*  background-color: rgba(255, 255, 255, 0.95);*/
   padding: 30px;
   border-radius: 5px;
 }
@@ -580,6 +584,59 @@ html, body {
     transform: translateX(-50%);
   }
 }
+/****Image Gallery*/
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 120px 0;
+}
+
+.gallery-inner {
+  display: flex;
+  align-items: center;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+  min-width: calc(305px * 16); /* Ensure all images + duplicates fit */
+}
+
+.gallery-image {
+  width: 305px;
+  height: 305px;
+  flex-shrink: 0;
+  margin-left: -12px; /* Reduced so last image isn't cut off */
+  transform: rotate(45deg) translateY(30px); /* Bottom touch */
+  transform-origin: center;
+  border: 4px solid #adff2f;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-image.alt {
+  transform: rotate(45deg) translateY(-30px); /* Top touch */
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(-45deg); /* Keep face upright */
+  border-radius: 24px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 /*.dropdown-menu {
   display: none;
@@ -1233,10 +1290,10 @@ left:0;
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">LINES</a>
         <div class="dropdown-menu">
-          <a href="#">PureFinest®</a>
-          <a href="#">Gin®</a>
-          <a href="#">Vodka®</a>
-           <a href="#">Wine®</a>
+          <a href="#">Vitality</a>
+          <a href="#">Gin</a>
+          <a href="#">Vodka</a>
+           <a href="#">Wine</a>
         </div>
       </li>
       <li class="dropdown">
@@ -1277,7 +1334,7 @@ left:0;
     <img src="./Assets/logo-B-T5VAok.png" alt="PURE FINEST Logo" class="logo-img">
     <div class="tagline-bottom" >
      <p> Your Gateway</p> <br> <span class="highlight" >to</span> <span style="color: #6ccb35;font-size:70px; font-family: 'Baloo Tamma 2', sans-serif;">Natural</span> <span class="highlight">Vitality</span>
-      <img src="./Assets/orange-half.png" alt="Half Orange" class="orange-half-img">
+      <img src="./Assets/half-orange-removebg-preview.png" alt="Half Orange" class="orange-half-img white-icon">
     </div>
   </div>
 </section>
@@ -1472,7 +1529,31 @@ left:0;
   </section>
                   <div class="container-fluid" style="padding-top:70px;margin-left: 70px;"><div class="row"><div class="col-xs-12 col-sm-12"><h2 style="font-weight:bold;margin:0 0 10px 0;font-size:30px; font-family: 'Saira Stencil One', sans-serif;">We are PureFinestDrinks</h2><p style="font-size:20px;line-height:1.6;margin:0;">Revitalize your passion, 
                     elevate every moment, empower your success naturally.</p></div></div></div>
-                    
+<div class="gallery-wrapper">
+  <div class="gallery-inner" id="gallery-track">
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-1.jpg" alt="Vitamin"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-2.jpg" alt="Vegan"></div>
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-3.jpg" alt="Spring Water"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-4.jpg" alt="Plant Based"></div>
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-5.jpg" alt="Organic"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-6.jpg" alt="No Preservatives"></div>
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-7.jpg" alt="No Artificial Colour"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-8.jpg" alt="Natural Ingredients"></div>
+
+    <!-- Duplicate for seamless loop -->
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-1.jpg" alt="Vitamin"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-2.jpg" alt="Vegan"></div>
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-3.jpg" alt="Spring Water"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-4.jpg" alt="Plant Based"></div>
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-5.jpg" alt="Organic"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-6.jpg" alt="No Preservatives"></div>
+    <div class="gallery-image"><img src="./Assets/Finest-Gal-7.jpg" alt="No Artificial Colour"></div>
+    <div class="gallery-image alt"><img src="./Assets/Finest-Gal-8.jpg" alt="Natural Ingredients"></div>
+  </div>
+</div>
+
+
+              
        
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
