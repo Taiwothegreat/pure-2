@@ -256,14 +256,14 @@
   filter: brightness(0) invert(1); /* turns dark areas to white */
 }
    /* Fade-in animation */
-.overlay-content h2,
+/*.overlay-content h2,
 .overlay-content p,
 .overlay-content button,
 #vitalityText {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
+}*/
 
 .fade-in {
   opacity: 1 !important;
@@ -360,6 +360,16 @@ h2,
 .col-sm-4 {
   display: flex;
 }
+.scroll-line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /*h1,h5,.mobile-version-6 a,.mobile-version-7 a,
 .mobile-version-8 a,.mobile-version-9 a,
 .mobile-version-10 a{
@@ -367,17 +377,17 @@ h2,
   color: #000;
    font-family: 'Saira Stencil One', sans-serif;
 }*/
-h1 #headings{
+/*h1 #headings{
    font-size: 20px !important;
   color: #000;
    font-family: 'Saira Stencil One', sans-serif !important;
-}
-.overlay-content h1{
+}*/
+/*.overlay-content h1{
   width: 600px;
     font-size: 40px !important;
   color: #000;
    font-family: 'Saira Stencil One', sans-serif !important;
-}
+}*/
 /*.nav-container {
 max-width: 1200px;
 margin: 0 auto;
@@ -464,13 +474,13 @@ html, body {
     overflow-x: hidden;
   }
 
-  .overlay-content {
+  /*.overlay-content {
     padding: 40px;
-  }
+  }*/
 @media (max-width: 1024px) {
-    .overlay-content {
+    /*.overlay-content {
       padding: 20px;
-    }
+    }*/
 
     .row > div {
       width: 100% !important;
@@ -487,9 +497,9 @@ html, body {
     }
   }
   @media (max-width: 1024px) {
-    .overlay-content {
+   /* .overlay-content {
       padding: 20px;
-    }
+    }*/
   }
 
   .rotating-wrapper {
@@ -1297,12 +1307,20 @@ left:0;
         </div>
       </li>
       <li class="dropdown">
-        <a href="#">ADVOCATES</a>
-       <!----- <div class="dropdown-menu">
-          <a href="#">People First</a>
-          <a href="#">EDI</a>
-          <a href="#">The Pure Finest Foundation</a>
-        </div>-->
+        <a href="#" class="dropdown-toggle">ADVOCATES</a>
+       <div class="dropdown-menu">
+          <a href="#" style="display: inline-block; text-align: center; text-decoration: none; color: inherit;">
+  <img src="./Assets/Chimela-ude.jpg" alt="Chiemela Paris Ude" 
+       style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <div class="caption" style="margin-top: 10px;">
+    <h6 style="margin: 5px 0; font-size: 16px; font-weight: 600;">Amb. Chiemela Paris Ude</h6>
+    <p style="margin: 0; font-size: 13px; color: #666;">United Kingdom Soccer</p>
+  </div>
+</a>
+
+           <!----- <a href="#">EDI</a>
+          <a href="#">The Pure Finest Foundation</a>--->
+        </div>
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">DISCOVERY</a>
@@ -1344,17 +1362,21 @@ left:0;
     <div class="row" style="margin-top: 20px;">
       <!-- Text -->
       <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
-        <div class="overlay-content">
-          <h3 style="font-weight: 600;   font-family: 'Saira Stencil One', sans-serif;" id="headings">Healthiest Plant-Based Vitamin,Sports & Vitality 
-            Natural Drink on Planet Earth... In A Can.</h3>
-          <p style="font-size: 20px;width: 90%;">
-            Welcome to the Oasis of Purity and Future of Wellness! Introducing the Healthiest Plant-Based Vitamin,
-             Sports & Vitality Natural Drink on Planet Earth. Indulge in PureFinest® – 
-             a beverage that truly lives up to its name! We believe that nourishing your Body,
-              Mind & Soul should be a delightful experience, 
-              and our revolutionary beverage is designed to elevate your well-being to new heights.
-          </p>
-        </div>
+      <div class="overlay-content">
+  <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;" id="headings">
+    <span class="scroll-line">Healthiest Plant-Based Vitamin,Sports & Vitality </span><br>
+    <span class="scroll-line">Natural Drink on Planet Earth...In A Can.</span><br>
+<!-----    <span class="scroll-line"></span>-->
+  </h3>
+  <p style="font-size: 20px; width: 90%;">
+    <span class="scroll-line">Welcome to the Oasis of Purity and Future of Wellness!</span>
+    <span class="scroll-line">Introducing the Healthiest Plant-Based Vitamin, Sports & Vitality Natural Drink on Planet Earth.</span>
+    <span class="scroll-line">Indulge in PureFinest® – a beverage that truly lives up to its name!</span>
+    <span class="scroll-line">We believe that nourishing your Body, Mind & Soul should be a delightful experience,</span>
+    <span class="scroll-line">and our revolutionary beverage is designed to elevate your well-being to new heights.</span>
+  </p>
+</div>
+
       </div>
       <!-- Image -->
       <div class="col-md-6" style="padding: 0;">
@@ -1379,17 +1401,51 @@ left:0;
         <img src="./Assets/finest-image-3.jpg" alt="" style="width: 100%; height: 600px; object-fit: cover; display: block;">
       </div>
       <!-- Text -->
-      <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
-        <div class="overlay-content">
-          <h3 style="font-weight: 600;  font-family: 'Saira Stencil One', sans-serif;" id="headings">Revitalize Your Body, Mind and Soul</h3>
-          <p style="font-size: 20px; ">
-            Crafted with natural ingredients, PureFinest® Natural Drinks help you push through mental and physical challenges and exertion. It has a natural goodness, by using medicinal plants and herbs that our ancestors used throughout history to combat mental and physical stress. Fuel your active lifestyle with the natural power of plants. Our beverage is crafted to boost your energy levels, enhance endurance, and promote overall vitality.
-          </p>
-          <button style="margin-top: 20px; padding: 10px 20px; background-color: #000; color: #fff; border: none; border-radius: 5px;">
-            Meet Our Flavours
-          </button>
-        </div>
-      </div>
+    <div class="col-md-6" style="padding: 0; display: flex; align-items: center;"> 
+  <div class="overlay-content">
+    <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;" id="headings">
+      <span class="scroll-line">Revitalize Your Body, Mind and Soul</span><br>
+      <!-----<span class="scroll-line"></span>-->
+    </h3>
+    <p style="font-size: 20px;">
+      <span class="scroll-line">Crafted with natural ingredients, PureFinest® Natural Drinks help you push through mental and physical challenges and exertion.</span>
+      <span class="scroll-line">It has a natural goodness, by using medicinal plants and herbs that our ancestors used throughout history to combat mental and physical stress.</span>
+      <span class="scroll-line">Fuel your active lifestyle with the natural power of plants.</span>
+      <span class="scroll-line">Our beverage is crafted to boost your energy levels, enhance endurance, and promote overall vitality.</span>
+    </p>
+    <button style="margin-top: 20px; border: none; border-radius: 5px;background-color: #faf4f4; border-radius: 24px;">
+   <!-----   <span class="scroll-line">Meet Our Flavours</span>-->
+   <span class="scroll-line" style="
+  display: inline-block;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 5px solid black;
+  border-radius: 24px;
+  text-align: center;
+  cursor: pointer;
+  width: 350px;
+">
+  Meet Our Flavours
+</span>
+
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 </section>
@@ -1399,17 +1455,43 @@ left:0;
   <div class="container-fluid" style="padding: 0; margin: 0;">
     <div class="row" style="margin: 0;">
       <!-- Text -->
-      <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
-        <div class="overlay-content">
-          <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;" id="headings">Taste Me! Feel Me!®</h3>
-          <p style="font-size: 20px;  ">
-            "Taste Me! - Feel Me!" ® is not just a slogan; it's an invitation to embark on a sensory journey with our beverage, designed to leave you feeling refreshed, revitalized, and ready to take on the day. From the first sip to the last, our beverage promises an experience that will awaken your senses and leave you with a feeling of overall well-being.
-          </p>
-          <button style="margin-top: 20px; padding: 10px 20px; background-color: #000; color: #fff; border: none; border-radius: 5px;">
-            Meet Our Flavours
-          </button>
-        </div>
-      </div>
+     <div class="col-md-6" style="padding: 0; display: flex; align-items: center;">
+  <div class="overlay-content">
+    <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;" id="headings">
+      <span class="scroll-line">Taste Me! Feel Me!®</span><br>
+    <!----  <span class="scroll-line"></span>-->
+    </h3>
+    <p style="font-size: 20px;">
+      <span class="scroll-line">"Taste Me! - Feel Me!" ® is not just a slogan;</span>
+      <span class="scroll-line">it's an invitation to embark on a sensory journey with our beverage,</span>
+      <span class="scroll-line">designed to leave you feeling refreshed, revitalized, and ready to take on the day.</span>
+      <span class="scroll-line">From the first sip to the last, our beverage promises an experience</span>
+      <span class="scroll-line">that will awaken your senses and leave you with a feeling of overall well-being.</span>
+    </p>
+    <button style="margin-top: 20px;  border: none; border-radius: 5px;background-color: #faf4f4; border-radius: 24px;">
+ <!----     <span class="scroll-line">Meet Our Flavours</span>-->
+  <span class="scroll-line" style="
+  display: inline-block;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 5px solid black;
+  border-radius: 24px;
+  text-align: center;
+  cursor: pointer;
+  width: 350px;
+">
+  Meet Our Flavours
+</span>
+    </button>
+  </div>
+</div>
+
       <!-- Image -->
       <div class="col-md-6" style="padding: 0;">
         <img src="./Assets/finest-image-6.jpg" alt="" style="width: 100%; height: 780px; object-fit: cover; object-position: 30% center; display: block;">
@@ -1527,7 +1609,12 @@ left:0;
       </div>
     </div>
   </section>
-                  <div class="container-fluid" style="padding-top:70px;margin-left: 70px;"><div class="row"><div class="col-xs-12 col-sm-12"><h2 style="font-weight:bold;margin:0 0 10px 0;font-size:30px; font-family: 'Saira Stencil One', sans-serif;">We are PureFinestDrinks</h2><p style="font-size:20px;line-height:1.6;margin:0;">Revitalize your passion, 
+                  <div class="container-fluid" style="padding-top:70px;margin-left: 70px;"><div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <h2 style="font-weight:bold;margin:0 0 10px 0;font-size:30px;
+                       font-family: 'Saira Stencil One', sans-serif;">We are <span style="color: #6ccb35;">
+                       PureFinestDrinks</span></h2><p style="font-size:20px;line-height:1.6;margin:0;font-weight: 700;">
+                        Revitalize your passion, 
                     elevate every moment, empower your success naturally.</p></div></div></div>
 <div class="gallery-wrapper">
   <div class="gallery-inner" id="gallery-track">
@@ -1551,7 +1638,32 @@ left:0;
     <div class="gallery-image alt"><img src="./Assets/Finest-Gal-8.jpg" alt="Natural Ingredients"></div>
   </div>
 </div>
+<!--------scroll visible-->
 
+<script>
+const lines = document.querySelectorAll('.scroll-line');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const el = entry.target;
+
+    if (entry.isIntersecting) {
+      const index = Array.from(lines).indexOf(el);
+      el.style.transitionDelay = `${index * 100}ms`; // stagger each by 100ms
+      el.classList.add('visible');
+    } else {
+      el.style.transitionDelay = '0ms';
+      el.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+lines.forEach(line => {
+  observer.observe(line);
+});
+</script>
 
               
        
