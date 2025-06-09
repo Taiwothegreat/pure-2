@@ -25,6 +25,158 @@
  
 
   <style>
+    /*slides*/
+     .no-gap-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    .slide.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+
+    .edge-to-edge-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .refresh, .refresh-1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 90%;
+      text-align: center;
+    }
+
+    .refresh {
+      top: 40%;
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .refresh-1 {
+      top: 55%;
+      font-size: 1.2em;
+      color: white;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .animated-icon {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 50px;
+      animation: bounce 2s infinite;
+      text-shadow: 2px 2px 5px black;
+      z-index: 2;
+    }
+
+    .slide:nth-child(1) .animated-icon {
+      color: #8BC34A; /* Green */
+    }
+
+    .slide:nth-child(2) .animated-icon {
+      color: #4CAF50; /* Deep Green */
+    }
+
+    .slide:nth-child(3) .animated-icon {
+      color: #03A9F4; /* Blue */
+    }
+
+    .slide:nth-child(4) .animated-icon {
+      color: #E91E63; /* Pink/Red */
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
+
+   /* @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }*/
+
+    @media (max-width: 768px) {
+      .refresh {
+        top: 35%;
+        font-size: 1.5em;
+      }
+      .refresh-1 {
+        top: 50%;
+        font-size: 1em;
+      }
+      .animated-icon {
+        top: 20%;
+        font-size: 40px;
+      }
+    }
+
+    .slide-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      z-index: 3;
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .slide-control.left {
+      left: 15px;
+    }
+
+    .slide-control.right {
+      right: 15px;
+    }
+
+    .slide-control:hover {
+      background: rgba(0,0,0,0.5);
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .dot {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: white;
+    }
+    /*End of slides*/
     .fruit2,.fruit-over{
       margin: auto;
       width: 80% !important;
@@ -80,21 +232,21 @@ body, html {
 }
 
 /* Full-width images */
-.edge-to-edge-img {
+/*.edge-to-edge-img {
   display: block;
   margin: 0;
   padding: 0;
   width: 100%;
   height: auto;
 }
-
+*/
 /* Wrapper with no gap */
-.no-gap-wrapper {
+/*.no-gap-wrapper {
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
-}
+}*/
 
 /* Row styling */
 .image-row {
@@ -158,22 +310,22 @@ body, html {
 
 /* Responsive: Small screens stack */
 @media (max-width: 768px) {
-  .refresh{
+ /* .refresh{
     /*position: relative;
     top:-50px;
     left: 150px;
     font-weight: 900;
     font-size: 60px;*/
-    margin-top: 50px;
-}
-.refresh-1{
+    /*margin-top: 50px;
+}*/
+/*.refresh-1{
    /* position: relative;
     top:-630px;
     left: 150px;
     font-weight: 900;
     font-size: 30px;*/
-    margin-top: -28px;
-}
+    /*margin-top: -28px;
+/*}*/
   .image-row {
     flex-direction: column;
   }
@@ -241,7 +393,7 @@ body, html {
       margin-top: 0;
       font-size: 2em;
     }
-.refresh{
+/*.refresh{
     position: relative;
     top:-650px;
     left: 150px;
@@ -254,7 +406,7 @@ body, html {
     left: 150px;
     font-weight: 900;
     font-size: 30px;
-}
+}*/
    @media (max-width: 768px) {
 .mobile-version-1,.mobile-version-2,
 .mobile-version-3,.mobile-version-4,.mobile-version-5{
@@ -335,7 +487,7 @@ margin: 300;
 font-family: Arial, sans-serif;
 /*  overflow-x: hidden;*/
 } 
-.refresh{
+/*.refresh{
     position: relative;
     top:-290px !important;
     left: 4px !important;
@@ -345,10 +497,10 @@ font-family: Arial, sans-serif;
 .refresh-1{
     position: relative;
     top:-250px !important;
-    left: 4px !important;
+    left: 4px !important;*/
  /*   font-weight: 900;*/
-     font-size: 20px !important;
-}
+    /* font-size: 20px !important;*/
+/*}*/
 .fruit-over{
   margin-top: 45px !important;
 }
@@ -1050,7 +1202,7 @@ font-family: Arial, sans-serif;
 
     /*-----------------------------------------------------------------*/
 @media (max-width: 1024px) {
-.refresh{
+/*.refresh{
     position: relative;
     top:-390px;
     left: 20px;
@@ -1063,7 +1215,7 @@ font-family: Arial, sans-serif;
     left: 20px;
     font-weight: 900;
      font-size: 25px;
-}
+}*/
 
 
   .footer {
@@ -1402,7 +1554,7 @@ left:0;
               <h2>15+ <br>Years of Crafting Excellence</h2>
               <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
                  that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
-              <button style="background-color: #6ccb35;border-radius:10px;"><a href="#">LEARN MORE</a></button>
+              <button style="background-color: #6ccb35;border-radius:10px;"><a href="who-we-are.html">LEARN MORE</a></button>
             </div>
             <div style="margin-left: 30px;" class="we">
               <h5> <a href="who-we-are.html">Who We Are</a></h5>
@@ -1587,16 +1739,101 @@ left:0;
   </div>
 </nav>
  
-<div class="no-gap-wrapper" >
-  <!----  <video src="./Assets/HomeBanner1.mp4" width="100%" autoplay muted></video>-->
-  <img src="./Assets/Whoweare-ban.png" alt="" class="edge-to-edge-img">
-  <h1 class="refresh">PUREFINEST: REDEFINING <br>
+<!-----<div class="no-gap-wrapper" >
+   <video src="./Assets/HomeBanner1.mp4" width="100%" autoplay muted></video>
+  <img src="./Assets/Whoweare-ban.png" alt="" class="edge-to-edge-img">---->
+  <!----<h1 class="refresh">REDEFINING
     REFRESHMENT, NATURALLY.</h1>
     <p class="refresh-1">Crafting Premium, Plant Based Foods And <br>
 
         Drinks For Vitality And Well-Being.</p>
-  </div>
+  </div>--------->
+
   <!-----Grid System-->
+ 
+<div class="no-gap-wrapper" id="slideshow">
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <span class="glyphicon glyphicon-leaf animated-icon"></span>
+    <img src="./Assets/Whoweare-ban.png" alt="" class="edge-to-edge-img">
+    <h1 class="refresh">REDEFINING REFRESHMENT, NATURALLY.</h1>
+    <p class="refresh-1">Crafting Premium, Plant-Based Foods And <br>Drinks For Vitality And Well-Being.</p>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <span class="glyphicon glyphicon-tree-deciduous animated-icon"></span>
+    <img src="./Assets/who-we-are-slide-1.jpg" alt="" class="edge-to-edge-img">
+    <h1 class="refresh">SUSTAINABILITY AT HEART</h1>
+    <p class="refresh-1">Our eco-conscious process protects nature from seed to sip.</p>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <span class="glyphicon glyphicon-tint animated-icon"></span>
+    <img src="./Assets/who-we-are-slide-2.jpg" alt="" class="edge-to-edge-img">
+    <h1 class="refresh">PURITY IN EVERY DROP</h1>
+    <p class="refresh-1">Infused with natural ingredients to support a vibrant life.</p>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <span class="glyphicon glyphicon-heart animated-icon"></span>
+    <img src="./Assets/who-we-are-slide-3.jpg" alt="" class="edge-to-edge-img">
+    <h1 class="refresh">BOOST YOUR WELLNESS</h1>
+    <p class="refresh-1">Plant-powered blends crafted to energize and uplift.</p>
+  </div>
+
+  <!-- Controls -->
+  <span class="slide-control left glyphicon glyphicon-chevron-left" onclick="prevSlide()"></span>
+  <span class="slide-control right glyphicon glyphicon-chevron-right" onclick="nextSlide()"></span>
+
+  <!-- Dots -->
+  <div class="dots" id="dot-container"></div>
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll("#slideshow .slide");
+  const dotContainer = document.getElementById("dot-container");
+
+  // Create dots dynamically
+  slides.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      resetInterval();
+    });
+    dotContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index) {
+    slides[current].classList.remove("active");
+    dots[current].classList.remove("active");
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add("active");
+    dots[current].classList.add("active");
+  }
+
+  function nextSlide() {
+    showSlide(current + 1);
+  }
+
+  function prevSlide() {
+    showSlide(current - 1);
+  }
+
+  let interval = setInterval(nextSlide, 5000);
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 5000);
+  }
+</script>
 
 
 
@@ -1604,9 +1841,8 @@ left:0;
 
 
 
-
-
-    <div class="container-fluid" style="margin-top: -70px;">
+<!-------------------End of slide-->
+    <div class="container-fluid" style="margin-top: 70px;">
     
     <!-- First Row -->
   <div class="row image-row scoped-overview-section">
@@ -1665,7 +1901,11 @@ left:0;
       </p>
     </div>
   </div>
-
+<div class="row">
+<div class="col-sm-12 text-center">
+<h2 style="padding: 20px;">THE GENESIS</h2>
+</div>
+</div>
   <!-- Fifth Row -->
   <div class="row image-row">
     <div class="col-md-6 text-block whoweare-2">
