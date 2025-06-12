@@ -1,0 +1,1804 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ <!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+
+<!-----  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+ <link href="https://fonts.googleapis.com/css2?family=Open Sans&display=swap" rel="stylesheet">
+<!----- <link href="https://fonts.googleapis.com/css2?family=Playfair Display&display=swap" rel="stylesheet">-->
+ <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+   integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==
+  " crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+  <title>PURE FINEST</title>
+ 
+
+  <style>
+    
+/************************************/
+  #media-center { text-align: center; padding: 30px; }
+  .sort-container { display: inline-block; margin: 20px 0; position: relative; }
+  .caret { cursor: pointer; font-size: 20px; margin-left: 10px; transition: transform 0.3s ease; }
+  .caret.open { transform: rotate(180deg); }
+  
+  .radios { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 10px; display: flex; justify-content: center; gap: 20px; }
+  .radios.open { max-height: 50px; }
+  .news-item { display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; padding: 15px; margin: 15px auto; width: 80%; text-align: left; flex-wrap: wrap; transition: all 0.3s ease; }
+  .news-item a { display: flex; width: 100%; color: inherit; text-decoration: none; }
+  .news-desc { flex: 1; padding-right: 20px; }
+  .news-img { position: relative; width: 200px; height: 150px; }
+  .news-img img:first-child { width: 200px; height: 150px; object-fit: cover; }
+  .logo-overlay { position: absolute; top: 8px; right: 8px; width: 50px; height: 50px; }
+  .pagination { margin-top: 30px; }
+  .page-numbers button { margin: 0 5px; }
+ /* .news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+}*/
+
+/*.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}*/
+
+.news-img:hover img:first-child {
+  transform: scale(1.1);
+}
+
+/*.logo-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
+.logo-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  object-fit: contain;
+}*/
+.news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.news-img:hover {
+  transform: scale(1.1);
+}
+
+.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px; /* Bigger logo */
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Make sure logo zooms along with image */
+.news-img:hover .logo-overlay {
+  transform: scale(1.05);
+}
+
+  @media (max-width: 600px) {
+    .news-item a { flex-direction: column; text-align: center; }
+    .news-desc { padding: 0; margin-bottom: 10px; }
+  }
+   
+
+/*For labels*/
+ 
+    h2 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+
+
+   
+
+    @media screen and (max-width: 768px) {
+     
+
+      
+    }
+
+
+/*End of glyphicon animation*/
+
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+}
+.mobile-version-6 a:hover{
+  background-color: red;
+}
+
+.dropdown-content p,li{
+  font-size: 17px;
+  
+}
+
+
+h1,h2,h5 {
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}
+h1,h5,.mobile-version-6 a,.mobile-version-7 a,
+.mobile-version-8 a,.mobile-version-9 a,
+.mobile-version-10 a{
+  font-size: 20px;
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 10px 15px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+
+/*Brand from another file*/
+.brand a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-right: auto;
+}
+/*.logo{
+/* padding: -10px;*/
+/*}*/
+.brand .logo {
+  height: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+/*Brand logo with text*/
+
+/*Brand logo with text*/
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/*End of the file*/
+
+.menu-toggle {
+display: none;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+}
+
+.menu-toggle span {
+display: block;
+width: 25px;
+height: 3px;
+background-color: #000;
+}
+
+
+ul.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Add this to make dropdown positioning relative to this nav block */
+}
+
+ul.nav > li {
+  position: static; /* Remove positioning so it doesn't anchor the dropdown */
+}
+.we h5 a:hover{
+  background-color: #6ccb35;
+  text-decoration:none;
+}
+.we ul li a{
+  font-family: Arial, sans-serif;
+}
+.we ul li a:hover{
+   background-color: #6ccb35;
+  text-decoration:none;
+  font-weight: 100;
+ 
+}
+.peef ul li a{
+  font-family: Arial, sans-serif;
+}
+.peef h5 a:hover{
+  background-color: #6ccb35;
+  text-decoration: none;
+}
+.peef ul li a:hover{
+  background-color: #6ccb35;
+  text-decoration: none;
+}
+.hydrations h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.hydrations ul li a{
+  font-family: Arial, sans-serif;
+}
+.hydrations ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.visions button a{
+  background-color: #ffa500;
+}
+.juices h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.snackss h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.alcohols h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.juices ul li a{
+  font-family: Arial, sans-serif;
+}
+.juices ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.snackss ul li a{
+  font-family: Arial, sans-serif;
+}
+.snackss ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.alcohols ul li a{
+  font-family: Arial, sans-serif;
+}
+.alcohols ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.edi h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.edi ul li a{
+  font-family: Arial, sans-serif;
+}
+.edi ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.human h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.human ul li a{
+  font-family: Arial, sans-serif;
+}
+.human ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.sports h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.sports ul li a{
+  font-family: Arial, sans-serif;
+}
+.sports ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.foundation h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.foundation ul li a{
+  font-family: Arial, sans-serif;
+}
+.foundation ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.recruit h5 a:hover{
+  background:#0000ff;
+   text-decoration: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 300px ;
+  left: 0;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.follow-us{
+  color: rgb(139, 204, 139);
+}
+
+li.active .dropdown-menu {
+  display: block;
+}
+
+.dropdown-content {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.dropdown-content > div {
+flex: 1 1 180px;
+}
+
+.dropdown-content h2 {
+margin-top: 0;
+font-size: 20px;
+}
+
+.dropdown-content button {
+background-color: #d9534f;
+border: none;
+padding: 10px 15px;
+color: white;
+cursor: pointer;
+margin-top: 10px;
+}
+
+
+
+/* Right column - text and links */
+.dropdown-content.labelss-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Individual blocks */
+.dropdown-content.labelss-1 > div {
+  flex-shrink: 0;
+}
+
+.label-images img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.visions {
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.hydrations, .juices, .snackss, .alcohols {
+  flex: 1 1 150px;
+  min-width: 120px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .dropdown-content.labelss-1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label-images,
+  .visions,
+  .hydrations,
+  .juices,
+  .snackss,
+  .alcohols {
+    flex: 1 1 100%;
+  }
+
+  .label-imagse img {
+    margin: 0 auto;
+  }
+
+  .visions {
+    text-align: center;
+  }
+}
+
+
+/*New Hover Effect*/
+.mobile-version-6 a:hover {
+  color: #fff;
+  background-color: #6ccb35 !important;
+}
+.mobile-version-7 a:hover{
+  color:#fff;
+  background: orange !important;
+}
+.mobile-version-8 a:hover{
+  color:#fff;
+  background: rgb(192, 65, 65) !important;
+}
+.mobile-version-9 a:hover{
+  color:#fff;
+  background: rgb(117, 83, 83) !important;
+}
+.mobile-version-10 a:hover{
+  color:#fff;
+  background: #0000ff !important;
+}
+  
+
+
+
+
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.form-control{
+  margin-top: 50px !important;
+}
+.social-icons{
+  margin-top: 0;
+}
+
+.img-2,.img-3{
+    width:100%;
+    object-fit: contain;
+}
+
+
+.foot2 h4,ul li a,i{
+  margin-left: 0px;
+
+   }
+
+*/
+.footer-logo img {
+  width: 200px;
+  height: auto;
+  margin-left: -10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.social-icons :hover{
+  background-color: #6ccb35;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.facebook-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px; /* Adjust as needed */
+    height: 33px;
+    background-color: white;
+    border-radius: 50%; /* Circle */
+    border: 1px solid #ccc; /* Optional */
+  }
+
+  .facebook-icon i {
+    color: black;
+    font-size: 20px;
+  }
+.social-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  color: #000;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+}
+
+.footee {
+  font-size: 20px;
+  text-align: center !important;
+}
+.form-control{
+  margin-left: 15px !important;
+}
+body {
+ /* font-family: 'Roboto', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 0;
+}
+.container-fluid video{
+  margin-left: 25px;
+  width:100%;
+}
+
+
+.foot2 h4,ul li a,i{
+/*margin-left:10px;*/
+position: relative;
+left:0px;
+  }
+body {
+margin: 0;
+/*font-family: Arial, sans-serif;*/
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+margin: 10px !important;
+}
+
+
+
+
+/* Make container stretch full width */
+/*.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.brew-1{
+  margin-top: 200px;
+}
+
+li a{
+  font-size: 16px;
+}*/
+
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-img {
+  height: 100px; /* Adjust as needed */
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+/* Continuous scrolling animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+.news{
+  margin-top: 30px;
+}
+
+.footer-select{
+  margin-top: 100px;
+}
+/*Footer new*/
+.footer-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-wave {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+.footer-wave svg {
+  display: block;
+  width: 100%;
+height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
+}
+
+
+ .footer-logo img {
+ 
+    position: relative;
+    left: -100px !important;
+  }
+.language-selector {
+  width: 200px;
+  background-color: #29226b;
+  color: #ffffff;
+  margin-left: auto;
+  margin-top: 120px;
+}
+
+.follow-us {
+  font-size: 20px;
+}
+.list-unstyled{
+  margin-top: 70px !important;
+  margin-left: 60px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.list-unstyled li a:hover{
+  color: #6ccb35 !important;
+  list-style: none;
+  text-decoration: none;
+
+}
+@media(max-width:1500px){
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -480px;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+}
+
+@media (max-width: 1300px) {
+  
+  /* Right column - text and links */
+.dropdown-content.labelss-1 > div:nth-child(2) {
+  flex: 1; /* take up the remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.dropdown-content.labelss-1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* reduce space between inner content sections if needed */
+}
+ .dropdown-content.visions{
+  width: 200px;
+  margin-left: 0 !important;
+}
+
+.mobile-version-6,.mobile-version-7,
+.mobile-version-8,.mobile-version-9,.mobile-version-10{
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+.menu-toggle {
+  display: flex;
+}
+
+ul.nav {
+  flex-direction: column;
+  width: 100%;
+  display: none;
+  
+}
+
+ul.nav.active {
+  display: flex;
+}
+
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+.dropdown-menu {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+}
+/*From another file*/
+.brand {
+  align-items: flex-start;
+}
+
+
+.brand .logo {
+  height: 100px;
+  margin-left: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 300;
+font-family: Arial, sans-serif;
+/*  overflow-x: hidden;*/
+}  }
+@media (max-width: 768px) {
+  /* Right column - text and links */
+.dropdown-content.labelss-1 > div:nth-child(2) {
+  flex: 1; /* take up the remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+  .dropdown-content.labelss {
+    flex-direction: row;
+  }
+}
+
+    /*-----------------------------------------------------------------*/
+@media (max-width: 1024px) {
+
+
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .footer-logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
+.language-selector {
+  width: 100%;
+  padding: 0.5rem;
+}
+.social-icons{
+  margin-bottom: -10px;
+}
+
+/* ========== Desktop Styles (≥ 1200px) ========== */
+@media (min-width: 1200px) {
+  .crafting {
+    min-width: 200px;
+   position: relative;
+   left:-140px;
+    text-align: justify;
+  }
+  .we{
+position: relative;
+left: -100px;
+  }
+  .peef{
+position: relative;
+left: -80px;
+  }
+   .med {
+    position: relative;
+    left:-60px;
+    min-width: 400px;
+    text-align: justify;
+  }
+  .ben{
+    position: relative;
+    left: 30px;
+  }
+  .watch {
+    margin-left: -100px;
+  }
+  .listen {
+    margin-left: -100px;
+  }
+ 
+  .visions{
+    position: relative;
+    left: 0;
+      min-width: 350px;
+    text-align: justify;
+  }
+  .one{
+    text-align: left;
+  }
+  .med{
+    text-align: justify;
+  }
+  .recruit{
+margin-left: -200px;
+  }
+  .purpose{
+    position: relative;
+    left: -270px;
+    min-width: 100px;
+    text-align: justify;
+  }
+  .edi{
+     position: relative;
+    left:55px;
+  }
+  .foundation {
+  margin-left: -195px;
+  }
+  .sports {
+     position: relative;
+    left:-120px;
+  }
+ .human {
+    position: relative;
+    left:-60px;
+  
+  }
+  .people,.peev{
+      min-width: 400px;
+    text-align: justify;
+
+  }
+  .peef{
+    margin-left: -200px;
+  }
+  .alcohols{
+    margin-left: -58px;
+  }
+  .snackss{
+  position: relative;
+  left: -20px !important;
+  }
+  .juices{
+  position: relative;
+  left: 50px;
+  }
+  .hydrations{
+     position: relative;
+  left:70px;
+  }
+  }
+
+  
+@media (max-width: 1024px) {
+
+
+
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+
+.foot1, .footer-select, .foot2{
+  margin-left: 100px;
+}  
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+
+font-family: Arial, sans-serif;
+
+} 
+
+
+.foot-2{
+position: absolute;
+top:18px;
+}
+
+
+.cut-text p{
+margin-left: 40px ;
+}
+.brew-1{
+  margin-top: 0;
+}
+.container-fluid video{
+position: relative;
+left:0;
+  width:100%;
+}
+
+.foot2 h4,ul li a,i{
+  margin-left: 0;
+   }
+   .container-fluid video{
+    margin-left: 25px;
+    width:100%;
+  }
+  .gold{
+    margin-left:40px;
+  }
+}
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  
+  .foot-svg{
+    position: relative;
+    top:125px;
+    width: 100vw;
+    
+  }
+  .text-right{
+    text-align: center;
+  }
+
+  .follow-us{
+    color: green;
+  }
+ 
+  
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+  
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+
+/* ========== Tablet & Mobile Styles (< 992px) ========== */
+@media screen and (max-width: 991px) {
+ 
+
+ 
+
+  
+
+/*---------------------------*/
+
+  /* Footer Adjustments */
+  .footer .row {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer .col-sm-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-logo {
+    justify-content: center;
+    margin-left: 80px;
+  }
+
+  .footer .list-unstyled {
+    padding: 0;
+  }
+
+  .footer select.language-selector {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .footer .social-icons {
+    margin-top: 10px;
+  }
+
+  .form-control {
+    margin-left: 85px;
+  }
+
+  .footer-logo img {
+    max-width: 200px;
+    height: auto;
+    left: 0;
+  }
+
+  body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+}
+
+
+  </style>
+  <!-------------->
+</head>
+<body>
+ 
+
+<!--------Cookies instruction-->
+
+  <div class="marquee-wrapper">
+    <div class="marquee-inner" id="marquee-track">
+      <!-- Duplicated set of images for seamless loop -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+  
+      <!-- Duplicate for seamless scroll -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+    </div>
+  </div>
+ 
+<!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
+    <nav>
+  <div class="nav-container">
+  
+    <div class="brand">
+       <a href="index.html"> <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo" >
+        <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px"></a>
+        
+      </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav" id="main-nav">
+      <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu " style="border-top: 10px solid #6ccb35;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content company-1">
+            <div><img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="crafting">
+              <h2>15+ <br>Years of Crafting Excellence</h2>
+              <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
+                 that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
+              <button style="background-color: #6ccb35;border-radius:10px;"><a href="who-we-are.html">LEARN MORE</a></button>
+            </div>
+            <div style="margin-left: 30px;" class="we">
+              <h5> <a href="who-we-are.html">Who We Are</a></h5>
+              <ul><li title="We are focused on foods and beverages 
+                creating premium, plant-based, 
+                 and natural foods and drinks. Offerings
+                  include REDEFINING REFRESHMENT
+                  WITH INTEGRITY AND INNOVATION vitality,
+                   vitamins, 
+                  sports, drinks, and well-being foods made with organic 
+                  ingredients to promote health and well-being. The company 
+                  is known for using high-quality premium ingredients,
+                   alongside other carefully selected components designed 
+                   to revitalize both body and soul. We ensure 
+                our brands are sustainable and beneficial for overall 
+                vitality,appealing to health-conscious consumers."><a href="who-we-are.html">Overview</a></li><li title="Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest® 
+                 has ushered in a new era of wellness beverages,
+                  seamlessly blending ancient wisdom with modern vitality."><a href="who-we-are.html">Origin</a></li><li title="Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest®
+                   has ushered in a new era of wellness beverages, 
+                   seamlessly blending ancient wisdom with modern vitality."><a href="who-we-are.html">Our Drive</a></li>
+                   <li><a href="who-we-are.html">Our Successful Milestones</a></li></ul>
+            </div>
+            <div class="peef">
+              <h5><a href="thepfiway.html">The PFI Way</a></h5>
+              <ul><li title="Our mission is to enhance lives by offering high-quality food and
+                 beverages that inspire joy, promote well-being, and deliver
+                  satisfaction to the body and soul. We strive 
+                to be a reliable provider of innovative, wholesome products,
+                 thoughtfully created with care and excellence."><a href="thepfiway.html">Our Purpose</a></li><li title="A vision of a future where every bite and sip support sustainability, exceptional quality, and well-being. We aspire to create a world where our food and 
+                 beverages not only satisfy but also foster healthier lifestyles 
+                 and contribute to a more sustainable planet."><a href="thepfiway.html">Our Vision</a></li><li title="With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create 
+                 not only delights the palate but also aligns with our values of wellness, 
+                 sustainability, and innovation."><a href="thepfiway.html">Our Approach</a></li></ul>
+            </div>
+          </div>
+        </div></li>
+
+  
+<li class="mobile-version-7">
+  <a href="labels.html">Labels <i class="fa fa-caret-down"></i></a>
+  <div class="dropdown-menu" style="border-top: 10px solid #ffa500 ;">
+    <div class="dropdown-content labels-1">
+      
+      <!-- Image -->
+      <div class="label-image">
+        <img src="./Assets/labels-logo.jpg" alt="Labels Logo" width="200px" height="200px">
+      </div>
+
+      <!-- Vision Section -->
+      <div class="visions">
+        <h2 class="one">10+ <br> LABELS, ONE VISION</h2>
+        <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive in today’s dynamic marketplace.</p>
+        <button style="background: #ffa500; border-radius:10px;width:350px; 
+        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="labels.html">DISCOVER OUR LABELS</a></button>
+      </div>
+
+      <!-- Other Categories -->
+      <div class="hydrations">
+        <h5 ><a href="labels.html">Hydration & Vitality</a></h5>
+        <ul>
+          <li><a href="finest.html">PureFinest®</a></li>
+          <li><a href="finest.html">Elysium Alps®</a></li>
+          <li><a href="finest.html">AlpineGlow®</a></li>
+        </ul>
+      </div>
+
+      <div class="juices">
+        <h5 ><a href="labels.html">Juice & Dairy</a></h5>
+        <ul>
+          <li><a href="finest.html">PureLife</a></li>
+        </ul>
+      </div>
+
+      <div class="snackss">
+        <h5><a href="labels.html">Snacks</a></h5>
+        <ul>
+          <li><a href="finest.html">PureLife</a></li>
+          <li><a href="finest.html">Taste Me! - Feel Me!®</a></li>
+        </ul>
+      </div>
+
+      <div class="alcohols">
+        <h5><a href="labels.html">Alcohol</a></h5>
+        <ul>
+          <li><a href="finest.html">Gin</a></li>
+          <li><a href="finest.html">Vodka</a></li>
+          <li><a href="finest.html">Wine</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+      <li class="mobile-version-8">
+        <a href="#">Social<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu " style="border-top: 10px solid #c04141;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content social-1">
+            <div><img src="./Assets/social-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="people ">
+              <h2>PEOPLE AT THE HEART OF WHAT WE DO </h2>
+              <p class="peev">At Pure Finest Inc., we believe that people are our greatest asset. 
+                 From empowering our employees to fostering meaningful connections with partners and supporting the communities 
+                we call home, we are committed to improving lives and creating a positive impact wherever we operate.</p>
+              <button style="background-color: #c04141;border-radius:10px;"><a href="#">PEOPLE FIRST</a></button>
+            </div>
+          <div class="edi">
+              <h5 ><a href="edi.html">EDI</a></h5>
+              <ul><li><a href="edi.html">Employee</a></li><li><a href="edi.html">Network</a></li><li><a href="edi.html">Headship</a></li></ul>
+            </div>
+           <div class="human">
+              <h5 ><a href="humanrights.html">Human Rights</a></h5>
+              <ul><li><a href="humanrights.html">Human Rights</a></li>
+              <li><a href="humanrights.html">Governance</a></li>
+            <li><a href="humanrights.html">Stories of Impact</a></li></ul>
+            </div>
+             <div class="sports">
+              <h5 ><a href="sports-and-ent.html">Sports and <br>Entertainment</a></h5>
+              <ul><li><a href="sports-and-ent.html">Sponsorship</a></li></ul>
+            </div>
+             <div class="foundation">
+              <h5 ><a href="pffoundation.html">The Pure Finest Foundation</a></h5>
+              <ul><li><a href="pffoundation.html">Partnership</a></li><li><a href="pffoundation.html">Communities</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="mobile-version-9">
+        <a href="#">Media Center<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu" style="border-top:10px solid #755353 ;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content media-center-1">
+            <div><img src="./Assets/media-center-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="med">
+              <h2>STAY UPDATED </h2>
+              <p>Discover the latest from Pure Finest Inc. — from groundbreaking brand
+                 innovations to impactful 
+                sustainability initiatives. Explore how we’re shaping the future of food and beverages around the globe.</p>
+              <button style="background: #755353;border-radius:10px;"><a href="news-and-press.html">GET THE LATEST</a></button>
+            </div>
+            <div class="ben">
+              <h5>Being Read</h5>
+              <ul><li ><a href="news-and-press.html">News & Press</a></li></ul>
+            </div>
+            <div class="watch">
+              <h5>Being Watched</h5>
+              <ul><li>Life Stream</li>
+              <li>TV</li><li>Gallery</li></ul>
+            </div>
+            <div class="listen">
+              <h5>Being Listened</h5>
+              <ul><li>Radio</li><li>Podcast</li></ul>
+            </div>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="mobile-version-10">
+        <a href="#">Careers<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu" style="border-top: 10px solid #0000ff;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content careers-1">
+            <div><img src="./Assets/careers-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="purpose">
+              <h2>CAREER WITH PURPOSE</h2>
+              <p>At Pure Finest Inc., building your career means more than just a job—it’s a chance
+                 to make a meaningful impact on a global scale. Join us to grow,
+                  innovate, and help shape a brighter future."</p>
+              <button style="background: #0000ff;border-radius:10px;"><a href="#">HUMAN POTENTIAL</a></button>
+            </div>
+            <div class="recruit">
+              <h5 ><a href="careers.html">RECRUITMENT PROCESS</a></h5>
+              <ul><li>Application Pathway</li><li>Assessment</li><li>Offers</li></ul>
+            </div>
+            
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+ <!------News and Press Release-->
+<div id="media-center">
+  <h1>Media Center</h1>
+  <p>Select an option to apply sort order</p>
+
+  <div class="sort-container">
+    <h4 id="sortHeader" style="display:inline;">News</h4>
+  <span class="caret">&#x25BC;</span> <!-- V-shape caret -->
+
+    <div class="radios">
+      <label><input type="radio" name="filter" id="all" value="all" checked> All</label>
+      <label><input type="radio" name="filter" id="news" value="news"> News</label>
+      <label><input type="radio" name="filter" id="press" value="press"> Press Release</label>
+    </div>
+  </div>
+
+  <div id="news-container">
+
+    <!-- Item 1 (now NEWS) -->
+    <div class="news-item" data-type="news">
+      <a href="https://www.bevnet.com/pr/2024/09/04/pure-finest-inc-set-to-launch-a-revolutionary-3in1-taste-me-feel-me-beverage-brand-set-with-premium-ingredients" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">Pure Finest Inc. Set to Launch: A Revolutionary 3-in-1 Taste Me! Feel Me! Beverage Brand Set with Premium Ingredients</p>
+          <span>HEALTH - Aug 29th, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/BlogImage 2.png" alt="Bevnet">
+          <img src="/Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 2 (NEWS) -->
+    <div class="news-item" data-type="news">
+      <a href="https://www.trendhunter.com/trends/line-of-beverages" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">PureFinest Inc. is Preparing to Launch a New Line of Beverages</p>
+          <span>HEALTH - Sept 11th, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/BlogImage 2.png" alt="Trendhunter">
+          <img src="/Assets/newsLogo 5.png" class="logo-overlay" alt="Trendhunter Logo">
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 3 (NEWS) -->
+    <div class="news-item" data-type="news">
+      <a href="https://www.vanguardngr.com/2024/09/purefinest-set-to-launch-organic-vitamin-sports-and-vitality-beverages-across-africa/" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">PureFinest® Set to Launch Organic Vitamin, Sports, and Vitality Beverages Across Africa</p>
+          <span>HEALTH - Sept 27th, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/Blog 2.jpg" alt="Vanguard">
+          <img src="/Assets/newsLogo 1.png" class="logo-overlay" alt="Vanguard Logo">
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 4 (NEWS) -->
+    <div class="news-item" data-type="news">
+      <a href="https://example.com/news4" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">Extra News 4</p>
+          <span>HEALTH - Oct 1st, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/BlogImage 2.png" alt="Brewbound">
+          <img src="/Assets/newsLogo 3.png" class="logo-overlay" alt="Brewbound Logo">
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 5 (NEWS) -->
+    <div class="news-item" data-type="news">
+      <a href="https://example.com/news5" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">Extra News 5</p>
+          <span>HEALTH - Oct 2nd, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/Blog 1.jpg" alt="Food Business Africa">
+          <img src="/Assets/newsLogo 2.png" class="logo-overlay" alt="Food Business Africa Logo">
+        </div>
+      </a>
+    </div>
+
+    <!-- Extra PRESS RELEASE Item 1 -->
+    <div class="news-item" data-type="press">
+      <a href="https://example.com/press6" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">PureFinest Announces Strategic Partnership Expansion (Placeholder 1)</p>
+          <span>PRESS RELEASE - Oct 3rd, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/Blog 1.jpg" alt="Placeholder 1">
+          <img src="/Assets/newsLogo 1.png" class="logo-overlay" alt="Logo 1">
+        </div>
+      </a>
+    </div>
+
+    <!-- Extra PRESS RELEASE Item 2 -->
+    <div class="news-item" data-type="press">
+      <a href="https://example.com/press7" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">PureFinest Opens New State-of-the-Art Production Facility (Placeholder 2)</p>
+          <span>PRESS RELEASE - Oct 4th, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/Blog 2.jpg" alt="Placeholder 2">
+          <img src="/Assets/newsLogo 2.png" class="logo-overlay" alt="Logo 2">
+        </div>
+      </a>
+    </div>
+
+    <!-- Extra PRESS RELEASE Item 3 -->
+    <div class="news-item" data-type="press">
+      <a href="https://example.com/press8" target="_blank">
+        <div class="news-desc">
+          <p style="font-weight: 900;">PureFinest Secures Major Retail Distribution Deal (Placeholder 3)</p>
+          <span>PRESS RELEASE - Oct 5th, 2024</span>
+        </div>
+        <div class="news-img">
+          <img src="/Assets/BlogImage 2.png" alt="Placeholder 3">
+          <img src="/Assets/newsLogo 3.png" class="logo-overlay" alt="Logo 3">
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button class="prevBtn btn btn-default">Prev</button>
+    <span class="page-numbers"></span>
+    <button class="nextBtn btn btn-default">Next</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const container = document.getElementById("media-center");
+  const caret = container.querySelector('.caret');
+  const radios = container.querySelector('.radios');
+  const radioInputs = container.querySelectorAll('input[name="filter"]');
+  const newsItems = Array.from(container.querySelectorAll('.news-item'));
+  const pageNumbers = container.querySelector('.page-numbers');
+  const prevBtn = container.querySelector('.prevBtn');
+  const nextBtn = container.querySelector('.nextBtn');
+  const sortHeader = document.getElementById("sortHeader");
+
+  let filteredItems = [...newsItems];
+  let currentPage = 1;
+  const itemsPerPage = 3;
+
+  function toggleDropdown() {
+    caret.classList.toggle('open');
+    radios.classList.toggle('open');
+  }
+
+  function filterItems() {
+    const selected = container.querySelector('input[name="filter"]:checked').value;
+    filteredItems = selected === 'all' ? [...newsItems] : newsItems.filter(item => item.dataset.type === selected);
+    currentPage = 1;
+    updatePagination();
+    updateHeader(selected);
+  }
+
+  function updateHeader(selected) {
+    if (selected === "all") {
+      sortHeader.textContent = "All";
+    } else if (selected === "news") {
+      sortHeader.textContent = "News";
+    } else if (selected === "press") {
+      sortHeader.textContent = "Press Release";
+    }
+  }
+
+  function updatePagination() {
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+    newsItems.forEach(item => item.style.display = 'none');
+    filteredItems.slice((currentPage-1)*itemsPerPage, currentPage*itemsPerPage).forEach(item => item.style.display = 'flex');
+    renderPageNumbers(totalPages);
+  }
+
+  function renderPageNumbers(totalPages) {
+    pageNumbers.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = i === currentPage ? 'btn btn-primary active' : 'btn btn-default';
+      btn.addEventListener('click', () => { currentPage = i; updatePagination(); });
+      pageNumbers.appendChild(btn);
+    }
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+  }
+
+  caret.addEventListener('click', toggleDropdown);
+  radioInputs.forEach(radio => radio.addEventListener('change', filterItems));
+  prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; updatePagination(); } });
+  nextBtn.addEventListener('click', () => { if (currentPage < Math.ceil(filteredItems.length/itemsPerPage)) { currentPage++; updatePagination(); } });
+
+  // Initialize
+  filterItems();
+})();
+</script>
+
+
+
+       
+<!-- Footer Section (Full width, isolated, no side effects) -->
+<div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
+  <!-- SVG Wave -->
+  <div style="width: 100%; line-height: 0; overflow: hidden; margin-bottom: -5px;">
+    <svg viewBox="0 0 1440 320"
+         xmlns="http://www.w3.org/2000/svg"
+         preserveAspectRatio="none"
+         style="display: block; width: 100%; height: 80px;">
+      <path fill="#254125" d="M0,192 C360,96 1080,288 1440,192 L1440,320 L0,320 Z"></path>
+    </svg>
+  </div>
+
+  <!-- Footer Content -->
+
+ <footer class="footer" style="background-color:#254125;">
+  <div class="container">
+    <div class="row text-white align-items-center">
+      
+      <!-- Logo -->
+      <div class="col-sm-3 text-center text-sm-left mb-3 footer-logo">
+       <!------ <img src="/Assets/Footer logo.png" alt="Footer Logo" class="img-responsive" style="width: 500px; margin-left: -10px;">-->
+        <img src="/Assets/Footer logo.png" alt="Footer Logo" class="footer-logo img-responsive" style="max-width: 270px; height: auto;">
+
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-sm-3 mb-3 text-center text-sm-left">
+        <ul class="list-unstyled mb-0" style="text-align:left !important;">
+          <li><a href="#" class="text-white">Sustainability</a></li>
+          <li><a href="#" class="text-white">Responsibility</a></li>
+          <li><a href="#" class="text-white">Terms Of Use</a></li>
+          <li><a href="#" class="text-white">Labels Protection</a></li>
+        </ul>
+      </div>
+
+      <!-- Info Links -->
+      <div class="col-sm-3 b mb-3 text-center text-sm-left ">
+        <ul class="list-unstyled mb-0 " style="text-align:left;">
+          <li><a href="#" class="text-white">Cookies Setting</a></li>
+          <li><a href="#" class="text-white">Imprint</a></li>
+          <li><a href="#" class="text-white">Fraud Warning</a></li>
+          <li><a href="#" class="text-white">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Language, Icons, Copyright -->
+      <div class="col-sm-3 mb-3 d-flex flex-column align-items-start " >
+        <select class="form-control language-selector mb-3 w-100" style="margin-left: -1px !important;">
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="dt">Dutch</option>
+          <option value="ar">Arabic</option>
+          <option value="ch">Chinese</option>
+          <option value="pt">Portuguese</option>
+          <option value="rs">Russian</option>
+          <option value="tr">Turkish</option>
+          <option value="yr">Yoruba</option>
+          <option value="ig">Igbo</option>
+          <option value="ha">Hausa</option>
+        </select>
+
+        <!-- Icons + Copyright wrapper -->
+        <div class="d-flex flex-column" style="margin-top: 40px;">
+          <div class="social-icons d-flex gap-2 mb-2" style="margin-left: 25px;">
+           <a href="https://www.tiktok.com/@purefinest?lang=en&is_from_webapp=1&sender_device=mobile&sender_web_id=7501937624288151062"> <i class="fab fa-tiktok fa-2x social-icon"></i></a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FPurefinestdrink"><i class="fab fa-x-twitter fa-2x social-icon"></i></a>
+           <a href="https://www.instagram.com/purefinestofficial?igsh=dTV1N2p1Z2libnI3"> <i class="fab fa-instagram fa-2x social-icon"></i></a>
+         <a href="https://www.threads.net/@purefinestofficial">   <i class="fab fa-threads fa-2x social-icon"></i></a>
+      <a href="https://www.facebook.com/share/1KMkUBojpm/">   <span class="facebook-icon"><i class="fab fa-facebook-f"></i></span></a>
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+    <div style="text-align: center;"><p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center !important;" > 
+            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p></div>
+  </div>
+</footer>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!----End of Footer Section-->
+<script>
+ 
+/*This is for Labels*/
+   let dropdownVisible = true;
+
+    function toggleDropdown() {
+      const radioBox = document.getElementById('radioContainer');
+      dropdownVisible = !dropdownVisible;
+      radioBox.style.display = dropdownVisible ? 'flex' : 'none';
+    }
+
+    function filterImages() {
+      const selected = document.querySelector('input[name="filter"]:checked').value;
+      const allImages = document.querySelectorAll('#imageContainer a');
+
+      allImages.forEach(img => {
+        const categories = img.querySelector('img').dataset.category.split(' ');
+        img.style.display = (selected === 'all' || categories.includes(selected)) ? 'inline-block' : 'none';
+      });
+    }
+    /*End of Labels*/
+ /*New JavaScript*/
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+  const dropdownTriggers = document.querySelectorAll(".nav > li");
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("main-nav");
+  const isDesktop = () => window.innerWidth > 1200;
+
+  // Toggle mobile menu
+  menuToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    nav.classList.toggle("active");
+
+    // Close all dropdowns on toggle for mobile
+    if (!isDesktop()) {
+      dropdownTriggers.forEach(item => item.classList.remove("active"));
+    }
+  });
+
+  dropdownTriggers.forEach(item => {
+    const link = item.querySelector("a");
+    const dropdownMenu = item.querySelector(".dropdown-menu");
+
+    // MOBILE CLICK TOGGLE
+    link.addEventListener("click", function (e) {
+      if (!isDesktop()) {
+        const hasDropdown = item.querySelector(".dropdown-menu");
+        if (hasDropdown) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const isActive = item.classList.contains("active");
+
+          // Close other dropdowns
+          dropdownTriggers.forEach(el => el.classList.remove("active"));
+
+          // Toggle current
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        }
+      }
+    });
+
+    // DESKTOP HOVER BEHAVIOR
+    if (dropdownMenu) {
+      let hoverTimeout;
+
+      item.addEventListener("mouseenter", () => {
+        if (isDesktop()) {
+          clearTimeout(hoverTimeout);
+          item.classList.add("active");
+        }
+      });
+
+      item.addEventListener("mouseleave", () => {
+        if (isDesktop()) {
+          hoverTimeout = setTimeout(() => {
+            item.classList.remove("active");
+          }, 200); // slight delay to allow cursor to reach dropdown
+        }
+      });
+
+      dropdownMenu.addEventListener("mouseenter", () => {
+        if (isDesktop()) {
+          clearTimeout(hoverTimeout);
+        }
+      });
+
+      dropdownMenu.addEventListener("mouseleave", () => {
+        if (isDesktop()) {
+          item.classList.remove("active");
+        }
+      });
+    }
+  });
+
+  // Click outside to close (mobile only)
+  document.addEventListener("click", function (e) {
+    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+      dropdownTriggers.forEach(item => item.classList.remove("active"));
+      nav.classList.remove("active");
+    }
+  });
+
+  // Optional: handle window resize to remove active states if switching to desktop
+  window.addEventListener("resize", () => {
+    if (isDesktop()) {
+      dropdownTriggers.forEach(item => item.classList.remove("active"));
+      nav.classList.remove("active");
+    }
+  });
+});
+
+ 
+/*For Mobile*/
+ 
+
+
+
+
+
+ /*Third party website*/
+    $(document).ready(function () {
+      $('.external-link').click(function (e) {
+        e.preventDefault();
+        var url = $(this).data('url');
+        $('#proceedBtn').attr('href', url);
+        $('#securityModal').modal('show');
+      });
+    
+      $('#proceedBtn').click(function () {
+        $('#securityModal').modal('hide');
+      });
+    });
+ 
+    
+
+</script>
+<!-------For cookies-->
+
+
+
+</body>
+</html>
