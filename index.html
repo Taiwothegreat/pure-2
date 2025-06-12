@@ -2169,7 +2169,7 @@ function closeOverlay() {
             </div>
             <div class="ben">
               <h5>Being Read</h5>
-              <ul><li>News & Blogs</li></ul>
+              <ul><li><a href="news-and-press.html">News & Press</a></li></ul>
             </div>
             <div class="watch">
               <h5>Being Watched</h5>
@@ -2215,7 +2215,7 @@ function closeOverlay() {
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0, 0, 0, 0.3);"></div>
   
   <video
-    src="./Assets/HomeBanner1.mp4"
+    src="./Assets/main-banner-1.mp4"
     autoplay
     muted
     loop
@@ -2266,6 +2266,18 @@ function closeOverlay() {
 
     
 </div>
+<section style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0, 0, 0, 0.3);"></div>
+  
+  <video
+    src="./Assets/main-banner-2.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    style="width: 100vw; height: 900px; object-fit: fill; display: block; margin: 0; padding: 0; z-index: 0;" class="dark-video">
+  </video>
+</section>
 <div class="container">
   <div class="row image-row" style="margin-top: 40px; margin-bottom: 40px;">
     <div class="col-sm-6" style="padding: 0;"> <!-- Remove any internal padding -->
@@ -2360,11 +2372,11 @@ function closeOverlay() {
 
   <!-- READ MORE button -->
   <div style="text-align:center; margin-top:20px;">
-    <button id="readMoreBtnNews" style="padding: 10px 20px; font-weight: bold;">READ MORE</button>
+    <button id="readMoreBtnNews" style="padding: 10px 20px; font-weight: bold;"><a href="news-and-press.html">READ MORE</a></button>
   </div>
 
   <!-- Hidden content -->
-  <div id="moreNewsContent" style="opacity:0; max-height:0; overflow:hidden; transition: all 0.8s ease;">
+<!-----  <div id="moreNewsContent" style="opacity:0; max-height:0; overflow:hidden; transition: all 0.8s ease;">
     <div class="row" style="margin-top:30px;">
 
       <div class="col-md-4">
@@ -2404,11 +2416,11 @@ function closeOverlay() {
       </div>
 
     </div>
-  </div>
+  </div>-->
 
 </div>
 
-<script>
+<!-----<script>
 // Smooth show on button click
 document.getElementById("readMoreBtnNews").addEventListener("click", function() {
     var content = document.getElementById("moreNewsContent");
@@ -2416,7 +2428,7 @@ document.getElementById("readMoreBtnNews").addEventListener("click", function() 
     content.style.opacity = "1";
     this.style.display = "none";
 });
-</script>
+</script>-->
 
 
   
