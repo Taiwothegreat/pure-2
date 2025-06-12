@@ -25,6 +25,130 @@
  
 
   <style>
+    /*Milestones achieved*/
+   html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+#milestone-slider-container {
+  width: 100vw;
+  height: 100vh; /* Optional: Full screen height */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  margin-left: -20px;
+}
+
+    .milestone-slider-track {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .milestone-slide {
+      flex: 0 0 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .milestone-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .milestone-slide-content {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      animation: milestone-zoomIn 2s;
+    }
+
+    @keyframes milestone-zoomIn {
+      0% { transform: scale(0.85); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .milestone-chevron {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .milestone-chevron:hover {
+      background: rgba(255, 0, 0, 0.8);
+    }
+
+    #milestone-prev { left: 15px; }
+    #milestone-next { right: 15px; }
+
+    #milestone-year-bullets {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .milestone-year-bullet {
+      font-weight: bold;
+      color: #555;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .milestone-year-bullet.active {
+      color: red;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .milestone-slide-content {
+        bottom: 10px;
+        right: 10px;
+        padding: 15px;
+        max-width: 90%;
+        font-size: 14px;
+      }
+
+      .milestone-chevron {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      .milestone-year-bullet {
+        font-size: 16px;
+      }
+    }
+  /* Simple active state for year bullets */
+  
+
     /*slides*/
      .no-gap-wrapper {
       position: relative;
@@ -1926,18 +2050,31 @@ left:0;
   </div>
 
   <!-- Sixth Row -->
-  <div class="row image-row">
+ <!------ <div class="row image-row">
     <div class="col-md-6 thumbnail">
       <img src="./Assets/we-fruit-6.png" alt="">
     </div>
     <div class="col-md-6 text-block whoweare-2">
-      <h3 style="font-weight: 900;margin-left: 40px; font-family: 'Saira Stencil One', sans-serif !important;text-transform:uppercase">Company History and Background</h3>
+      <h3 style="font-weight: 900;margin-left: 40px; font-family: 'Saira Stencil One',
+       sans-serif !important;text-transform:uppercase">Company History and Background</h3>
       <p class="fruit2" style="margin-left: 40px;font-size: 18px;">
-        Founded in the early 2010s, PureFinest® has grown from a small startup into a globally recognized brand. The company began with a simple mission: to create beverages that are as beneficial to the body as they are delightful to the taste buds. Over the years, the PureFinest® brand has been dedicated to creating innovative and health-focused products that enhance the lives of consumers. With a commitment to quality, sustainability, and customer satisfaction, PureFinest® continues to lead the way in developing food and beverages that not only taste great but also provide essential health benefits.
+        Founded in the early 2010s, PureFinest® has grown from
+         a small startup into a globally recognized brand.
+          The company began with a simple mission:
+           to create beverages that are as beneficial
+            to the body as they are delightful to the 
+            taste buds. Over the years, the PureFinest®
+             brand has been dedicated to creating 
+             innovative and health-focused products
+              that enhance the lives of consumers.
+               With a commitment to quality, sustainability,
+                and customer satisfaction, PureFinest® 
+                continues to lead the way in developing
+                 food and beverages that not only taste great but also provide essential health benefits.
       </p>
     </div>
   </div>
-  <!------Start of second Image-->
+  
   <div class="container-fluid" style="margin-top: 100px;">
    
     <div class="row">
@@ -1972,7 +2109,108 @@ left:0;
       
     </div>
   </div>
- 
+ -->
+<!-- Milestone Slider Container -->
+<div ><h3 style="text-align: center;font-family: 'Saira Stencil One', sans-serif !important;font-weight: 900;">Our Successful Milestones & Label Facts</h3></div>
+<div id="milestone-slider-container">
+  <div class="milestone-slider-track">
+    <div class="milestone-slide">
+      <img src="./Assets/we-fruit-6.png" alt="2010">
+      <div class="milestone-slide-content">
+        <h3 style="text-align: left;font-family: 'Saira Stencil One', sans-serif !important;font-weight: 900;">Company History and Background</h3>
+        <p style="text-align: left;font-size: 18px;">Founded in the early 2010s, PureFinest® has grown from a small startup into a globally
+           recognized brand. The company began with a simple mission: to create beverages that are as beneficial to the body as they are delightful to the taste buds. Over the years, the PureFinest® brand has been dedicated to creating innovative and health-focused products that enhance the lives of consumers. With a commitment to quality, sustainability, and customer satisfaction, PureFinest® continues to lead the way 
+          in developing food and beverages that not only taste great but also provide essential health benefits.</p>
+      </div>
+    </div>
+    <div class="milestone-slide">
+      <img src="./Assets/we-fruit-7.png" alt="2016">
+      <div class="milestone-slide-content">
+        <h3 style="text-align: left;font-family: 'Saira Stencil One', sans-serif !important;font-weight: 900;">OUR STORY</h3>
+        <h3 style="text-align: left;font-family: 'Saira Stencil One', sans-serif !important;font-weight: 900;">2016</h3>
+        <p style="text-align: left;font-size: 18px;">Over nearly seven years, from 2016 to 2023, Beulah Group Inc. meticulously
+           developed and crafted the PureFinest® range, focusing on 
+          perfecting the ingredients, formulation, brand positioning, design, 
+          packaging, and marketing strategy.</p>
+      </div>
+    </div>
+    <div class="milestone-slide">
+      <img src="./Assets/we-fruit-8.png" alt="2025">
+      <div class="milestone-slide-content">
+        <h3 style="text-align: left;font-family: 'Saira Stencil One', sans-serif !important;font-weight: 900;" >PRE-LAUNCHED</h3>
+              <h3 style="text-align: left;font-family: 'Saira Stencil One', sans-serif !important;font-weight: 900;" >March 15, 2023</h3>
+        <p style="text-align: left;font-size: 18px;">On March 15, 2023, PureFinest® Drink was pre-launched in the United Kingdom, introducing a groundbreaking new product category: 3-in-1 Vitamin, Sports, and Vitality, beverages with our first 6 main ingredients: Purest Water, 
+          Organic Moringa, Organic Guarana, Organic Maca, Organic Hibiscus, and Organic Acerola Fruit.</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="milestone-prev" class="milestone-chevron">&#10094;</button>
+  <button id="milestone-next" class="milestone-chevron">&#10095;</button>
+
+  <div id="milestone-year-bullets">
+    <div class="milestone-year-bullet active" data-index="0">2010</div>
+    <div class="milestone-year-bullet" data-index="1">2016</div>
+    <div class="milestone-year-bullet" data-index="2">2025</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const container = document.getElementById('milestone-slider-container');
+  const track = container.querySelector('.milestone-slider-track');
+  const slides = container.querySelectorAll('.milestone-slide');
+  const bullets = container.querySelectorAll('.milestone-year-bullet');
+  let index = 0;
+  let interval;
+
+  function goToSlide(i) {
+    track.style.transform = `translateX(-${i * 100}%)`;
+    bullets.forEach(b => b.classList.remove('active'));
+    bullets[i].classList.add('active');
+    const content = slides[i].querySelector('.milestone-slide-content');
+    content.style.animation = 'none';
+    void content.offsetWidth;
+    content.style.animation = 'milestone-zoomIn 2s';
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    goToSlide(index);
+  }
+
+  container.querySelector('#milestone-prev').onclick = () => {
+    index = (index + slides.length - 1) % slides.length;
+    goToSlide(index);
+  };
+
+  container.querySelector('#milestone-next').onclick = () => {
+    index = (index + 1) % slides.length;
+    goToSlide(index);
+  };
+
+  bullets.forEach(bullet => {
+    bullet.onclick = () => {
+      index = +bullet.dataset.index;
+      goToSlide(index);
+    };
+  });
+
+  function startAutoPlay() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(interval);
+  }
+
+  container.addEventListener('mouseenter', stopAutoPlay);
+  container.addEventListener('mouseleave', startAutoPlay);
+
+  startAutoPlay();
+})();
+</script>
+
 
 
 
