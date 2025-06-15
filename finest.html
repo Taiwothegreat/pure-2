@@ -25,6 +25,56 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*Blog scroll*/
+    /* Scoped styles only for this section */
+#about .dynamic-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#about .dynamic-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: dynamicScroll linear infinite;
+  animation-duration: var(--animation-speed, 60s);
+}
+
+#about .thumbnail {
+  flex: 0 0 auto;
+  width: 300px;
+  margin: 10px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+#about .thumbnail:hover {
+  transform: scale(1.05);
+}
+
+#about .blog-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+#about:hover .dynamic-track {
+  animation-play-state: paused;
+}
+
+@keyframes dynamicScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #about .thumbnail {
+    width: 250px;
+  }
+}
+    /*Blog scroll*/
     /* Reset some base styles */
 * {
   margin: 0;
@@ -1347,12 +1397,21 @@ left:0;
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">ADVOCATES</a>
        <div class="dropdown-menu">
-          <a href="#" style="display: inline-block; text-align: center; text-decoration: none; color: inherit;">
+          <a href="#" style="display: inline-block; text-align: center;
+           text-decoration: none; color: inherit;">
   <img src="./Assets/Chimela-ude.jpg" alt="Chiemela Paris Ude" 
-       style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+       style="width: 120px; height: 120px; object-fit: cover;
+        border-radius: 50%; border: 3px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <div class="caption" style="margin-top: 10px;">
     <h6 style="margin: 5px 0; font-size: 16px; font-weight: 600;">Chiemela Paris Ude</h6>
-    <p style="margin: 0; font-size: 13px; color: #666;">United Kingdom Soccer</p>
+ <!------   <p style="margin: 0; font-size: 13px; color: #666;">United Kingdom Soccer</p>-->
+ 
+<p style="margin: 0; font-size: 13px; color: #666; display: flex; align-items: center; flex-wrap: wrap;">
+  United Kingdom 
+  <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag" style="width: 16px; height: auto; margin: 0 5px; vertical-align: middle;">
+  (Football) Soccer
+</p>
+
   </div>
 </a>
 
@@ -1368,7 +1427,13 @@ left:0;
         <!-----  <a href="#">Radio & Podcast</a>-->
         </div>
       </li>
-      <li class="studio"><a href="#">STUDIO</a></li>
+      <li class="dropdown"><a href="#" class="dropdown-toggle">STUDIO</a>
+         <div class="dropdown-menu">
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blog</a>
+        <!-----  <a href="#">Radio & Podcast</a>-->
+        </div>
+      </li>
       <li class="promos"><a href="#">PROMOS & OFFERS</a></li>
     </ul>
   </div>
@@ -1409,8 +1474,8 @@ left:0;
   <p style="font-size: 20px; width: 90%;">
     <span class="scroll-line">Welcome to the Oasis of Purity and Future of Wellness!</span>
     <span class="scroll-line">Introducing the Healthiest Plant-Based Vitamin, Sports, and Vitality Natural Drink on Planet Earth.</span>
-    <span class="scroll-line">Indulge in PureFinest® – <span style="font-weight: 900;">a beverage that truly lives up to its name!</span></span>
-    <span class="scroll-line">We believe that nourishing your Body, Mind & Soul should be a delightful experience,</span>
+    <span class="scroll-line">Indulge in PureFinest® – <span style="font-weight: 900;">A beverage that truly lives up to its name!</span></span>
+    <span class="scroll-line">We believe that nourishing your Body, Mind, and Soul should be a delightful experience,</span>
     <span class="scroll-line">and our revolutionary beverage is designed to elevate your well-being to new heights.</span>
   </p>
    <button style="margin-top: 20px; border: none; border-radius: 5px; border-radius: 24px;">
@@ -1560,12 +1625,13 @@ left:0;
       <div class="col-md-6" style="padding: 0;">
         <img src="./Assets/finest-image-6.jpg" alt="" style="width: 100%; height: auto; object-fit: cover; object-position: 30% center; display: block;">
       </div>
+      
     </div>
   </div>
 </section>
 
 
-<section id="about" class="about-2" style="padding-top:50px;">
+<!-------<section id="about" class="about-2" style="padding-top:50px;">
   <div class="container">
     <div class="row">
       <div class="col-sm-4 col-xs-12">
@@ -1609,12 +1675,12 @@ left:0;
       </div>
     </div>
 
-    <!-- Read More button -->
+     Read More button 
     <div style="text-align:center; margin-top:20px;">
       <button id="readMoreBtn" style="padding: 10px 20px; font-weight: bold;">READ MORE</button>
     </div>
 
-    <!-- Hidden content -->
+     Hidden content
     <div id="more-content" style="opacity:0; max-height:0; overflow:hidden; transition: all 0.8s ease;">
       <div class="row" style="margin-top:30px;">
         <div class="col-sm-4 col-xs-12">
@@ -1660,8 +1726,94 @@ left:0;
     </div>
 
   </div>
+</section>-->
+
+
+
+<div><h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;margin-left: 50px;">What Did You Miss?</h3></div>
+
+
+<section id="about" class="about-2" style="padding-top:50px; overflow:hidden; position:relative;">
+  <div class="dynamic-container">
+    <div class="dynamic-track">
+
+      <!-- Blog Items -->
+      <a href="blog1.html" class="blog-link">
+        <div class="thumbnail">
+          <img src="./Assets/finest-confidence.jpg" alt="Confidence" class="img-responsive">
+          <div>
+            <h2 style="font-family: 'Saira Stencil One', sans-serif;">Confident You: PureFinest®'s Well-Being Boost</h2>
+            <p style="font-size: 17px;">In a world where our well-being is both a journey and destination, PureFinest® Vitamin emerges as a beacon of empowerment, crafting</p>
+            <div class="meta-row">
+              <span class="meta-left" style="font-size: 17px;">HEALTH</span>
+              <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog2.html" class="blog-link">
+        <div class="thumbnail">
+          <img src="./Assets/finest-nature.jpg" alt="Nature" class="img-responsive">
+          <div>
+            <h2 style="font-family: 'Saira Stencil One', sans-serif;">PureFinest®: Aligned with Your Nature</h2>
+            <p style="font-size: 17px;">In our search for holistic health and wellness, the choices we make about the food and drink we consume play a critical role</p>
+            <div class="meta-row">
+              <span class="meta-left" style="font-size: 17px;">HEALTH</span>
+              <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog3.html" class="blog-link">
+        <div class="thumbnail">
+          <img src="./Assets/finest-acerola.jpg" alt="Acerola" class="img-responsive">
+          <div>
+            <h2 style="font-family: 'Saira Stencil One', sans-serif;">What is Acerola and Why is it Good for You?</h2>
+            <p style="font-size: 17px;">Have you ever heard of acerola? This extraordinary fruit, also known as Barbados cherry or West Indian cherry, is not just a</p>
+            <div class="meta-row">
+              <span class="meta-left" style="font-size: 17px;">HEALTH</span>
+              <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog4.html" class="blog-link">
+        <div class="thumbnail">
+          <img src="./Assets/finest-boost.jpg" alt="Boost" class="img-responsive">
+          <div>
+            <h2 style="font-family: 'Saira Stencil One', sans-serif;">PureFinest®'s Daily Boost</h2>
+            <p style="font-size: 17px;">PureFinest® Vitamin boosts your immune system with a rich blend of natural extracts designed for daily energy and balance.</p>
+            <div class="meta-row">
+              <span class="meta-left" style="font-size: 17px;">WELLNESS</span>
+              <span class="meta-right" style="font-size: 17px;">4 mins read</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const track = document.querySelector("#about .dynamic-track");
+  const items = Array.from(track.children);
+  
+  // Duplicate all items to allow infinite seamless scroll
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  // Adjust speed dynamically based on number of items
+  const speed = items.length * 15; // adjust speed factor here
+  track.style.setProperty('--animation-speed', speed + 's');
+});
+</script>
 <script>
 // Smooth show on button click
 document.getElementById("readMoreBtn").addEventListener("click", function() {
@@ -1779,7 +1931,7 @@ document.getElementById("readMoreBtn").addEventListener("click", function() {
       </div>
     </div>
   </section>-->
-                  <div class="container-fluid" style="padding-top:70px;margin-left: 70px;"><div class="row">
+                  <div class="container-fluid" style="padding-top:70px;margin-left: 50px;"><div class="row">
                     <div class="col-xs-12 col-sm-12">
                       <h2 style="font-weight:bold;margin:0 0 10px 0;font-size:30px;
                        font-family: 'Saira Stencil One', sans-serif;">We are <span style="color: #6ccb35;">
