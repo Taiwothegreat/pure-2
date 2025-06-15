@@ -1519,6 +1519,45 @@ left:0;
       <div class="rotating-label">Great Vitality</div>
     </div>
   </div>
+  <script>
+  const rotatingImage = document.getElementById('rotatingSvg');
+  let lastScrollTop = window.scrollY;
+  let currentRotation = 0;
+  let rotationVelocity = 0;
+  let maxVelocity = 1.5;  // cap maximum speed
+  let damping = 0.92;     // smooth out the rotation
+  let ticking = false;
+
+  function updateRotation() {
+    currentRotation += rotationVelocity;
+    rotationVelocity *= damping;
+
+    // Only apply rotation if movement is significant
+    if (Math.abs(rotationVelocity) > 0.01) {
+      rotatingImage.style.transform = `rotate(${currentRotation}deg)`;
+      requestAnimationFrame(updateRotation);
+    } else {
+      ticking = false;  // stop when motion slows down
+    }
+  }
+
+  function onScroll() {
+    const currentScroll = window.scrollY;
+    const delta = currentScroll - lastScrollTop;
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+    // Add delta to velocity, capped for very fast scrolls
+    rotationVelocity += Math.max(Math.min(delta * 0.2, maxVelocity), -maxVelocity);
+
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateRotation);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
 </section>
 
 <!-- SECTION 2 -->
@@ -2144,7 +2183,7 @@ lines.forEach(line => {
 
 
 
-<script>
+<!-------<script>
     const rotatingImage = document.getElementById('rotatingSvg');
     let lastScrollTop = window.scrollY;
     let currentRotation = 0;
@@ -2163,7 +2202,7 @@ lines.forEach(line => {
       rotatingImage.style.transform = `rotate(${currentRotation}deg)`;
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
-  </script>
+  </script>-->
   <script>
   function isInViewport(el) {
     const rect = el.getBoundingClientRect();
