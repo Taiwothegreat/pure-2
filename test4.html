@@ -42,123 +42,10 @@
       gap: 30px;
       padding: 40px 20px 20px 20px;
     }*/
-    body {
-      margin: 0;
-      padding: 0;
-      transition: background-color 1s ease;
-      font-family: 'Saira Stencil One', sans-serif;
-      background-color: #ffffff;
-    }
-    .canny {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      min-height: 100vh;
-      gap: 30px;
-      padding: 40px 20px 20px 20px;
-    }
-    .can {
-      position: relative;
-      transition: transform 0.5s ease;
-      cursor: pointer;
-      flex: 1 1 150px;
-      max-width: 200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .can img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      transition: transform 0.5s ease;
-      display: block;
-    }
-    .lemon, .cherry, .water, .apple, .tropical{
-         font-family: 'Shelby W05 Bold', sans-serif;
-         font-size: 30px !important;
-    }
-    .text-block {
-      text-align: center;
-      margin-bottom: 10px;
-      color: #333;
-    }
-    .text-block h2 {
-      font-size: 24px;
-      margin: 0;
-      text-transform: uppercase;
-    }
-    .text-block p {
-      font-size: 18px;
-      margin: 5px 0 10px 0;
-    }
-    .container:hover .can {
-      transform: scale(0.9);
-    }
-    .can:hover {
-      transform: scale(1.1) !important;
-      z-index: 2;
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-      .text-block h2 {
-        font-size: 18px;
-      }
-      .text-block p {
-        font-size: 14px;
-      }
-    }
+   
     /*Blog scroll*/
     /* Scoped styles only for this section */
-#about .dynamic-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
 
-#about .dynamic-track {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  animation: dynamicScroll linear infinite;
-  animation-duration: var(--animation-speed, 60s);
-}
-
-#about .thumbnail {
-  flex: 0 0 auto;
-  width: 300px;
-  margin: 10px;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-#about .thumbnail:hover {
-  transform: scale(1.05);
-}
-
-#about .blog-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-#about:hover .dynamic-track {
-  animation-play-state: paused;
-}
-
-@keyframes dynamicScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  #about .thumbnail {
-    width: 250px;
-  }
-}
     /*Blog scroll*/
     /* Reset some base styles */
 * {
@@ -1507,98 +1394,11 @@ left:0;
     </ul>
   </div>
 </nav>
+      
 
 
 
 
-<div style="background-color: #ffffff;margin-top: 0;margin-bottom: 70px !important;">
-    <h3 style="text-align: center;width: 30%;margin: auto;color: #6ccb35;font-weight: 900;margin-top: 70px;font-size: 28px;">MEET OUR FLAVORS</h3>
-    <p style="text-align: center;width: 30%;margin: auto;margin-top: 70px;font-size: 18px;">Experience the refreshing purity of our Plant-Based Natural Organic Flavours,
-         sourced from the lush Amazon fields. Each sip is filled with the rich, 
-         vibrant tastes of sun-ripened fruits, enhanced by a delightful touch of
-          natural sweetness. Our drinks are rich in antioxidants, vitamins, and 
-          nutrients, providing a revitalizing blend of tangy notes and smooth, 
-          velvety textures. Enjoy a nourishing 
-        journey for your taste buds and well-being with every can, embracing 
-        the true vitality of nature.</p>
-</div>
-
-
- 
- 
-
-
-
-
-
-
-<div class="container canny" style="margin-bottom: 100px !important;">
-  <div class="can" data-color="#C2F970">
-    <div class="text-block">
-      <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="lemon">Lemon Lime</p>
-    </div>
-  <a href="lemon-lime.html">  <img src="./Assets/flavor-lemon-lime.png" alt="Lemon Lime"></a>
-  </div>
-
-  <div class="can" data-color="#FBC13D">
-    <div class="text-block">
-      <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="tropical">Tropical Bliss</p>
-    </div>
-   <a href="tropical-bliss.html"> <img src="./Assets/flavor-tropical-bliss.png" alt="Tropical Bliss"></a>
-  </div>
-
-  <div class="can" data-color="#E74C3C">
-    <div class="text-block">
-      <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="cherry">Cherry Vanilla</p>
-    </div>
- <a href="cherry-vanilla.html">   <img src="./Assets/flavor-cherry-vanilla.png" alt="Cherry Vanilla"></a>
-  </div>
-
-  <div class="can" data-color="#FF6F61">
-    <div class="text-block">
-      <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="water">Watermelon Lime</p>
-    </div>
-<a href="watermelon-lime.html">    <img src="./Assets/flavor-watermelon-lime.png" alt="Watermelon Lime"></a>
-  </div>
-
-  <div class="can" data-color="#D4A373">
-    <div class="text-block">
-      <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="apple">Apple Ginger</p>
-    </div>
-<a href="apple-ginger.html">    <img src="./Assets/flavor-apple-ginger.png" alt="Apple Ginger"></a>
-  </div>
-</div>
-
-<script>
-  const cans = document.querySelectorAll('.can');
-  const body = document.body;
-
-  cans.forEach(can => {
-    can.addEventListener('mouseenter', () => {
-      const color = can.getAttribute('data-color');
-      body.style.backgroundColor = color;
-    });
-
-    can.addEventListener('mouseleave', () => {
-      body.style.backgroundColor = '#ffffff';
-    });
-  });
-</script>
-
-   
-
-
-
-
-
-
-
-       
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
   <!-- SVG Wave -->
