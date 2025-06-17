@@ -58,7 +58,7 @@
       gap: 30px;
       padding: 40px 20px 20px 20px;
     }
-    .can {
+  /*  .can {
       position: relative;
       transition: transform 0.5s ease;
       cursor: pointer;
@@ -68,16 +68,54 @@
       flex-direction: column;
       align-items: center;
     }
+   
     .can img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
       border-radius: 15px;
       transition: transform 0.5s ease;
       display: block;
-    }
+    }*/
+    body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.can-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* space between cans only */
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.can {
+  flex: 1; /* allows equal flexible width */
+  max-width: calc((100% - 4 * 20px) / 5); /* 5 cans, 4 gaps of 20px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.can img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
     .lemon, .cherry, .water, .apple, .tropical{
          font-family: 'Shelby W05 Bold', sans-serif;
          font-size: 30px !important;
+    }
+      .lemon:hover,.cherry:hover,.water:hover,.apple:hover,.tropical:hover{
+        
+         color: #ffffff !important;
     }
     .text-block {
       text-align: center;
@@ -1532,11 +1570,11 @@ left:0;
 
 
 
-<div class="container canny" style="margin-bottom: 100px !important;">
+<div class="container-fluid canny" style="margin-bottom: 100px !important;">
   <div class="can" data-color="#C2F970">
     <div class="text-block">
       <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="lemon">Lemon Lime</p>
+      <p class="lemon" style="color: #829629;">Lemon Lime</p>
     </div>
   <a href="lemon-lime.html">  <img src="./Assets/flavor-lemon-lime.png" alt="Lemon Lime"></a>
   </div>
@@ -1544,7 +1582,7 @@ left:0;
   <div class="can" data-color="#FBC13D">
     <div class="text-block">
       <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="tropical">Tropical Bliss</p>
+      <p class="tropical" style="color: #fcac1f;">Tropical Bliss</p>
     </div>
    <a href="tropical-bliss.html"> <img src="./Assets/flavor-tropical-bliss.png" alt="Tropical Bliss"></a>
   </div>
@@ -1552,7 +1590,7 @@ left:0;
   <div class="can" data-color="#E74C3C">
     <div class="text-block">
       <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="cherry">Cherry Vanilla</p>
+      <p class="cherry" style="color: #993a4a;">Cherry Vanilla</p>
     </div>
  <a href="cherry-vanilla.html">   <img src="./Assets/flavor-cherry-vanilla.png" alt="Cherry Vanilla"></a>
   </div>
@@ -1560,7 +1598,7 @@ left:0;
   <div class="can" data-color="#FF6F61">
     <div class="text-block">
       <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="water">Watermelon Lime</p>
+      <p class="water" style="color: #96bb36; ">Watermelon Lime</p>
     </div>
 <a href="watermelon-lime.html">    <img src="./Assets/flavor-watermelon-lime.png" alt="Watermelon Lime"></a>
   </div>
@@ -1568,7 +1606,7 @@ left:0;
   <div class="can" data-color="#D4A373">
     <div class="text-block">
       <h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;">MEET</h3>
-      <p class="apple">Apple Ginger</p>
+      <p class="apple" style=" color:#b36f34 ">Apple Ginger</p>
     </div>
 <a href="apple-ginger.html">    <img src="./Assets/flavor-apple-ginger.png" alt="Apple Ginger"></a>
   </div>
