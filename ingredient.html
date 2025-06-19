@@ -1,10 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PURE FINEST</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,81 +13,636 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 
 <!-----  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+
  <link href="https://fonts.googleapis.com/css2?family=Open Sans&display=swap" rel="stylesheet">
 <!----- <link href="https://fonts.googleapis.com/css2?family=Playfair Display&display=swap" rel="stylesheet">-->
  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Precursive&display=swap" rel="stylesheet">
+
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
-  <title>PURE FINEST</title>
- 
-
+  <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
-    
-/************************************/
+    /*Acerola*/
+     .ingredients-blue-bg {
+    background-color: rgb(118, 197, 250) !important;
+    padding: 50px 15px;
+  }
+
+  .moringa-text-col {
+    width: 100%;
+    width: 650px;
+    padding-right: 30px;
+  }
+
+  .acerola-image-col {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+  }
+
+  @media (min-width: 768px) {
+    .moringa-text-col,
+    .acerola-image-col {
+      flex: 1 1 48%;
+      margin-top: 0;
+    }
+
+    .moringa-text-col {
+      order: 1;
+    }
+
+    .acerola-image-col {
+      order: 2;
+    }
+  }
+
+  .ingredients-section-custom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .info-section-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-left: 70px;
+    margin-top: 33px;
+    font-size: 18px;
+  }
+
+  .info-section {
+    margin: 0;
+  }
+    /*Hibiscus*/
+.ingredients-red-bg {
+  background-color: #fe453e !important;
+  padding: 50px 15px;
+}
+
+.red-bg-extension {
+  background-color: #fe453e;
+  padding-top: 0;
+  padding-bottom: 0px; /* Or more, if your footer height is larger */
+
+}
+
+
+
+ /*       .ingredients-red-bg {
+    background-color: #fe453e !important;
+    padding: 50px 15px;
+  }*/
+/*  body{
+      background-color: #fe453e !important;
+    padding: 50px 15px;
+    margin-top: 80%;
+    z-index: -999;
+  }*/
+       .ingredients-dynasty-bg {
+    background-color: #EEAC58 !important;
+    padding: 50px 15px;
+  }
+      .ingredients-white-bg {
+    background-color: #f8f1f1 !important;
+    padding: 50px 15px;
+  }
+
+  .ingredients-section-custom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .ingredients-image-col {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+
+  .ingredients-text-col {
+    width: 100%;
+    max-width: 650px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: 768px) {
+    .ingredients-image-col,
+    .ingredients-text-col {
+      flex: 1 1 48%;
+    }
+  }
+
+  .info-section-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-left: 70px;
+    margin-top: 33px;
+  }
+
+  .info-section {
+    margin: 0;
+  }
+    /*form*/
   
 
+   .info-section-wrapper {
+    display: flex;
+    margin-left: 70px; /* Align with bullet list above */
+    gap: 30px; /* Space between first and second group */
+    margin-top: 33px;
+  }
 
+  .info-section {
+    margin: 0; /* Remove default spacing */
+  }
+    /*Moringa*/
+   /* .ingredients-heading {
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Saira Stencil One', sans-serif;
+  margin-bottom: 40px;
+}
 
-    
+.moringa-title {
+  font-family: 'Shelby W05 Bold', sans-serif;
+  font-size: 53px;
+  margin-bottom: 20px;
+}
 
-   
-
-/*For labels*/
+.ingredients-section ul.moringa-benefits {
+  padding-left: 0;
  
-    h2 {
-      margin-top: 0;
-      font-size: 2em;
+    list-style-type:square;
+  padding-left: 40px;
+}
+
+.ingredients-section ul.moringa-benefits li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.ingredients-section ul.moringa-benefits li  h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 30px;
+  min-width: 240px;
+
+}
+
+.ingredients-section ul.moringa-benefits span {
+  font-size: 18px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.ingredient-image {
+  max-width: 85%;
+  height: auto;
+  margin-top: 200px; /* pushes image down a bit */
+/*}
+*/
+.ingredients-heading {
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Saira Stencil One', sans-serif;
+  margin-bottom: 40px;
+}
+.moringa-title {
+  font-family: 'Shelby W05 Bold', sans-serif;
+  font-size: 53px;
+  margin-bottom: 20px;
+  margin-left: 70px;
+}
+.moringa-benefits {
+ 
+  list-style-type: square;
+  padding-left: 20px;
+   margin-left: 70px;
+}
+
+.moringa-benefits li {
+  margin-bottom: 15px;
+}
+
+.moringa-benefits li h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  display: inline;
+  
+}
+
+.moringa-benefits li span {
+  font-size: 18px;
+  display: inline;
+}
+.ingredient-image {
+  max-width: 85%;
+  height: auto;
+  margin-top: 200px; /* pushes image down a bit */
+}
+
+    /*Ingredients*/
+    .purefinest-ingredients-section{
+      background-color: #29bdc1;
     }
+    .purefinest-ingredients-section .centered-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.text-block h4{
+    font-family: 'Shelby W05 Bold', sans-serif;
+    color: #ffffff;
+    font-size: 53px;
+}
+.purefinest-ingredients-section h4 {
+  margin-bottom: 10px;
+}
 
+.purefinest-ingredients-section .text-block {
+  padding: 10px;
+}
 
+    /*Can*/
+      /*body {
+      margin: 0;
+      padding: 0;
+      transition: background-color 1s ease;
+      font-family: 'Saira Stencil One', sans-serif;
+      background-color: #ffffff;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      gap: 30px;
+      padding: 40px 20px 20px 20px;
+    }*/
    
+    /*Blog scroll*/
+    /* Scoped styles only for this section */
 
-    @media screen and (max-width: 768px) {
-     
-
-      
-    }
-
-
-/*End of glyphicon animation*/
-
-  * {
+    /*Blog scroll*/
+    /* Reset some base styles */
+* {
   margin: 0;
   padding: 0;
-box-sizing: border-box;
-}
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-overflow-x: hidden;
-}
-.text-white {
-color: white !important;
-}
-.mobile-version-6 a:hover{
-  background-color: red;
+  box-sizing: border-box;
 }
 
-.dropdown-content p,li{
-  font-size: 17px;
-  
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+.brand a {
+  display: inline-block;
+  position: relative;
+  text-align: center; /* center contents */
+}
+
+/* Make the logo block and center it */
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: auto;
+  animation: spin 10s linear infinite;
+  position: absolute;
+  top:40px;
+  /* Adjust left to position over N and E */
+  left: 125px; /* adjust this value for perfect alignment */
+}
+
+/* The text logo below */
+.text-logo {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 300px;
+  user-select: none;
+}
+
+/* Keep spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 
-h1,h2,h5 {
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #000;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
   color: #000;
-   font-family: 'Saira Stencil One', sans-serif;
+  font-weight: bold;
 }
-h1,h5,.mobile-version-6 a,.mobile-version-7 a,
+.dropdown a{
+     font-family: 'Saira Stencil One', sans-serif;
+     font-size: 20px;
+}
+.studio a, .promos a{
+     font-family: 'Saira Stencil One', sans-serif;
+     font-size: 20px;
+}
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 5px;
+  color: #000;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: flex;
+  }
+}
+
+    /**Video Banner*/
+#home-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  text-align: center;
+/*  color: #fff;*/
+  padding: 20px;
+
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./Assets/shellnormal.ttf') format('wttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.tagline-top {
+  /*font-family: 'shell', sans-serif !important;*/
+  font-family: 'Shelby W05 Bold', sans-serif;
+
+  font-size: 6.5rem;
+  color: #6ccb35;
+}
+
+
+
+.logo-img {
+  max-width: 500px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+    filter: brightness(0) invert(1);
+
+}
+
+.tagline-bottom p{
+  font-size: 70px;
+  font-weight: 900;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #6ccb35;
+ font-family: 'Baloo Tamma 2', sans-serif;
+}
+
+.highlight {
+  color: #fff;
+  font-size: 70px;
+
+}
+
+.orange-half-img {
+  margin-top: -10px !important;
+  width: 70px;
+  height: auto;
+  vertical-align: middle;
+}
+.white-icon {
+  filter: brightness(0) invert(1); /* turns dark areas to white */
+}
+   /* Fade-in animation */
+/*.overlay-content h2,
+.overlay-content p,
+.overlay-content button,
+#vitalityText {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}*/
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
+/* Background image layer */
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 0;
+}
+
+section, .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+h2,
+.thumbnail h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.thumbnail p {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.meta-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Thumbnail card layout */
+.thumbnail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.05);
+}
+
+.thumbnail > div {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Row and column flex helpers */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-sm-4 {
+  display: flex;
+}
+.scroll-line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/*h1,h5,.mobile-version-6 a,.mobile-version-7 a,
 .mobile-version-8 a,.mobile-version-9 a,
 .mobile-version-10 a{
   font-size: 20px;
   color: #000;
    font-family: 'Saira Stencil One', sans-serif;
-}
-.nav-container {
+}*/
+/*h1 #headings{
+   font-size: 20px !important;
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif !important;
+}*/
+/*.overlay-content h1{
+  width: 600px;
+    font-size: 40px !important;
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif !important;
+}*/
+/*.nav-container {
 max-width: 1200px;
 margin: 0 auto;
 padding: 10px 15px;
@@ -96,28 +650,28 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 flex-wrap: wrap;
-}
+}*/
 
 
 /*Brand from another file*/
-.brand a{
+/*.brand a{
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   margin-right: auto;
-}
+}*/
 /*.logo{
 /* padding: -10px;*/
 /*}*/
-.brand .logo {
+/*.brand .logo {
   height: 100px;
   animation: spin 5s linear infinite;
 }
 
 .brand .text-logo {
   margin-top: -120px;
-}
+}*/
 /*Brand logo with text*/
 
 /*Brand logo with text*/
@@ -127,7 +681,7 @@ flex-wrap: wrap;
 }
 /*End of the file*/
 
-.menu-toggle {
+/*.menu-toggle {
 display: none;
 flex-direction: column;
 gap: 5px;
@@ -139,148 +693,251 @@ display: block;
 width: 25px;
 height: 3px;
 background-color: #000;
+}*/
+
+/*h1,h2,h5 {
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}*/
+.text-white {
+color: white !important;
 }
+/*.mobile-version-6 a:hover{
+  background-color: red;
+}*/
 
-
+/*.dropdown-content p,li{
+  font-size: 17px;
+  
+}
 ul.nav {
   list-style: none;
   display: flex;
   gap: 20px;
   margin: 0;
   padding: 0;
-  position: relative; /* Add this to make dropdown positioning relative to this nav block */
+  position: relative; 
 }
 
 ul.nav > li {
-  position: static; /* Remove positioning so it doesn't anchor the dropdown */
-}
-.we h5 a:hover{
-  background-color: #6ccb35;
-  text-decoration:none;
-}
-.we ul li a{
-  font-family: Arial, sans-serif;
-}
-.we ul li a:hover{
-   background-color: #6ccb35;
-  text-decoration:none;
-  font-weight: 100;
- 
-}
-.peef ul li a{
-  font-family: Arial, sans-serif;
-}
-.peef h5 a:hover{
-  background-color: #6ccb35;
-  text-decoration: none;
-}
-.peef ul li a:hover{
-  background-color: #6ccb35;
-  text-decoration: none;
-}
-.hydrations h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.hydrations ul li a{
-  font-family: Arial, sans-serif;
-}
-.hydrations ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.visions button a{
-  background-color: #ffa500;
-}
-.juices h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.snackss h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.alcohols h5 a:hover{
-  background: #ffa500;
-   text-decoration: none;
-}
-.juices ul li a{
-  font-family: Arial, sans-serif;
-}
-.juices ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.snackss ul li a{
-  font-family: Arial, sans-serif;
-}
-.snackss ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.alcohols ul li a{
-  font-family: Arial, sans-serif;
-}
-.alcohols ul li a:hover{
-  background-color: #ffa500;
-  text-decoration: none;
-}
-.edi h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.edi ul li a{
-  font-family: Arial, sans-serif;
-}
-.edi ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.human h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.ben ul li a,.watch ul li a,.listen ul li a{
-   font-family: Arial, sans-serif;
-}
-.ben ul li a:hover,.watch ul li a:hover,.listen ul li a:hover{
-   text-decoration: none;
-}
-.human ul li a{
-  font-family: Arial, sans-serif;
-}
-.human ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.sports h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.sports ul li a{
-  font-family: Arial, sans-serif;
-}
-.sports ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.foundation h5 a:hover{
-  background: #c04141;
-   text-decoration: none;
-}
-.foundation ul li a{
-  font-family: Arial, sans-serif;
-}
-.foundation ul li a:hover{
-  background-color: #c04141;
-  text-decoration: none;
-}
-.recruit h5 a:hover{
-  background:#0000ff;
-   text-decoration: none;
+  position: static; 
+}*/
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /*.overlay-content {
+    padding: 40px;
+  }*/
+@media (max-width: 1024px) {
+    /*.overlay-content {
+      padding: 20px;
+    }*/
+
+    .row > div {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .row {
+      margin: 0 !important;
+    }
+
+    .container-fluid {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+  @media (max-width: 1024px) {
+   /* .overlay-content {
+      padding: 20px;
+    }*/
+  }
+
+/*  .rotating-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .rotating-image {
+    animation: rotate 10s linear infinite;
+    width: 100px;
+    height: 100px;
+  }
+
+  .rotating-label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+*/
+.rotating-wrapper-behind {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  z-index: -2; /* behind -1 image */
+  text-align: center;
+  pointer-events: none;
 }
 
-.dropdown-menu {
+.rotating-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  display: block;
+}
+
+.rotating-label {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: white;
+  font-size: 2.1rem;
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+/* Overlay box */
+.overlay-content {
+/*  background-color: rgba(255, 255, 255, 0.95);*/
+  padding: 30px;
+  border-radius: 5px;
+}
+
+/* Rotating element */
+
+.rotating-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+}
+
+.rotating-image {
+  width: 100%;
+  height: 100%;
+  margin-top: 380px;
+  transition: transform 0.3s ease-in-out;
+  display: block;
+
+}
+
+.rotating-label {
+  position: absolute;
+  top: 450px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+  font-size: 2.1rem;
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  margin-top: 0;
+  z-index: 1;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-img {
+  height: 100px; /* Adjust as needed */
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+/* Continuous scrolling animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/****Image Gallery*/
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 120px 0;
+}
+
+.gallery-inner {
+  display: flex;
+  align-items: center;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+  min-width: calc(305px * 16); /* Ensure all images + duplicates fit */
+}
+
+.gallery-image {
+  width: 305px;
+  height: 305px;
+  flex-shrink: 0;
+  margin-left: -12px; /* Reduced so last image isn't cut off */
+  transform: rotate(45deg) translateY(30px); /* Bottom touch */
+  transform-origin: center;
+  border: 4px solid #adff2f;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-image.alt {
+  transform: rotate(45deg) translateY(-30px); /* Top touch */
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(-45deg); /* Keep face upright */
+  border-radius: 24px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/*.dropdown-menu {
   display: none;
   position: fixed;
   top: 300px ;
@@ -290,13 +947,13 @@ ul.nav > li {
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 100;
-}
+}*/
 
 .follow-us{
   color: rgb(139, 204, 139);
 }
 
-li.active .dropdown-menu {
+/*li.active .dropdown-menu {
   display: block;
 }
 
@@ -322,104 +979,9 @@ padding: 10px 15px;
 color: white;
 cursor: pointer;
 margin-top: 10px;
-}
+}*/
 
 
-
-/* Right column - text and links */
-.dropdown-content.labelss-1 {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 10px;
-}
-
-/* Individual blocks */
-.dropdown-content.labelss-1 > div {
-  flex-shrink: 0;
-}
-
-.label-images img {
-  max-width: 200px;
-  height: auto;
-  display: block;
-}
-
-.visions {
-  max-width: 300px;
-  flex: 1 1 300px;
-}
-
-.hydrations, .juices, .snackss, .alcohols {
-  flex: 1 1 150px;
-  min-width: 120px;
-}
-
-/* Responsive behavior for smaller screens */
-@media (max-width: 768px) {
-  .dropdown-content.labelss-1 {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .label-images,
-  .visions,
-  .hydrations,
-  .juices,
-  .snackss,
-  .alcohols {
-    flex: 1 1 100%;
-  }
-
-  .label-imagse img {
-    margin: 0 auto;
-  }
-
-  .visions {
-    text-align: center;
-  }
-}
-
-
-/*New Hover Effect*/
-.mobile-version-6 a:hover {
-  color: #fff;
-  background-color: #6ccb35 !important;
-}
-.mobile-version-7 a:hover{
-  color:#fff;
-  background: orange !important;
-}
-.mobile-version-8 a:hover{
-  color:#fff;
-  background: rgb(192, 65, 65) !important;
-}
-.mobile-version-9 a:hover{
-  color:#fff;
-  background: rgb(117, 83, 83) !important;
-}
-.mobile-version-10 a:hover{
-  color:#fff;
-  background: #0000ff !important;
-}
-  
-
-
-
-
-  * {
-  margin: 0;
-  padding: 0;
-box-sizing: border-box;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
 
 
 .form-control{
@@ -496,17 +1058,6 @@ body, html {
 .form-control{
   margin-left: 15px !important;
 }
-body {
- /* font-family: 'Roboto', sans-serif;*/
-  font-family: 'Open Sans', sans-serif;
-  margin-left: 0;
-}
-.container-fluid video{
-  margin-left: 25px;
-  width:100%;
-}
-
-
 .foot2 h4,ul li a,i{
 /*margin-left:10px;*/
 position: relative;
@@ -521,62 +1072,13 @@ overflow-x: hidden;
 color: white !important;
 margin: 10px !important;
 }
-
-
-
-
-/* Make container stretch full width */
-/*.container-fluid {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-
-
 .brew-1{
   margin-top: 200px;
 }
 
 li a{
   font-size: 16px;
-}*/
-
-
-.marquee-wrapper {
-  overflow: hidden;
-  width: 100%;
-  background: #fff;
-  padding: 10px 0;
-  margin-top: 0;
 }
-
-.marquee-inner {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 30s linear infinite;
-  will-change: transform;
-}
-
-.marquee-img {
-  height: 100px; /* Adjust as needed */
-  margin-right: 30px;
-  flex-shrink: 0;
-}
-
-/* Continuous scrolling animation */
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-
-
-
 .news{
   margin-top: 30px;
 }
@@ -635,8 +1137,21 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   text-decoration: none;
 
 }
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .rotating-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .rotating-label {
+    font-size: 0.9rem;
+  }
+}
 @media(max-width:1500px){
-  .dropdown-menu {
+/*  .dropdown-menu {
   display: none;
   position: absolute;
   top: 70px;
@@ -646,14 +1161,14 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 100;
-}
+}*/
 }
 
 @media (max-width: 1300px) {
   
   /* Right column - text and links */
-.dropdown-content.labelss-1 > div:nth-child(2) {
-  flex: 1; /* take up the remaining space */
+/*.dropdown-content.labelss-1 > div:nth-child(2) {
+  flex: 1; 
   display: flex;
   flex-wrap: wrap;
   gap: 0;
@@ -661,9 +1176,9 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
 .dropdown-content.labelss-1 > div {
   display: flex;
   flex-direction: column;
-  gap: 0; /* reduce space between inner content sections if needed */
-}
- .dropdown-content.visions{
+  gap: 0; 
+}*/
+/* .dropdown-content.visions{
   width: 200px;
   margin-left: 0 !important;
 }
@@ -675,9 +1190,9 @@ height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
 }
 .menu-toggle {
   display: flex;
-}
+}*/
 
-ul.nav {
+/*ul.nav {
   flex-direction: column;
   width: 100%;
   display: none;
@@ -693,14 +1208,14 @@ li a i{
 position: relative;
 top:-23px;
   margin-left: 100%;
-}
-.dropdown-menu {
+}*/
+/*.dropdown-menu {
   position: static;
   width: 100%;
   box-shadow: none;
-}
+}*/
 /*From another file*/
-.brand {
+/*.brand {
   align-items: flex-start;
 }
 
@@ -713,7 +1228,7 @@ top:-23px;
 
 .brand .text-logo {
   margin-top: -120px;
-}
+}*/
  
 * {
   margin: 0;
@@ -723,12 +1238,12 @@ box-sizing: border-box;
 body {
 margin: 300;
 font-family: Arial, sans-serif;
-/*  overflow-x: hidden;*/
+
 }  }
 @media (max-width: 768px) {
-  /* Right column - text and links */
-.dropdown-content.labelss-1 > div:nth-child(2) {
-  flex: 1; /* take up the remaining space */
+
+/*.dropdown-content.labelss-1 > div:nth-child(2) {
+  flex: 1; 
   display: flex;
   flex-wrap: wrap;
   gap: 0;
@@ -736,7 +1251,7 @@ font-family: Arial, sans-serif;
 
   .dropdown-content.labelss {
     flex-direction: row;
-  }
+  }*/
 }
 
     /*-----------------------------------------------------------------*/
@@ -754,9 +1269,9 @@ font-family: Arial, sans-serif;
     margin-bottom: 20px;
   }
 
-  .cut{
+ /* .cut{
     margin-top: 0 !important;
-  }
+  }*/
 }
 @media (max-width: 767px) {
   .footer-logo {
@@ -775,7 +1290,7 @@ font-family: Arial, sans-serif;
 
 /* ========== Desktop Styles (≥ 1200px) ========== */
 @media (min-width: 1200px) {
-  .crafting {
+  /*.crafting {
     min-width: 200px;
    position: relative;
    left:-140px;
@@ -878,7 +1393,7 @@ li a i{
 position: relative;
 top:-23px;
   margin-left: 100%;
-}
+}*/
 
 .foot1, .footer-select, .foot2{
   margin-left: 100px;
@@ -901,7 +1416,7 @@ top:18px;
 }
 
 
-.cut-text p{
+/*.cut-text p{
 margin-left: 40px ;
 }
 .brew-1{
@@ -911,15 +1426,15 @@ margin-left: 40px ;
 position: relative;
 left:0;
   width:100%;
-}
+}*/
 
 .foot2 h4,ul li a,i{
   margin-left: 0;
    }
-   .container-fluid video{
+   /*.container-fluid video{
     margin-left: 25px;
     width:100%;
-  }
+  }*/
   .gold{
     margin-left:40px;
   }
@@ -953,9 +1468,7 @@ left:0;
     margin-bottom: 20px;
   }
   
-  .cut{
-    margin-top: 0 !important;
-  }
+  
 }
 
 /* ========== Tablet & Mobile Styles (< 992px) ========== */
@@ -1013,16 +1526,10 @@ left:0;
   }
 }
 
-
   </style>
-  <!-------------->
 </head>
 <body>
- 
-
-<!--------Cookies instruction-->
-
-  <div class="marquee-wrapper">
+    <div class="marquee-wrapper">
     <div class="marquee-inner" id="marquee-track">
       <!-- Duplicated set of images for seamless loop -->
       <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
@@ -1058,223 +1565,441 @@ left:0;
  
 <!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 -->
-    <nav>
+
+ <nav style="background-color: #fff;">
   <div class="nav-container">
-  
-    <div class="brand">
-       <a href="index.html"> <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo" >
-        <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px"></a>
-        
-      </div>
+    <!-----<div class="brand">
+      <a href="index.html" style="display: flex; align-items: center;">
+        <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo">
+        <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
+      </a>
+    </div>-->
+<div class="brand">
+  <a href="index.html" style="position: relative; display: inline-block;">
+    <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo">
+    <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
+  </a>
+</div>
+
     <div class="menu-toggle" id="menu-toggle">
       <span></span><span></span><span></span>
     </div>
 
     <ul class="nav" id="main-nav">
-      <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu " style="border-top: 10px solid #6ccb35;">
-          <!-- repeat content as above -->
-          <div class="dropdown-content company-1">
-            <div><img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px"></div>
-            <div class="crafting">
-              <h2>15+ <br>Years of Crafting Excellence</h2>
-              <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
-                 that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
-              <button style="background-color: #6ccb35;border-radius:10px;">LEARN MORE</button>
-            </div>
-            <div style="margin-left: 30px;" class="we">
-              <h5> <a href="who-we-are.html">Who We Are</a></h5>
-              <ul><li title="We are focused on foods and beverages 
-                creating premium, plant-based, 
-                 and natural foods and drinks. Offerings
-                  include REDEFINING REFRESHMENT
-                  WITH INTEGRITY AND INNOVATION vitality,
-                   vitamins, 
-                  sports, drinks, and well-being foods made with organic 
-                  ingredients to promote health and well-being. The company 
-                  is known for using high-quality premium ingredients,
-                   alongside other carefully selected components designed 
-                   to revitalize both body and soul. We ensure 
-                our brands are sustainable and beneficial for overall 
-                vitality,appealing to health-conscious consumers."><a href="who-we-are.html">Overview</a></li><li title="Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest® 
-                 has ushered in a new era of wellness beverages,
-                  seamlessly blending ancient wisdom with modern vitality."><a href="who-we-are.html">Origin</a></li><li title="Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest®
-                   has ushered in a new era of wellness beverages, 
-                   seamlessly blending ancient wisdom with modern vitality."><a href="who-we-are.html">Our Drive</a></li>
-                   <li><a href="who-we-are.html">Our  Milestones</a></li></ul>
-            </div>
-            <div class="peef">
-              <h5><a href="thepfiway.html">The PFI Way</a></h5>
-              <ul><li title="Our mission is to enhance lives by offering high-quality food and
-                 beverages that inspire joy, promote well-being, and deliver
-                  satisfaction to the body and soul. We strive 
-                to be a reliable provider of innovative, wholesome products,
-                 thoughtfully created with care and excellence."><a href="thepfiway.html">Our Purpose</a></li><li title="A vision of a future where every bite and sip support sustainability, exceptional quality, and well-being. We aspire to create a world where our food and 
-                 beverages not only satisfy but also foster healthier lifestyles 
-                 and contribute to a more sustainable planet."><a href="thepfiway.html">Our Vision</a></li><li title="With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create 
-                 not only delights the palate but also aligns with our values of wellness, 
-                 sustainability, and innovation."><a href="thepfiway.html">Our Approach</a></li></ul>
-            </div>
-          </div>
-        </div></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">LINES</a>
+        <div class="dropdown-menu">
+          <a href="#">Vitality</a>
+          <a href="#">Gin</a>
+          <a href="#">Vodka</a>
+           <a href="#">Wine</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">ADVOCATES</a>
+       <div class="dropdown-menu">
+          <a href="#" style="display: inline-block; text-align: center;
+           text-decoration: none; color: inherit;">
+  <img src="./Assets/Chimela-ude.jpg" alt="Chiemela Paris Ude" 
+       style="width: 120px; height: 120px; object-fit: cover;
+        border-radius: 50%; border: 3px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <div class="caption" style="margin-top: 10px;">
+    <h6 style="margin: 5px 0; font-size: 16px; font-weight: 600;">Chiemela Paris Ude</h6>
+ <!------   <p style="margin: 0; font-size: 13px; color: #666;">United Kingdom Soccer</p>-->
+ 
+<p style="margin: 0; font-size: 13px; color: #666; display: flex; align-items: center; flex-wrap: wrap;">
+  United Kingdom 
+  <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag" style="width: 16px; height: auto; margin: 0 5px; vertical-align: middle;">
+  (Football) Soccer
+</p>
 
-  
-<li class="mobile-version-7">
-  <a href="labels.html">Labels <i class="fa fa-caret-down"></i></a>
-  <div class="dropdown-menu" style="border-top: 10px solid #ffa500 ;">
-    <div class="dropdown-content labels-1">
-      
-      <!-- Image -->
-      <div class="label-image">
-        <img src="./Assets/labels-logo.jpg" alt="Labels Logo" width="200px" height="200px">
-      </div>
-
-      <!-- Vision Section -->
-      <div class="visions">
-        <h2 class="one">10+ <br> LABELS, ONE VISION</h2>
-        <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive in today’s dynamic marketplace.</p>
-        <button style="background: #ffa500; border-radius:10px;width:350px; 
-        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="labels.html">DISCOVER OUR LABELS</a></button>
-      </div>
-
-      <!-- Other Categories -->
-      <div class="hydrations">
-        <h5 ><a href="labels.html">Hydration & Vitality</a></h5>
-        <ul>
-          <li><a href="finest.html">PureFinest®</a></li>
-          <li><a href="finest.html">Elysium Alps®</a></li>
-          <li><a href="finest.html">AlpineGlow®</a></li>
-        </ul>
-      </div>
-
-      <div class="juices">
-        <h5 ><a href="labels.html">Juice & Dairy</a></h5>
-        <ul>
-          <li><a href="finest.html">PureLife</a></li>
-        </ul>
-      </div>
-
-      <div class="snackss">
-        <h5><a href="labels.html">Snacks</a></h5>
-        <ul>
-          <li><a href="finest.html">PureLife</a></li>
-          <li><a href="finest.html">Taste Me! - Feel Me!®</a></li>
-        </ul>
-      </div>
-
-      <div class="alcohols">
-        <h5><a href="labels.html">Alcohol</a></h5>
-        <ul>
-          <li><a href="finest.html">Gin</a></li>
-          <li><a href="finest.html">Vodka</a></li>
-          <li><a href="finest.html">Wine</a></li>
-        </ul>
-      </div>
-
-    </div>
   </div>
-</li>
+</a>
 
-      <li class="mobile-version-8">
-        <a href="#">Social<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu " style="border-top: 10px solid #c04141;">
-          <!-- repeat content as above -->
-          <div class="dropdown-content social-1">
-            <div><img src="./Assets/social-logo.jpg" alt="" width="200px" height="200px"></div>
-            <div class="people ">
-              <h2>PEOPLE AT THE HEART OF WHAT WE DO </h2>
-              <p class="peev">At Pure Finest Inc., we believe that people are our greatest asset. 
-                 From empowering our employees to fostering meaningful connections with partners and supporting the communities 
-                we call home, we are committed to improving lives and creating a positive impact wherever we operate.</p>
-              <button style="background-color: #c04141;border-radius:10px;">PEOPLE FIRST</button>
-            </div>
-          <div class="edi">
-              <h5 ><a href="edi.html">EDI</a></h5>
-              <ul><li><a href="edi.html">Employee</a></li><li><a href="edi.html">Network</a></li><li><a href="edi.html">Headship</a></li></ul>
-            </div>
-           <div class="human">
-              <h5 ><a href="humanrights.html">Human Rights</a></h5>
-              <ul><li><a href="humanrights.html">Human Rights</a></li>
-              <li><a href="humanrights.html">Governance</a></li>
-            <li><a href="humanrights.html">Stories of Impact</a></li></ul>
-            </div>
-             <div class="sports">
-              <h5 ><a href="sports-and-ent.html">Sports and <br>Entertainment</a></h5>
-              <ul><li><a href="sports-and-ent.html">Sponsorship</a></li></ul>
-            </div>
-             <div class="foundation">
-              <h5 ><a href="pffoundation.html">The Pure Finest Foundation</a></h5>
-              <ul><li><a href="pffoundation.html">Partnership</a></li><li><a href="pffoundation.html">Communities</a></li></ul>
-            </div>
-          </div>
+           <!----- <a href="#">EDI</a>
+          <a href="#">The Pure Finest Foundation</a>--->
         </div>
       </li>
-
-     <li class="mobile-version-9">
-        <a href="#">Media Center<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu" style="border-top:10px solid #755353 ;">
-          <!-- repeat content as above -->
-          <div class="dropdown-content media-center-1">
-            <div><img src="./Assets/media-center-logo.jpg" alt="" width="200px" height="200px"></div>
-            <div class="med">
-              <h2>STAY UPDATED </h2>
-              <p>Discover the latest from Pure Finest Inc. — from groundbreaking brand
-                 innovations to impactful 
-                sustainability initiatives. Explore how we’re shaping the future of food and beverages around the globe.</p>
-              <button style="background: #755353;border-radius:10px;"><a href="news-and-press.html">GET THE LATEST</a></button>
-            </div>
-            <div class="ben">
-              <h5>Being Read</h5>
-              <ul><li ><a href="news-and-press.html">News & Press</a></li></ul>
-            </div>
-            <div class="watch">
-              <h5>Being Watched</h5>
-              <ul><li><a href="#">Live Stream</a></li>
-              <li><a href="#">TV</a></li><li><a href="#">Gallery</a></li></ul>
-            </div>
-            <div class="listen">
-              <h5>Being Listened</h5>
-              <ul><li><a href="#">Radio</a></li><li><a href="#">Podcast</a></li></ul>
-            </div>
-            
-          </div>
-        </div>
-      </li> 
-      <li class="mobile-version-10">
-        <a href="#">Careers<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu" style="border-top: 10px solid #0000ff;">
-          <!-- repeat content as above -->
-          <div class="dropdown-content careers-1">
-            <div><img src="./Assets/careers-logo.jpg" alt="" width="200px" height="200px"></div>
-            <div class="purpose">
-              <h2>CAREER WITH PURPOSE</h2>
-              <p>At Pure Finest Inc., building your career means more than just a job—it’s a chance
-                 to make a meaningful impact on a global scale. Join us to grow,
-                  innovate, and help shape a brighter future."</p>
-              <button style="background: #0000ff;border-radius:10px;">HUMAN POTENTIAL</button>
-            </div>
-            <div class="recruit">
-              <h5 ><a href="careers.html">RECRUITMENT PROCESS</a></h5>
-              <ul><li>Application Pathway</li><li>Assessment</li><li>Offers</li></ul>
-            </div>
-            
-          </div>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">DISCOVERY</a>
+        <div class="dropdown-menu">
+          <a href="ingredient.html">Ingredients</a>
+          <a href="flavor.html">Flavors</a>
+        <!-----  <a href="#">Radio & Podcast</a>-->
         </div>
       </li>
+      <li class="dropdown"><a href="#" class="dropdown-toggle">STUDIO</a>
+         <div class="dropdown-menu">
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blog</a>
+        <!-----  <a href="#">Radio & Podcast</a>-->
+        </div>
+      </li>
+      <li class="promos"><a href="#">PROMOS & OFFERS</a></li>
     </ul>
   </div>
 </nav>
- 
- 
+<div class="purefinest-ingredients-section">
+  <div><h1 class="centered-heading" style="font-weight: 600; font-family: 'Saira Stencil One',
+     sans-serif;position: relative;top: 30px;">Crispy Ingredients</h1></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="text-block">
+          <h4>Nature's Finest Ingredients</h4>
+          <p style="font-size: 20px;">Our drink is a symphony of carefully selected, premium plant-based 
+            ingredients: Organic Moringa, Guarana, Maca, Acerola Fruit and Hibiscus Flower, all sourced from the heart of Mother Nature. Packed with essential vitamins, minerals, and antioxidants, every sip is a celebration of health and vitality. PureFinest® is a carefully 
+            crafted orchestration of nature's finest ingredients, designed to nourish and invigorate your mind and body.</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="text-block">
+          <h4>No Artificial Nasties</h4>
+          <p style="font-size: 20px;">Experience true purity with PureFinest® - it's not just a name, it's
+             a promise! PureFinest® lives up to its name in every aspect. 
+             Say goodbye to artificial flavors, colors, and preservatives.
+              Our commitment to purity means you get the goodness of 
+              nature without compromising on taste. We believe in 
+              providing you with a drink that not only refreshes your
+               senses but also nourishes your Body Mind & Soul with clean, plant-derived goodness.
+
+</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="text-block">
+          <h4>Purity Unleashed on Our Water</h4>
+          <p style="font-size: 20px;">PureFinest® is more than a beverage; it's a celebration of nature's bounty.
+             We source our water from natural springs, ensuring that every drop is
+              imbued with the crisp, clean taste that only pure, untainted water 
+              can provide. Our commitment to quality begins with the water itself.
+               Spring water, drawn from underground sources, is naturally filtered
+                and enriched with minerals, 
+            resulting in a beverage that is not only refreshing but also beneficial
+             for your overall well-being.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+
+
+  <!-------layer One-->
+ <div class="container-fluid" style="background-color: #d5e7a3; padding: 50px 15px;">
+  <h1 class="ingredients-heading">Meet Our Ingredients</h1>
+  <div class="row ingredients-section">
+    <div class="col-sm-6">
+      <h4 class="moringa-title">Organic Moringa Leaf</h4>
+      <p style="font-size: 18px; margin-left:70px">
+        Organic moringa leaf, derived from the Moringa oleifera tree, has gained popularity...
+        <br><br>Moringa leaves may offer a range of benefits, from supporting healthy blood sugar 
+        to reducing inflammation. We use organic moringa for its potential to naturally
+        boost your well-being.
+      </p>
+      <ul class="moringa-benefits">
+        <li><h5>Nutrient-Rich:</h5> <span>Moringa leaves are packed with vitamins (A, C, E, and B vitamins), minerals (calcium, potassium, and magnesium), and essential amino acids.</span></li>
+        <li><h5>Antioxidant Properties:</h5> <span> High in antioxidants like quercetin and chlorogenic acid, moringa leaves help combat oxidative stress and reduce inflammation.</span></li>
+        <li><h5>Anti-Inflammatory:</h5> <span>Compounds in moringa leaves can reduce inflammation, which is beneficial for conditions like arthritis and other inflammatory diseases.
+</span></li>
+        <li><h5>Blood Sugar Regulation:</h5> <span>Moringa has been shown to lower blood sugar levels, making it beneficial for people with diabetes.</span></li>
+        <li><h5>Cholesterol Reduction:</h5> <span> Studies suggest that moringa can help lower cholesterol levels, reducing the risk of heart disease.</span></li>
+        <li><h5>Antimicrobial and Antibacterial:</h5> <span>Moringa leaves possess properties that can help fight infections and support the immune system.</span></li>
+        <li><h5>Digestive Health:</h5> <span>The leaves aid in digestion and have been used to treat stomach disorders like constipation and gastritis.</span></li>
+        <li><h5>Bone Health:</h5> <span>High levels of calcium and phosphorus in moringa support healthy bones.</span></li>
+        <li><h5>Improved Skin and Hair:</h5> <span>Vitamins and antioxidants in moringa help improve skin texture and hair growth.
+</span></li>
+        <li><h5>Supports Brain Health:</h5> <span>Moringa's high vitamin E and C content can help combat oxidative stress, potentially improving cognitive function and mood.</span></li>
+        <li><h5>Liver Protection:</h5> <span>Moringa helps restore liver enzymes, reducing liver damage and enhancing its detoxification functions.</span></li>
+        <li><h5>Rich in Plant Protein:</h5> <span>Contains significant amounts of protein, beneficial for muscle growth and repair.
 
 
 
 
 
 
-       
+</span></li>
+      </ul>
+   
+
+
+
+
+      
+<div class="info-section-wrapper">
+  <!-- First Group -->
+  <div>
+    <div><p style="padding:20px; background:#ffffff; width:300px;">Diabetes Management</p></div>
+    <div><p style="padding:20px; background:#ffffff; width:300px;">Natural Supplement</p></div>
+    <div><p style="padding:20px; background:#ffffff; width:300px;">Renewed Vigor</p></div>
+  </div>
+
+  <!-- Second Group -->
+  <div class="info-section">
+    <div><p style="padding:20px; background:#ffffff; width:300px;">Digestive Support</p></div>
+    <div><p style="padding:20px; background:#ffffff; width:300px;">Cardiovascular Health</p></div>
+    <div><p style="padding:20px; background:#ffffff; width:300px;">Anti-Inflammatory Properties</p></div>
+  </div>
+</div>
+      
+    </div>
+
+    <div class="col-sm-6 d-flex justify-content-center">
+      <img src="./Assets/ingredient-moringa.png" alt="moringa" class="ingredient-image">
+    </div>
+  </div>
+</div>
+<!-------Layer Two-->
+<div class="container-fluid ingredients-white-bg">
+ <!------ <h1 class="ingredients-heading">Meet Our Ingredients</h1>-->
+  
+  <div class="ingredients-section-custom row">
+    <!-- 🥭 Image now comes first -->
+    <div class="ingredients-image-col d-flex justify-content-center">
+      <img src="./Assets/ingredient-hibiscus-flower.png" alt="moringa" class="ingredient-image">
+    </div>
+
+    <!-- 🌿 Text content -->
+    <div class="ingredients-text-col">
+      <h4 class="moringa-title">Organic Hibiscus Flower</h4>
+      <p style="font-size: 18px; margin-left:70px">
+      <!-----  Organic moringa leaf, derived from the Moringa oleifera tree, has gained popularity...
+        <br><br>Moringa leaves may offer a range of benefits, from supporting healthy blood sugar 
+        to reducing inflammation. We use organic moringa for its potential to naturally
+        boost your well-being.-->
+        This vibrant bloom isn't just a feast for the eyes! Organic hibiscus flower boasts
+         a wealth of vitamins (A, B, and C) and minerals (iron, calcium, magnesium, and potassium).
+
+This translates to potential health benefits like a stronger immune system, a healthy heart, and even improved muscle function. Enjoy its tangy flavor and embrace the power of hibiscus flower in every sip.
+      </p>
+
+      <ul class="moringa-benefits">
+        <li><h5>Antioxidant Properties:</h5> <span>Hibiscus is rich in antioxidants, which help combat oxidative stress and protect cells from damage caused by free radicals.
+</span></li>
+        <li><h5>Blood Pressure Regulation:</h5> <span>Consuming hibiscus tea has been linked to lower blood pressure in people with hypertension, 
+          due to its diuretic properties and ability to relax blood vessels.</span></li>
+        <li><h5>Heart Health:</h5> <span>Hibiscus may help lower cholesterol levels,
+           reduce triglycerides, and improve overall heart health by reducing the risk of heart disease.</span></li>
+        <li><h5>Weight Management:</h5> <span> Hibiscus can aid in weight loss by inhibiting the production of amylase, an enzyme
+           that breaks down complex sugars and starches, potentially leading to reduced absorption of carbohydrates.</span></li>
+        <li><h5>Liver Health:</h5> <span> Hibiscus extract can improve liver health and function by increasing the production of detoxifying enzymes and reducing liver damage.</span></li>
+        <li><h5>Anti-Inflammatory and Antibacterial Properties:</h5> <span> Hibiscus has anti-inflammatory and antibacterial effects that can help reduce inflammation and fight off infections.</span></li>
+        <li><h5>Rich in Vitamin C: </h5> <span>Hibiscus is a good source of vitamin C, which supports the immune system, enhances skin health, and promotes collagen production.</span></li>
+        <li><h5>Digestive Health:</h5> <span>The diuretic properties of hibiscus can help maintain a healthy digestive system by promoting regular urination and preventing constipation.</span></li>
+        <li><h5>Menstrual Pain Relief:</h5> <span>Hibiscus can help alleviate menstrual pain and cramps due to its ability to balance hormones and reduce inflammation.</span></li>
+        <li><h5>Mood Enhancement:</h5> <span>Some studies suggest that hibiscus may help improve mood and reduce symptoms of depression and anxiety due to its potential effects on the central nervous system</span></li>
+      </ul>
+
+      <!-- ⬇ Info section aligned and grouped -->
+      <div class="info-section-wrapper">
+        <!-- First Group -->
+        <div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Rich in Calcium</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Skin Integrity</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Energy Boost</p></div>
+        </div>
+
+        <!-- Second Group -->
+        <div class="info-section">
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Vision Health</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Regulate Blood Pressure</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Cognitive Boost</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------Layer Three-->
+<div class="container-fluid ingredients-blue-bg">
+<!------  <h1 class="ingredients-heading">Meet Our Ingredients</h1>-->
+  
+  <div class="ingredients-section-custom row">
+    <!-- 🌿 TEXT COLUMN FIRST -->
+    <div class="moringa-text-col">
+      <h4 class="moringa-title">Organic Acerola Fruit</h4>
+      <p style="font-size: 18px; margin-left:70px">
+      Acerola is a vibrant fruit renowned for its unique tart flavor. Acerola is not just a culinary delight but a treasure trove of essential nutrients. This small, cherry-sized fruit has earned several monikers, including Barbados cherry and West Indian cherry.
+
+Acerola stands out for its impressive nutrient profile, most notably its exceptionally high vitamin C content. This superfood surpasses even citrus fruits in providing a potent dose of this vital antioxidant, contributing to immune health, collagen formation, and overall well-being.
+
+
+      </p>
+
+      <ul class="moringa-benefits">
+        <li><h5>Rich in Vitamin C:</h5> <span>Acerola is one of the richest natural sources of vitamin C, which is essential for immune system support, collagen production, and skin health. It contains significantly more vitamin C than oranges.</span></li>
+        <li><h5>Antioxidant Properties:</h5> <span>  The high levels of antioxidants in acerola, including carotenoids and bioflavonoids, help protect cells from oxidative damage, reduce inflammation, and lower the risk of chronic diseases.</span></li>
+        <li><h5>Boosts Immune System</h5> <span>The vitamin C and other antioxidants in acerola enhance immune function, helping the body fend off infections and illnesses.</span></li>
+        <li><h5>Improves Skin Health:</h5> <span> Vitamin C is crucial for collagen synthesis, which keeps the skin firm and elastic. Acerola's antioxidants also help protect the skin from damage caused by UV rays and pollution.</span></li>
+        <li><h5>Supports Heart Health:</h5> <span> Acerola can help improve cardiovascular health by reducing oxidative stress, lowering cholesterol levels, and improving blood circulation.</span></li>
+        <li><h5>Enhances Digestive Health:</h5> <span>Acerola contains dietary fiber, which aids in digestion, promotes regular bowel movements, and helps prevent constipation.</span></li>
+        <li><h5>Anti-Aging Benefits:</h5> <span> The potent antioxidants in acerola can help slow down the aging process by protecting cells from damage and reducing the appearance of fine lines and wrinkles.</span></li>
+        <li><h5>Boosts Energy Levels: </h5> <span>Acerola can help increase energy levels and reduce fatigue due to its high vitamin C content, which plays a role in the production of carnitine, a molecule that helps convert fat into energy.</span></li>
+        <li><h5>Improves Vision:</h5> <span>The carotenoids in acerola, including beta-carotene, contribute to eye health and may help prevent age-related macular degeneration and other eye conditions.
+</span></li>
+        <li><h5>Anti-Inflammatory Properties:</h5> <span>Acerola's antioxidants and vitamin C help reduce inflammation, which is beneficial for conditions like arthritis and other inflammatory diseases</span></li>
+        <li><h5>Supports Brain Health:</h5> <span>The antioxidants in acerola may protect the brain from oxidative stress, potentially reducing the risk of neurodegenerative diseases and improving cognitive function</span></li>
+      </ul>
+
+      <div class="info-section-wrapper">
+        <!-- First Group -->
+        <div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Rich in Vitamin C</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Collagen Formation</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Heart Health</p></div>
+        </div>
+
+        <!-- Second Group -->
+        <div class="info-section">
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Immunity Support</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Antioxidants</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Rich in Minerals</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🍒 IMAGE COLUMN SECOND -->
+    <div class="acerola-image-col d-flex justify-content-center">
+      <img src="./Assets/ingredient-acerola.png" alt="acerola" class="ingredient-image">
+    </div>
+  </div>
+</div>
+<!------Layer Four-->
+<div class="container-fluid ingredients-dynasty-bg">
+ <!------- <h1 class="ingredients-heading">Meet Our Ingredients</h1>-->
+  
+  <div class="ingredients-section-custom row">
+    <!-- 🥭 Image now comes first -->
+    <div class="ingredients-image-col d-flex justify-content-center">
+      <img src="./Assets/ingredient-maca.png" alt="moringa" class="ingredient-image">
+    </div>
+
+    <!-- 🌿 Text content -->
+    <div class="ingredients-text-col">
+      <h4 class="moringa-title">Organic Maca Tuber
+</h4>
+      <p style="font-size: 18px; margin-left:70px">
+      This Peruvian root boasts adaptogenic properties, potentially
+       helping your body adapt to stress and find balance. Maca's
+        potential to support hormonal balance and mood aligns with our focus on overall well-being.
+
+Maca also has a long history as an aphrodisiac and fertility aid.
+ We explore its potential to support reproductive health,
+  recognizing the connection between vitality and sexual well-being.
+      </p>
+
+      <ul class="moringa-benefits">
+        <li><h5>Energy Boost: </h5> <span>Maca is often used to enhance stamina and energy levels. It is known to help combat fatigue and improve physical endurance.</span></li>
+        <li><h5>Hormonal Balance:</h5> <span> Maca can help balance hormones, making it beneficial for both men and women. It is often used to alleviate symptoms of menopause and menstrual irregularities.</span></li>
+        <li><h5>Improved Sexual Function</h5> <span>Maca is traditionally used as an aphrodisiac and is believed to enhance libido and improve sexual performance in both men and women.</span></li>
+        <li><h5>Fertility Enhancement:</h5> <span>Some studies suggest that maca can improve fertility in both men and women by enhancing sperm quality and motility in men and supporting reproductive health in women.</span></li>
+        <li><h5>Mood Improvement</h5> <span>  Maca is known to help improve mood and reduce symptoms of anxiety and depression. Its adaptogenic properties help the body adapt to stress.</span></li>
+        <li><h5>Enhanced Cognitive Function:</h5> <span>Regular consumption of maca may improve memory and cognitive function. It is thought to protect the brain from damage and improve learning capabilities.</span></li>
+        <li><h5>Bone Health:</h5> <span>Maca contains calcium and other minerals that are essential for maintaining healthy bones and preventing osteoporosis.</span></li>
+        <li><h5>Antioxidant Properties:</h5> <span> Maca is rich in antioxidants, which help combat oxidative stress and protect cells from damage caused by free radicals.</span></li>
+        <li><h5>Improved Skin Health:</h5> <span>The nutrients in maca can help improve skin tone and reduce the appearance of fine lines and wrinkles.</span></li>
+        <li><h5>Supports Immune System::</h5> <span>Maca's rich nutrient profile supports the immune system, helping the body to fend off illnesses and infections.</span></li>
+        <li><h5>Regulates Blood Pressure:</h5> <span>Maca is sometimes used by athletes and bodybuilders to help increase muscle mass and improve workout performance.
+
+
+
+
+
+
+</span></li>
+      </ul>
+
+      <!-- ⬇ Info section aligned and grouped -->
+      <div class="info-section-wrapper">
+        <!-- First Group -->
+        <div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Boosted Energy</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Hormone Balance</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Enhanced Fertility</p></div>
+        </div>
+
+        <!-- Second Group -->
+        <div class="info-section">
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Sexual Health</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Mood Enhancement</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Improved Stamina</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!------Layer Five-->
+<div class="container-fluid ingredients-red-bg">
+<!------  <h1 class="ingredients-heading">Meet Our Ingredients</h1>-->
+  
+  <div class="ingredients-section-custom row">
+    <!-- 🌿 TEXT COLUMN FIRST -->
+    <div class="moringa-text-col">
+      <h4 class="moringa-title">Organic Guarana Seed</h4>
+      <p style="font-size: 18px; margin-left:70px">
+       Packed with nutrients and known for its energizing properties, organic guarana seed is gaining popularity as a natural alternative to synthetic energy boosters.
+
+Beyond its energizing effects, organic guarana seed has been linked to cognitive enhancement. The caffeine content in guarana helps improve mental alertness, concentration, and memory.
+      </p>
+
+      <ul class="moringa-benefits">
+        <li><h5>Increased Energy Levels:</h5> <span>Guarana is a potent source of caffeine, which can help increase energy levels and combat fatigue. It is often used as a natural stimulant.</span></li>
+        <li><h5>Enhanced Mental Focus and Alertness:</h5> <span> The caffeine in guarana can improve cognitive function, enhancing alertness, concentration, and memory.</span></li>
+        <li><h5>Weight Loss Aid:</h5> <span> Guarana can aid in weight loss by boosting metabolism, increasing fat oxidation, and suppressing appetite.</span></li>
+        <li><h5>Antioxidant Properties:</h5> <span>Guarana contains antioxidants such as tannins, saponins, and catechins, which help protect cells from oxidative stress and reduce inflammation.</span></li>
+        <li><h5>Improved Athletic Performance:</h5> <span>The stimulant effects of guarana can enhance physical performance, reduce perceived exertion during exercise, and improve endurance. </span></li>
+        <li><h5>Reduced Fatigue</h5> <span> Guarana can help alleviate fatigue and improve overall physical and mental endurance.</span></li>
+        <li><h5>Digestive Health:</h5> <span> Guarana has been used traditionally to treat digestive issues. Its astringent properties can help manage diarrhea and other digestive problems.
+ </span></li>
+        <li><h5>Pain Relief:</h5> <span>Guarana may have analgesic properties, helping to reduce pain and discomfort, particularly headaches and migraines.</span></li>
+        <li><h5></h5> <span>Vitamins and antioxidants in moringa help improve skin texture and hair growth.</span></li>
+        <li><h5>Heart Health:</h5> <span>
+          Guarana may improve heart health by promoting better blood circulation and reducing the risk of blood clots due to its stimulant properties.
+        </span></li>
+        <li><h5> Mood Enhancement:</h5> <span>
+          The caffeine and other compounds in guarana can help improve mood and reduce symptoms of depression and anxiety.
+        </span></li>
+        <li><h5>Antibacterial Properties:</h5> <span>Some studies suggest that guarana has antibacterial effects, which can help prevent infections and support overall health. </span></li>
+         <li><h5>Eye Health:</h5> <span> Guarana contains compounds that can protect against oxidative stress in the eyes, potentially reducing the risk of age-related eye diseases.
+
+
+
+
+
+
+ </span></li>
+      </ul>
+
+      <div class="info-section-wrapper">
+        <!-- First Group -->
+        <div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Weight Management</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Mental Alertness</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Energy Boost</p></div>
+        </div>
+
+        <!-- Second Group -->
+        <div class="info-section">
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Improved Wellbeing</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Antioxidants</p></div>
+          <div><p style="padding:20px; background:#ffffff; width:300px;">Natural</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🍒 IMAGE COLUMN SECOND -->
+    <div class="acerola-image-col d-flex justify-content-center">
+      <img src="./Assets/ingredient-guarana.png" alt="acerola" class="ingredient-image">
+    </div>
+  </div>
+</div>
+
+
+
+
 <!-- Footer Section (Full width, isolated, no side effects) -->
-<div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
+<div class="red-bg-extension">
+  <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;z-index:1">
   <!-- SVG Wave -->
   <div style="width: 100%; line-height: 0; overflow: hidden; margin-bottom: -5px;">
     <svg viewBox="0 0 1440 320"
@@ -1285,9 +2010,10 @@ left:0;
     </svg>
   </div>
 
+
   <!-- Footer Content -->
 
- <footer class="footer" style="background-color:#254125;">
+ <footer class="footer" style="background-color:#254125;z-index:1;">
   <div class="container">
     <div class="row text-white align-items-center">
       
@@ -1342,7 +2068,7 @@ left:0;
             <a href="https://x.com/i/flow/login?redirect_after_login=%2FPurefinestdrink"><i class="fab fa-x-twitter fa-2x social-icon"></i></a>
            <a href="https://www.instagram.com/purefinestofficial?igsh=dTV1N2p1Z2libnI3"> <i class="fab fa-instagram fa-2x social-icon"></i></a>
          <a href="https://www.threads.net/@purefinestofficial">   <i class="fab fa-threads fa-2x social-icon"></i></a>
-      <a href="https://www.facebook.com/share/1KMkUBojpm/">   <span class="facebook-icon"><i class="fab fa-facebook-f"></i></span></a>
+      <a href="https://www.facebook.com/share/1KMkUBojpm/">   <span class="facebook-icon"><i class="fab fa-facebook"></i></span></a>
           </div>
           
         </div>
@@ -1356,6 +2082,7 @@ left:0;
 </footer>
 
   
+</div>
 </div>
 
 
@@ -1390,126 +2117,89 @@ left:0;
     /*End of Labels*/
  /*New JavaScript*/
  
- document.addEventListener("DOMContentLoaded", function () {
-  const dropdownTriggers = document.querySelectorAll(".nav > li");
-  const menuToggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("main-nav");
-  const isDesktop = () => window.innerWidth > 1200;
-
-  // Toggle mobile menu
-  menuToggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    nav.classList.toggle("active");
-
-    // Close all dropdowns on toggle for mobile
-    if (!isDesktop()) {
-      dropdownTriggers.forEach(item => item.classList.remove("active"));
-    }
-  });
-
-  dropdownTriggers.forEach(item => {
-    const link = item.querySelector("a");
-    const dropdownMenu = item.querySelector(".dropdown-menu");
-
-    // MOBILE CLICK TOGGLE
-    link.addEventListener("click", function (e) {
-      if (!isDesktop()) {
-        const hasDropdown = item.querySelector(".dropdown-menu");
-        if (hasDropdown) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const isActive = item.classList.contains("active");
-
-          // Close other dropdowns
-          dropdownTriggers.forEach(el => el.classList.remove("active"));
-
-          // Toggle current
-          if (!isActive) {
-            item.classList.add("active");
-          }
-        }
-      }
-    });
-
-    // DESKTOP HOVER BEHAVIOR
-    if (dropdownMenu) {
-      let hoverTimeout;
-
-      item.addEventListener("mouseenter", () => {
-        if (isDesktop()) {
-          clearTimeout(hoverTimeout);
-          item.classList.add("active");
-        }
-      });
-
-      item.addEventListener("mouseleave", () => {
-        if (isDesktop()) {
-          hoverTimeout = setTimeout(() => {
-            item.classList.remove("active");
-          }, 200); // slight delay to allow cursor to reach dropdown
-        }
-      });
-
-      dropdownMenu.addEventListener("mouseenter", () => {
-        if (isDesktop()) {
-          clearTimeout(hoverTimeout);
-        }
-      });
-
-      dropdownMenu.addEventListener("mouseleave", () => {
-        if (isDesktop()) {
-          item.classList.remove("active");
-        }
-      });
-    }
-  });
-
-  // Click outside to close (mobile only)
-  document.addEventListener("click", function (e) {
-    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-      dropdownTriggers.forEach(item => item.classList.remove("active"));
-      nav.classList.remove("active");
-    }
-  });
-
-  // Optional: handle window resize to remove active states if switching to desktop
-  window.addEventListener("resize", () => {
-    if (isDesktop()) {
-      dropdownTriggers.forEach(item => item.classList.remove("active"));
-      nav.classList.remove("active");
-    }
-  });
-});
-
- 
-/*For Mobile*/
- 
-
-
-
-
-
- /*Third party website*/
-    $(document).ready(function () {
-      $('.external-link').click(function (e) {
-        e.preventDefault();
-        var url = $(this).data('url');
-        $('#proceedBtn').attr('href', url);
-        $('#securityModal').modal('show');
-      });
-    
-      $('#proceedBtn').click(function () {
-        $('#securityModal').modal('hide');
-      });
-    });
- 
     
 
 </script>
-<!-------For cookies-->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  function handleDropdownClick(e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const parent = e.target.closest('.dropdown');
+      const isOpen = parent.classList.contains('open');
+
+      document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+      if (!isOpen) {
+        parent.classList.add('open');
+      }
+    }
+  }
+
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', handleDropdownClick);
+  });
+</script>
 
 
+
+
+
+
+
+<!-------<script>
+    const rotatingImage = document.getElementById('rotatingSvg');
+    let lastScrollTop = window.scrollY;
+    let currentRotation = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      const direction = currentScroll > lastScrollTop ? 'down' : 'up';
+      const delta = Math.abs(currentScroll - lastScrollTop);
+
+      if (direction === 'down') {
+        currentRotation -= delta * 0.1; // rotate left
+      } else {
+        currentRotation += delta * 0.1; // rotate right
+      }
+
+      rotatingImage.style.transform = `rotate(${currentRotation}deg)`;
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>-->
+  <script>
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight - 100 && rect.bottom > 100
+    );
+  }
+
+  function checkVisibility() {
+    const overlaySections = document.querySelectorAll('.overlay-content');
+
+    overlaySections.forEach(section => {
+      const elements = section.querySelectorAll('h2, p, button');
+
+      elements.forEach(el => {
+        if (isInViewport(el)) {
+          el.classList.add('fade-in');
+        } else {
+          el.classList.remove('fade-in');
+        }
+      });
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('load', checkVisibility);
+</script>
 
 </body>
 </html>
