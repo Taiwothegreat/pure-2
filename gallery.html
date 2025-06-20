@@ -25,51 +25,82 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
-    /*Can*/
-     .text-content h3,
-    .text-content > h5 {
-      color: green;
-    }
-
-    .text-content ul li h5 {
-      color: black;
-      font-weight: bold;
-      display: inline;
-      font-size: 20px;
-      margin: 0;
-    }
-
-    .text-content ul li span {
-      font-size: 18px;
-      display: inline;
-    }
-
-    .can-image {
-      display: block;
-      /*margin: 0 auto;
-      max-width: none;*/
-      margin-top: 120px !important;
-     width: 40%;
-     height: auto;
-      animation: smoothBounceBend 8s ease-in-out infinite;
-      margin: auto;
-    }
-
-  /*  @keyframes smoothBounceBend {
-      0%   { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-      25%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(-2deg); }
-      50%  { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-      75%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(2deg); }
-      100% { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-    }*/
-    @keyframes smoothBounceBend {
-  0%   { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-  25%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(-6deg); }
-  50%  { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-  75%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(6deg); }
-  100% { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
+    /****Image Gallery*/
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 120px 0;
 }
-  /******/
+
+.gallery-inner {
+  display: flex;
+  align-items: center;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+  min-width: calc(305px * 16); /* Ensure all images + duplicates fit */
+}
+
+.gallery-image {
+  width: 305px;
+  height: 305px;
+  flex-shrink: 0;
+  margin-left: -12px; /* Reduced so last image isn't cut off */
+  transform: rotate(45deg) translateY(30px); /* Bottom touch */
+  transform-origin: center;
+  border: 4px solid #adff2f;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-image.alt {
+  transform: rotate(45deg) translateY(-30px); /* Top touch */
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(-45deg); /* Keep face upright */
+  border-radius: 24px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+    /*Can*/
+      /*body {
+      margin: 0;
+      padding: 0;
+      transition: background-color 1s ease;
+      font-family: 'Saira Stencil One', sans-serif;
+      background-color: #ffffff;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      gap: 30px;
+      padding: 40px 20px 20px 20px;
+    }*/
+   
+    /*Blog scroll*/
+    /* Scoped styles only for this section */
+
+    /*Blog scroll*/
+    /* Reset some base styles */
 * {
   margin: 0;
   padding: 0;
@@ -1366,7 +1397,7 @@ left:0;
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">LINES</a>
         <div class="dropdown-menu">
-          <a href="#headings">Vitality</a>
+          <a href="finest.html#headings">Vitality</a>
           <a href="#">Gin</a>
           <a href="#">Vodka</a>
            <a href="#">Wine</a>
@@ -1416,40 +1447,66 @@ left:0;
     </ul>
   </div>
 </nav>
-      
+   <div class="container-fluid" style="padding-top:70px;margin-left: 50px;"><div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <h2 style="font-weight:bold;margin:0 0 10px 0;font-size:30px;
+                       font-family: 'Saira Stencil One', sans-serif;">We Are <span style="color: #6ccb35;">
+                       PureFinestDrinks</span></h2><p style="font-size:20px;line-height:1.6;margin:0;font-weight: 700;">
+                        Revitalize your passion, 
+                    elevate every moment, empower your success naturally.</p></div></div></div>
+<div class="gallery-wrapper">
+  <div class="gallery-inner" id="gallery">
 
-<div class="container">
-  <div class="row" style="margin-left: 20px;">
-    <div class="col-sm-6 text-content" style="text-align: justify;">
-      <h1 style="color:#b36f34 ;font-weight: 900;font-family: 'Saira Stencil One', sans-serif;">
-        Apple Ginger Blaze</h1>
-      <p style="font-size: 20px;">
-Introducing our <span style="font-weight: 900;">Apple Ginger Blaze</span>, a vibrant and invigorating flavour blend crafted from the purest, finest organic ingredients. This plant-based delight combines the crisp, refreshing taste of ripe apples with the zesty, warming kick of fresh ginger. Infused with essential vitamins, our Apple Ginger Blaze not only tantalizes your taste buds but also supports your active lifestyle. Perfect for sports enthusiasts and vitality seekers, this natural drink energizes and revitalizes, helping you stay at the top of your game. Experience the harmony
- of nature's best flavours in every sip of our Apple Ginger Blaze, where health meets deliciousness.
-</p>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-1.jpg" alt="Vitamin"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-2.jpg" alt="Vegan"></a></div>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-3.jpg" alt="Spring Water"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-4.jpg" alt="Plant Based"></a></div>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-5.jpg" alt="Organic"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-6.jpg" alt="No Preservatives"></a></div>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-7.jpg" alt="No Artificial Colour"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-8.jpg" alt="Natural Ingredients"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Gallery-pic-10.jpg" alt="Natural Ingredients"></a></div>
 
-      <h3 style="color: #b36f34;font-weight: 900;font-family: 'Saira Stencil One', sans-serif;">Key Features:</h3>
-      <ul style="list-style-type: square;">
-        <li><h5>Organic Ingredients:</h5><span>Made with 100% organic, ensuring the purest and most authentic taste. </span></li>
-        <li><h5>Plant-Based Goodness:</h5><span>  Infused with natural plant extracts and botanicals, providing essential vitamins and minerals to support your active lifestyle.
-</span></li>
-        <li><h5>No Artificial Additives:</h5><span> Free from artificial flavors,
-           colors, and preservatives, offering a clean and wholesome drinking experience.</span></li>
-        <li><h5>Hydration Boost:</h5><span>Enhanced with electrolytes to keep you 
-          hydrated and energized during your workouts or daily activities. </span></li>
-        <li><h5>Refreshing and Revitalizing:</h5><span> Perfectly balanced to quench your 
-          thirst and rejuvenate your senses, making it an ideal companion for any time of day.
-</span></li>
-      </ul>
-      <div><p style="font-size: 20px;margin-top: 30px;">Embrace the natural vitality of PureFinest®
-     Apple Ginger Blaze and elevate your wellness journey with every refreshing sip.</p></div>
-    </div>
+    <!-- Duplicate for seamless loop -->
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-1.jpg" alt="Vitamin"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-2.jpg" alt="Vegan"></a></div>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-3.jpg" alt="Spring Water"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-4.jpg" alt="Plant Based"></a></div>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-5.jpg" alt="Organic"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-6.jpg" alt="No Preservatives"></a></div>
+    <div class="gallery-image"><a href="gallery.html"><img src="./Assets/Finest-Gal-7.jpg" alt="No Artificial Colour"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Finest-Gal-8.jpg" alt="Natural Ingredients"></a></div>
+    <div class="gallery-image alt"><a href="gallery.html"><img src="./Assets/Gallery-pic-10.jpg" alt="Natural Ingredients"></a></div>
 
-    <div class="col-sm-6">
-      <img src="./Assets/flavor-apple-ginger.png" alt="Lemon Lime Breeze Can" class="can-image">
-    </div>
   </div>
 </div>
+
+<!--------scroll visible-->
+
+<script>
+const lines = document.querySelectorAll('.scroll-line');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const el = entry.target;
+
+    if (entry.isIntersecting) {
+      const index = Array.from(lines).indexOf(el);
+      el.style.transitionDelay = `${index * 100}ms`; // stagger each by 100ms
+      el.classList.add('visible');
+    } else {
+      el.style.transitionDelay = '0ms';
+      el.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+lines.forEach(line => {
+  observer.observe(line);
+});
+</script>    
 
 
 

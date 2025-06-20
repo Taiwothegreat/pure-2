@@ -25,51 +25,135 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
-    /*Can*/
-     .text-content h3,
-    .text-content > h5 {
-      color: green;
-    }
-
-    .text-content ul li h5 {
-      color: black;
-      font-weight: bold;
-      display: inline;
-      font-size: 20px;
-      margin: 0;
-    }
-
-    .text-content ul li span {
-      font-size: 18px;
-      display: inline;
-    }
-
-    .can-image {
-      display: block;
-      /*margin: 0 auto;
-      max-width: none;*/
-      margin-top: 120px !important;
-     width: 40%;
-     height: auto;
-      animation: smoothBounceBend 8s ease-in-out infinite;
-      margin: auto;
-    }
-
-  /*  @keyframes smoothBounceBend {
-      0%   { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-      25%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(-2deg); }
-      50%  { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-      75%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(2deg); }
-      100% { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-    }*/
-    @keyframes smoothBounceBend {
-  0%   { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-  25%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(-6deg); }
-  50%  { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-  75%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(6deg); }
-  100% { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
+    .blog-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  max-width: 100%;
 }
-  /******/
+
+.blog-slider-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.blog-slider-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 20px;
+}
+
+.blog-slide {
+  flex: 0 0 calc(25% - 15px); /* 4 per row */
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-prev-btn,
+.blog-next-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.blog-prev-btn:disabled,
+.blog-next-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+    .dynamic-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 20px;
+  will-change: transform;
+}
+
+.dynamic-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+    .dynamic-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.dynamic-track-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.dynamic-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 20px;
+}
+
+.blog-link {
+  flex: 0 0 calc(25% - 15px); /* Show 4 per view */
+  text-decoration: none;
+  color: inherit;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.nav-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+    /*Blog post*/
+     /* Scroll Container */
+ 
+
+    /*Can*/
+      /*body {
+      margin: 0;
+      padding: 0;
+      transition: background-color 1s ease;
+      font-family: 'Saira Stencil One', sans-serif;
+      background-color: #ffffff;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      gap: 30px;
+      padding: 40px 20px 20px 20px;
+    }*/
+   
+    /*Blog scroll*/
+    /* Scoped styles only for this section */
+
+    /*Blog scroll*/
+    /* Reset some base styles */
 * {
   margin: 0;
   padding: 0;
@@ -316,6 +400,7 @@
   opacity: 1 !important;
   transform: translateY(0px) !important;
 }
+/*Thumbnails*/
 
 /* Background image layer */
 
@@ -333,54 +418,6 @@ section, .container-fluid {
   z-index: 1;
 }
 
-h2,
-.thumbnail h2 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.thumbnail p {
-  font-size: 14px;
-  flex-grow: 1;
-}
-
-.meta-row {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #666;
-}
-
-/* Thumbnail card layout */
-.thumbnail {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: none;
-  padding: 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.thumbnail:hover img {
-  transform: scale(1.05);
-}
-
-.thumbnail > div {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 
 /* Row and column flex helpers */
 .row {
@@ -550,83 +587,7 @@ html, body {
     font-weight: bold;
   }
 */
-.rotating-wrapper-behind {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  transform: translate(-50%, -50%);
-  z-index: -2; /* behind -1 image */
-  text-align: center;
-  pointer-events: none;
-}
 
-.rotating-image {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
-  display: block;
-}
-
-.rotating-label {
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  color: white;
-  font-size: 2.1rem;
-  pointer-events: none;
-  text-align: center;
-  white-space: nowrap;
-}
-
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-/* Overlay box */
-.overlay-content {
-/*  background-color: rgba(255, 255, 255, 0.95);*/
-  padding: 30px;
-  border-radius: 5px;
-}
-
-/* Rotating element */
-
-.rotating-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-  text-align: center;
-}
-
-.rotating-image {
-  width: 100%;
-  height: 100%;
-  margin-top: 380px;
-  transition: transform 0.3s ease-in-out;
-  display: block;
-
-}
-
-.rotating-label {
-  position: absolute;
-  top: 450px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  color: white;
-  font-size: 2.1rem;
-  pointer-events: none;
-  text-align: center;
-  white-space: nowrap;
-}
 
 
 .marquee-wrapper {
@@ -1366,7 +1327,7 @@ left:0;
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">LINES</a>
         <div class="dropdown-menu">
-          <a href="#headings">Vitality</a>
+          <a href="finest.html#headings">Vitality</a>
           <a href="#">Gin</a>
           <a href="#">Vodka</a>
            <a href="#">Wine</a>
@@ -1417,39 +1378,127 @@ left:0;
   </div>
 </nav>
       
+<div><h3 style="font-weight: 600; font-family: 'Saira Stencil One',
+ sans-serif;margin-left: 50px;margin-top:100px;font-size: 30px;"> 
+ <span style="color:#6ccb35;">What Did</span> You Miss?</h3></div>
 
-<div class="container">
-  <div class="row" style="margin-left: 20px;">
-    <div class="col-sm-6 text-content" style="text-align: justify;">
-      <h1 style="color:#b36f34 ;font-weight: 900;font-family: 'Saira Stencil One', sans-serif;">
-        Apple Ginger Blaze</h1>
-      <p style="font-size: 20px;">
-Introducing our <span style="font-weight: 900;">Apple Ginger Blaze</span>, a vibrant and invigorating flavour blend crafted from the purest, finest organic ingredients. This plant-based delight combines the crisp, refreshing taste of ripe apples with the zesty, warming kick of fresh ginger. Infused with essential vitamins, our Apple Ginger Blaze not only tantalizes your taste buds but also supports your active lifestyle. Perfect for sports enthusiasts and vitality seekers, this natural drink energizes and revitalizes, helping you stay at the top of your game. Experience the harmony
- of nature's best flavours in every sip of our Apple Ginger Blaze, where health meets deliciousness.
-</p>
 
-      <h3 style="color: #b36f34;font-weight: 900;font-family: 'Saira Stencil One', sans-serif;">Key Features:</h3>
-      <ul style="list-style-type: square;">
-        <li><h5>Organic Ingredients:</h5><span>Made with 100% organic, ensuring the purest and most authentic taste. </span></li>
-        <li><h5>Plant-Based Goodness:</h5><span>  Infused with natural plant extracts and botanicals, providing essential vitamins and minerals to support your active lifestyle.
-</span></li>
-        <li><h5>No Artificial Additives:</h5><span> Free from artificial flavors,
-           colors, and preservatives, offering a clean and wholesome drinking experience.</span></li>
-        <li><h5>Hydration Boost:</h5><span>Enhanced with electrolytes to keep you 
-          hydrated and energized during your workouts or daily activities. </span></li>
-        <li><h5>Refreshing and Revitalizing:</h5><span> Perfectly balanced to quench your 
-          thirst and rejuvenate your senses, making it an ideal companion for any time of day.
-</span></li>
-      </ul>
-      <div><p style="font-size: 20px;margin-top: 30px;">Embrace the natural vitality of PureFinest®
-     Apple Ginger Blaze and elevate your wellness journey with every refreshing sip.</p></div>
+<section id="blog" class="about-2" style="padding-top:50px; overflow:hidden; position:relative;">
+  <div class="dynamic-container">
+
+    <!-- Navigation Buttons -->
+    <button class="nav-btn prev-btn">Prev</button>
+    <div class="dynamic-track-wrapper">
+      <div class="dynamic-track">
+
+        <!-- Blog Items (Unchanged) -->
+        <a href="blog1.html" class="blog-link">
+          <div class="thumbnail">
+            <img src="./Assets/finest-confidence.jpg" alt="Confidence" class="img-responsive">
+            <div>
+              <h2 style="font-family: 'Saira Stencil One', sans-serif;">Confident You: PureFinest®'s Well-Being Boost</h2>
+              <p style="font-size: 17px;">In a world where our well-being is both a journey and destination, PureFinest® Vitamin emerges as a beacon of empowerment, crafting</p>
+              <div class="meta-row">
+                <span class="meta-left" style="font-size: 17px;">HEALTH</span>
+                <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog2.html" class="blog-link">
+          <div class="thumbnail">
+            <img src="./Assets/finest-nature.jpg" alt="Nature" class="img-responsive">
+            <div>
+              <h2 style="font-family: 'Saira Stencil One', sans-serif;">PureFinest®: Aligned with Your Nature</h2>
+              <p style="font-size: 17px;">In our search for holistic health and wellness, the choices we make about the food and drink we consume play a critical role</p>
+              <div class="meta-row">
+                <span class="meta-left" style="font-size: 17px;">HEALTH</span>
+                <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog3.html" class="blog-link">
+          <div class="thumbnail">
+            <img src="./Assets/finest-acerola.jpg" alt="Acerola" class="img-responsive">
+            <div>
+              <h2 style="font-family: 'Saira Stencil One', sans-serif;">What is Acerola and Why is it Good for You?</h2>
+              <p style="font-size: 17px;">Have you ever heard of acerola? This extraordinary fruit, also known as Barbados cherry or West Indian cherry, is not just a</p>
+              <div class="meta-row">
+                <span class="meta-left" style="font-size: 17px;">HEALTH</span>
+                <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog4.html" class="blog-link">
+          <div class="thumbnail">
+            <img src="./Assets/finest-boost.jpg" alt="Boost" class="img-responsive">
+            <div>
+              <h2 style="font-family: 'Saira Stencil One', sans-serif;">PureFinest®'s Daily Boost</h2>
+              <p style="font-size: 17px;">PureFinest® Vitamin boosts your immune system with a rich blend of natural extracts designed for daily energy and balance.</p>
+              <div class="meta-row">
+                <span class="meta-left" style="font-size: 17px;">WELLNESS</span>
+                <span class="meta-right" style="font-size: 17px;">4 mins read</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Add more blog items here if needed -->
+
+      </div>
     </div>
-
-    <div class="col-sm-6">
-      <img src="./Assets/flavor-apple-ginger.png" alt="Lemon Lime Breeze Can" class="can-image">
-    </div>
+    <button class="nav-btn next-btn">Next</button>
   </div>
-</div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.querySelector('.blog-slider-track');
+  const wrapper = document.querySelector('.blog-slider-wrapper');
+  const prevBtn = document.querySelector('.blog-prev-btn');
+  const nextBtn = document.querySelector('.blog-next-btn');
+  const slides = document.querySelectorAll('.blog-slide');
+  const itemsPerPage = 4;
+
+  let currentIndex = 0;
+
+  function updateSlider() {
+    const slideWidth = wrapper.offsetWidth;
+    const totalPages = Math.ceil(slides.length / itemsPerPage);
+    const maxIndex = totalPages - 1;
+
+    const offset = currentIndex * slideWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === maxIndex;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const totalPages = Math.ceil(slides.length / itemsPerPage);
+    if (currentIndex < totalPages - 1) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('resize', updateSlider);
+  updateSlider(); // Initial call
+});
+</script>
 
 
 
