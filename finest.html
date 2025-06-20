@@ -25,6 +25,55 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*Security Warning*/
+    .security-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .security-box {
+    background: #fff;
+    padding: 30px;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  .security-text {
+    margin-bottom: 30px;
+  }
+
+  .button-row {
+    text-align: center;
+  }
+
+  .modal-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+  }
+
+  .modal-btn.cancel {
+    background: #aaa;
+  }
+
+  .modal-btn:hover {
+    opacity: 0.9;
+  }
     /*Blog scroll*/
     /* Scoped styles only for this section */
 #about .dynamic-container {
@@ -638,7 +687,7 @@ html, body {
 .rotating-image {
   width: 100%;
   height: 100%;
-  margin-top: 380px;
+  margin-top: 450px;
   transition: transform 0.3s ease-in-out;
   display: block;
 
@@ -646,7 +695,7 @@ html, body {
 
 .rotating-label {
   position: absolute;
-  top: 450px;
+  top: 520px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
@@ -1416,7 +1465,7 @@ left:0;
 <p style="margin: 0; font-size: 13px; color: #666; display: flex; align-items: center; flex-wrap: wrap;">
   United Kingdom 
   <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag" style="width: 16px; height: auto; margin: 0 5px; vertical-align: middle;">
-  (Football) Soccer
+  (Soccer) Football
 </p>
 
   </div>
@@ -1846,7 +1895,9 @@ left:0;
 
 
 
-<div><h3 style="font-weight: 600; font-family: 'Saira Stencil One', sans-serif;margin-left: 50px;margin-top:100px;font-size: 30px;"> <span style="color:#6ccb35;">What Did</span> You Miss?</h3></div>
+<div><h3 style="font-weight: 600; font-family: 'Saira Stencil One',
+ sans-serif;margin-left: 50px;margin-top:100px;font-size: 30px;"> 
+ <span style="color:#6ccb35;">What Did</span> You Miss?</h3></div>
 
 
 <section id="about" class="about-2" style="padding-top:50px; overflow:hidden; position:relative;">
@@ -1913,6 +1964,50 @@ left:0;
     </div>
   </div>
 </section>
+
+<div id="securityModal" style="display:none;" class="security-modal">
+  <div class="security-box">
+    <p class="security-text">
+      <strong>Security Warning</strong><br><br>
+      You are about to visit a site. Please note that you will be redirected to a third-party website. We are not responsible for the content or privacy practices of the destination site.
+    </p>
+    <div class="button-row">
+      <button id="proceedBtn" class="modal-btn">PROCEED</button>
+      <button id="cancelBtn" class="modal-btn cancel">CANCEL</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let targetHref = '';
+
+    // Delegate click from the document level
+    document.body.addEventListener('click', function (e) {
+      // Only handle if .blog-link is clicked (or inside it)
+      const blogLink = e.target.closest('.blog-link');
+      if (blogLink) {
+        e.preventDefault();
+        targetHref = blogLink.getAttribute('href');
+        document.getElementById('securityModal').style.display = 'flex';
+      }
+    });
+
+    document.getElementById('proceedBtn').addEventListener('click', function () {
+      if (targetHref) {
+        window.location.href = targetHref;
+      }
+    });
+
+    document.getElementById('cancelBtn').addEventListener('click', function () {
+      document.getElementById('securityModal').style.display = 'none';
+      targetHref = '';
+    });
+  });
+</script>
+
+
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -2078,6 +2173,7 @@ document.getElementById("readMoreBtn").addEventListener("click", function() {
       <div class="gallery-image alt"><img src="./Assets/Gallery-pic-10.jpg" alt="Natural Ingredients"></div>
   </div>
 </div>-->
+
 <div class="gallery-wrapper">
   <div class="gallery-inner" id="gallery-track">
 
