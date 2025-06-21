@@ -25,135 +25,132 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
-    .blog-slider-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.blog-slider-wrapper {
-  overflow: hidden;
-  flex: 1;
-}
-
-.blog-slider-track {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-  gap: 20px;
-}
-
-.blog-slide {
-  flex: 0 0 calc(25% - 15px); /* 4 per row */
-  text-decoration: none;
-  color: inherit;
-}
-
-.blog-prev-btn,
-.blog-next-btn {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-.blog-prev-btn:disabled,
-.blog-next-btn:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-    .dynamic-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-  gap: 20px;
-  will-change: transform;
-}
-
-.dynamic-track-wrapper {
-  overflow: hidden;
+    /* Modal Styles */
+.security-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-    .dynamic-container {
+.security-modal-box {
+  background-color: white;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.security-modal-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.security-modal-box p {
+  text-align: justify;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.security-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.security-buttons button {
+  padding: 10px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.security-buttons button:hover {
+  background-color: #555;
+}
+   /* Unique Container */
+.thumbnail-carousel-container {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0 20px;
 }
 
-.dynamic-track-wrapper {
+/* Navigation Buttons */
+.thumbnail-nav-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+.thumbnail-prev-btn { margin-right: 10px; }
+.thumbnail-next-btn { margin-left: 10px; }
+
+/* Carousel Window */
+.thumbnail-carousel-wrapper {
   overflow: hidden;
-  flex: 1;
+  width: 100%;
 }
 
-.dynamic-track {
+/* Track that scrolls */
+.thumbnail-carousel-track {
   display: flex;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
   gap: 20px;
 }
 
-.blog-link {
-  flex: 0 0 calc(25% - 15px); /* Show 4 per view */
+/* Each blog item */
+.thumbnail-item {
+  flex: 0 0 calc(100% / 2.5); /* Show ~2.5 items per view (adjust as needed) */
   text-decoration: none;
   color: inherit;
 }
 
-.thumbnail img {
+.thumbnail-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.thumbnail-box img {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
 }
 
-.nav-btn {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
+.thumbnail-content {
+  padding: 15px;
+}
+
+.thumbnail-content h2 {
+  font-size: 18px;
+  font-family: 'Saira Stencil One', sans-serif;
+  margin-bottom: 10px;
+}
+
+.thumbnail-content p {
   font-size: 16px;
-  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.nav-btn:disabled {
-  opacity: 0.5;
-  cursor: default;
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
 }
-
-    /*Blog post*/
-     /* Scroll Container */
- 
-
-    /*Can*/
-      /*body {
-      margin: 0;
-      padding: 0;
-      transition: background-color 1s ease;
-      font-family: 'Saira Stencil One', sans-serif;
-      background-color: #ffffff;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      min-height: 100vh;
-      gap: 30px;
-      padding: 40px 20px 20px 20px;
-    }*/
-   
-    /*Blog scroll*/
-    /* Scoped styles only for this section */
-
-    /*Blog scroll*/
-    /* Reset some base styles */
 * {
   margin: 0;
   padding: 0;
@@ -1382,126 +1379,156 @@ left:0;
  sans-serif;margin-left: 50px;margin-top:100px;font-size: 30px;"> 
  <span style="color:#6ccb35;">What Did</span> You Miss?</h3></div>
 
-
-<section id="blog" class="about-2" style="padding-top:50px; overflow:hidden; position:relative;">
-  <div class="dynamic-container">
+<section id="blog" class="about-2" style="padding-top: 50px; overflow: hidden; position: relative;">
+  <div class="thumbnail-carousel-container">
 
     <!-- Navigation Buttons -->
-    <button class="nav-btn prev-btn">Prev</button>
-    <div class="dynamic-track-wrapper">
-      <div class="dynamic-track">
+    <button class="thumbnail-nav-btn thumbnail-prev-btn">Prev</button>
 
-        <!-- Blog Items (Unchanged) -->
-        <a href="blog1.html" class="blog-link">
-          <div class="thumbnail">
-            <img src="./Assets/finest-confidence.jpg" alt="Confidence" class="img-responsive">
-            <div>
-              <h2 style="font-family: 'Saira Stencil One', sans-serif;">Confident You: PureFinest®'s Well-Being Boost</h2>
-              <p style="font-size: 17px;">In a world where our well-being is both a journey and destination, PureFinest® Vitamin emerges as a beacon of empowerment, crafting</p>
+    <!-- Carousel Wrapper -->
+    <div class="thumbnail-carousel-wrapper">
+      <div class="thumbnail-carousel-track">
+
+        <!-- Blog Items -->
+        <a href="blog1.html" class="thumbnail-item">
+          <div class="thumbnail-box">
+            <img src="./Assets/finest-confidence.jpg" alt="Confidence">
+            <div class="thumbnail-content">
+              <h2>Confident You: PureFinest®'s Well-Being Boost</h2>
+              <p>In a world where our well-being is both a journey and destination, PureFinest® Vitamin emerges as a beacon...</p>
               <div class="meta-row">
-                <span class="meta-left" style="font-size: 17px;">HEALTH</span>
-                <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+                <span>HEALTH</span>
+                <span>3 mins read</span>
               </div>
             </div>
           </div>
         </a>
 
-        <a href="blog2.html" class="blog-link">
-          <div class="thumbnail">
-            <img src="./Assets/finest-nature.jpg" alt="Nature" class="img-responsive">
-            <div>
-              <h2 style="font-family: 'Saira Stencil One', sans-serif;">PureFinest®: Aligned with Your Nature</h2>
-              <p style="font-size: 17px;">In our search for holistic health and wellness, the choices we make about the food and drink we consume play a critical role</p>
+        <a href="blog2.html" class="thumbnail-item">
+          <div class="thumbnail-box">
+            <img src="./Assets/finest-nature.jpg" alt="Nature">
+            <div class="thumbnail-content">
+              <h2>PureFinest®: Aligned with Your Nature</h2>
+              <p>In our search for holistic health and wellness, the choices we make about the food and drink we consume...</p>
               <div class="meta-row">
-                <span class="meta-left" style="font-size: 17px;">HEALTH</span>
-                <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+                <span>HEALTH</span>
+                <span>3 mins read</span>
               </div>
             </div>
           </div>
         </a>
 
-        <a href="blog3.html" class="blog-link">
-          <div class="thumbnail">
-            <img src="./Assets/finest-acerola.jpg" alt="Acerola" class="img-responsive">
-            <div>
-              <h2 style="font-family: 'Saira Stencil One', sans-serif;">What is Acerola and Why is it Good for You?</h2>
-              <p style="font-size: 17px;">Have you ever heard of acerola? This extraordinary fruit, also known as Barbados cherry or West Indian cherry, is not just a</p>
+        <a href="blog3.html" class="thumbnail-item">
+          <div class="thumbnail-box">
+            <img src="./Assets/finest-acerola.jpg" alt="Acerola">
+            <div class="thumbnail-content">
+              <h2>What is Acerola and Why is it Good for You?</h2>
+              <p>Have you ever heard of acerola? This extraordinary fruit, also known as Barbados cherry or West Indian cherry...</p>
               <div class="meta-row">
-                <span class="meta-left" style="font-size: 17px;">HEALTH</span>
-                <span class="meta-right" style="font-size: 17px;">3 mins read</span>
+                <span>HEALTH</span>
+                <span>3 mins read</span>
               </div>
             </div>
           </div>
         </a>
 
-        <a href="blog4.html" class="blog-link">
-          <div class="thumbnail">
-            <img src="./Assets/finest-boost.jpg" alt="Boost" class="img-responsive">
-            <div>
-              <h2 style="font-family: 'Saira Stencil One', sans-serif;">PureFinest®'s Daily Boost</h2>
-              <p style="font-size: 17px;">PureFinest® Vitamin boosts your immune system with a rich blend of natural extracts designed for daily energy and balance.</p>
+        <a href="blog4.html" class="thumbnail-item">
+          <div class="thumbnail-box">
+            <img src="./Assets/finest-boost.jpg" alt="Boost">
+            <div class="thumbnail-content">
+              <h2>PureFinest®'s Daily Boost</h2>
+              <p>PureFinest® Vitamin boosts your immune system with a rich blend of natural extracts...</p>
               <div class="meta-row">
-                <span class="meta-left" style="font-size: 17px;">WELLNESS</span>
-                <span class="meta-right" style="font-size: 17px;">4 mins read</span>
+                <span>WELLNESS</span>
+                <span>4 mins read</span>
               </div>
             </div>
           </div>
         </a>
 
-        <!-- Add more blog items here if needed -->
+        <!-- Add more blog items as needed -->
 
       </div>
     </div>
-    <button class="nav-btn next-btn">Next</button>
+
+    <button class="thumbnail-nav-btn thumbnail-next-btn">Next</button>
   </div>
 </section>
-
+<!-- Security Modal -->
+<div id="securityWarningModal" class="security-modal-overlay">
+  <div class="security-modal-box">
+    <h2>Security Warning</h2>
+    <p>
+      You are about to visit a site. Please note that you will be redirected to a third-party website. We are not responsible for the content or privacy practices of the destination site.
+    </p>
+    <div class="security-buttons">
+      <button id="proceedBtn">PROCEED</button>
+      <button id="cancelBtn">CANCEL</button>
+    </div>
+  </div>
+</div>
+<!-------Warning-->
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const track = document.querySelector('.blog-slider-track');
-  const wrapper = document.querySelector('.blog-slider-wrapper');
-  const prevBtn = document.querySelector('.blog-prev-btn');
-  const nextBtn = document.querySelector('.blog-next-btn');
-  const slides = document.querySelectorAll('.blog-slide');
-  const itemsPerPage = 4;
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("securityWarningModal");
+  const proceedBtn = document.getElementById("proceedBtn");
+  const cancelBtn = document.getElementById("cancelBtn");
 
-  let currentIndex = 0;
+  let destinationUrl = "";
 
-  function updateSlider() {
-    const slideWidth = wrapper.offsetWidth;
-    const totalPages = Math.ceil(slides.length / itemsPerPage);
-    const maxIndex = totalPages - 1;
-
-    const offset = currentIndex * slideWidth;
-    track.style.transform = `translateX(-${offset}px)`;
-
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === maxIndex;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-    }
+  document.querySelectorAll(".secure-external-link").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // stop immediate navigation
+      destinationUrl = this.getAttribute("data-url");
+      modal.style.display = "flex";
+    });
   });
 
-  nextBtn.addEventListener('click', () => {
-    const totalPages = Math.ceil(slides.length / itemsPerPage);
-    if (currentIndex < totalPages - 1) {
-      currentIndex++;
-      updateSlider();
-    }
+  proceedBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    window.location.href = destinationUrl;
   });
 
-  window.addEventListener('resize', updateSlider);
-  updateSlider(); // Initial call
+  cancelBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    destinationUrl = "";
+  });
 });
 </script>
 
 
 
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".thumbnail-carousel-track");
+  const prevBtn = document.querySelector(".thumbnail-prev-btn");
+  const nextBtn = document.querySelector(".thumbnail-next-btn");
+  const itemWidth = document.querySelector(".thumbnail-item").offsetWidth + 20; // width + gap
+  const wrapper = document.querySelector(".thumbnail-carousel-wrapper");
+
+  let position = 0;
+
+  nextBtn.addEventListener("click", () => {
+    const maxScroll = track.scrollWidth - wrapper.offsetWidth;
+    position = Math.min(position + itemWidth, maxScroll);
+    track.style.transform = `translateX(-${position}px)`;
+  });
+
+  prevBtn.addEventListener("click", () => {
+    position = Math.max(position - itemWidth, 0);
+    track.style.transform = `translateX(-${position}px)`;
+  });
+
+  window.addEventListener("resize", () => {
+    track.style.transform = `translateX(0px)`;
+    position = 0;
+  });
+});
+</script>
 
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
@@ -1514,6 +1541,17 @@ document.addEventListener('DOMContentLoaded', function () {
       <path fill="#254125" d="M0,192 C360,96 1080,288 1440,192 L1440,320 L0,320 Z"></path>
     </svg>
   </div>
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Footer Content -->
 
