@@ -1485,8 +1485,8 @@ left:0;
       </li>
       <li class="dropdown"><a href="#" class="dropdown-toggle">STUDIO</a>
          <div class="dropdown-menu">
-          <a href="#gallery">Gallery</a>
-          <a href="#blog">Blog</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blog</a>
         <!-----  <a href="#">Radio & Podcast</a>-->
         </div>
       </li>
@@ -1720,26 +1720,26 @@ left:0;
 
   <div class="rotating-label" style="position: absolute;top: 100px;left: 95px;">Powered By <br> Nature</div>
 </div>
+
 <script>
-  let lastScrollTo = 0;
-  let rotation = 0;
+  (function () {
+    let lastScrollY = window.scrollY;
+    let rotation = 0;
+    const svg = document.getElementById('scrollRotateSvg');
 
-  window.addEventListener("scroll", function () {
-    const svg = document.getElementById("scrollRotateSvg");
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-      rotation += 2; // Scroll down → rotate right
-    } else {
-      rotation -= 2; // Scroll up → rotate left
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY ? 1 : -1; // 1 = down, -1 = up
+      rotation += direction * 6; // Adjust this for speed
+      svg.style.transform = `rotate(${rotation}deg)`;
+      lastScrollY = currentScrollY;
     }
 
-    svg.style.transform = `rotate(${rotation}deg)`;
-    svg.style.transition = "transform 0.1s linear";
-
-    lastScrollTo = scrollTop <= 0 ? 0 : scrollTop;
-  });
+    window.addEventListener('scroll', handleScroll);
+  })();
 </script>
+
+
 
 <!-- SECTION 3 -->
 <section>
