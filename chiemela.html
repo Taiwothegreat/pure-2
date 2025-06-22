@@ -25,6 +25,44 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*Letter falls for Chiemela*/
+     @keyframes letterFall {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .fall-letter {
+    display: inline-block;
+    animation: letterFall 1s ease forwards;
+  }
+    /*Letter falls one after the other*/
+    @keyframes fall {
+    0% {
+      transform: translateY(-80px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .falling-letter {
+    display: inline-block;
+    animation: fall 0.6s ease forwards;
+  }
+   /*End of Letter falls one after the other*/
+    body{
+       background-image: url('./Assets/night-football-game.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+    }
     /*Can*/
       /*body {
       margin: 0;
@@ -1290,7 +1328,245 @@ left:0;
     </ul>
   </div>
 </nav>
-      
+   
+<div class="container-fluid">
+
+  <!-- Transparent Overlay -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  "></div>
+<!-----<div style="color: #ffffff;text-align: center;margin-top: 80px;font-family: 'Saira Stencil One', sans-serif">
+  <h1>Goalkeeper. Gamechanger. Rising Icon in Women’s Football. </h1></div>-->
+  <div style="color: #ffffff; text-align: center; margin-top: 80px;
+   font-family: 'Saira Stencil One', sans-serif">
+  <h1 id="fallingText" style="display: inline-block;"></h1>
+</div>
+<script>
+  const text = "Goalkeeper. Gamechanger. Rising Icon in Women’s Football.";
+  const h1 = document.getElementById("fallingText");
+
+  text.split("").forEach((char, index) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.className = "falling-letter";
+    span.style.animationDelay = `${index * 0.05}s`;
+    h1.appendChild(span);
+  });
+</script>
+  <!-- Image + Caption (Left-Aligned) -->
+  <div class="girl-caption-wrapper" style="
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    margin-top: 100px;
+  ">
+
+    <!-- Circular Image -->
+    <img src="./Assets/Chimela-ude.jpg" alt="Chiemela Paris Ude"
+         style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; 
+         border: 3px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+
+    <!-- Caption -->
+    <div class="caption" style="color: #fff;">
+     <!-------- <h1 style="margin: 0; font-size: 32px; font-weight: bold;">Chiemela <br> Paris Ude</h1>-->
+      <h1 id="animatedName" style="margin: 0; font-size: 32px; font-weight: bold;"></h1>
+      <p style="margin: 0; font-size: 18px; color: #eee; display: flex; align-items: center; 
+      flex-wrap: wrap; margin-top: 30px;">
+        <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"
+             style="width: 24px; height: auto; margin-right: 8px; vertical-align: middle;">
+        United Kingdom Soccer (Football)
+      </p>
+    </div>
+    
+<script>
+  const nameText = "Chiemela|Paris Ude"; // '|' replaces <br>
+  const h1Target = document.getElementById("animatedName");
+
+  nameText.split("").forEach((char, i) => {
+    if (char === "|") {
+      h1Target.appendChild(document.createElement("br"));
+    } else {
+      const span = document.createElement("span");
+      span.className = "fall-letter";
+      span.textContent = char;
+      span.style.animationDelay = `${i * 0.1}s`; // slower fall
+      h1Target.appendChild(span);
+    }
+  });
+</script>
+  </div>
+
+  <!-- Info Box Below -->
+  <div class="info-grid-box" style="
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  ">
+    <div style="
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px 40px;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 90%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    ">
+      <!-- First Row -->
+      <div style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;font-size:18px">
+        <div>
+          <strong>🎂 Date of Birth</strong><br>September 17, 2008
+        </div>
+        <div>
+          <strong>🔢 Age</strong><br>17
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;font-size:18px">
+        <div>
+          
+          <strong>🏳️ Nationality</strong><br>  <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"
+             style="width: 24px; height: auto; margin-right: 8px; vertical-align: middle;">United Kingdom
+        </div>
+        <div>
+          <strong>⚽ Disciplines</strong><br>Soccer (Football)
+        </div>
+      </div>
+    </div>
+  </div>
+<!------Biography of Chiemela-->
+<!-- Chi-Chi Bio Transparent Overlay -->
+
+<div class="bio-overlay-section" style="
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  margin: 40px auto 0 auto;
+  padding: 30px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+">
+
+  <div id="bioContent" style="
+  width: 90%;
+    max-height: 260px;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+    text-align: justify;
+    font-size: 18px;
+     
+  ">
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Meet Chi-Chi — the next generation of greatness between the posts.</h3>
+    <p>A fearless competitor and an unapologetic creative, Chiemela-Uju “Chi-Chi” Paris Ude is a rising star shaking up the future of women’s football. At just 16, she’s already standing tall in goal for Arsenal FC’s U-16s, while making waves with England’s youth national team—and she’s only getting started.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">From Local Hero to National Prospect</h3>
+    <p>After sharpening her skills at Millwall and West Ham United, Ude’s raw talent and work ethic landed her at the prestigious Arsenal FC Academy. Whether it’s dominating penalty boxes or lifting silverware, she’s been a fixture in success stories across clubs.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">More Than Football</h3>
+    <p>But Chi-Chi isn’t just a shot-stopper—she’s a cultural force in the making. Off the pitch, she expresses herself through fashion, art, and social media, sharing her life with fans in a way that’s real, relatable, and creatively charged.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Dual Heritage, Global Vision</h3>
+    <p>Proudly British-Nigerian, Chiemela is eligible to represent both England and Nigeria’s Super Falcons—a choice she embraces as a reflection of her powerful dual identity.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">The Future Is Fearless</h3>
+    <p>Chi-Chi Ude represents everything that’s next in women’s sport: confident, versatile, and endlessly evolving.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Agility & Footwork Drills</h3>
+    <p>Chi‑Chi thrives in a position where speed, reaction, and control matter most. Her training includes cone ladders, T-drills, lateral shuffles, drop-steps, and reaction saves.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Positioning & Anticipation</h3>
+    <p>She practices rebound drills and live play breakdowns to read ball trajectories and respond confidently to fast-paced play.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Endurance Conditioning</h3>
+    <p>Her fitness program includes interval sprints, short-area shuttle runs, and game simulations to build stamina.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Strength & Power (Age-Appropriate)</h3>
+    <p>Light resistance bands, bodyweight exercises, and core work enhance jump height, reach, and recovery speed.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Mental Resilience & Reflective Learning</h3>
+    <p>After matches, Chi-Chi reviews game footage and writes in a journal to track goals, performance, and growth.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Game-Day Routine</h3>
+    <p>Hydration, stretches, shot-stopping drills, and sprint sets across the six-yard box prepare her mentally and physically.</p>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Weekly Training Template</h3>
+    <table style="width: 100%; border-collapse: collapse; color: #fff; font-size: 16px;">
+      <thead>
+        <tr style="border-bottom: 1px solid #ccc;">
+          <th style="text-align: left; padding: 6px 0;font-family: 'Saira Stencil One', sans-serif;">Day</th>
+          <th style="text-align: left; padding: 6px 0;font-family: 'Saira Stencil One', sans-serif;">Focus Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 5px 0;">Monday</td><td>Agility & Reflex Drills</td></tr>
+        <tr><td style="padding: 5px 0;">Tuesday</td><td>Endurance + Footwork Intensity</td></tr>
+        <tr><td style="padding: 5px 0;">Wednesday</td><td>Light Strength Training + Foot Play</td></tr>
+        <tr><td style="padding: 5px 0;">Thursday</td><td>Shot-Stopping + Position Analysis</td></tr>
+        <tr><td style="padding: 5px 0;">Friday</td><td>Simulated Game Scenarios + Mental Prep</td></tr>
+        <tr><td style="padding: 5px 0;">Saturday</td><td>Match or Training Game + Journal</td></tr>
+        <tr><td style="padding: 5px 0;">Sunday</td><td>Active Rest / Stretching / Recovery</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style=" font-family: 'Saira Stencil One', sans-serif;">Why This Blueprint Works for Chi‑Chi</h3>
+    <ul style="padding-left: 20px; list-style-type: disc;">
+      <li><strong>Precision Movement:</strong> Enhances her goal coverage and sharpens fast-twitch muscle response.</li>
+      <li><strong>Focused Endurance:</strong> Builds long-lasting energy with intensity-specific drills.</li>
+      <li><strong>Mind & Body Alignment:</strong> Integrates mental reflection with physical readiness.</li>
+      <li><strong>Match Preparedness:</strong> Develops confidence, control, and on-field leadership.</li>
+    </ul>
+  </div>
+
+  <div style="text-align: center; margin-top: 15px;">
+    <button onclick="toggleBio()" style="
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    ">Read More</button>
+  </div>
+</div>
+
+<script>
+  function toggleBio() {
+    const bio = document.getElementById('bioContent');
+    const btn = event.target;
+    if (bio.style.maxHeight && bio.style.maxHeight !== 'none') {
+      bio.style.maxHeight = 'none';
+      btn.textContent = 'Read Less';
+    } else {
+      bio.style.maxHeight = '260px';
+      btn.textContent = 'Read More';
+    }
+  }
+</script>
+
+
+</div>
+
+
+
+
+
 
 
 
