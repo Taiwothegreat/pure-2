@@ -25,6 +25,19 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    .falling-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fall 0.6s forwards;
+  }
+
+  @keyframes fall {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
     /*Letter falls for Chiemela*/
      @keyframes letterFall {
     0% {
@@ -1298,7 +1311,8 @@ left:0;
        style="width: 120px; height: 120px; object-fit: cover;
         border-radius: 50%; border: 3px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <div class="caption" style="margin-top: 10px;">
-    <h6 style="margin: 5px 0; font-size: 16px; font-weight: 600;">Chiemela Paris Ude</h6>
+    <h6 style="margin: 5px 0; font-size: 16px; font-weight: 600;word-spacing: 10px;">
+      Chiemela  <span style="word-spacing: 20px;"> Paris </span> <span style="word-spacing: 20px;">Ude</span></h6>
  <!------   <p style="margin: 0; font-size: 13px; color: #666;">United Kingdom Soccer</p>-->
  
 <p style="margin: 0; font-size: 13px; color: #666; display: flex; align-items: center; flex-wrap: wrap;">
@@ -1348,22 +1362,37 @@ left:0;
 <!-----<div style="color: #ffffff;text-align: center;margin-top: 80px;font-family: 'Saira Stencil One',
  sans-serif">
   <h1>Goalkeeper. Gamechanger. Rising Icon in Women’s Football. </h1></div>-->
-  <div style="color: #adff2f; text-align: center; margin-top: 80px;
-   font-family: 'Saira Stencil One', sans-serif">
-  <h1 id="fallingText" style="display: inline-block;"></h1>
+ <div style="color: #adff2f; text-align: center; margin-top: 80px; font-family: 'Saira Stencil One', sans-serif">
+  <h1 id="fallingText" style="display: inline-block; line-height: 1.6;"></h1>
 </div>
-<script>
-  const text = "Goalkeeper. Gamechanger. Rising Icon in Women’s Football.";
-  const h1 = document.getElementById("fallingText");
 
-  text.split("").forEach((char, index) => {
-    const span = document.createElement("span");
-    span.textContent = char;
-    span.className = "falling-letter";
-    span.style.animationDelay = `${index * 0.05}s`;
-    h1.appendChild(span);
+<script>
+  const lines = [
+    "ARSENAL OUTSTANDING ACADEMY GAMECHANGER GOALKEEPER.",
+    "RISING ICON IN WOMEN SOCCER"
+  ];
+
+  const h1 = document.getElementById("fallingText");
+  let delay = 0;
+
+  lines.forEach((line, lineIndex) => {
+    const words = line.split(" ");
+    words.forEach((word, index) => {
+      const span = document.createElement("span");
+      span.textContent = word;
+      span.className = "falling-word";
+      span.style.animationDelay = `${delay * 0.2}s`;
+      span.style.marginRight = "25px"; // 👈 Extra space between words
+      h1.appendChild(span);
+      delay++;
+    });
+
+    if (lineIndex < lines.length - 1) {
+      h1.appendChild(document.createElement("br"));
+    }
   });
 </script>
+
   <!-- Image + Caption (Left-Aligned) -->
   <div class="girl-caption-wrapper" style="
     position: relative;
@@ -1393,7 +1422,7 @@ left:0;
     </div>
     
 <script>
-  const nameText = "Chiemela|Paris Ude"; // '|' replaces <br>
+  const nameText = "Chiemela|Paris\u00A0\u00A0Ude"; // 3 non-breaking spaces
   const h1Target = document.getElementById("animatedName");
 
   nameText.split("").forEach((char, i) => {
@@ -1403,11 +1432,12 @@ left:0;
       const span = document.createElement("span");
       span.className = "fall-letter";
       span.textContent = char;
-      span.style.animationDelay = `${i * 0.1}s`; // slower fall
+      span.style.animationDelay = `${i * 0.1}s`;
       h1Target.appendChild(span);
     }
   });
 </script>
+
   </div>
 
   <!-- Info Box Below -->
@@ -1433,7 +1463,7 @@ left:0;
       <!-- First Row -->
       <div style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;font-size:18px">
         <div>
-          <strong>🎂 Date of Birth</strong><br>September 17, 2008
+          <strong>🎂 Date of Birth</strong><br>September 03, 2008
         </div>
         <div>
           <strong>🔢 Age</strong><br>17
@@ -1445,7 +1475,7 @@ left:0;
         <div>
           
           <strong>🏳️ Nationality</strong><br>  <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"
-             style="width: 24px; height: auto; margin-right: 8px; vertical-align: middle;">United Kingdom
+             style="width: 24px; height: auto; margin-right: 8px; vertical-align: middle;">British-Nigerian
         </div>
         <div>
           <strong>⚽ Disciplines</strong><br>Soccer (Football)
