@@ -25,7 +25,24 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
-    p,table,td,ul{
+    /*fall letters*/
+      .fall-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: fall 0.5s forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+     
+    /*fall the letters*/
+   
+     p,table,td,ul{
       font-size: 18px;
     /*   font-family: 'Saira Stencil One', sans-serif;*/
     }
@@ -33,244 +50,17 @@
       font-size: 28px;
        font-family: 'Saira Stencil One', sans-serif;
     }
-    /*end blog slider*/
-      .continuous-slider-container {
-  width: 100%;
-/*  background: #000;*/
-  overflow: hidden;
-  padding: 20px 0;
-}
-
-.continuous-slider-track {
-  display: flex;
-  width: calc(200%);
-  animation: scroll-left 60s linear infinite;
-}
-
-.slide-item {
-  flex: 0 0 16.666%;
-  box-sizing: border-box;
-  padding: 15px;
-}
-
-.thumbnail {
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 500px; /* Unified full box height for all */
-}
-
-.img-container {
-  flex-shrink: 0;
-  width: 100%;
-  height: 300px; /* Same for all */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-}
-
-.img-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Maintain full original image */
-}
-
-.logo-overlay {
-  width: 60px;
-  margin: 10px;
-}
-
-.caption {
-  padding: 15px;
-  flex-grow: 1;
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Responsive on mobile */
-@media (max-width: 768px) {
-  .slide-item {
-    flex: 0 0 50%;
-  }
-  .thumbnail {
-    height: 420px;
-  }
-  .img-container {
-    height: 250px;
-  }
-}
-  /******FOR BALANCE THUMBNAILS******/
-.continuous-slider-container .thumbnail {
-  width: 100%;
-  height: 350px; /* Adjust height as suitable */
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.continuous-slider-container .img-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.continuous-slider-container .img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.continuous-slider-container .logo-overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 60px;
-  height: auto;
-  z-index: 2;
-}
-
-.continuous-slider-container .caption {
-  position: absolute;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.85);
-  width: 100%;
-  padding: 15px;
-  box-sizing: border-box;
-  font-family: 'Saira Stencil One', sans-serif;
-}
-
-.continuous-slider-container .meta-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-  /*************/
-.news-slider-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
-  background: #fff;
-}
-
-.news-slider-track {
-  display: flex;
-  width: calc(300%); /* 3 slides */
-  animation: scroll 15s linear infinite;
-}
-
-.news-slide {
-  flex: 0 0 33.3333%;
-  box-sizing: border-box;
-  padding: 15px;
-}
-
-.news-slide .thumbnail {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.news-slide .thumbnail:hover {
-  transform: scale(1.03);
-}
-
-/* Smooth infinite scroll */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  33.333% { transform: translateX(-100%); }
-  66.666% { transform: translateX(-200%); }
-  100% { transform: translateX(-300%); }
-}
-
-/* Pause animation when hover */
-.news-slider-container:hover .news-slider-track {
-  animation-play-state: paused;
-}
-
-/* Fully responsive */
-@media (max-width: 768px) {
-  .news-slide { flex: 0 0 100%; }
-  .news-slider-track { width: 300%; }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    33.333% { transform: translateX(-100%); }
-    66.666% { transform: translateX(-200%); }
-    100% { transform: translateX(-300%); }
-  }
-}
-    /*End of blog*/
-     .falling-word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fall 0.6s forwards;
-  }
-
-  @keyframes fall {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-     /*Letter falls for Chiemela*/
-     @keyframes letterFall {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .fall-letter {
-    display: inline-block;
-    animation: letterFall 1s ease forwards;
-  }
-    /*Letter falls one after the other*/
-    @keyframes fall {
-    0% {
-      transform: translateY(-80px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  .falling-letter {
-    display: inline-block;
-    animation: fall 0.6s ease forwards;
-  }
     body{
-      
-      /*End of Fall*/
-  position: relative;
-  background-image: url('./Assets/night-football-game.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 40px 20px;
-  width: 100%;
-  height: auto;
-  margin-bottom:-55px;
-  overflow: hidden;
+        background-image: url("Assets/night-football-game.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    h2{
+        font-size: 38px !important;
+       font-family: 'Saira Stencil One', sans-serif;
+       text-align: center;
+       color: #ffffff;
     }
     /*Can*/
       /*body {
@@ -1537,142 +1327,35 @@ left:0;
     </ul>
   </div>
 </nav>
-   
-<div class="container-fluid">
-<div style="color: #ffffff; text-align: center; margin-top: 80px; font-family: 'Saira Stencil One',
- sans-serif">
-  <h1 id="fallingText" style="display: inline-block; line-height: 1.6;"></h1>
+<div style="text-align: center;">
+  <h2 id="fallingHeading" style="text-transform: uppercase; 
+  display: inline-block;    font-family: 'Saira Stencil One', sans-serif;
+  word-spacing: 1.5rem;"></h2>
 </div>
-<script>
-  const lines = [
-    "ARSENAL OUTSTANDING ACADEMY GAMECHANGER GOALKEEPER",
-    "RISING ICON IN WOMEN SOCCER"
-  ];
 
-  const h1 = document.getElementById("fallingText");
-  let delay = 0;
-
-  lines.forEach((line, lineIndex) => {
-    const words = line.split(" ");
-    words.forEach((word, index) => {
-      const span = document.createElement("span");
-      span.textContent = word;
-      span.className = "falling-word";
-      span.style.animationDelay = `${delay * 0.2}s`;
-      span.style.marginRight = "10px"; // 👈 Reduced space for natural sentence look
-      h1.appendChild(span);
-      delay++;
-    });
-
-    if (lineIndex < lines.length - 1) {
-      h1.appendChild(document.createElement("br"));
-    }
-  });
-</script>
-
-  <!-- Transparent Overlay -->
-  <div style="
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-  /*  background-color: rgba(0, 0, 0, 0.5);*/
-    z-index: 1;
-  "></div>
-
-  <!-- Image + Caption (Left-Aligned) -->
-<div class="girl-caption-wrapper" style="
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 100%;
-    margin-top: 100px;
-  ">
-
-    <!-- Circular Image -->
-    <img src="./Assets/Chimela-ude.jpg" alt="Chiemela Paris Ude"
-         style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; 
-         border: 3px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
-
-    <!-- Caption -->
-    <div class="caption" style="color: #fff;">
-     <!-------- <h1 style="margin: 0; font-size: 32px; font-weight: bold;">Chiemela <br> Paris Ude</h1>-->
-      <h1 id="animatedName" style="margin: 0; font-size: 32px; font-weight: bold;"></h1>
-      <p style="margin: 0; font-size: 18px; color: #eee; display: flex; align-items: center; 
-      flex-wrap: wrap; margin-top: 30px;">
-        <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"
-             style="width: 24px; height: auto; margin-right: 8px; vertical-align: middle;">
-        United Kingdom Soccer (Football)
-      </p>
-    </div>
-    
-<script>
-  const nameText = "Chiemela|Paris\u00A0Ude"; // 3 non-breaking spaces
-  const h1Target = document.getElementById("animatedName");
-
-  nameText.split("").forEach((char, i) => {
-    if (char === "|") {
-      h1Target.appendChild(document.createElement("br"));
-    } else {
-      const span = document.createElement("span");
-      span.className = "fall-letter";
-      span.textContent = char;
-      span.style.animationDelay = `${i * 0.1}s`;
-      h1Target.appendChild(span);
-    }
-  });
-</script>
-
-  </div>
-
-
-  <!-- Info Box Below -->
-  <div class="info-grid-box" style="
-    position: relative;
-    z-index: 2;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-  ">
-    <div style="
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px 40px;
-      border-radius: 10px;
-      color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 90%;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-    ">
-      <!-- First Row -->
-      <div style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;font-size:18px">
-        <div>
-          <strong>🎂 Date of Birth</strong><br>September 03, 2008
-        </div>
-        <div>
-          <strong>🔢 Age</strong><br>17
-        </div>
-      </div>
-
-      <!-- Second Row -->
-      <div style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;font-size:18px">
-        <div>
-          
-          <strong>🏳️ Nationality</strong><br>  <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag"
-             style="width: 24px; height: auto; margin-right: 8px; vertical-align: middle;">United Kingdom
-        </div>
-        <div>
-          <strong>⚽ Disciplines</strong><br>Soccer (Football)
-        </div>
-      </div>
-    </div>
-  </div>
+<!-------   <div><h2 style="text-transform: uppercase;">Chi‑Chi Training & Performance Blueprint</h2></div>-->
 <!------Biography of Chiemela-->
 <!-- Chi-Chi Bio Transparent Overlay -->
+<script>
+  const text = "Chi‑Chi Training & Performance Blueprint";
+  const target = document.getElementById("fallingHeading");
+
+  text.split("").forEach((char, i) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.className = "fall-letter";
+    span.style.animationDelay = `${i * 0.05}s`;
+
+    // ✅ Add margin only after spaces (i.e., between words)
+    if (char === " ") {
+      span.style.width = "1rem"; // visually space words
+      span.style.display = "inline-block";
+    }
+
+    target.appendChild(span);
+  });
+</script>
+
 
 <div class="bio-overlay-section" style="
   position: relative;
@@ -1688,53 +1371,72 @@ left:0;
 ">
 
   <div id="bioContent" style="
-    max-height: 200px;
+    max-height: 900px;
     overflow: hidden;
     transition: max-height 0.6s ease;
   ">
-    <h3>Meet Chi-Chi,the next generation of greatness between the posts.</h3>
-    <p>A fearless competitor and an unapologetic creative, Chiemela-Uju 
-      “Chi-Chi” Paris Ude is a rising star shaking up the future of women’s football.
-       At just 16, she’s already standing tall in goal for Arsenal FC’s U-16s,
-        while making waves with England’s youth national team,and she’s only getting started.</p>
-      <p>Chi-Chi’s journey began with garden kickabouts alongside her older brothers, but the moment she stepped in as an emergency keeper, everything changed. What started as a favor to her team became her life’s calling. Her transformation
-         from midfielder to elite goalkeeper speaks to the adaptability, guts, and fire that define her style.</p>
-    <h3>From Local Hero to National Prospect</h3>
-    <p>After sharpening her skills at Millwall and West Ham United,
-       Ude’s raw talent and work ethic landed her at the prestigious
-        Arsenal FC Academy. Whether it’s dominating penalty boxes 
-        or lifting silverware, she’s been a fixture in success stories across clubs.</p>
-      <p>She’s a multi-time JPL Warriors Cup winner,first lifting the trophy with Millwall, then 
-        continuing her championship streak at Arsenal, where she helped seal the club’s latest 
-        title run in 2023. 
-        Her consistency at the highest youth levels has
-         earned her recognition as a future senior international.</p>
-         <p>She’s worn the England badge with pride,starting in a commanding 7-0 win over the Faroe 
-          Islands at UEFA U17 qualifiers, and shining in the Bob Docherty Tournament against the 
-          Republic of Ireland. Every match adds another layer to a career built on hustle, instinct,
-           and ambition.</p>
-    <h3>More Than Football</h3>
-    <p>But Chi-Chi isn’t just a shot-stopper,she’s a cultural force in the making. 
-      Off the pitch, she expresses herself through fashion, art,
-       and social media, sharing her life with fans in a way
-        that’s real, relatable, and creatively charged. A lover of 
-        rugby, netball, and javelin, she thrives in all arenas,mental, physical, and aesthetic.</p>
-        <p>With accolades like Essex County Sports Award, Jack Petchey Foundation 
-          Achievement Award, and School Sportswoman of the Year, she’s proof
-           that greatness has no single lane.</p>
 
-    <h3>Dual Heritage, Global Vision</h3>
-    <p>Proudly British-Nigerian, Chiemela is eligible to represent both England
-       and Nigeria’s Super Falcons,a choice she embraces as a reflection of her powerful dual identity.Her ambitions are global, and her goals are bigger than any net.</p>
-
-    <h3>The Future Is Fearless</h3>
-    <p>Chi-Chi Ude represents everything that’s next in women’s sport:
-       confident, versatile, and endlessly evolving.
-      Whether she’s making diving saves at Arsenal, repping her country 
-      in major tournaments, or inspiring young girls to dream bigger, one thing is clear:</p>
-        <p>She’s not just playing the game. She’s changing it.</p>
         <!----Chiemela “Chi‑Chi” Ude – Training & Performance Blueprint---->
-   
+    <h3>Agility & Footwork Drills</h3>
+    <p>Chi‑Chi thrives in a position where speed, reaction,
+       and control matter most. Her training includes cone ladders,
+        T-drills, lateral shuffles, drop-steps, and reaction saves.
+        These sharpen her ability to cover angles quickly and shift
+         direction with precision inside the box.</p>
+
+    <h3>Positioning & Anticipation</h3>
+    <p>To command the goal area, Chi‑Chi practices with rebound drills and 
+      live play breakdowns. Her focus is on reading ball trajectories 
+      early and positioning herself to respond confidently to fast-paced play, crosses, and set pieces.</p>
+
+    <h3>Endurance Conditioning</h3>
+    <p>Being a goalkeeper demands explosive energy and recovery speed. Chi‑Chi’s 
+      fitness program includes interval sprints, short-area shuttle runs, 
+      and high-intensity game simulations to build stamina while maintaining focus under fatigue.</p>
+
+    <h3>Strength & Power (Age-Appropriate)</h3>
+    <p>Chi‑Chi incorporates light resistance band training, bodyweight strength
+       routines (like squats, planks, and lunges), and core activation exercises. These are designed
+       to enhance her jump height, diving reach, 
+       and recovery speed,essential tools for an elite goalkeeper.</p>
+
+    <h3>Mental Resilience & Reflective Learning</h3>
+    <p>After matches or training, Chi‑Chi reviews her game footage to identify moments of
+       excellence and opportunities for improvement. She keeps a performance journal,
+       noting “save of the day,” mental goals, and areas to fine-tune,building confidence through clarity.</p>
+
+    <h3>Game-Day Routine</h3>
+    <p>Chi‑Chi begins her matchday with hydration, light dynamic stretches, and mental 
+      visualization of key moments. Her warm-up includes high-tempo shot stopping,
+       reaction drills, and sprint sets across the six-yard box. She listens to her pre-game playlist, 
+      suits up in her favorite kit, and steps onto the pitch with intention: command, communicate, and compete.</p>
+
+    <h3>Weekly Training Template</h3>
+    <table style="width: 100%; border-collapse: collapse; color: #fff; font-size: 16px;">
+      <thead>
+        <tr style="border-bottom: 1px solid #ccc;">
+          <th style="text-align: left; padding: 6px 0;">Day</th>
+          <th style="text-align: left; padding: 6px 0;">Focus Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 5px 0;">Monday</td><td>Agility & Reflex Drills</td></tr>
+        <tr><td style="padding: 5px 0;">Tuesday</td><td>Endurance + Footwork Intensity</td></tr>
+        <tr><td style="padding: 5px 0;">Wednesday</td><td>Light Strength Training + Foot Play</td></tr>
+        <tr><td style="padding: 5px 0;">Thursday</td><td>Shot-Stopping + Position Analysis</td></tr>
+        <tr><td style="padding: 5px 0;">Friday</td><td>Simulated Game Scenarios + Mental Prep</td></tr>
+        <tr><td style="padding: 5px 0;">Saturday</td><td>Match or Training Game + Journal</td></tr>
+        <tr><td style="padding: 5px 0;">Sunday</td><td>Active Rest / Stretching / Recovery</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Why This Blueprint Works for Chi‑Chi</h3>
+    <ul style="padding-left: 20px; list-style-type: disc;">
+      <li><strong>Precision Movement:</strong> Enhances her goal coverage and sharpens fast-twitch muscle response.</li>
+      <li><strong>Focused Endurance:</strong> Builds long-lasting energy with intensity-specific drills.</li>
+      <li><strong>Mind & Body Alignment:</strong> Integrates mental reflection with physical readiness.</li>
+      <li><strong>Match Preparedness:</strong> Develops confidence, control, and on-field leadership.</li>
+    </ul>
   </div>
 
   <div style="text-align: center; margin-top: 15px;">
@@ -1758,380 +1460,11 @@ left:0;
       bio.style.maxHeight = 'none';
       btn.textContent = 'Read Less';
     } else {
-      bio.style.maxHeight = '200px';
+      bio.style.maxHeight = '900px';
       btn.textContent = 'Read More';
     }
   }
 </script>
-
-
-</div>
-<div style="font-weight: 900;margin-left:70px; font-family: 'Saira Stencil One', sans-serif;font-size: 
-20px;color:#ffffff"><h1>More Articles</h1></div>
-<div class="continuous-slider-container">
-  <div class="continuous-slider-track">
-
-    <!-- ORIGINAL SLIDES -->
-      <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="more-article.html">
-          <div class="img-container">
-            <img src="./Assets/Finest-Gal-1.jpg" alt="Nature">
-          </div>
-       <!------   <img src="/Assets/newsLogo 4.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; 
-            font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">
-          Chi‑Chi Training & Performance Blueprint </p>
-            <div class="meta-row">
-           <!-------   <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Aug 29th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://www.vanguardngr.com/2024/10/meet-16-yr-old-chiemela-uju-paris-ude-a-promising-arsenal-goalkeeper-eligible-for-nigeria/amp/">
-          <div class="img-container">
-            <img src="./Assets/Chiemela-vanguard.png" alt="Nature">
-          </div>
-       <!-----   <img src="/Assets/newsLogo 4.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">Meet 16-yr-old Chiemela-Uju Paris Ude, a promising Arsenal
-               goalkeeper eligible for Nigeria</p>
-            <div class="meta-row">
-        <!-------      <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Aug 29th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://www.africasport.net/article/football/chiemela-ude-arsenal-goalkeeper-provisionally-tied-to-england-nigeria">
-          <div class="img-container">
-            <img src="/Assets/Chiemela-AllNigeria.png" alt="Fjords">
-          </div>
-       <!------   <img src="/Assets/newsLogo 5.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">Chiemela Ude: Arsenal goalkeeper provisionally tied to England, Nigeria</p>
-            <div class="meta-row">
-         <!------     <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 11th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://thenationonlineng.net/chiemela-uju-udes-promising-future-for-nigeria/ ">
-          <div class="img-container">
-            <img src="/Assets/Chiemela-theNation.jpg" alt="Fjords" class="img-3">
-          </div>
-      <!-----    <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; font-family: 'Saira Stencil One', sans-serif;
-            font-size: 20px;">Chiemela-Uju Ude’s promising future for Nigeria</p>
-            <div class="meta-row">
-         <!-----     <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
- <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://shekicks.net/young-lionesses-squad-named-for-uefa-womens-u-17-qualifiers/">
-          <div class="img-container">
-            <img src="/Assets/Chimela-shekicks.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family:
-             'Saira Stencil One', sans-serif;">Young Lionesses squad named for UEFA Women’s U-17 qualifiers</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-     <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://schoolsfootball.org/category/international-football/page/6/">
-          <div class="img-container">
-            <img src="./Assets/Chiemela-schoolfootball.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family:
-             'Saira Stencil One', sans-serif;">Match Report: England v Scotland Bob Docherty Tournament</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-      <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://cartophilic-info-exch.blogspot.com/2023/08/panini-england-u15-schoolgirls-2022-23.html ">
-          <div class="img-container">
-            <img src="./Assets/Chiemela-cartophilic.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family:
-             'Saira Stencil One', sans-serif;">Football Cartophilic Info Exchange</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- DUPLICATE THE SAME SLIDES FOR LOOPING EFFECT -->
-        <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="more-article.html">
-          <div class="img-container">
-            <img src="./Assets/Finest-Gal-1.jpg" alt="Nature">
-          </div>
-       <!------   <img src="/Assets/newsLogo 4.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; 
-            font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">
-          Chi‑Chi Training & Performance Blueprint </p>
-            <div class="meta-row">
-           <!-------   <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Aug 29th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://www.vanguardngr.com/2024/10/meet-16-yr-old-chiemela-uju-paris-ude-a-promising-arsenal-goalkeeper-eligible-for-nigeria/amp/">
-          <div class="img-container">
-            <img src="./Assets/Chiemela-vanguard.png" alt="Nature">
-          </div>
-       <!------   <img src="/Assets/newsLogo 4.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">Meet 16-yr-old Chiemela-Uju Paris Ude, a promising Arsenal goalkeeper eligible for Nigeria</p>
-            <div class="meta-row">
-           <!-------   <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Aug 29th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://www.africasport.net/article/football/chiemela-ude-arsenal-goalkeeper-provisionally-tied-to-england-nigeria">
-          <div class="img-container">
-            <img src="/Assets/Chiemela-AllNigeria.png" alt="Fjords">
-          </div>
-      <!------    <img src="/Assets/newsLogo 5.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0; font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">Chiemela Ude: Arsenal goalkeeper provisionally tied to England, Nigeria</p>
-            <div class="meta-row">
-            <!------  <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 11th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://thenationonlineng.net/chiemela-uju-udes-promising-future-for-nigeria/">
-          <div class="img-container">
-            <img src="/Assets/Chiemela-theNation.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family: 'Saira Stencil One', sans-serif;">PureFinest® Set to Launch Organic Vitamin, Sports, and Vitality Beverages Across Africa</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
- <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://shekicks.net/young-lionesses-squad-named-for-uefa-womens-u-17-qualifiers/">
-          <div class="img-container">
-            <img src="/Assets/Chimela-shekicks.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family:
-             'Saira Stencil One', sans-serif;">Young Lionesses squad named for UEFA Women’s U-17 qualifiers</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-     <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://schoolsfootball.org/category/international-football/page/6/">
-          <div class="img-container">
-            <img src="./Assets/Chiemela-schoolfootball.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family:
-             'Saira Stencil One', sans-serif;">Match Report: England v Scotland Bob Docherty Tournament</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-       <div class="slide-item">
-      <div class="thumbnail">
-        <a href="#" class="external-link" data-url="https://cartophilic-info-exch.blogspot.com/2023/08/panini-england-u15-schoolgirls-2022-23.html ">
-          <div class="img-container">
-            <img src="./Assets/Chiemela-cartophilic.jpg" alt="Fjords" class="img-3">
-          </div>
-       <!-------   <img src="/Assets/newsLogo 1.png" alt="Logo" class="logo-overlay">-->
-          <div class="caption">
-            <p style="font-weight: 900;margin-left:0;margin-bottom: 20px;font-size: 20px; font-family:
-             'Saira Stencil One', sans-serif;">Football Cartophilic Info Exchange</p>
-            <div class="meta-row">
-      <!-------        <span class="meta-left">HEALTH</span>
-              <span class="meta-right">Sept 27th, 2024</span>-->
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    
-  </div>
-  
-</div>
-<!-- Security Warning Modal -->
-
-
-
-
-
-
-
-
-<!-----
-<script>
-// Pause animation on hover
-document.querySelectorAll('.slide-item').forEach((item) => {
-  item.addEventListener('mouseenter', () => {
-    document.querySelector('.continuous-slider-track').style.animationPlayState = 'paused';
-  });
-  item.addEventListener('mouseleave', () => {
-    document.querySelector('.continuous-slider-track').style.animationPlayState = 'running';
-  });
-});
-
-// Redirect to external URL on click
-document.querySelectorAll('.external-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default anchor behavior
-    const externalUrl = this.getAttribute('data-url');
-    if (externalUrl) {
-      window.open(externalUrl, '_blank'); // open in new tab
-    }
-  });
-});
-</script>
-
-
--->
-<!-- Isolated Security Warning Modal -->
-<div id="securityModal" style="display:none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center;">
-  <div style="background: #fff; padding: 20px 25px; border-radius: 8px; max-width: 360px; width: 90%; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.2); font-family: sans-serif;">
-    <h3 style="margin-top: 0; color: #c00; font-size: 18px;">Security Warning</h3>
-    <p style="font-size: 14px; color: #333;">
-      You are about to visit a site. Please note that you will be redirected to a third-party website. We are not responsible for the content or privacy practices of the destination site.
-    </p>
-    <div style="margin-top: 20px;">
-      <button id="proceedBtn" style="background: #c00; color: white; padding: 8px 14px; border: none; border-radius: 4px; margin-right: 8px;">PROCEED</button>
-      <button id="cancelBtn" style="background: #666; color: white; padding: 8px 14px; border: none; border-radius: 4px;">CANCEL</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Pause slider on hover
-    document.querySelectorAll('.slide-item').forEach((item) => {
-      item.addEventListener('mouseenter', () => {
-        document.querySelector('.continuous-slider-track').style.animationPlayState = 'paused';
-      });
-      item.addEventListener('mouseleave', () => {
-        document.querySelector('.continuous-slider-track').style.animationPlayState = 'running';
-      });
-    });
-
-    // Security modal elements
-    const links = document.querySelectorAll(".external-link");
-    const modal = document.getElementById("securityModal");
-    const proceedBtn = document.getElementById("proceedBtn");
-    const cancelBtn = document.getElementById("cancelBtn");
-    let redirectUrl = null;
-
-    links.forEach(link => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault(); // Stop <a> default
-
-        const url = link.getAttribute("data-url");
-        if (!url) return;
-
-        if (url.startsWith("http")) {
-          // External link — show security warning
-          redirectUrl = url;
-          modal.style.display = "flex";
-        } else {
-          // Internal link — go directly
-          window.location.href = url;
-        }
-      });
-    });
-
-    proceedBtn.addEventListener("click", function () {
-      if (redirectUrl) {
-        window.open(redirectUrl, "_blank");
-        modal.style.display = "none";
-        redirectUrl = null;
-      }
-    });
-
-    cancelBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-      redirectUrl = null;
-    });
-  });
-</script>
-
 
 
 
