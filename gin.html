@@ -25,51 +25,53 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*rotate coming soon*/
+     @keyframes rotateScaleIn {
+    0% {
+      transform: scale(0.2) rotate(0deg);
+      opacity: 0;
+      z-index: 0;
+    }
+    50% {
+      opacity: 1;
+      z-index: 999;
+    }
+    100% {
+      transform: scale(1) rotate(1080deg);
+      z-index: 999;
+    }
+  }
+
+  .rotate-scale-in {
+    animation: rotateScaleIn 1.2s ease-out forwards;
+    transform-origin: center;
+    display: block;
+    margin: auto;
+    position: relative;
+  }
     /*Can*/
-     .text-content h3,
-    .text-content > h5 {
-      color: green;
-    }
-
-    .text-content ul li h5 {
-      color: black;
-      font-weight: bold;
-      display: inline;
-      font-size: 20px;
+      /*body {
       margin: 0;
+      padding: 0;
+      transition: background-color 1s ease;
+      font-family: 'Saira Stencil One', sans-serif;
+      background-color: #ffffff;
     }
-
-    .text-content ul li span {
-      font-size: 18px;
-      display: inline;
-    }
-
-    .can-image {
-      display: block;
-      /*margin: 0 auto;
-      max-width: none;*/
-      margin-top: 120px !important;
-     width: 40%;
-     height: auto;
-      animation: smoothBounceBend 8s ease-in-out infinite;
-      margin: auto;
-    }
-
-  /*  @keyframes smoothBounceBend {
-      0%   { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-      25%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(-2deg); }
-      50%  { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-      75%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(2deg); }
-      100% { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      gap: 30px;
+      padding: 40px 20px 20px 20px;
     }*/
-    @keyframes smoothBounceBend {
-  0%   { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-  25%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(-6deg); }
-  50%  { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-  75%  { transform: translate3d(8.2855px, -24.9846px, 0px) rotate(6deg); }
-  100% { transform: translate3d(8.2855px, -4.9846px, 0px) rotate(0deg); }
-}
-  /******/
+   
+    /*Blog scroll*/
+    /* Scoped styles only for this section */
+
+    /*Blog scroll*/
+    /* Reset some base styles */
 * {
   margin: 0;
   padding: 0;
@@ -211,41 +213,7 @@
   }
 }
 
-    /**Video Banner*/
-#home-banner {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.video-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-}
-
-.banner-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  transform: translate(-50%, -50%);
-  text-align: center;
-/*  color: #fff;*/
-  padding: 20px;
-
-}
+ 
 
 @font-face {
   font-family: 'Shell';
@@ -550,83 +518,13 @@ html, body {
     font-weight: bold;
   }
 */
-.rotating-wrapper-behind {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  transform: translate(-50%, -50%);
-  z-index: -2; /* behind -1 image */
-  text-align: center;
-  pointer-events: none;
-}
 
-.rotating-image {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
-  display: block;
-}
-
-.rotating-label {
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  color: white;
-  font-size: 2.1rem;
-  pointer-events: none;
-  text-align: center;
-  white-space: nowrap;
-}
 
   @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
 /* Overlay box */
-.overlay-content {
-/*  background-color: rgba(255, 255, 255, 0.95);*/
-  padding: 30px;
-  border-radius: 5px;
-}
-
-/* Rotating element */
-
-.rotating-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-  text-align: center;
-}
-
-.rotating-image {
-  width: 100%;
-  height: 100%;
-  margin-top: 380px;
-  transition: transform 0.3s ease-in-out;
-  display: block;
-
-}
-
-.rotating-label {
-  position: absolute;
-  top: 450px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  color: white;
-  font-size: 2.1rem;
-  pointer-events: none;
-  text-align: center;
-  white-space: nowrap;
-}
 
 
 .marquee-wrapper {
@@ -1418,39 +1316,17 @@ left:0;
 </nav>
       
 
-<div class="container">
-  <div class="row" style="margin-left: 20px;">
-    <div class="col-sm-6 text-content" style="text-align: justify;">
-      <h1 style="color: #993a4a;font-weight: 900;font-family: 'Saira Stencil One', sans-serif;">
-        Cherry Vanilla Burst</h1>
-      <p style="font-size: 20px;">
-Indulge in the refreshing and invigorating taste of our <span style="font-weight: 900;">Cherry Vanilla Burst</span>, a premium blend crafted with the finest plant-based organic ingredients. This delicious flavor combines the rich sweetness of ripe cherries with the smooth, creamy essence of vanilla, delivering a taste sensation that is both delightful and energizing. Each sip of Cherry Vanilla Burst is a celebration of nature, packed with antioxidants, vitamins, and essential nutrients that invigorate your body and refresh your mind. The smooth, velvety texture glides effortlessly, making it the perfect companion for any moment. Whether you're lounging at home or on the go, Cherry Vanilla Burst delivers a burst of pure joy and revitalization. Indulge in this luscious blend and let the refreshing
- taste of organic cherries, and Vanilla,
-  transport you to a sun-drenched orchard with every can!
-</p>
 
-      <h3 style="color: #993a4a;font-weight: 900;font-family: 'Saira Stencil One', sans-serif;">Key Features:</h3>
-      <ul style="list-style-type: square;">
-        <li><h5>Organic Ingredients:</h5><span>Made with 100% organic, ensuring the purest and most authentic taste. </span></li>
-        <li><h5>Plant-Based Goodness:</h5><span>  Infused with natural plant extracts and botanicals, providing essential vitamins and minerals to support your active lifestyle.
-</span></li>
-        <li><h5>No Artificial Additives:</h5><span> Free from artificial flavors,
-           colors, and preservatives, offering a clean and wholesome drinking experience.</span></li>
-        <li><h5>Hydration Boost:</h5><span>Enhanced with electrolytes to keep you 
-          hydrated and energized during your workouts or daily activities. </span></li>
-        <li><h5>Refreshing and Revitalizing:</h5><span> Perfectly balanced to quench your 
-          thirst and rejuvenate your senses, making it an ideal companion for any time of day.
-</span></li>
-      </ul>
-      <div><p style="font-size: 20px;margin-top: 30px;">Embrace the natural vitality of PureFinest®
-      Cherry Vanilla Burst and elevate your wellness journey with every refreshing sip.</p></div>
-    </div>
-
-    <div class="col-sm-6">
-      <img src="./Assets/flavor-cherry-vanilla.png" alt="Lemon Lime Breeze Can" class="can-image">
-    </div>
-  </div>
+<div class="container-fluid" style="margin-left:200px">
+  <img src="./Assets/gin.png" alt="" class="rotate-scale-in">
 </div>
+
+
+
+
+
+
+
 
 
 

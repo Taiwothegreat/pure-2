@@ -25,10 +25,53 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*Instagram*/
+   /* .ig-link-wrapper {
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .ig-link-text {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .ig-link-wrapper a {
+    text-decoration: none;
+  }*/
+ .ig-button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none !important;
+   /* border: 2px solid #000000;*/
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .ig-button-link:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .ig-link-wrapper {
+    text-align: center;
+    position: relative;
+    top:50px;
+    z-index: 2;
+  }
+  /*********/
     p,table,td,ul{
       font-size: 18px;
     /*   font-family: 'Saira Stencil One', sans-serif;*/
     }
+  
      h3{
       font-size: 28px;
        font-family: 'Saira Stencil One', sans-serif;
@@ -271,6 +314,7 @@
   height: auto;
   margin-bottom:-55px;
   overflow: hidden;
+  z-index: -999;
     }
     /*Can*/
       /*body {
@@ -1488,9 +1532,9 @@ left:0;
         <a href="#" class="dropdown-toggle">LINES</a>
         <div class="dropdown-menu">
           <a href="finest.html#headings">Vitality</a>
-          <a href="#">Gin</a>
-          <a href="#">Vodka</a>
-           <a href="#">Wine</a>
+          <a href="gin.html">Gin</a>
+          <a href="vodka.html">Vodka</a>
+           <a href="wine.html">Wine</a>
         </div>
       </li>
       <li class="dropdown">
@@ -1545,7 +1589,7 @@ left:0;
 </div>
 <script>
   const lines = [
-    "AN OUTSTANDING SHOT STOPPER AND FEARLESS GAMECHANGER",
+    "AN OUTSTANDING SHOT STOPPER & FEARLESS GAMECHANGER",
     "RISING ICON IN WOMEN SOCCER"
   ];
 
@@ -1671,6 +1715,16 @@ left:0;
       </div>
     </div>
   </div>
+<!----- <div class="ig-link-wrapper">
+  <a href="https://www.instagram.com/1chiude?igsh=MWsxd280MTl6cHNvaQ%3D%3D" target="_blank">
+    <h6 class="ig-link-text">Chi-Chi’s Instagram Handle</h6>
+  </a>
+</div>-->
+<div class="ig-link-wrapper">
+  <a href="https://www.instagram.com/1chiude?igsh=MWsxd280MTl6cHNvaQ==" target="_blank" class="ig-button-link">
+    Chi-Chi’s Instagram Handle
+  </a>
+</div>
 <!------Biography of Chiemela-->
 <!-- Chi-Chi Bio Transparent Overlay -->
 
@@ -1782,7 +1836,7 @@ left:0;
           <div class="caption">
             <p style="font-weight: 900;margin-left:0; 
             font-family: 'Saira Stencil One', sans-serif;font-size: 20px;">
-          Chi‑Chi Training & Performance Blueprint </p>
+          Chi‑Chi's Training & Performance Blueprint </p>
             <div class="meta-row">
            <!-------   <span class="meta-left">HEALTH</span>
               <span class="meta-right">Aug 29th, 2024</span>-->
