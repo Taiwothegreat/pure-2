@@ -25,6 +25,28 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*zoom in the achievement*/
+      @keyframes zoomBounce {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    80% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .zoom-bounce {
+    animation: zoomBounce 2s ease-out forwards;
+  }
+
     /*Instagram*/
    /* .ig-link-wrapper {
     text-align: center;
@@ -1720,11 +1742,60 @@ left:0;
     <h6 class="ig-link-text">Chi-Chi’s Instagram Handle</h6>
   </a>
 </div>-->
-<div class="ig-link-wrapper">
+<!-----<div class="ig-link-wrapper">
   <a href="https://www.instagram.com/1chiude?igsh=MWsxd280MTl6cHNvaQ==" target="_blank" class="ig-button-link">
     Chi-Chi’s Instagram Handle
   </a>
+</div>-->
+<!-- Font Awesome CDN (needed for the Instagram icon) -->
+
+
+<!-----<div class="ig-link-wrapper" style="text-align: center;">
+  <a href="https://www.instagram.com/1chiude?igsh=MWsxd280MTl6cHNvaQ==" 
+     target="_blank" 
+     class="ig-button-link" 
+     style="font-size: 32px; color: #E4405F; text-decoration: none;">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>-->
+<!-- Font Awesome CDN (if not already included) -->
+
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="ig-link-wrapper" style="text-align: center;">
+  <!-- Instagram Icon -->
+  <a href="https://www.instagram.com/1chiude?igsh=MWsxd280MTl6cHNvaQ==" 
+     target="_blank" 
+     style="
+       font-size: 32px; 
+       color: #E4405F; 
+       margin-right: 15px;
+       background: none; 
+       border: none; 
+       box-shadow: none; 
+       text-decoration: none;
+     ">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <!-- Threads Icon -->
+  <a href="https://www.threads.com/@purefinestofficial" 
+     target="_blank" 
+     style="
+       font-size: 32px; 
+       color: #ffffff; 
+       background: none; 
+       border: none; 
+       box-shadow: none; 
+       text-decoration: none;
+     ">
+    <i class="fab fa-threads"></i>
+  </a>
 </div>
+
+
 <!------Biography of Chiemela-->
 <!-- Chi-Chi Bio Transparent Overlay -->
 
@@ -2086,6 +2157,52 @@ left:0;
   </div>
   
 </div>
+
+
+<div class="zoom-bounce" style="
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+">
+  <h2 style="font-size: 22px; text-align: justify;">🏆 Achievements</h2>
+
+  <p style="font-size: 22px; text-align: justify;">1st Place: JPL Warriors Cup Winners</p>
+  <p style="font-size: 17px; text-align: justify;">2021. Millwall FC U-14 England</p>
+
+  <p style="font-size: 22px; text-align: justify;">3rd Place: Epping Forest Sports Award</p>
+  <p style="font-size: 17px; text-align: justify;">2022. England</p>
+
+  <p style="font-size: 22px; text-align: justify;">1st Place: JPL Warriors Cup Winners</p>
+  <p style="font-size: 17px; text-align: justify;">2023. Arsenal FC U-14 England</p>
+
+  <p style="font-size: 22px; text-align: justify;">1st Place: Bob Docherty Cup Winners</p>
+  <p style="font-size: 17px; text-align: justify;">2023. ESFA U-15 Scotland</p>
+
+  <p style="font-size: 22px; text-align: justify;">1st England International Cap</p>
+  <p style="font-size: 17px; text-align: justify;">2023. ESFA U-15 Scotland</p>
+
+  <p style="font-size: 22px; text-align: justify;">2nd Place: REYCUP Competition</p>
+  <p style="font-size: 17px; text-align: justify;">2023. Arsenal FC U-16</p>
+
+  <p style="font-size: 22px; text-align: justify;">FA Lauren James (LJ10) Award</p>
+  <p style="font-size: 17px; text-align: justify;">2024. England</p>
+
+  <p style="font-size: 22px; text-align: justify;">JPL Warriors PGA Player of the Tournament</p>
+  <p style="font-size: 17px; text-align: justify;">2024. Arsenal FC U-16 England</p>
+
+  <p style="font-size: 22px; text-align: justify;">2nd Place: FA Cup</p>
+  <p style="font-size: 17px; text-align: justify;">2024. Arsenal FC U-16 England</p>
+
+  <p style="font-size: 22px; text-align: justify;">1st Place: PGA Champions Cup</p>
+  <p style="font-size: 17px; text-align: justify;">2024. Arsenal FC U-16 England</p>
+</div>
+
 <!-- Security Warning Modal -->
 
 
