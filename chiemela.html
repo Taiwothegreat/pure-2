@@ -25,28 +25,6 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
-    /*zoom in the achievement*/
-      @keyframes zoomBounce {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    60% {
-      transform: scale(1.1);
-      opacity: 1;
-    }
-    80% {
-      transform: scale(0.95);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .zoom-bounce {
-    animation: zoomBounce 2s ease-out forwards;
-  }
-
     /*Instagram*/
    /* .ig-link-wrapper {
     text-align: center;
@@ -323,7 +301,7 @@
     display: inline-block;
     animation: fall 0.6s ease forwards;
   }
-    body{
+    .container-fluid{
       
       /*End of Fall*/
   position: relative;
@@ -980,6 +958,7 @@ margin-top: 10px;
   margin-left: 50px;
   margin-top: 10px;
   text-decoration: none;
+
 }
 .social-icons :hover{
   background-color: #6ccb35;
@@ -1604,6 +1583,10 @@ left:0;
   </div>
 </nav>
    
+
+
+
+<!--------------------------Background-Image------>
 <div class="container-fluid">
 <div style="color: #ffffff; text-align: center; margin-top: 80px; font-family: 'Saira Stencil One',
  sans-serif">
@@ -1762,8 +1745,8 @@ left:0;
 
 
 <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<!-------<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">-->
+<!-----edited-->
 <div class="ig-link-wrapper" style="text-align: center;">
   <!-- Instagram Icon -->
   <a href="https://www.instagram.com/1chiude?igsh=MWsxd280MTl6cHNvaQ==" 
@@ -1781,7 +1764,7 @@ left:0;
   </a>
 
   <!-- Threads Icon -->
-  <a href="https://www.threads.com/@purefinestofficial" 
+  <a href="https://www.threads.com/@1chiude" 
      target="_blank" 
      style="
        font-size: 32px; 
@@ -1890,7 +1873,8 @@ left:0;
 </script>
 
 
-</div>
+<!-------End of first initial background image------->
+
 <div style="font-weight: 900;margin-left:70px; font-family: 'Saira Stencil One', sans-serif;font-size: 
 20px;color:#ffffff"><h1>More Articles</h1></div>
 <div class="continuous-slider-container">
@@ -2157,9 +2141,22 @@ left:0;
   </div>
   
 </div>
+</div>
 
+<!-- Achievements Section with Background -->
+<div style="
+  background-image: url('./Assets/more-chi-back.jpg'); /* ✅ Your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 0 0 0; /* top padding only */
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+">
 
-<div class="zoom-bounce" style="
+ <!-- Achievements Overlay with Pagination -->
+<div id="achievementsCarousel" style="
   position: relative;
   width: 90%;
   max-width: 700px;
@@ -2169,39 +2166,106 @@ left:0;
   color: white;
   font-family: Arial, sans-serif;
   border-radius: 10px;
+  overflow: hidden;
 ">
+
   <h2 style="font-size: 22px; text-align: justify;">🏆 Achievements</h2>
 
-  <p style="font-size: 22px; text-align: justify;">1st Place: JPL Warriors Cup Winners</p>
-  <p style="font-size: 17px; text-align: justify;">2021. Millwall FC U-14 England</p>
+  <!-- Slides go here -->
+  <div id="achievementSlides"></div>
 
-  <p style="font-size: 22px; text-align: justify;">3rd Place: Epping Forest Sports Award</p>
-  <p style="font-size: 17px; text-align: justify;">2022. England</p>
+  <!-- Navigation -->
+  <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+  ">
 
-  <p style="font-size: 22px; text-align: justify;">1st Place: JPL Warriors Cup Winners</p>
-  <p style="font-size: 17px; text-align: justify;">2023. Arsenal FC U-14 England</p>
+    <!-- Prev Arrow -->
+    <div onclick="changeSlide(-1)" style="
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    ">
+      &#8592;
+    </div>
 
-  <p style="font-size: 22px; text-align: justify;">1st Place: Bob Docherty Cup Winners</p>
-  <p style="font-size: 17px; text-align: justify;">2023. ESFA U-15 Scotland</p>
+    <!-- Progress Bar -->
+    <div style="flex: 1; margin: 0 10px;">
+      <div style="background: white; height: 4px; border-radius: 2px; overflow: hidden;">
+        <div id="progressBar" style="background: limegreen; height: 100%; width: 0%; transition: width 0.4s ease;"></div>
+      </div>
+    </div>
 
-  <p style="font-size: 22px; text-align: justify;">1st England International Cap</p>
-  <p style="font-size: 17px; text-align: justify;">2023. ESFA U-15 Scotland</p>
-
-  <p style="font-size: 22px; text-align: justify;">2nd Place: REYCUP Competition</p>
-  <p style="font-size: 17px; text-align: justify;">2023. Arsenal FC U-16</p>
-
-  <p style="font-size: 22px; text-align: justify;">FA Lauren James (LJ10) Award</p>
-  <p style="font-size: 17px; text-align: justify;">2024. England</p>
-
-  <p style="font-size: 22px; text-align: justify;">JPL Warriors PGA Player of the Tournament</p>
-  <p style="font-size: 17px; text-align: justify;">2024. Arsenal FC U-16 England</p>
-
-  <p style="font-size: 22px; text-align: justify;">2nd Place: FA Cup</p>
-  <p style="font-size: 17px; text-align: justify;">2024. Arsenal FC U-16 England</p>
-
-  <p style="font-size: 22px; text-align: justify;">1st Place: PGA Champions Cup</p>
-  <p style="font-size: 17px; text-align: justify;">2024. Arsenal FC U-16 England</p>
+    <!-- Next Arrow -->
+    <div onclick="changeSlide(1)" style="
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    ">
+      &#8594;
+    </div>
+  </div>
 </div>
+
+<script>
+  const achievements = [
+    { title: "1st Place: JPL Warriors Cup Winners", year: "2021. Millwall FC U-14 England" },
+    { title: "3rd Place: Epping Forest Sports Award", year: "2022. England" },
+    { title: "1st Place: JPL Warriors Cup Winners", year: "2023. Arsenal FC U-14 England" },
+    { title: "1st Place: Bob Docherty Cup Winners", year: "2023. ESFA U-15 Scotland" },
+    { title: "1st England International Cap", year: "2023. ESFA U-15 Scotland" },
+    { title: "2nd Place: REYCUP Competition", year: "2023. Arsenal FC U-16" },
+    { title: "FA Lauren James (LJ10) Award", year: "2024. England" },
+    { title: "JPL Warriors PGA Player of the Tournament", year: "2024. Arsenal FC U-16 England" },
+    { title: "2nd Place: FA Cup", year: "2024. Arsenal FC U-16 England" },
+    { title: "1st Place: PGA Champions Cup", year: "2024. Arsenal FC U-16 England" }
+  ];
+
+  const perPage = 3;
+  let currentPage = 0;
+
+  function renderAchievements() {
+    const container = document.getElementById("achievementSlides");
+    const progressBar = document.getElementById("progressBar");
+
+    container.innerHTML = "";
+
+    const start = currentPage * perPage;
+    const end = Math.min(start + perPage, achievements.length);
+
+    for (let i = start; i < end; i++) {
+      const ach = achievements[i];
+      const block = document.createElement("div");
+      block.innerHTML = `
+        <p style="font-size: 22px; text-align: justify;">${ach.title}</p>
+        <p style="font-size: 17px; text-align: justify;">${ach.year}</p>
+        <hr style="border: 0; border-top: 1px solid white; margin: 10px 0;">
+      `;
+      container.appendChild(block);
+    }
+
+    const totalPages = Math.ceil(achievements.length / perPage);
+    const percent = ((currentPage + 1) / totalPages) * 100;
+    progressBar.style.width = `${percent}%`;
+  }
+
+  function changeSlide(direction) {
+    const maxPage = Math.floor((achievements.length - 1) / perPage);
+    currentPage += direction;
+    if (currentPage < 0) currentPage = 0;
+    if (currentPage > maxPage) currentPage = maxPage;
+    renderAchievements();
+  }
+
+  // Initial Load
+  renderAchievements();
+</script>
+
+
+<!----End of Second-image-->
 
 <!-- Security Warning Modal -->
 
@@ -2393,8 +2457,7 @@ document.querySelectorAll('.external-link').forEach(link => {
 </div>
 
 
-
-
+</div>
 
 
 
