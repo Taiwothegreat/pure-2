@@ -25,6 +25,246 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    
+  /* Scoped styles for the back link */
+  .pure-back-link {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #6ccb35;
+    padding: 8px 14px;
+    display: inline-flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .pure-back-link:hover {
+    background-color: #4a9b28;
+    color: #e0ffe0;
+        text-decoration: none;
+  }
+
+  .pure-back-arrow {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+    /* === Pure Blog Slider Styles === */
+    .pure-blog-slider-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .pure-blog-slider-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: pureBlogScroll 60s linear infinite;
+    }
+
+    @keyframes pureBlogScroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .pure-blog-slide-item {
+      flex: 0 0 auto;
+      width: 300px;
+      text-decoration: none;
+     /* color: #fff;*/
+    }
+
+    .pure-blog-thumbnail {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .pure-blog-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pure-blog-caption {
+      padding: 10px 0;
+    }
+
+    .pure-blog-caption .one{
+      font-size: 18px !important;
+      font-family: 'Saira Stencil One', sans-serif;
+    font-weight: bold;
+      line-height: 1.3;
+      margin:auto;
+      text-align: left;
+    }
+
+    .pure-blog-caption p {
+      font-size: 15px;
+      line-height: 1.4;
+      margin: 0 0 10px;
+    }
+
+    .pure-blog-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    body {
+      background-color: #000; /* for visibility only; remove or adjust as needed */
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Pure Blog Slider Styling (conflict-free) */
+    
+.pure-blog-slider-container {
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.pure-blog-slider-track {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+}
+
+.pure-blog-slide-item {
+  display: block;
+  width: 300px;
+  flex: 0 0 auto;
+  text-decoration: none;
+/*  color: #ffffff;*/
+}
+
+.pure-blog-thumbnail {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.pure-blog-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pure-blog-caption {
+  margin-top: 10px;
+}
+
+.pure-blog-caption h2 {
+  font-size: 18px;
+  font-family: 'Saira Stencil One', sans-serif;
+  font-weight: 900;
+  line-height: 1.3;
+  margin: 10px 0 5px;
+}
+
+.pure-blog-caption p {
+  font-size: 15px;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.pure-blog-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+      /* Container for the blog slider */
+  .pure-blog-slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Track that moves continuously */
+  .pure-blog-slider-track {
+    display: flex;
+    animation: pure-blog-scroll 60s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes pure-blog-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Each blog item */
+  .pure-blog-slide-item {
+    flex: 0 0 auto;
+    width: 300px;
+    margin: 10px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .pure-blog-slide-item:hover {
+    transform: scale(1.03);
+    text-decoration: none;
+  }
+
+  .pure-blog-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .pure-blog-caption {
+    padding: 15px;
+  }
+
+  .pure-blog-caption h2 {
+    font-family: 'Saira Stencil One', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .pure-blog-caption p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .pure-blog-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .pure-blog-slide-item {
+      width: 80vw;
+    }
+  }
+
+  
     /*fall letters*/
       .fall-letter {
     display: inline-block;
@@ -1471,6 +1711,110 @@ left:0;
 </script>
 
 
+<div style="font-weight: 900;margin-left:70px; font-family: 'Saira Stencil One', sans-serif;font-size: 20px;color:#ffffff">
+  <h1 style="color: #000;">Related Post</h1>
+</div>
+
+<section id="pure-blog-slider-section" class="about-2" style="padding-top:50px;">
+  <div class="pure-blog-slider-container">
+    <div class="pure-blog-slider-track">
+
+      <!-- ORIGINAL SLIDES -->
+      <a href="chiemela.html" class="pure-blog-slide-item">
+        <div class="pure-blog-thumbnail">
+          <img src="./Assets/Chiemela-u17.jpg" alt="Confidence">
+        </div>
+        <div class="pure-blog-caption">
+          <h2 class="one">Meet Chi-Chi — greatness between the posts.</h2>
+          <p>In a world where our well-being is both a journey and destination...</p>
+          <div class="pure-blog-meta">
+            <span>SOCCER(FOOTBALL)</span>
+            <span>3 mins read</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="chiemela.html" class="pure-blog-slide-item">
+        <div class="pure-blog-thumbnail">
+          <img src="./Assets/Chiemela-theNation.jpg" alt="Nature">
+        </div>
+        <div class="pure-blog-caption">
+          <h2 class="one">Chi-Chi’s promising future for Nigeria</h2>
+          <p>Discover the new star rising in goalkeeping excellence...</p>
+          <div class="pure-blog-meta">
+            <span>SOCCER(FOOTBALL)</span>
+            <span>3 mins read</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="chiemela.html" class="pure-blog-slide-item">
+        <div class="pure-blog-thumbnail">
+          <img src="./Assets/Chimela-ude.jpg" alt="Acerola">
+        </div>
+        <div class="pure-blog-caption">
+          <h2 class="one">Chi-Chi: Born for the Net</h2>
+          <p>Meet the talent between the posts — smart, skilled, unstoppable...</p>
+          <div class="pure-blog-meta">
+            <span>SOCCER(FOOTBALL)</span>
+            <span>3 mins read</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="chiemela.html" class="pure-blog-slide-item">
+        <div class="pure-blog-thumbnail">
+          <img src="./Assets/Chiemela-cartophilic.jpg" alt="Boost">
+        </div>
+        <div class="pure-blog-caption">
+          <h2 class="one">Chi-Chi in International Spotlight</h2>
+          <p>Young, fearless, and already making waves in youth football...</p>
+          <div class="pure-blog-meta">
+            <span>SOCCER(FOOTBALL)</span>
+            <span>4 mins read</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- DUPLICATE SLIDES FOR SEAMLESS LOOP -->
+      <a href="chiemela.html" class="pure-blog-slide-item">
+        <div class="pure-blog-thumbnail">
+          <img src="./Assets/Chiemela-u17.jpg" alt="Confidence">
+        </div>
+        <div class="pure-blog-caption">
+          <h2 class="one">Meet Chi-Chi — greatness between the posts.</h2>
+          <p>In a world where our well-being is both a journey and destination...</p>
+          <div class="pure-blog-meta">
+            <span>SOCCER(FOOTBALL)</span>
+            <span>3 mins read</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="chiemela.html" class="pure-blog-slide-item">
+        <div class="pure-blog-thumbnail">
+          <img src="./Assets/chiemela-blueprint.jpg" alt="Blueprint">
+        </div>
+        <div class="pure-blog-caption">
+          <h2 class="one">Blueprint of Success</h2>
+          <p>The training roadmap that shaped Chi-Chi’s career journey...</p>
+          <div class="pure-blog-meta">
+            <span>SOCCER(FOOTBALL)</span>
+            <span>3 mins read</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+<div class="container-fluid">
+  <h6 style="margin-left: 10px;">
+    <a href="index.html" class="pure-back-link">
+      <span class="pure-back-arrow">←</span> BACK TO HOME PAGE
+    </a>
+  </h6>
+</div>
 
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
