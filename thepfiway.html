@@ -35,7 +35,7 @@
   position: relative;
   z-index: 1;
    margin-left: 200px;
-   margin-top: 300px;
+   margin-top: 30px;
       border-radius: 20px solid black;
 }
 .pfi-thumbnail-sec {
@@ -48,6 +48,7 @@
    margin-left: 200px;
    margin-top: 100px;
       border-radius: 20px solid black;
+      
 }
 .pfi-thumbnail-sec .thumbnail-box {
   background: #ffffff;
@@ -148,7 +149,7 @@
     margin: 0;
     padding: 0;
   }*/
-.full-banner {
+/*.full-banner {
   position: relative;
   top:300px;
  
@@ -160,7 +161,34 @@
   height: 200vh;
   margin: 0;
   padding: 0;
+}*/
+.full-banner {
+  position: relative;
+  background-image: url("./Assets/thepfiway-3-section-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 200vh; /* Adjusted from 200vh to 100vh for full-screen banner */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end; /* Push content to bottom */
+  justify-content: center;
+  margin-top: 400px;
 }
+
+.banner-content {
+  text-align: left;
+  font-weight: 900;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 60px;
+  background: rgba(0, 0, 0, 0.4); /* Optional: dark overlay behind text */
+  padding: 40px 20px;
+  width: 100%;
+}
+
 .full-ban {
   position: relative;
   top:50px;
@@ -173,6 +201,7 @@
   margin: 0;
   padding: 0;
 }
+
 
 
 /* end the third banner*/
@@ -295,37 +324,13 @@
     }
   }
     /* Scoped styles for the back link */
-  .pure-back-link {
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #6ccb35;
-    padding: 8px 14px;
-    display: inline-flex;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-  }
-
-  .pure-back-link:hover {
-    background-color: #4a9b28;
-    color: #e0ffe0;
-        text-decoration: none;
-  }
-
-  .pure-back-arrow {
-    margin-right: 8px;
-    font-size: 18px;
-  }
+  
   /*Carousel*/
     .custom-carousel {
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-height: 550px;
+    max-height: 950px !important;
   }
 
   .custom-carousel-slide {
@@ -347,8 +352,8 @@
   }
 
   .custom-carousel-slide img {
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
   }
 
@@ -473,26 +478,7 @@
 }
 
 
-    /*Can*/
-      /*body {
-      margin: 0;
-      padding: 0;
-      transition: background-color 1s ease;
-      font-family: 'Saira Stencil One', sans-serif;
-      background-color: #ffffff;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      min-height: 100vh;
-      gap: 30px;
-      padding: 40px 20px 20px 20px;
-    }*/
-   
-    /*Blog scroll*/
-    /* Scoped styles only for this section */
+
 
     /*Blog scroll*/
     /* Reset some base styles */
@@ -504,26 +490,12 @@
     padding: 0; /* No extra space around the section */
     margin-top: 30px;
   }
-  /*pfiway second video*/
-/*.pfiway-video-container {
-  margin-top: 30px;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.pfiway-video-container video {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}*/
+/*pfi-video*/
 .pfiway-video-container {
   margin-top: 30px;
   position: relative;
   width: 100%;
-  height: 100vh; /* Full height of viewport or container */
+  height: 150vh; /* Full height of viewport or container */
   overflow: hidden;
 }
 
@@ -538,15 +510,15 @@
 }
 
 /* Dark overlay */
-.pfiway-video-container .video-overlay {
+/*.pfiway-video-container .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* darker overlay */
+  background: rgba(0, 0, 0, 0.2); 
   z-index: 1;
-}
+}*/
 
 /* Centered text */
 .pfiway-video-container .video-text {
@@ -556,9 +528,11 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
-  color: #fff;
+  color: rgb(218, 230, 218);
   padding: 0 15px;
   font-size: 28px;
+   background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
 }
 
 .pfiway-video-container .video-text h1 {
@@ -573,6 +547,7 @@ font-size: 28px !important;
  /* font-size: 2.0rem;*/
  font-size: 20px !important;
   line-height: 1.6;
+   font-weight: bold;
      /*  font-family: 'Saira Stencil One', sans-serif;*/
 }
 
@@ -592,7 +567,7 @@ font-size: 28px !important;
 
   .img-col img {
     width: 100%;
-    height: 300px;
+    height: 500px;
     object-fit: cover;
     display: block;
   }
@@ -1875,9 +1850,9 @@ left:0;
         <a href="#" class="dropdown-toggle">LINES</a>
         <div class="dropdown-menu">
           <a href="finest.html#headings">Vitality</a>
-          <a href="#">Gin</a>
-          <a href="#">Vodka</a>
-           <a href="#">Wine</a>
+          <a href="gin.html">Gin</a>
+          <a href="vodka.html">Vodka</a>
+           <a href="wine.html">Wine</a>
         </div>
       </li>
       <li class="dropdown">
@@ -1936,7 +1911,7 @@ left:0;
         <li>Our promise is premium quality that inspires daily living.</li>
       </ul>
     </div>
-    <img src="./Assets/thepfiway-mainbanner.jpg" alt="The PFI Way">
+    <img src="./Assets/thepfiway-banner-1.jpg" alt="The PFI Way">
   </div>
 
   <!-- Slide 2 -->
@@ -2021,6 +1996,15 @@ left:0;
       <img src="./Assets/pfiway-purpose.jpg" alt="Our Purpose">
     </div>
     <div class="col-sm-6 text-col">
+    
+<span style="text-decoration: underline; text-underline-offset: 10px; margin-left: 0;
+ font-weight: 900; color: #000;">
+  <a href="who-we-are.html" style="color: inherit; text-decoration: none; 
+  font-weight: 900; margin-top: 0;">
+    <h3 style="margin-left: 400px;">← WHO WE ARE</h3>
+  </a>
+</span>
+
       <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Purpose</h2>
       <p style="font-size: 18px;">
         Our mission is to enhance lives by offering high-quality food and beverages that inspire joy, promote well-being, and deliver satisfaction to the body and soul. We strive to be a reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.
@@ -2030,7 +2014,6 @@ left:0;
 
   <!-- OUR VISION -->
   <div class="row section-row flex-md-row-reverse">
-    
     <div class="col-sm-6 text-col">
       <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Vision</h2>
       <p style="font-size: 18px;">
@@ -2045,7 +2028,8 @@ left:0;
   <!-- OUR APPROACH -->
   <div class="row section-row">
     <div class="col-sm-6 img-col">
-      <img src="./Assets/our-approach.jpg" alt="Our Approach">
+    <!---  <img src="./Assets/our-approach.jpg" alt="Our Approach">-->
+    <img src="./Assets/thepfiway-we-start.jpg" alt="">
     </div>
     <div class="col-sm-6 text-col">
       <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Approach</h2>
@@ -2054,7 +2038,10 @@ left:0;
       </p>
     </div>
   </div>
-</div>   
+</div>  
+
+
+
 <div class="container-fluid pfiway-video-container">
   <video src="./Assets/thepfiway-2-section-video.mp4" autoplay muted loop playsinline></video>
 
@@ -2109,8 +2096,22 @@ left:0;
 
 </div>
 <!------DO NOT DELETE---->
-<div class="container-fluid full-banner">
+<!----<div class="container-fluid full-banner">-->
  <!------ <img src="./Assets/thepfiway-3-section-banner.jpg" alt="">-->
+<!---- <h1>The Guiding Spirit We FOLLOW</h1>
+ <p>These principles guide our journey, <br>
+   allowing us to make a meaningful impact while staying true to our mission of delivering quality with <br>
+  conscience. At the heart of everything we do is an unwavering commitment to ethical and responsible practices.</p>
+</div>-->
+<div class="container-fluid full-banner">
+  <div class="banner-content">
+<!-----    <h1>The Guiding Spirit We FOLLOW</h1>-->
+    <p style="position: relative;top: 50px;">
+      These principles guide our journey, <br>
+      allowing us to make a meaningful impact while staying true to our mission of delivering quality with conscience. <br>
+      At the heart of everything we do is an unwavering commitment to ethical and responsible practices.
+    </p>
+  </div>
 </div>
 
 
@@ -2261,13 +2262,7 @@ left:0;
 
 
 
-<div class="container-fluid">
-  <h6 style="margin-left: 10px; margin-top: 70px;">
-    <a href="index.html" class="pure-back-link">
-      <span class="pure-back-arrow">←</span> BACK TO HOME PAGE
-    </a>
-  </h6>
-</div>
+
 
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
@@ -2301,6 +2296,7 @@ left:0;
           <li><a href="#" class="text-white">Responsibility</a></li>
           <li><a href="#" class="text-white">Terms Of Use</a></li>
           <li><a href="#" class="text-white">Labels Protection</a></li>
+           <li><a href="index.html" class="text-white">The Company</a></li>
         </ul>
       </div>
 
@@ -2311,6 +2307,7 @@ left:0;
           <li><a href="#" class="text-white">Imprint</a></li>
           <li><a href="#" class="text-white">Fraud Warning</a></li>
           <li><a href="#" class="text-white">Privacy Policy</a></li>
+           <li style="width: 500px;"><a href="#" class="text-white">The Pure Finest Foundation</a></li>
         </ul>
       </div>
 
