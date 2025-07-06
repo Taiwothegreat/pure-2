@@ -25,6 +25,53 @@
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://db.onlinewebfonts.com/c/a85294b3636dbceb69b900282a917b43?family=Shelby+W05+Bold" rel="stylesheet">
   <style>
+    /*message on the third banner*/
+    .custom-banner-overlay-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('./Assets/your-background-image.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.custom-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+ /* height: 100%;*/
+ height: 70%;
+  background-color: rgba(20, 20, 20, 0.6); /* semi-dark overlay */
+  z-index: 1;
+}
+
+.custom-banner-message {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-banner-message h1 {
+ /* font-size: 2.8rem;*/
+  font-size:48px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+     font-family: 'Saira Stencil One', sans-serif !important;
+}
+
+.custom-banner-message p {
+/*  font-size: 1.2rem;*/
+font-size: 28px;
+  line-height: 1.6;
+}
+
    /*logo for thumbnails*/
    /* Container with isolation */
 .pfi-thumbnail-section {
@@ -1992,8 +2039,8 @@ left:0;
    <div class="container-fluid pfiway-section">
   <!-- OUR PURPOSE -->
   <div class="row section-row">
-    <div class="col-sm-6 img-col">
-      <img src="./Assets/pfiway-purpose.jpg" alt="Our Purpose">
+    <div class="col-sm-6 img-col" id="purpose">
+     <img src="./Assets/pfiway-purpose.jpg" alt="Our Purpose">
     </div>
     <div class="col-sm-6 text-col">
     
@@ -2020,7 +2067,7 @@ left:0;
         A vision of a future where every bite and sip supports sustainability, exceptional quality, and well-being. We aspire to create a world where our food and beverages not only satisfy but also foster healthier lifestyles and contribute to a more sustainable planet.
       </p>
     </div>
-    <div class="col-sm-6 img-col">
+    <div class="col-sm-6 img-col" id="vision">
       <img src="./Assets/pfiway-vision.png" alt="Our Vision">
     </div>
   </div>
@@ -2031,7 +2078,7 @@ left:0;
     <!---  <img src="./Assets/our-approach.jpg" alt="Our Approach">-->
     <img src="./Assets/thepfiway-we-start.jpg" alt="">
     </div>
-    <div class="col-sm-6 text-col">
+    <div class="col-sm-6 text-col" id="approach">
       <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Approach</h2>
       <p style="font-size: 18px;">
         With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create not only delights the palate but also aligns with our values of wellness, sustainability, and innovation.
@@ -2188,6 +2235,22 @@ left:0;
 <!-------DO NOT DELETE-->
 <div class="container-fluid full-ban">
  <!------ <img src="./Assets/thepfiway-3-section-banner.jpg" alt="">-->
+<!-----  <div class="banner-message">
+   <h1>Conduct We Uphold</h1>
+    <p style="position: relative;top: 50px;">
+      These behaviors reflect who we are, guiding our daily actions and shaping our long-term goals:
+    </p>
+  </div>-->
+  <div class="custom-banner-overlay-wrapper">
+  <div class="custom-banner-overlay"></div>
+  <div class="custom-banner-message">
+    <h1>Conduct We Uphold</h1>
+    <p>
+      These behaviors reflect our essence — the compass behind our decisions, the promise in our path forward.
+    </p>
+  </div>
+</div>
+
 </div>
 
 <section class="pfi-thumbnail-sec">
@@ -2285,7 +2348,8 @@ left:0;
       <!-- Logo -->
       <div class="col-sm-3 text-center text-sm-left mb-3 footer-logo">
        <!------ <img src="/Assets/Footer logo.png" alt="Footer Logo" class="img-responsive" style="width: 500px; margin-left: -10px;">-->
-        <img src="/Assets/Footer logo.png" alt="Footer Logo" class="footer-logo img-responsive" style="max-width: 270px; height: auto;">
+     <a href="index.html">   <img src="/Assets/Footer logo.png" alt="Footer Logo" class="footer-logo img-responsive" 
+        style="max-width: 270px; height: auto;"></a>
 
       </div>
 
