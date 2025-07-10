@@ -60,7 +60,7 @@ body {
   position: relative;
 top:300px;
   z-index: 2;
-  color: #000;
+  color: #fff;
   text-align: center;
   padding: 20px;
   width: 100vw;
@@ -84,7 +84,8 @@ top:300px;
 
 .custom-banner-message h1 {
  /* font-size: 2.8rem;*/
-  font-size:48px;
+ color:#ffffff;
+  font-size:28px;
   margin-bottom: 20px;
   letter-spacing: 1px;
      font-family: 'Saira Stencil One', sans-serif !important;
@@ -92,8 +93,9 @@ top:300px;
 
 .custom-banner-message p {
 /*  font-size: 1.2rem;*/
-font-size: 28px;
+font-size: 24px;
   line-height: 1.6;
+     font-family: 'Saira Stencil One', sans-serif !important;
 }
 
    /*logo for thumbnails*/
@@ -110,76 +112,115 @@ font-size: 28px;
   z-index: 1;
   margin-left: 200px;
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* space between thumbnails */
+  justify-content: center;
 }
 
 .pfi-thumbnail-section .thumbnail-box,
 .pfi-thumbnail-sec .thumbnail-box {
+  width: 100%;
+  max-width: 450px; /* ✅ wider thumbnail */
+  height: 460px;
   background: #ffffff;
-  border: 1px solid #e0e0e0;
-  padding: 15px;
+  border: 1px solid brown;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
-  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   transition: transform 0.3s ease;
-  min-height: 200px;      /* 🔧 Adjust this to match desired height */
-  max-height: 500px;
+  color: black;
 }
 
 .pfi-thumbnail-section .thumbnail-box:hover,
 .pfi-thumbnail-sec .thumbnail-box:hover {
-  transform: translateY(-5px);
+  transform: scale(1.02);
 }
 
-.pfi-thumbnail-section img
- {
-  width: 100%;
-  height: 250px !important;          /* 🔧 Force equal image height */
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.pfi-thumbnail-sec img {
-  width: 100%;
-  height: 300px !important;          /* 🔧 Force equal image height */
-  object-fit: cover;
-  margin-bottom: 15px;
-}
+/* Image inside thumbnail */
 .pfi-thumbnail-section img,
 .pfi-thumbnail-sec img {
   width: 100%;
-  height: 180px;         /* ✅ adjust to desired visible size */
-  object-fit: contain;   /* ✅ ensures full image fits without cropping */
-  margin-bottom: 15px;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain; /* shows full image without cropping */
+  border-bottom: 1px solid brown;
+  transition: transform 0.4s ease-in-out;
   display: block;
+  background-color: #fff;
 }
 
+.pfi-thumbnail-section .thumbnail-box:hover img,
+.pfi-thumbnail-sec .thumbnail-box:hover img {
+  transform: scale(1.1);
+}
+
+/* Caption content */
 .pfi-thumbnail-section .caption,
 .pfi-thumbnail-sec .caption {
-  flex-grow: 1;
+  flex: 1;
+  padding: 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* spacing inside caption */
 }
 
 .pfi-thumbnail-section .caption h2,
 .pfi-thumbnail-sec .caption h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #222;
+  font-size: 18px;
+  margin: 0;
+  color: black;
   font-weight: bold;
   font-family: 'Saira Stencil One', sans-serif !important;
 }
 
 .pfi-thumbnail-section .caption p,
 .pfi-thumbnail-sec .caption p {
-  font-size: 18px;
-  color: #666;
+  font-size: 17px;
+  color: black;
   line-height: 1.6;
+  margin: 0;
 }
 
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+  .pfi-thumbnail-section,
+  .pfi-thumbnail-sec {
+    margin-left: 0;
+    padding: 30px 10px;
+  }
+
+  .pfi-thumbnail-section .thumbnail-box,
+  .pfi-thumbnail-sec .thumbnail-box {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pfi-thumbnail-section img,
+  .pfi-thumbnail-sec img {
+    max-height: 180px;
+  }
+
+  .pfi-thumbnail-section .caption,
+  .pfi-thumbnail-sec .caption {
+    padding: 15px;
+  }
+
+  .pfi-thumbnail-section .caption h2,
+  .pfi-thumbnail-sec .caption h2 {
+    font-size: 16px;
+  }
+
+  .pfi-thumbnail-section .caption p,
+  .pfi-thumbnail-sec .caption p {
+    font-size: 13px;
+  }
+}
 
 
 
@@ -252,10 +293,10 @@ font-size: 28px;
 .banner-content {
   text-align: left;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 24px;
   color: #ffffff;
   margin-top: 60px;
-  background: rgba(0, 0, 0, 0.4); /* Optional: dark overlay behind text */
+/*  background: rgba(0, 0, 0, 0.4);*/ /* Optional: dark overlay behind text */
   padding: 40px 20px;
   width: 100%;
 }
@@ -265,7 +306,8 @@ font-size: 28px;
 
 
 /* end the third banner*/
-   .pfi-layout-container {
+
+.pfi-layout-container {
   position: relative;
   max-width: 1200px;
   min-height: 700px;
@@ -280,52 +322,66 @@ font-size: 28px;
   position: absolute;
   top: 20px;
   width: 100%;
-  gap: 300px; /* more manageable than 350px for responsiveness */
+  gap: 400px; /* spacing between thumbnails */
 }
 
 .pfi-thumb {
-  width: 260px;
-  padding: 20px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  width: 300px;
+  padding: 0 20px 20px 20px; /* no top padding to let image touch top */
   background-color: #fff;
   text-align: center;
   z-index: 1;
+  border: 2px solid brown;
+  border-radius: 12px;
+  color: brown;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  
+}
+
+.pfi-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
 }
 
 .pfi-thumb img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-  border-radius: 8px;
+  width: calc(100% + 40px); /* to extend image beyond horizontal padding */
+  margin-left: -20px;
+  margin-right: -20px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid brown;
+  display: block;
+  margin-top: 0; /* ensure image touches top */
 }
 
 .pfi-thumb h3 {
-    font-size: 20px;
-/*  font-size: 1.2em;*/
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
+  margin: 15px 0 10px;
+  color: brown !important;
 }
 
 .pfi-thumb p {
-   font-size: 16px;
- /* font-size: 0.95em;*/
-  color: #555;
+  font-size: 16px;
+  color: brown !important;
 }
-  .pfi-top {
-    top: 70%;
-  }
 
-  .pfi-center {
-    top: 70%;
-    transform: translateY(-50%);
-    z-index: 2;
-  }
+.pfi-top {
+  top: 70%;
+}
 
-  .pfi-bottom {
-    bottom: 90%;
-  }
+.pfi-center {
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.pfi-bottom {
+  bottom: 90%;
+}
 
 /* Tablet view */
 @media (max-width: 991px) {
@@ -337,7 +393,7 @@ font-size: 28px;
   .pfi-row {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 40px; /* still space between items */
     position: static;
     margin-top: 30px;
   }
@@ -361,28 +417,34 @@ font-size: 28px;
     width: 90%;
   }
 }
-  @media (max-width: 992px) {
-    .pfi-layout-container {
-      height: auto;
-    }
 
-    .pfi-row {
-      position: static;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .pfi-center {
-      transform: none;
-    }
-
-    .pfi-thumb {
-      width: 100%;
-      max-width: 360px;
-    }
+@media (max-width: 992px) {
+  .pfi-layout-container {
+    height: auto;
   }
+
+  .pfi-row {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .pfi-center {
+    transform: none;
+  }
+
+  .pfi-thumb {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+
+
+
     /* Scoped styles for the back link */
   
   /*Carousel*/
@@ -425,12 +487,12 @@ font-size: 28px;
     padding: 20px;
     color: #fff;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.4);
+   /* background: rgba(0, 0, 0, 0.4);*/
     font-family: 'Saira Stencil One', sans-serif;
   }
 
   .custom-carousel-slide:first-child .carousel-heading-top {
-    text-align: left;
+    text-align: center;
     padding-left: 40px;
   }
 
@@ -453,6 +515,7 @@ font-size: 28px;
 
   .carousel-heading-top ul li {
     margin: 5px 0;
+        font-size: 24px;
   }
 
   .carousel-controls button {
@@ -590,9 +653,10 @@ font-size: 28px;
   text-align: center;
   color: rgb(218, 230, 218);
   padding: 0 15px;
-  font-size: 28px;
-   background: rgba(0, 0, 0, 0.5); 
+  font-size: 24px;
+ /*  background: rgba(0, 0, 0, 0.5); */
   z-index: 1;
+  width:100%;
 }
 
 .pfiway-video-container .video-text h1 {
@@ -605,10 +669,10 @@ font-size: 28px !important;
 
 .pfiway-video-container .video-text p {
  /* font-size: 2.0rem;*/
- font-size: 20px !important;
+ font-size: 24px !important;
   line-height: 1.6;
    font-weight: bold;
-     /*  font-family: 'Saira Stencil One', sans-serif;*/
+     font-family: 'Saira Stencil One', sans-serif;
 }
 
 
@@ -627,7 +691,7 @@ font-size: 28px !important;
 
   .img-col img {
     width: 100%;
-    height: 500px;
+    height: 600px;
     object-fit: cover;
     display: block;
   }
@@ -1778,14 +1842,14 @@ left:0;
       <div class="juices">
         <h5 ><a href="labels.html">Juice & Dairy</a></h5>
         <ul>
-          <li><a href="finest.html">PureLife</a></li>
+          <li><a href="finest.html">PureLife<sup><span>&trade;</span></sup></a></li>
         </ul>
       </div>
 
       <div class="snackss">
         <h5><a href="labels.html">Snacks</a></h5>
         <ul>
-          <li><a href="finest.html">PureLife</a></li>
+          <li><a href="finest.html">PureLife<sup><span>&trade;</span></sup></a></li>
           <li><a href="finest.html">Taste Me! - Feel Me!®</a></li>
         </ul>
       </div>
@@ -1935,13 +1999,13 @@ left:0;
     <button id="prevBtn">&#10094;</button>
     <button id="nextBtn">&#10095;</button>
   </div>
-  <span style="text-decoration: underline; text-underline-offset: 10px; margin-right: 0;
- font-weight: 900; color: #000;">
-  <a href="who-we-are.html" style="color: inherit; text-decoration: none; 
-  font-weight: 900; margin-top: 0;">
-    <h3 style="margin-left: 1100px;">← WHO WE ARE</h3>
+<div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 20px;">
+  <a href="who-we-are.html" style="color: #000; text-decoration: underline; text-underline-offset: 10px; font-weight: 900;">
+    <h3 style="margin: 0;">← WHO WE ARE</h3>
   </a>
-</span>
+</div>
+
+
 </div>
 <script>
   const slides = document.querySelectorAll('.custom-carousel-slide');
@@ -2055,19 +2119,18 @@ left:0;
   </div>
 </div>
 
-
-<div class="container-fluid pfi-layout-container">
+  <div class="container-fluid pfi-layout-container">
 
   <!-- Top Row -->
   <div class="pfi-row pfi-top">
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-premium.png" alt="">
-      <h3>Premium Ingredients</h3>
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Premium Ingredients</h3>
       <p>We source the finest natural and sustainable ingredients, ensuring every product meets the highest standards of quality and taste.</p>
     </div>
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-sustainability.png" alt="">
-      <h3>Sustainability</h3>
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Sustainability</h3>
       <p>Our practices prioritize environmental responsibility, from eco-friendly sourcing and production to packaging that reduces waste and promotes sustainability.</p>
     </div>
   </div>
@@ -2076,7 +2139,7 @@ left:0;
   <div class="pfi-row pfi-center">
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-customer-centric.png" alt="">
-      <h3>Customer-Centric Focus</h3>
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Customer-Centric Focus</h3>
       <p>We listen to our customers, continuously improving and adapting to deliver products that satisfy and inspire trust.</p>
     </div>
   </div>
@@ -2085,17 +2148,22 @@ left:0;
   <div class="pfi-row pfi-bottom">
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-innovation.png" alt="">
-      <h3>Innovation</h3>
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Innovation</h3>
       <p>Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
     </div>
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-excellence.png" alt="">
-      <h3>Excellence in <br> Craftsmanship</h3>
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Excellence in <br> Craftsmanship</h3>
       <p>Each product is created with care and attention to detail, blending expertise and passion to ensure superior taste and a memorable experience.</p>
     </div>
   </div>
 
 </div>
+
+
+
+
+
 <!------DO NOT DELETE---->
 <!----<div class="container-fluid full-banner">-->
  <!------ <img src="./Assets/thepfiway-3-section-banner.jpg" alt="">-->
@@ -2107,7 +2175,7 @@ left:0;
 <div class="container-fluid full-banner">
   <div class="banner-content">
 <!-----    <h1>The Guiding Spirit We FOLLOW</h1>-->
-    <p style="position: relative;top: 50px;">
+    <p style="position: relative;top: 50px;  font-family: 'Saira Stencil One', sans-serif !important;font-size:24px">
       These principles guide our journey,allowing us to make a meaningful impact while staying true to our mission of delivering quality with conscience.
       At the heart of everything we do is an unwavering commitment to ethical and responsible practices.
     </p>
