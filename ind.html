@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PFI Way</title>
+  <style>
+    /* Section Styling */
+    .pfiway-section {
+      margin-bottom: 50px;
+    }
+
+    /* Header Styling */
+    .pfiway-section h1 {
+      text-align: center;
+      font-family: 'Saira Stencil One', sans-serif;
+      font-size: 32px;
+      margin-top: 20px;
+    }
+
+    /* Image Overlay Container */
+    .image-overlay-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .image-overlay-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hidden Overlay Text */
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); /* Dark translucent background */
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      display: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Show on Hover */
+    .image-overlay-container:hover .overlay-text {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OUR PURPOSE -->
+  <div class="container-fluid pfiway-section">
+    <h1>Our Purpose</h1>
+    <div class="image-overlay-container" id="purpose">
+      <img src="./Assets/pfiway-purpose.jpg" alt="Our Purpose">
+      <p class="overlay-text">
+        Our mission is to enhance lives by offering high-quality food and beverages that inspire joy,
+        promote well-being, and deliver satisfaction to the body and soul. We strive to be a
+        reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.
+      </p>
+    </div>
+  </div>
+
+  <!-- OUR VISION -->
+  <div class="container-fluid pfiway-section">
+    <h1>Our Vision</h1>
+    <div class="image-overlay-container" id="vision">
+      <img src="./Assets/pfiway-vision.png" alt="Our Vision">
+      <p class="overlay-text">
+        A vision of a future where every bite and sip supports sustainability, exceptional quality,
+        and well-being. We aspire to create a world where our food and beverages not only satisfy 
+        but also foster healthier lifestyles and contribute to a more sustainable planet.
+      </p>
+    </div>
+  </div>
+
+  <!-- OUR APPROACH -->
+  <div class="container-fluid pfiway-section">
+    <h1>Our Approach</h1>
+    <div class="image-overlay-container">
+      <img src="./Assets/thepfiway-people-first.jpg" alt="Our Approach">
+      <p class="overlay-text">
+        With a commitment to quality and a focus on customer satisfaction, 
+        we blend premium ingredients, innovative technology, and eco-friendly
+        methods to create food and beverages that excel in flavor and leave 
+        a lasting positive impact. This holistic approach ensures that everything 
+        we create not only delights the palate but also aligns with our values of 
+        wellness, sustainability, and innovation.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

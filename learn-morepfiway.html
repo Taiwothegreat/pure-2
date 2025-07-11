@@ -23,575 +23,705 @@
  
 
   <style>
-    /** {
+    
+/************************************/
+  
+ 
+   /*message on the third banner*/
+
+body {
   margin: 0;
   padding: 0;
-box-sizing: border-box;
-}
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-overflow-x: hidden;
-}
-.text-white {
-color: white !important;
-}
-.mobile-version-1 a:hover{
-  background-color: red;
-}*/
-/*nav {
-/*background-color: #fff;*/
-/*border-bottom: 1px solid #ccc;*/
-/*}*/
-
-/*.nav-container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 10px 15px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-}*/
-
-/*.brand {
-display: flex;
-align-items: center;
-gap: 10px;
 }
 
-.brand img {
-height: 40px;
+/*.custom-banner-overlay-wrapper {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 200vh; /* Full screen height, no extra space */
+ /* background: url('./Assets/thepfiway-4-section-banner.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }*/
-/*Brand from another file*/
-/*.brand {
+
+.custom-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+ /* height: 100%;*/
+ height: 70%;
+ /* background-color: rgba(20, 20, 20, 0.6); *//* semi-dark overlay */
+  z-index: 1;
+}
+
+.custom-banner-message {
+  position: relative;
+top:500px;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 800px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*.custom-banner-message {
+  position: absolute;
+  bottom: 80px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}*/
+
+
+.custom-banner-message h1 {
+ /* font-size: 2.8rem;*/
+ color:#ffffff;
+  font-size:28px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+     font-family: 'Saira Stencil One', sans-serif !important;
+}
+
+.custom-banner-message p {
+/*  font-size: 1.2rem;*/
+font-size: 24px;
+  line-height: 1.6;
+     font-family: 'Saira Stencil One', sans-serif !important;
+}
+
+   /*logo for thumbnails*/
+   /* Container with isolation */
+
+
+.pfi-thumbnail-section,
+.pfi-thumbnail-sec {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  clear: both;
+  position: relative;
+  z-index: 1;
+  margin-left: 200px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* space between thumbnails */
+  justify-content: center;
+}
+
+.pfi-thumbnail-section .thumbnail-box,
+.pfi-thumbnail-sec .thumbnail-box {
+  width: 100%;
+  max-width: 450px; /* ✅ wider thumbnail */
+  height: 460px;
+  background: #ffffff;
+  border: 1px solid brown;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  margin-right: auto;
-}*/
-/*.logo{
-/* padding: -10px;*/
-/*}*/
-/*.brand .logo{
-  height: 100px;
-  animation: spin 5s linear infinite;
+  transition: transform 0.3s ease;
+  color: black;
 }
 
-.brand .text-logo {
-  margin-top: -120px;
-}*/
-/*Brand logo with text*/
-/*  .brand .logo, .brand .text-logo{
-  margin-top: -10px;
-}*/
-/*Brand logo with text*/
-/*@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
-/*End of the file*/
-/*.nav li a:hover{
-background-color: red;
-}*/
-/*.menu-toggle {
-display: none;
-flex-direction: column;
-gap: 5px;
-cursor: pointer;
+.pfi-thumbnail-section .thumbnail-box:hover,
+.pfi-thumbnail-sec .thumbnail-box:hover {
+  transform: scale(1.02);
 }
 
-.menu-toggle span {
-display: block;
-width: 25px;
-height: 3px;
-background-color: #000;
-}
-
-ul.nav {
-list-style: none;
-display: flex;
-gap: 20px;
-margin: 0;
-padding: 0;
-}
-
-ul.nav > li {
-position: relative;
-}
-
-ul.nav > li > a {
-text-decoration: none;
-color: #000;
-padding: 10px;
-display: block;
-}
-*/
-/*.dropdown-menu {
-display: none;
-position: absolute;
-top: 70px;
-left:-620px;
-background-color: #f9f9f9;
-padding: 20px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-z-index: 100;
-}
-.follow-us{
-  color: rgb(139, 204, 139);
-}*/
-/*li:hover .dropdown-menu,
-li.active .dropdown-menu {
-display: block;
-}*/
-/*li.active .dropdown-menu {
+/* Image inside thumbnail */
+.pfi-thumbnail-section img,
+.pfi-thumbnail-sec img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain; /* shows full image without cropping */
+  border-bottom: 1px solid brown;
+  transition: transform 0.4s ease-in-out;
   display: block;
+  background-color: #fff;
 }
 
-.dropdown-content {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
+.pfi-thumbnail-section .thumbnail-box:hover img,
+.pfi-thumbnail-sec .thumbnail-box:hover img {
+  transform: scale(1.1);
 }
 
-.dropdown-content > div {
-flex: 1 1 180px;
+/* Caption content */
+.pfi-thumbnail-section .caption,
+.pfi-thumbnail-sec .caption {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* spacing inside caption */
 }
 
-.dropdown-content h2 {
-margin-top: 0;
-font-size: 20px;
+.pfi-thumbnail-section .caption h2,
+.pfi-thumbnail-sec .caption h2 {
+  font-size: 18px;
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  font-family: 'Saira Stencil One', sans-serif !important;
 }
 
-.dropdown-content button {
-background-color: #d9534f;
-border: none;
-padding: 10px 15px;
-color: white;
-cursor: pointer;
-margin-top: 10px;
+.pfi-thumbnail-section .caption p,
+.pfi-thumbnail-sec .caption p {
+  font-size: 17px;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
 }
-li a i{
-margin-left: 10px;
-}*/
-/*li.mobile-version-1:hover{
-  background-color: #008000 !important;
-}*/
-/*New Hover Effect*/
-/*.mobile-version-1 > a:hover {
-  color: #fff;
-  background-color: #6ccb35 !important;
-}
-.mobile-version-2 a:hover{
-  color:#fff;
-  background: orange !important;
-}
-.mobile-version-3 a:hover{
-  color:#fff;
-  background: rgb(192, 65, 65) !important;
-}
-.mobile-version-4 a:hover{
-  color:#fff;
-  background: rgb(117, 83, 83) !important;
-}
-.mobile-version-5 a:hover{
-  color:#fff;
-  background: #0000ff !important;
-}*/
-/*button a{
-  color:#000 !important;
-  text-decoration: none !important;
-  background-color: #6ccb35 !important;
-}
-.who a{
-  color:#000 !important;
-  text-decoration: none !important;
-  background-color: transparent!important;
-}*/
 
-.network{
-  text-align: justify;
-  max-width: 500px;
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+  .pfi-thumbnail-section,
+  .pfi-thumbnail-sec {
+    margin-left: 0;
+    padding: 30px 10px;
+  }
+
+  .pfi-thumbnail-section .thumbnail-box,
+  .pfi-thumbnail-sec .thumbnail-box {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pfi-thumbnail-section img,
+  .pfi-thumbnail-sec img {
+    max-height: 180px;
+  }
+
+  .pfi-thumbnail-section .caption,
+  .pfi-thumbnail-sec .caption {
+    padding: 15px;
+  }
+
+  .pfi-thumbnail-section .caption h2,
+  .pfi-thumbnail-sec .caption h2 {
+    font-size: 16px;
+  }
+
+  .pfi-thumbnail-section .caption p,
+  .pfi-thumbnail-sec .caption p {
+    font-size: 13px;
+  }
 }
-  
-/*.w-screen-banner{
-    object-fit: cover;
+
+
+
+
+
+   /*End of thumbnails*/
+/*third banner*/
+/*.full-banner {
     width: 100vw;
-    height: 50vh;
-    opacity: 0.1;
-    overlay: hidden;
-    background-color: rgba(0, 0, 0,0.8);
-}*/
-/*.image-container {
-    position: relative;
+    height: 100vh;
+    margin: 0;
     padding: 0;
     overflow: hidden;
-  }*/
-  
-  /*.main-image {
-  /*  width: 100%;
-    height: 800px;
-    display: block;*/
-   /* background-color: rgb(0, 0, 0);*/
-/*   opacity: 0.5;
-z-index: 1;*/
-  /*}*/
- /* .main-image::after{
-    content: "";
-    clear: both;
-    display: table;
-  }*/
-  .globally{
-    /*position: absolute;
-    top:80%;
-    left: 120px;*/
-    color: #fff;
-   font-family: Cinzel Decorative, serif;
-    /*font-family: 'Tangerine', serif;*/
-    /*text-transform:uppercase;
-    font-weight: 900;
-    font-size: 50px;*/
-    
   }
-  
-  .expand{
-    margin-top: 50px;
-    width: 100%;
-   
-  }
-  /*new overlay*/
-  .image-container {
-    position: relative;
+
+  .full-banner img {
     width: 100%;
     height: 100%;
-  /*  max-width: 100%;*/
-    overflow: hidden; /* prevent overflow */
-  }
-  
-  .main-image {
-    width: 100%;
-    height: 500px; /* reduced height */
-  
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 500px; /* match image height */
-    background: rgba(0, 0, 0, 0.5);
-    
-    z-index: 1;
-  }
-  
-  .image-container h3 {
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0 15px;
-    font-size: 24px;
-    
-  }
-  /*employee*/
-  .edi-employee-section {
-    padding: 40px 15px;
-  }
-  
-  .edi-employee-img {
-    width: 500px;
-    height: 500px;
+    object-fit: cover;
     display: block;
-    border-radius: 8px;
-    margin-left: 100px;
   }
-  .network{
-    margin-top:100px;
-    margin-right: 0;
-    text-align: justify;
-  }
-  .network-1{
-  /*  margin-top:100px;
-    margin-right: 0;*/
-    max-width: 500px;
-    text-align: justify;
-  }
-  .network-1 h2{
-    /*  margin-top:100px;
-      margin-right: 0;*/
-      max-width: 500px;
-      text-align: justify;
-      margin-left: 50px;
-      font-weight: 900;
-      margin-top: 40px;
-    }
-    .network-1 p{
-      /*  margin-top:100px;
-        margin-right: 0;*/
-        max-width: 500px;
-        text-align: justify;
-        margin-left: 50px;
-        font-weight: 900;
-      }
-      .net-logo{
-        margin-left: 50px;
-      }
 
-    .network-2 h3{
-      /*  margin-top:100px;
-        margin-right: 0;*/
-        /*max-width: 500px;
-        text-align: justify;*/
-        margin-left: 100px;
-        font-weight: 900;
-      }
-      .network-2 p{
-        /*  margin-top:100px;
-          margin-right: 0;*/
-          max-width: 500px;
-          text-align: justify;
-          margin-left: 100px;
-        
-        }
-  .core-networks-section {
-    padding: 40px 15px;
-  }
-  
- /* .core-networks-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
+  body, html {
+    margin: 0;
+    padding: 0;
   }*/
-  .core-networks-img {
-    width: 60%; /* Adjust to your preference */
-    max-width: 300px; /* Optional: sets a maximum size */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* centers the image */
-  }
-  /*thicken thumbnail*/
-/* Layout and spacing */
-.thumbnails-row {
+/*.full-banner {
+  position: relative;
+  top:300px;
+ 
+  background-image: url("./Assets/thepfiway-3-section-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 200vh;
+  margin: 0;
+  padding: 0;
+}*/
+.full-banner {
+  position: relative;
+  background-image: url("./Assets/thepfiway-3-section-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 200vh; /* Adjusted from 200vh to 100vh for full-screen banner */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end; /* Push content to bottom */
+  justify-content: center;
+  margin-top: 400px;
+}
+.full-ban {
+  position: relative;
+  background-image: url("./Assets/thepfiway-4-section-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 200vh; /* Adjusted from 200vh to 100vh for full-screen banner */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end; /* Push content to bottom */
+  justify-content: center;
+  margin-top: 0;
+}
+.banner-content {
+  text-align: left;
+  font-weight: 900;
+  font-size: 24px;
+  color: #ffffff;
+  margin-top: 60px;
+/*  background: rgba(0, 0, 0, 0.4);*/ /* Optional: dark overlay behind text */
+  padding: 40px 20px;
+  width: 100%;
+}
+
+
+
+
+
+/* end the third banner*/
+
+.pfi-layout-container {
+  position: relative;
+  max-width: 1200px;
+  min-height: 700px;
+  margin: 100px auto;
+  padding: 0 15px;
+}
+
+.pfi-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* spacing between thumbnails */
-  padding: 20px;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  gap: 400px; /* spacing between thumbnails */
 }
 
-/* Thumbnail card styling */
-.custom-thumb {
-  width: 280px;
-  height: 400px;
-  border-radius: 20px;
-  overflow: hidden;
+.pfi-thumb {
+  width: 300px;
+  padding: 0 20px 20px 20px; /* no top padding to let image touch top */
   background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  text-align: center;
+  z-index: 1;
+  border: 2px solid brown;
+  border-radius: 12px;
+  color: brown;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
+  
 }
 
-/* Image styling */
-.custom-thumb img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
+.pfi-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
 }
 
-/* Full-width divider */
-.divider {
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  margin: 15px 0;
-  border-radius: 2px;
+.pfi-thumb img {
+  width: calc(100% + 40px); /* to extend image beyond horizontal padding */
+  margin-left: -20px;
+  margin-right: -20px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid brown;
+  display: block;
+  margin-top: 0; /* ensure image touches top */
 }
 
-/* Responsive layout */
-/*.mobile-version-1,.mobile-version-2,
-.mobile-version-3,.mobile-version-4,.mobile-version-5{
- font-size: 16px;
-}*/
-@media (max-width: 768px) {
-  .thumbnails-row {
+.pfi-thumb h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  color: brown !important;
+}
+
+.pfi-thumb p {
+  font-size: 16px;
+  color: brown !important;
+}
+
+.pfi-top {
+  top: 70%;
+}
+
+.pfi-center {
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.pfi-bottom {
+  bottom: 90%;
+}
+
+/* Tablet view */
+@media (max-width: 991px) {
+  .pfi-layout-container {
+    min-height: auto;
+    margin: 80px auto;
+  }
+
+  .pfi-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px; /* still space between items */
+    position: static;
+    margin-top: 30px;
+  }
+
+  .pfi-thumb {
+    width: 45%;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .pfi-row {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+    position: static;
+    margin-top: 20px;
   }
 
-  .custom-thumb {
+  .pfi-thumb {
     width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .pfi-layout-container {
     height: auto;
   }
- 
-    .network-2 h3{
-      /*  margin-top:100px;
-        margin-right: 0;*/
-        /*max-width: 500px;
-        text-align: justify;*/
-        margin-left: 50px;
-        font-weight: 900;
-      }
-      .network-2 p{
-        /*  margin-top:100px;
-          margin-right: 0;*/
-          max-width: 250px;
-          text-align: justify;
-          margin-left: 50px;
-        
-        }
-        .logo-edi{
-          margin-top: 50px;
-          margin-left: 100px;
-        }
-}
 
-  
- 
-  
-/*@media (max-width: 768px) {
-.mobile-version-1,.mobile-version-2,
-.mobile-version-3,.mobile-version-4,.mobile-version-5{
-  width: 100%;
-  border-bottom: 1px solid #000;
-}
-.menu-toggle {
-  display: flex;
-}*/
-.edi-employee-img {
-  width: 500px;
-  height: 500px;
-  display: block;
-  border-radius: 8px;
-  margin-left: 0;
-}
-.core-networks-img {
-  width: 60%; /* Adjust to your preference */
-  max-width: 300px; /* Optional: sets a maximum size */
-  height: auto;
-  display: block;
-  margin: 0 auto; /* centers the image */
-  margin-left: 0;
-}
-
- /* ul.nav {
-  flex-direction: column;
-  width: 100%;
-  display: none;
-  
-}
-
-ul.nav.active {
-  display: flex;
-}
-
-li a i{
-position: relative;
-top:-23px;
-  margin-left: 100%;
-}*/
-/*.dropdown-menu {
-  position: static;
-  width: 100%;
-  box-shadow: none;
-}*/
-/*From another file*/
-.brand {
-  align-items: flex-start;
-}
-
-/*.brand .text-logo {
-  margin-top: 0;
-}*/
-.brand .logo {
-  height: 100px;
-  margin-left: 100px;
-  animation: spin 5s linear infinite;
-}
-
-.brand .text-logo {
-  margin-top: -120px;
-}
-/*.footer{
- /* margin-left: 150px;*/
-/*}*/
-/*.foot1, .footer-select, .foot2{
-  margin-left: 100px;
-}  
-* {
-  margin: 0;
-  padding: 0;
-box-sizing: border-box;
-}
-body {
-margin: 300;
-font-family: Arial, sans-serif;
-} */
-.main-image {
-   /* width: 100%;
-    height: 800px;
-    display: block;*/
-    background-color: rgb(0, 0, 0);
-/*    opacity: 0.5;*/
-width: 100%;
-max-height: 400px;
-z-index: 1;
+  .pfi-row {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
   }
-  .expand{
-    margin-top: 50px;
+
+  .pfi-center {
+    transform: none;
+  }
+
+  .pfi-thumb {
     width: 100%;
-    
+    max-width: 360px;
   }
- 
-  .network-1 h2{
-    /*  margin-top:100px;
-      margin-right: 0;*/
-      max-width: 500px;
-      text-align: justify;
-      margin-left: 50px;
-      font-weight: 900;
-      margin-top: 40px;
-    }
-    .network-1 p{
-      /*  margin-top:100px;
-        margin-right: 0;*/
-        max-width: 500px;
-        text-align: justify;
-        margin-left: 50px;
-        font-weight: 900;
-      }
-      .net-logo{
-        margin-left: 50px;
-      }
-    /*  h3.globally{
-        width: 100%;
-      }*/
-      .globally{
-        /*position: absolute;
-        top:80%;
-        left: 120px;*/
-        color: #fff;
-       font-family: Cinzel Decorative, serif;
-        /*font-family: 'Tangerine', serif;*/
-        /*text-transform:uppercase;
-        font-weight: 900;
-        font-size: 50px;*/
-        margin-left: -25px;
-      }
- 
-    /*END OF PURE-1*/
-/************************************/
-  
+}
 
+
+
+
+
+    /* Scoped styles for the back link */
+  
+  /*Carousel*/
+    .custom-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-height: 950px !important;
+  }
+
+  .custom-carousel-slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .custom-carousel-slide.active {
+    display: block;
+    animation: fadeSlide 1s ease-in-out;
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .custom-carousel-slide img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .carousel-heading-top {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: #fff;
+    z-index: 2;
+   /* background: rgba(0, 0, 0, 0.4);*/
+    font-family: 'Saira Stencil One', sans-serif;
+  }
+
+  .custom-carousel-slide:first-child .carousel-heading-top {
+    text-align: center;
+    padding-left: 40px;
+  }
+
+  .custom-carousel-slide:not(:first-child) .carousel-heading-top {
+    text-align: center;
+  }
+
+  .carousel-heading-top h3 {
+    margin: 5px 0;
+    font-size: 34px;
+    text-transform: uppercase;
+  }
+
+  .carousel-heading-top ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+     font-size: 24px;
+  }
+
+  .carousel-heading-top ul li {
+    margin: 5px 0;
+        font-size: 24px;
+  }
+
+  .carousel-controls button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  #prevBtn {
+    left: 10px;
+  }
+
+  #nextBtn {
+    right: 10px;
+  }
+
+  .carousel-controls button:hover {
+    background: rgba(0,0,0,0.6);
+  }
+
+  /* Bouncing Animation */
+ /* @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .carousel-indicators {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    right: 0;
+    z-index: 9;
+  }
+
+  .carousel-indicators img {
+    height: 28px;
+    width: 28px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .carousel-indicators img.active {
+    opacity: 1;
+    border: 2px solid #fff;
+  }
+*/
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.carousel-indicators span {
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 3px;
+  transition: border-color 0.3s;
+}
+
+.carousel-indicators .active {
+  border-color: #6ccb35; /* green border for active indicator */
+}
+
+.carousel-indicators img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+
+
+
+    /*Blog scroll*/
+    /* Reset some base styles */
+      .pfiway-section {
+    padding: 0; /* No extra space around the section */
+    margin-top: 30px;
+  }
+    .pfiway-sec {
+    padding: 0; /* No extra space around the section */
+    margin-top: 30px;
+  }
+/*pfi-video*/
+.pfiway-video-container {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  height: 150vh; /* Full height of viewport or container */
+  overflow: hidden;
+}
+
+.pfiway-video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Dark overlay */
+/*.pfiway-video-container .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); 
+  z-index: 1;
+}*/
+
+/* Centered text */
+.pfiway-video-container .video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: rgb(218, 230, 218);
+  padding: 0 15px;
+  font-size: 24px;
+ /*  background: rgba(0, 0, 0, 0.5); */
+  z-index: 1;
+  width:100%;
+}
+
+.pfiway-video-container .video-text h1 {
+/*  font-size: 3.4rem;*/
+font-size: 28px !important;
+  font-weight: bold;
+  margin-bottom: 15px;
+       font-family: 'Saira Stencil One', sans-serif;
+}
+
+.pfiway-video-container .video-text p {
+ /* font-size: 2.0rem;*/
+ font-size: 24px !important;
+  line-height: 1.6;
+   font-weight: bold;
+     font-family: 'Saira Stencil One', sans-serif;
+}
+
+
+ /* End pfiway second video*/
+  .section-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0; /* Remove gap between rows */
+  }
+
+  .img-col,
+  .text-col {
+    padding: 0;
+  }
+
+  .img-col img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .text-col {
+    padding: 30px;
+    background-color: #f9f9f9;
+  }
+
+  .text-col h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .text-col p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 767px) {
+    .img-col img {
+      height: 220px;
+    }
+
+    .text-col {
+      padding: 20px;
+    }
+  }
 
 
     
@@ -1065,7 +1195,7 @@ body {
   margin-left: 0;
 }
 .container-fluid video{
-  margin-left: 25px;
+  margin-left: 0;
   width:100%;
 }
 
@@ -1643,7 +1773,7 @@ left:0;
               <h2>15+ <br>Years of Crafting Excellence</h2>
               <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
                  that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
-              <button style="background-color: #6ccb35;border-radius:10px;">LEARN MORE</button>
+              <button style="background-color: #6ccb35;border-radius:10px;"><a href="learn-morepfiway.html">LEARN MORE</a></button>
             </div>
             <div style="margin-left: 30px;" class="we">
               <h5> <a href="who-we-are.html">Who We Are</a></h5>
@@ -1697,7 +1827,7 @@ left:0;
         <h2 class="one">10+ <br> LABELS, ONE VISION</h2>
         <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive in today’s dynamic marketplace.</p>
         <button style="background: #ffa500; border-radius:10px;width:350px; 
-        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="labels.html">DISCOVER OUR LABELS</a></button>
+        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="discover-our-labels.html">DISCOVER OUR LABELS</a></button>
       </div>
 
       <!-- Other Categories -->
@@ -1828,209 +1958,242 @@ left:0;
   </div>
 </nav>
  
- <div class="container-fluid image-container" style="position: relative; padding: 0;">
-    <img src="./Assets/edi-banner.png" alt="" class="main-image" style="width: 100%; display: block;  object-fit: cover;">
-    
-    <div class="overlay" style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      pointer-events: none;">
+ <div class="container-fluid pfiway-video-container">
+  <video src="./Assets/thepfiway-2-section-video.mp4" autoplay muted loop playsinline></video>
+
+  <div class="video-overlay"></div>
+
+  <div class="video-text">
+    <h1 style="color: white;">OUR COMMITMENT: HOW WE DO IT</h1>
+    <p>Our Passion for people and their lives and we focus on delivering <br>
+    exceptional food and beverages by adhering to our core principles:</p>
+  </div>
+</div>
+
+  <div class="container-fluid pfi-layout-container">
+
+  <!-- Top Row -->
+  <div class="pfi-row pfi-top">
+    <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-premium.png" alt="">
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Premium Ingredients</h3>
+      <p style="text-align: justify;">We source the finest natural and sustainable ingredients, ensuring every product meets the highest standards of quality and taste.</p>
     </div>
-  
-    <div style="
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-      color: white;
-      z-index: 2;">
-      
-      <div style="display: flex; gap: 30px; font-size: 40px; font-weight: bold;" class="globally">
-        Equity Diversity Inclusion (EDI)
-      </div>
-  
+    <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-sustainability.png" alt="">
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Sustainability</h3>
+      <p  style="text-align: justify;">Our practices prioritize environmental responsibility, from eco-friendly sourcing and production to packaging that reduces waste and promotes sustainability.</p>
     </div>
   </div>
-  
-<!----Start of Bannner-->
-<div class="container-fluid edi-employee-section">
+
+  <!-- Center Row -->
+  <div class="pfi-row pfi-center">
+    <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-customer-centric.png" alt="">
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Customer-Centric Focus</h3>
+      <p  style="text-align: justify;">We listen to our customers, continuously improving and adapting to deliver products that satisfy and inspire trust.</p>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="pfi-row pfi-bottom">
+    <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-innovation.png" alt="">
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Innovation</h3>
+      <p  style="text-align: justify;">Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
+    </div>
+    <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-excellence.png" alt="">
+      <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Excellence in <br> Craftsmanship</h3>
+      <p  style="text-align: justify;">Each product is created with care and attention to detail, blending expertise and passion to ensure superior taste and a memorable experience.</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!------DO NOT DELETE---->
+<!----<div class="container-fluid full-banner">-->
+ <!------ <img src="./Assets/thepfiway-3-section-banner.jpg" alt="">-->
+<!---- <h1>The Guiding Spirit We FOLLOW</h1>
+ <p>These principles guide our journey, <br>
+   allowing us to make a meaningful impact while staying true to our mission of delivering quality with <br>
+  conscience. At the heart of everything we do is an unwavering commitment to ethical and responsible practices.</p>
+</div>-->
+<div class="container-fluid full-banner">
+  <div class="banner-content">
+<!-----    <h1>The Guiding Spirit We FOLLOW</h1>-->
+    <p style="position: relative;top: 50px;  font-family: 'Saira Stencil One', sans-serif !important;font-size:24px">
+      These principles guide our journey,allowing us to make a meaningful impact while staying true to our mission of delivering quality with conscience.
+      At the heart of everything we do is an unwavering commitment to ethical and responsible practices.
+    </p>
+  </div>
+</div>
+
+
+
+<section class="pfi-thumbnail-section">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6">
-     <img src="./Assets/edi-employee.jpg" alt="Employee Network" class="img-responsive edi-employee-img">
-    <!--- <img src="./Assets/edi-employee.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">-->
-
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Integrity in Action:</h2>
+            <p style="text-align: justify;">We prioritize honesty, transparency, and fairness in all our dealings,
+               ensuring trust with our customers, partners, and communities.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 network">
-        <h2>EMPLOYEE NETWORK</h2>
-        <p>We foster strong employment networks to empower and connect talent both within and beyond our organization. Our goal is to create a collaborative and inclusive community where individuals can access opportunities for professional growth, mentorship, and skill development. By nurturing meaningful relationships, we strive to build an environment that supports career advancement and enables everyone to reach their full potential.</p>
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Sustainability as a Priority:</h2>
+            <p style="text-align: justify;">Every decision is guided by a commitment to protecting our planet. From sourcing and
+               production to packaging and distribution, we aim to minimize our environmental footprint.</p>
+          </div>
+        </div>
+      </div>
+         <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Health and Well-Being:</h2>
+            <p style="text-align: justify;">We are dedicated to creating products that contribute to healthier lifestyles,
+               ensuring every ingredient and process aligns with our mission to nourish both people and the planet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="row" style="margin-top: 70px;">
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Excellence with Responsibility:</h2>
+            <p style="text-align: justify;">Our focus is not only on creating exceptional 
+              products but also on ensuring that every step reflects our values of care, respect, and accountability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Excellence with Responsibility:</h2>
+            <p style="text-align: justify;">Our focus is not only on creating exceptional products
+               but also on ensuring that every step reflects our values of care, respect, and accountability.</p>
+          </div>
+        </div>
+      </div>
+         <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Community-Centric Values:</h2>
+            <p style="text-align: justify;">We believe in giving back, supporting
+               local communities, and fostering partnerships that promote mutual growth and development.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid core-networks-section">
+</section>
+
+<!-------DO NOT DELETE-->
+<div class="container-fluid full-ban">
+ <!------ <img src="./Assets/thepfiway-3-section-banner.jpg" alt="">-->
+<!-----  <div class="banner-message">
+   <h1>Conduct We Uphold</h1>
+    <p style="position: relative;top: 50px;">
+      These behaviors reflect who we are, guiding our daily actions and shaping our long-term goals:
+    </p>
+  </div>-->
+  <div class="custom-banner-overlay-wrapper">
+  <div class="custom-banner-overlay"></div>
+  <div class="custom-banner-message">
+    <h1>Conduct We Uphold</h1>
+    <p>
+      These behaviors reflect our essence — the compass behind our decisions, the promise in our path forward.
+    </p>
+  </div>
+</div>
+
+</div>
+
+<section class="pfi-thumbnail-sec">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6 net-logo">
-        <img src="./Assets/edi-logo.jpg " alt="Core Networks Logo" class="img-responsive core-networks-img">
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Accountability:</h2>
+            <p style="text-align: justify;">We take responsibility for our actions,
+               decisions, and their outcomes, always striving for excellence and improvement.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 network-1" >
-        <h2>Core Networks</h2>
-        <p>This network will strengthen employee engagement while aligning with Pure Finest Inc.’s brand ethos of innovation, sustainability, and wellness.</p>
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Collaboration:</h2>
+            <p style="text-align: justify;">We foster teamwork and partnerships, recognizing that collective effort 
+              leads to greater achievements.</p>
+          </div>
+        </div>
+      </div>
+         <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Adaptability:</h2>
+            <p style="text-align: justify;">We embrace change, 
+              continuously evolving to meet the needs of 
+              our customers and the demands of the industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="row" style="margin-top: 70px;">
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Respect:</h2>
+            <p style="text-align: justify;">We treat everyone with dignity and fairness,
+               building trust and strong relationships within our team and with stakeholders.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Innovation:</h2>
+            <p style="text-align: justify;">We consistently challenge 
+              ourselves to think creatively, introducing fresh ideas and solutions that drive progress.</p>
+          </div>
+        </div>
+      </div>
+         <div class="col-sm-3">
+        <div class="thumbnail-box">
+          <img src="./Assets/thepfiway-logo-image.jpg" alt="">
+          <div class="caption">
+            <h2>Sustainability:</h2>
+            <p style="text-align: justify;">We practice mindfulness in our operations, 
+              ensuring our work benefits both people and the planet.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
- <!-----thumbnail-->
- 
- <div class="container-fluid">
-  <div class="row thumbnails-row">
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-1.jpg" alt="">
-      <div class="divider"></div>
-      <h2 class="pure">Innovation hub:</h2>
-      <p>A network focused on sharing ideas 
-        and driving creativity for product
-        development, process improvement, 
-        and customer satisfaction.</p>
-    </div>
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-2.jpg" alt="">
-      <div class="divider"></div>
-      <h2 class="pure">Sustainability champions:</h2>
-      <p>A group dedicated to promoting 
-        eco-friendly practices, reducing waste,
-        and advocating for sustainable
-        initiatives across all levels of the company.</p>
-    </div>
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-3.jpg" alt="">
-      <div class="divider"></div>
-      <h2 class="pure">Health & wellness community:</h2>
-      <p>Focused on promoting employee well-being 
-        through fitness programs, mental health
-        resources, and nutritional education 
-        inspired by Pure Finest Inc. products.</p>
-    </div>
-    
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row thumbnails-row">
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-1.jpg" alt="">
-      <div class="divider"></div>
-      <h2 class="pure">Diversity & inclusion council:</h2>
-      <p>A platform to celebrate cultural diversity,
-         provide equal opportunities, and create
-          an inclusive workplace for all employees.</p>
-    </div>
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-2.jpg" alt="">
-      <div class="divider"></div>
-      <h2 class="pure">Leadership & mentorship program:</h2>
-      <p>Pairing experienced leaders with team members to
-         nurture professional growth and build future 
-         leaders within the company.</p>
-    </div>
-   <!---- <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-3.jpg" alt="">
-      <div class="divider"></div>
-      <h2 class="pure">Health & wellness community:</h2>
-      <p>Focused on promoting employee well-being 
-        through fitness programs, mental health
-        resources, and nutritional education 
-        inspired by Pure Finest Inc. products.</p>
-    </div>-->
-    
-  </div>
-</div>
-<div class="container-fluid core-networks-section">
-  <div class="row">
-    <div class="col-sm-6 network-2" >
-      <h3>BLACK EMPLOYEE NETWORK (BEN)</h3>
-      <p>The Black Employee Network (BEN)celebrates, supports, and empowers Black employees while fostering a culture of inclusion, equity, and representation. It promotes personal and professional growth through learning forums, development workshops, and cultural events that enhance cultural competency. These initiatives encourage employees to bring their authentic selves to work, contributing to an inclusive
-         and empowering workplace where everyone can thrive.</p>
-    </div>
-    <div class="col-sm-6 logo-edi">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
-    </div>
-    
-  </div>
-</div>
-
-<div class="container-fluid core-networks-section">
-  <div class="row">
-    <div class="col-sm-6 net-logo">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
-    </div>
-    <div class="col-sm-6 network-1" >
-      <h2>asian inclusion network (ain)</h2>
-      <p>To celebrate and empower employees of Asian heritage by fostering inclusion,
-         representation, and cultural awareness across the organization. AIN aims to
-          create a supportive environment where individuals
-         can thrive both personally and professionally while promoting understanding and respect for Asian cultures.</p>
-    </div>
-  </div>
-</div>
-<div class="container-fluid core-networks-section">
-  <div class="row">
-    <div class="col-sm-6 network-2" >
-      <h3>hispanic inclusion network (hlin)</h3>
-      <p>To empower and elevate Hispanic and Latino employees by fostering 
-        leadership opportunities, promoting cultural awareness, and driving
-         inclusion within the organization. HLIN seeks to create a space
-          where employees can celebrate 
-        their heritage, develop professionally, and contribute to a 
-        culture of equity and representation.</p>
-    </div>
-    <div class="col-sm-6 logo-edi">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
-    </div>
-    
-  </div>
-</div>
-<!-- Existing content above -->
-
-<!-- Diversity Headship Section -->
-<div class="container-fluid" style="margin-top: 40px; max-width:90%">
-  <div class="row">
-    <div class="col-sm-12">
-      <h2 style="font-weight: 900;">DIVERSITY HEADSHIP TEAM</h2>
-      <p style="font-weight: 900;text-align:justify">
-        At Pure Finest Inc., the leadership of our Equality, Diversity,
-        and Inclusion (EDI) initiatives is dedicated to fostering
-        a workplace where every individual feels valued, respected,
-        and empowered to contribute their best. By embedding EDI as a core organizational
-        value, the headship team is committed to creating a culture where belonging and inclusion thrive.
-      </p>
-      <p style="font-weight: 900;text-align:justify">
-        Our vision is to establish Pure Finest Inc. as a benchmark for
-        EDI, cultivating an environment where individuality is celebrated,
-        opportunities are equitable, and innovation flourishes through diverse perspectives.
-        By championing these principles, the leadership enables employees to bring their authentic selves to work and actively contribute 
-        to the company’s success, ensuring EDI is woven into every aspect of our operations and culture.
-      </p>
-    </div>
-  </div>
-</div>
-<div class="container-fluid core-networks-section">
-  <div class="row">
-    <div class="col-sm-6 network-2" >
-      <h3 >GLOBAL WOMEN'S LEADERSHIP TEAM (GWLT)</h3>
-      <p style="font-weight: 900;text-align:justify">To empower women leaders across the organization and beyond by 
-        fostering an inclusive environment that champions gender equity
-         builds leadership capacity, and supports professional growth. 
-        The GWLT is dedicated to creating pathways for women to excel,
-         inspire, and lead with confidence.</p>
-    </div>
-    <div class="col-sm-6 logo-edi">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
-    </div>
-    
-  </div>
-</div>
+</section>
 
 
 

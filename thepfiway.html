@@ -23,7 +23,146 @@
  
 
   <style>
-    
+        /* Existing carousel styles go here */
+
+     /* Ensure the carousel is properly contained */
+    .custom-carousel {
+      position: relative;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .custom-carousel-slide {
+      position: relative;
+      width: 100%;
+    }
+
+    .custom-carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .carousel-heading-top {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+    /*  background: rgba(0, 0, 0, 0.5);*/
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .carousel-heading-top h3,
+    .carousel-heading-top ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .carousel-heading-top ul li {
+      list-style: none;
+      font-size: 14px;
+    }
+
+   /* .carousel-controls {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 5;
+    }*/
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 5;
+}
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 50%;
+    }
+
+    /* ✅ WHO WE ARE link positioned below the banner, bottom-right */
+    .who-we-are-link {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      padding: 0 20px;
+    }
+
+    .who-we-are-link a {
+      color: #000;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+
+    /*********/
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .pfiway-section {
+      margin-bottom: 50px;
+    }
+
+    .pfiway-section h1 {
+      text-align: center;
+      font-family: 'Saira Stencil One', sans-serif;
+      font-size: 32px;
+      margin-top: 20px;
+    }
+
+    .image-overlay-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .image-overlay-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    /*  background: rgba(0, 0, 0, 0.7);*/
+      color: white;
+      font-size: 18px;
+      padding: 30px;
+      text-align: justify;
+      display: none;
+      max-width: 90%;
+      line-height: 1.6;
+      border-radius: 10px;
+    }
+
+    .image-overlay-container:hover .overlay-text {
+      display: block;
+    }
 /************************************/
   
    /*message on the third banner*/
@@ -1772,7 +1911,7 @@ left:0;
               <h2>15+ <br>Years of Crafting Excellence</h2>
               <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
                  that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
-              <button style="background-color: #6ccb35;border-radius:10px;">LEARN MORE</button>
+              <button style="background-color: #6ccb35;border-radius:10px;"><a href="learn-morepfiway.html">LEARN MORE</a></button>
             </div>
             <div style="margin-left: 30px;" class="we">
               <h5> <a href="who-we-are.html">Who We Are</a></h5>
@@ -1826,7 +1965,7 @@ left:0;
         <h2 class="one">10+ <br> LABELS, ONE VISION</h2>
         <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive in today’s dynamic marketplace.</p>
         <button style="background: #ffa500; border-radius:10px;width:350px; 
-        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="labels.html">DISCOVER OUR LABELS</a></button>
+        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="discover-our-labels.html">DISCOVER OUR LABELS</a></button>
       </div>
 
       <!-- Other Categories -->
@@ -1956,16 +2095,14 @@ left:0;
     </ul>
   </div>
 </nav>
- 
- 
+
 <div class="custom-carousel" id="pfiCarousel">
+
   <!-- Slide 1 -->
   <div class="custom-carousel-slide active">
     <div class="carousel-heading-top">
-    <!-----  <h3>THE PFI WAY</h3>-->
       <h3>We lead with excellence, innovation, and integrity.</h3>
       <ul>
-      <!-----  <li>We lead with excellence, innovation, and integrity.</li>-->
         <li>Our promise is premium quality that inspires daily living.</li>
       </ul>
     </div>
@@ -1999,14 +2136,66 @@ left:0;
     <button id="prevBtn">&#10094;</button>
     <button id="nextBtn">&#10095;</button>
   </div>
-<div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 20px;">
-  <a href="who-we-are.html" style="color: #000; text-decoration: underline; text-underline-offset: 10px; font-weight: 900;">
+</div>
+
+<!-- ✅ WHO WE ARE LINK (bottom-right, under the banner) -->
+<div class="who-we-are-link">
+  <a href="who-we-are.html">← WHO WE ARE</a>
+</div>
+
+
+ 
+<!------<div class="custom-carousel" id="pfiCarousel">-->
+  <!-- Slide 1 -->
+  <!-----<div class="custom-carousel-slide active">
+    <div class="carousel-heading-top">-->
+    <!-----  <h3>THE PFI WAY</h3>-->
+  <!-----    <h3>We lead with excellence, innovation, and integrity.</h3>
+      <ul>-->
+      <!-----  <li>We lead with excellence, innovation, and integrity.</li>-->
+     <!------   <li>Our promise is premium quality that inspires daily living.</li>
+      </ul>
+    </div>
+    <img src="./Assets/thepfiway-banner-1.jpg" alt="The PFI Way">
+  </div>-->
+
+  <!-- Slide 2 -->
+ <!----- <div class="custom-carousel-slide">
+    <div class="carousel-heading-top">
+      <h3>CRAFTING THE FUTURE</h3>
+      <ul>
+        <li>Empowering lives through mindful food choices.</li>
+      </ul>
+    </div>
+    <img src="./Assets/thepfiway-banner.jpg" alt="Crafting the Future">
+  </div>-->
+
+  <!-- Slide 3 -->
+<!-----  <div class="custom-carousel-slide">
+    <div class="carousel-heading-top">
+      <h3>EVERYDAY MOMENTS</h3>
+      <ul>
+        <li>Simple meals made memorable.</li>
+      </ul>
+    </div>
+    <img src="./Assets/thepfiway-banner1 (2).jpg" alt="Everyday Moments">
+  </div>-->
+
+  <!-- Controls -->
+<!------  <div class="carousel-controls">
+    <button id="prevBtn">&#10094;</button>
+    <button id="nextBtn">&#10095;</button>
+  </div>
+<div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 20px;"
+ class="who-we-are-mobile">
+  <a href="who-we-are.html" style="color: #000; text-decoration: underline;
+   text-underline-offset: 10px; font-weight: 900;">
     <h3 style="margin: 0;">← WHO WE ARE</h3>
   </a>
 </div>
 
 
-</div>
+</div>-->
 <script>
   const slides = document.querySelectorAll('.custom-carousel-slide');
   let currentSlide = 0;
@@ -2054,60 +2243,52 @@ left:0;
 </script>
 
 
-   <div class="container-fluid pfiway-section">
-  <!-- OUR PURPOSE -->
-  <div class="row section-row">
-    <div class="col-sm-6 img-col" id="purpose">
-     <img src="./Assets/pfiway-purpose.jpg" alt="Our Purpose">
-    </div>
-    <div class="col-sm-6 text-col">
-    
-<!------<span style="text-decoration: underline; text-underline-offset: 10px; margin-left: 0;
- font-weight: 900; color: #000;">
-  <a href="who-we-are.html" style="color: inherit; text-decoration: none; 
-  font-weight: 900; margin-top: 0;">
-    <h3 style="margin-left: 400px;">← WHO WE ARE</h3>
-  </a>
-</span>-->
 
-      <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Purpose</h2>
-      <p style="font-size: 18px;">
-        Our mission is to enhance lives by offering high-quality food and beverages that inspire joy, promote well-being, and deliver satisfaction to the body and soul. We strive to be a reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.
+  <!-- OUR PURPOSE -->
+  <div class="container-fluid pfiway-section">
+    <h1>Our Purpose</h1>
+    <div class="image-overlay-container" id="purpose">
+      <img src="./Assets/thepfiway-our-purpose.jpg" alt="Our Purpose">
+      <p class="overlay-text">
+        Our mission is to enhance lives by offering high-quality food and beverages that inspire joy,
+        promote well-being, and deliver satisfaction to the body and soul. We strive to be a
+        reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.
       </p>
     </div>
   </div>
 
   <!-- OUR VISION -->
-  <div class="row section-row flex-md-row-reverse">
-    <div class="col-sm-6 text-col">
-      <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Vision</h2>
-      <p style="font-size: 18px;">
-        A vision of a future where every bite and sip supports sustainability, exceptional quality, and well-being. We aspire to create a world where our food and beverages not only satisfy but also foster healthier lifestyles and contribute to a more sustainable planet.
+  <div class="container-fluid pfiway-section">
+    <h1>Our Vision</h1>
+    <div class="image-overlay-container" id="vision">
+      <img src="./Assets/thepfiway-our-vision.jpg" alt="Our Vision">
+      <p class="overlay-text">
+        A vision of a future where every bite and sip supports sustainability, exceptional quality,
+        and well-being. We aspire to create a world where our food and beverages not only satisfy 
+        but also foster healthier lifestyles and contribute to a more sustainable planet.
       </p>
-    </div>
-    <div class="col-sm-6 img-col" id="vision">
-      <img src="./Assets/pfiway-vision.png" alt="Our Vision">
     </div>
   </div>
 
   <!-- OUR APPROACH -->
-  <div class="row section-row">
-    <div class="col-sm-6 img-col">
-    <!---  <img src="./Assets/our-approach.jpg" alt="Our Approach">-->
-    <img src="./Assets/thepfiway-people-first.jpg" alt="">
-    </div>
-    <div class="col-sm-6 text-col" id="approach">
-      <h2 style="font-size: 28px;  font-family: 'Saira Stencil One', sans-serif !important;">Our Approach</h2>
-      <p style="font-size: 18px;">
-        With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create not only delights the palate but also aligns with our values of wellness, sustainability, and innovation.
+  <div class="container-fluid pfiway-section">
+    <h1>Our Approach</h1>
+    <div class="image-overlay-container">
+      <img src="./Assets/thepfiway-our-approach.jpg" alt="Our Approach">
+      <p class="overlay-text">
+        With a commitment to quality and a focus on customer satisfaction, 
+        we blend premium ingredients, innovative technology, and eco-friendly
+        methods to create food and beverages that excel in flavor and leave 
+        a lasting positive impact. This holistic approach ensures that everything 
+        we create not only delights the palate but also aligns with our values of 
+        wellness, sustainability, and innovation.
       </p>
     </div>
   </div>
-</div>  
 
 
 
-<div class="container-fluid pfiway-video-container">
+<!-----<div class="container-fluid pfiway-video-container">
   <video src="./Assets/thepfiway-2-section-video.mp4" autoplay muted loop playsinline></video>
 
   <div class="video-overlay"></div>
@@ -2119,10 +2300,10 @@ left:0;
   </div>
 </div>
 
-  <div class="container-fluid pfi-layout-container">
+  <div class="container-fluid pfi-layout-container">-->
 
   <!-- Top Row -->
-  <div class="pfi-row pfi-top">
+ <!------ <div class="pfi-row pfi-top">
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-premium.png" alt="">
       <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Premium Ingredients</h3>
@@ -2133,19 +2314,19 @@ left:0;
       <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Sustainability</h3>
       <p>Our practices prioritize environmental responsibility, from eco-friendly sourcing and production to packaging that reduces waste and promotes sustainability.</p>
     </div>
-  </div>
+  </div>-->
 
   <!-- Center Row -->
-  <div class="pfi-row pfi-center">
+ <!----- <div class="pfi-row pfi-center">
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-customer-centric.png" alt="">
       <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Customer-Centric Focus</h3>
       <p>We listen to our customers, continuously improving and adapting to deliver products that satisfy and inspire trust.</p>
     </div>
-  </div>
+  </div>-->
 
   <!-- Bottom Row -->
-  <div class="pfi-row pfi-bottom">
+<!------  <div class="pfi-row pfi-bottom">
     <div class="pfi-thumb">
       <img src="./Assets/thepfiway-innovation.png" alt="">
       <h3 style="  font-family: 'Saira Stencil One', sans-serif;">Innovation</h3>
@@ -2158,7 +2339,7 @@ left:0;
     </div>
   </div>
 
-</div>
+</div>-->
 
 
 
@@ -2172,10 +2353,10 @@ left:0;
    allowing us to make a meaningful impact while staying true to our mission of delivering quality with <br>
   conscience. At the heart of everything we do is an unwavering commitment to ethical and responsible practices.</p>
 </div>-->
-<div class="container-fluid full-banner">
-  <div class="banner-content">
+<!------<div class="container-fluid full-banner">
+  <div class="banner-content">-->
 <!-----    <h1>The Guiding Spirit We FOLLOW</h1>-->
-    <p style="position: relative;top: 50px;  font-family: 'Saira Stencil One', sans-serif !important;font-size:24px">
+ <!------   <p style="position: relative;top: 50px;  font-family: 'Saira Stencil One', sans-serif !important;font-size:24px">
       These principles guide our journey,allowing us to make a meaningful impact while staying true to our mission of delivering quality with conscience.
       At the heart of everything we do is an unwavering commitment to ethical and responsible practices.
     </p>
@@ -2251,10 +2432,10 @@ left:0;
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 <!-------DO NOT DELETE-->
-<div class="container-fluid full-ban">
+<!-----<div class="container-fluid full-ban">-->
  <!------ <img src="./Assets/thepfiway-3-section-banner.jpg" alt="">-->
 <!-----  <div class="banner-message">
    <h1>Conduct We Uphold</h1>
@@ -2262,7 +2443,7 @@ left:0;
       These behaviors reflect who we are, guiding our daily actions and shaping our long-term goals:
     </p>
   </div>-->
-  <div class="custom-banner-overlay-wrapper">
+ <!------ <div class="custom-banner-overlay-wrapper">
   <div class="custom-banner-overlay"></div>
   <div class="custom-banner-message">
     <h1>Conduct We Uphold</h1>
@@ -2342,7 +2523,7 @@ left:0;
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 
 
