@@ -25,6 +25,47 @@
  
 
   <style>
+      .dropdown-content span {
+    display: none;
+    position: absolute;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    width: 300px;
+    z-index: 999;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: justify;
+  
+  }
+
+  .dropdown-content li {
+    position: relative;
+    
+  }
+
+  .dropdown-content li:hover span,
+  .dropdown-content li:focus-within span {
+    display: block;
+    top: 100%;
+    left: 0;
+    
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-content span {
+      position: static;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .dropdown-content li:hover span,
+    .dropdown-content li:focus-within span {
+      display: block;
+    }
+  }
+/************************************/
     /* Scoped styles for the back link */
  
      /*Cookies Instructions*/
@@ -2090,61 +2131,77 @@ left:0;
     </div>
 
     <ul class="nav" id="main-nav">
-      <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu " style="border-top: 10px solid #6ccb35;">
-          <!-- repeat content as above -->
-          <div class="dropdown-content company-1">
-            <div><img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px"></div>
-            <div class="crafting">
-              <h2>15+ <br>Years of Crafting Excellence</h2>
-              <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
-                 that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
-              <button style="background-color: #6ccb35;border-radius:10px;"><a href="learn-morepfiway.html">LEARN MORE</a></button>
-            </div>
-            <div style="margin-left: 30px;" class="we">
-              <h5> <a href="who-we-are.html">Who We Are</a></h5>
-              <ul><li title="We are focused on foods and beverages 
-                creating premium, plant-based, 
-                 and natural foods and drinks. Offerings
-                  include REDEFINING REFRESHMENT
-                  WITH INTEGRITY AND INNOVATION vitality,
-                   vitamins, 
-                  sports, drinks, and well-being foods made with organic 
-                  ingredients to promote health and well-being. The company 
-                  is known for using high-quality premium ingredients,
-                   alongside other carefully selected components designed 
-                   to revitalize both body and soul. We ensure 
-                our brands are sustainable and beneficial for overall 
-                vitality,appealing to health-conscious consumers."><a href="who-we-are.html#overview">Overview</a></li><li title="Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest® 
-                 has ushered in a new era of wellness beverages,
-                  seamlessly blending ancient wisdom with modern vitality."><a href="who-we-are.html#origin">Origin</a></li><li title="Inspired by the holistic wellness traditions of the plant-based finest ingredients, PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and cutting-edge nutritional science, BGI crafted a line of beverages that not only revitalize the body but also nourish the soul. Pre-launched in the heart of London, England, on March 15, 2023, PureFinest® redefined the functional drink market by introducing a range that enhances everyday health with superior, organically sourced ingredients. Committed to purity and performance, PureFinest®
-                   has ushered in a new era of wellness beverages, 
-                   seamlessly blending ancient wisdom with modern vitality."><a href="who-we-are.html#our-drive">Our Drive</a></li>
-                   <li title="PureFinest® and Taste Me!-Feel Me!® stand at the forefront of 
-                   the food and beverage industry, under the umbrella of Pure Finest Inc.,
-                    known for its unwavering commitment to innovation, quality, 
-                    and sustainability. Since its inception, the company has 
-                    been dedicated to creating products that meet consumers' 
-                    needs and exceed their expectations 'Taste Me! Feel Me!®'.
-                     With a rich history of successful product launches, Pure
-                      Finest Inc. has consistently pushed the boundaries of 
-                      what is possible in the beverage and food industries."><a href="who-we-are.html#milestones">Our Milestones</a></li></ul>
-            </div>
-            <div class="peef">
-              <h5><a href="thepfiway.html">The PFI Way</a></h5>
-              <ul><li title="Our mission is to enhance lives by offering high-quality food and
-                 beverages that inspire joy, promote well-being, and deliver
-                  satisfaction to the body and soul. We strive 
-                to be a reliable provider of innovative, wholesome products,
-                 thoughtfully created with care and excellence."><a href="thepfiway.html#purpose">Our Purpose</a></li><li title="A vision of a future where every bite and sip support sustainability, exceptional quality, and well-being. We aspire to create a world where our food and 
-                 beverages not only satisfy but also foster healthier lifestyles 
-                 and contribute to a more sustainable planet."><a href="thepfiway.html#vision">Our Vision</a></li><li title="With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create 
-                 not only delights the palate but also aligns with our values of wellness, 
-                 sustainability, and innovation."><a href="thepfiway.html#approach">Our Approach</a></li></ul>
-            </div>
-          </div>
-        </div></li>
-
+ <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
+        
+<div class="dropdown-menu" style="border-top: 10px solid #6ccb35;">
+  <div class="dropdown-content company-1">
+    <div>
+      <img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px">
+    </div>
+    <div class="crafting">
+      <h2>15+ <br>Years of Crafting Excellence</h2>
+      <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
+        that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
+      <button style="background-color: #6ccb35;border-radius:10px;"><a href="learn-morepfiway.html">LEARN MORE</a></button>
+    </div>
+    <div style="margin-left: 30px;" class="we">
+      <h5><a href="who-we-are.html">Who We Are</a></h5>
+      <ul>
+        <li>
+          <a href="who-we-are.html#overview">Overview</a>
+          <span>We are focused on foods and beverages creating premium, plant-based, and natural foods and drinks. Offerings include REDEFINING REFRESHMENT WITH INTEGRITY AND INNOVATION vitality, vitamins, sports, drinks, and well-being foods made with organic ingredients to promote health and well-being. The company is known for using high-quality premium ingredients, alongside other carefully selected components designed to revitalize both body and soul. We ensure our brands are sustainable and beneficial for overall vitality, appealing to health-conscious consumers.</span>
+        </li>
+        <li>
+          <a href="who-we-are.html#origin">Origin</a>
+          <span>
+            Founded in the early 2010s, Pure Finest Inc.® has grown from a small startup into
+             a globally recognized brand. The company began with a simple mission: to create beverages that are as beneficial to the body as they are delightful to the taste buds. Over the years, the PureFinest® brand has been dedicated to creating innovative and health-focused products that enhance the lives of consumers. With a commitment to quality, sustainability, and customer satisfaction, PureFinest® continues to lead the way in developing food and beverages that
+             not only taste great but also provide essential health benefits.
+          </span>
+        </li>
+        <li>
+          <a href="who-we-are.html#our-drive">Our Drive</a>
+          <span>Inspired by the holistic wellness traditions of the plant-based finest ingredients,
+             PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of
+              Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and
+               cutting-edge nutritional science, BGI crafted a line of beverages that not only
+                revitalize the body but also nourish the soul. Pre-launched in the heart of London,
+                 England, on March 15, 2023, PureFinest® redefined the functional drink market by
+                  introducing a range that enhances everyday health with superior, organically 
+                  sourced ingredients. Committed to purity and performance, PureFinest®
+                   has ushered in a new era of wellness beverages, seamlessly blending
+                    ancient wisdom with modern vitality.</span>
+        </li>
+        <li>
+          <a href="who-we-are.html#milestones">Our Successful Milestones</a>
+          <span>
+            Pure Finest Inc.® stand at the forefront of the food and beverage industry,
+             under the umbrella of Pure Finest Inc.®, known for its unwavering commitment to innovation, quality, and sustainability. Since its inception, the company has been dedicated to creating products that meet consumers' needs and exceed their expectations 'Taste Me! Feel Me!®'. With a rich history of successful product launches, Pure Finest Inc.® has consistently
+             pushed the boundaries of what is possible in the beverage and food industries.
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="peef">
+      <h5><a href="thepfiway.html">The PFI Way</a></h5>
+      <ul>
+        <li>
+          <a href="thepfiway.html#purpose">Our Purpose</a>
+          <span>Our mission is to enhance lives by offering high-quality food and beverages that inspire joy, promote well-being, and deliver satisfaction to the body and soul. We strive to be a reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.</span>
+        </li>
+        <li>
+          <a href="thepfiway.html#vision">Our Vision</a>
+          <span>A vision of a future where every bite and sip support sustainability, exceptional quality, and well-being. We aspire to create a world where our food and beverages not only satisfy but also foster healthier lifestyles and contribute to a more sustainable planet.</span>
+        </li>
+        <li>
+          <a href="thepfiway.html#approach">Our Approach</a>
+          <span>With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create not only delights the palate but also aligns with our values of wellness, sustainability, and innovation.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+       </li>  
     <!-------  <li class="mobile-version-7">
         <a href="#">Labels<i class="fa fa-caret-down"></i></a>
         <div class="dropdown-menu">
