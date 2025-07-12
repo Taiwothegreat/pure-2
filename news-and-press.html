@@ -25,6 +25,46 @@
  
 
   <style>
+     .dropdown-content span {
+    display: none;
+    position: absolute;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    width: 300px;
+    z-index: 999;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    line-height: 1.4;
+  text-align: justify;
+  }
+
+  .dropdown-content li {
+    position: relative;
+    
+  }
+
+  .dropdown-content li:hover span,
+  .dropdown-content li:focus-within span {
+    display: block;
+    top: 100%;
+    left: 0;
+    
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-content span {
+      position: static;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .dropdown-content li:hover span,
+    .dropdown-content li:focus-within span {
+      display: block;
+    }
+  }
+/************************************/
     /* Scoped styles for the back link */
   
 /************************************/
