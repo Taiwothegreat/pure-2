@@ -23,6 +23,56 @@
  
 
   <style>
+     .pfiway-section {
+    position: relative;
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .pfiway-section h1 {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .caret-down {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-top: 4px;
+  }
+
+  .hover-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  .hover-text {
+    display: none;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .hover-wrapper:hover .hover-text {
+    display: block;
+  }
+
+  .image-overlay-container {
+    margin-top: 20px;
+  }
+
+  .image-overlay-container img {
+    max-width: 100%;
+    height: auto;
+  }
+    /***********/
      .dropdown-content span {
     display: none;
     position: absolute;
@@ -2309,48 +2359,62 @@ left:0;
 </script>
 
 
-
-  <!-- OUR PURPOSE -->
-  <div class="container-fluid pfiway-section">
-    <h1>Our Purpose</h1>
-    <div class="image-overlay-container" id="purpose">
-      <img src="./Assets/thepfiway-our-purpose.jpg" alt="Our Purpose">
-      <p class="overlay-text">
-        Our mission is to enhance lives by offering high-quality food and beverages that inspire joy,
-        promote well-being, and deliver satisfaction to the body and soul. We strive to be a
-        reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.
-      </p>
+<!-- OUR PURPOSE -->
+<div class="container-fluid pfiway-section">
+  <div class="hover-wrapper">
+    <h1>
+      Our Purpose
+      <span class="caret-down">▼</span>
+    </h1>
+    <div class="hover-text">
+      Our mission is to enhance lives by offering high-quality food and beverages that inspire joy,
+      promote well-being, and deliver satisfaction to the body and soul. We strive to be a
+      reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.
     </div>
   </div>
+  <div class="image-overlay-container" id="purpose">
+    <img src="./Assets/thepfiway-our-purpose.jpg" alt="Our Purpose">
+  </div>
+</div>
 
-  <!-- OUR VISION -->
-  <div class="container-fluid pfiway-section">
-    <h1>Our Vision</h1>
-    <div class="image-overlay-container" id="vision">
-      <img src="./Assets/thepfiway-our-vision.jpg" alt="Our Vision">
-      <p class="overlay-text">
-        A vision of a future where every bite and sip supports sustainability, exceptional quality,
-        and well-being. We aspire to create a world where our food and beverages not only satisfy 
-        but also foster healthier lifestyles and contribute to a more sustainable planet.
-      </p>
+<!-- OUR VISION -->
+<div class="container-fluid pfiway-section">
+  <div class="hover-wrapper">
+    <h1>
+      Our Vision
+      <span class="caret-down">▼</span>
+    </h1>
+    <div class="hover-text">
+      A vision of a future where every bite and sip supports sustainability, exceptional quality,
+      and well-being. We aspire to create a world where our food and beverages not only satisfy 
+      but also foster healthier lifestyles and contribute to a more sustainable planet.
     </div>
   </div>
+  <div class="image-overlay-container" id="vision">
+    <img src="./Assets/thepfiway-our-vision.jpg" alt="Our Vision">
+  </div>
+</div>
 
-  <!-- OUR APPROACH -->
-  <div class="container-fluid pfiway-section">
-    <h1>Our Approach</h1>
-    <div class="image-overlay-container">
-      <img src="./Assets/thepfiway-our-approach.jpg" alt="Our Approach">
-      <p class="overlay-text">
-        With a commitment to quality and a focus on customer satisfaction, 
-        we blend premium ingredients, innovative technology, and eco-friendly
-        methods to create food and beverages that excel in flavor and leave 
-        a lasting positive impact. This holistic approach ensures that everything 
-        we create not only delights the palate but also aligns with our values of 
-        wellness, sustainability, and innovation.
-      </p>
+<!-- OUR APPROACH -->
+<div class="container-fluid pfiway-section">
+  <div class="hover-wrapper">
+    <h1>
+      Our Approach
+      <span class="caret-down">▼</span>
+    </h1>
+    <div class="hover-text">
+      With a commitment to quality and a focus on customer satisfaction, 
+      we blend premium ingredients, innovative technology, and eco-friendly
+      methods to create food and beverages that excel in flavor and leave 
+      a lasting positive impact. This holistic approach ensures that everything 
+      we create not only delights the palate but also aligns with our values of 
+      wellness, sustainability, and innovation.
     </div>
   </div>
+  <div class="image-overlay-container">
+    <img src="./Assets/thepfiway-our-approach.jpg" alt="Our Approach">
+  </div>
+</div>
 
 
 
