@@ -90,7 +90,7 @@
 
     @media (min-width: 768px) {
       .custom-thumb {
-        width: 22%;
+        width: 27%;
         aspect-ratio: 3 / 4;
       }
     }
@@ -115,20 +115,27 @@
       width: 100%;
       margin: 10px 0;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
       color: #000;
     }
 
     .custom-thumb p {
       text-align: justify;
-      font-size: 14px;
+      font-size: 18px;
       margin: 0;
       color: #333;
     }
+.custom-thumb {
+  transition: transform 0.3s ease;
+}
+
+.custom-thumb:hover {
+  transform: scale(1.05); /* Zoom in slightly */
+}
 
 @media (min-width: 768px) {
   .custom-end {
-    margin-left: 90px; /* Adjust as needed */
+    margin-left: 10px; /* Adjust as needed */
   }
 
   .move-left {
