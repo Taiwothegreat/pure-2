@@ -23,6 +23,119 @@
  
 
   <style>
+    /*thicken thumbnail*/
+/* Layout and spacing */
+
+
+ .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+/*
+    .thumbnails-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }*/
+
+  /* ... previous styles unchanged ... */
+
+ /* .thumbnails-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 50px; /* closes space between items */
+  /*}*/
+.thumbnails-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ✅ centers the thumbnails */
+  margin: 0;
+  gap: 50px;
+}
+.thumbnails-rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start; /* ✅ centers the thumbnails */
+    margin: 0;
+
+  gap: 50px;
+}
+  @media (min-width: 768px) {
+    .custom-thumb {
+      width: calc(100% / 3); /* ensures no space between 3 items */
+      aspect-ratio: 3 / 4;
+    }
+  }
+
+  /* ... rest of your styles remain exactly as you had them ... */
+
+
+    .custom-thumb {
+      border: 2px solid #8B4513;
+      border-radius: 12px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      background-color: #f9f9f9;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .custom-thumb {
+        width: 22%;
+        aspect-ratio: 3 / 4;
+      }
+    }
+
+    .custom-thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      border-top: 2px solid #8B4513;
+      width: 100vw;
+      margin: 0;
+    }
+
+    .custom-thumb h5.pure {
+      text-align: left;
+      width: 100%;
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .custom-thumb p {
+      text-align: justify;
+      font-size: 14px;
+      margin: 0;
+      color: #333;
+    }
+
+@media (min-width: 768px) {
+  .custom-end {
+    margin-left: 90px; /* Adjust as needed */
+  }
+
+  .move-left {
+    margin-left: 0;
+  }
+}
+
  .dropdown-content span {
     display: none;
     position: absolute;
@@ -196,64 +309,13 @@
   }
 
   
-  /*thicken thumbnail*/
-/* Layout and spacing */
+  
 
 
-  .thumbnails-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* spacing between thumbnails */
-  padding: 20px;
-}
 
-/* Thumbnail card styling */
-.custom-thumb {
-  width: 280px;
-  height: 400px;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-sizing: border-box;
-}
 
-/* Image styling */
-.custom-thumb img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
-/* Full-width divider */
-.divider {
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  margin: 15px 0;
-  border-radius: 2px;
-}
-
-/* Responsive layout */
-/*.mobile-version-1,.mobile-version-2,
-.mobile-version-3,.mobile-version-4,.mobile-version-5{
- font-size: 16px;
-}*/
 @media (max-width: 768px) {
-  .thumbnails-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .custom-thumb {
-    width: 90%;
-    height: auto;
-  }
+  
  
     .network-2 h3{
       /*  margin-top:100px;
@@ -280,15 +342,7 @@
   
  
   
-/*@media (max-width: 768px) {
-.mobile-version-1,.mobile-version-2,
-.mobile-version-3,.mobile-version-4,.mobile-version-5{
-  width: 100%;
-  border-bottom: 1px solid #000;
-}
-.menu-toggle {
-  display: flex;
-}*/
+
 .edi-employee-img {
   width: 500px;
   height: 500px;
@@ -364,7 +418,7 @@ z-index: 1;
   .network-1 h2{
     /*  margin-top:100px;
       margin-right: 0;*/
-      max-width: 500px;
+      max-width: 600px;
       text-align: justify;
       margin-right: 100px;
       font-weight: 900;
@@ -1710,58 +1764,81 @@ left:0;
     </div>
   </div>
  <!-----thumbnail-->
- 
  <div class="container">
-  <div class="row thumbnails-row">
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-1.jpg" alt="">
-      <div class="divider"></div>
-      <h5 class="pure">Innovation hub:</h5>
-      <p style="font-size: 18px;text-align: justify;">A network focused on sharing ideas 
-        and driving creativity for product
-        development, process improvement, 
-        and customer satisfaction.</p>
-    </div>
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-2.jpg" alt="">
-      <div class="divider"></div>
-      <h5 class="pure">Sustainability champions:</h5>
-      <p style="font-size: 18px;text-align: justify;">A group dedicated to promoting 
-        eco-friendly practices, reducing waste,
-        and advocating for sustainable
-        initiatives across all levels of the company.</p>
-    </div>
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-3.jpg" alt="">
-      <div class="divider"></div>
-      <h5 class="pure">Health & wellness community:</h5>
-      <p style="font-size: 18px;text-align: justify;">Focused on promoting employee well-being 
-        through fitness programs, mental health
-        resources, and nutritional education 
-        inspired by Pure Finest Inc. products.</p>
-    </div>
-    
-  </div>
-</div>
+    <div class="row thumbnails-row">
+      <div class="thumbnail custom-thumb">
+        <img src="./Assets/edi-1.jpg" alt="Innovation hub">
+        <div class="divider"></div>
+        <h5 class="pure">Innovation hub:</h5>
+        <p>A network focused on sharing ideas 
+          and driving creativity for product development,
+          process improvement, and customer satisfaction.
+        </p>
+      </div>
 
-<div class="container">
-  <div class="row thumbnails-row">
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-1.jpg" alt="">
-      <div class="divider"></div>
-      <h5 class="pure">Diversity & inclusion council:</h5>
-      <p style="font-size: 18px;text-align: justify;">A platform to celebrate cultural diversity,
-         provide equal opportunities, and create
-          an inclusive workplace for all employees.</p>
+      <div class="thumbnail custom-thumb">
+        <img src="./Assets/edi-2.jpg" alt="Sustainability champions">
+        <div class="divider"></div>
+        <h5 class="pure">Sustainability champions:</h5>
+        <p>A group dedicated to promoting eco-friendly practices,
+           reducing waste, and advocating for sustainable initiatives
+           across all levels of the company.
+        </p>
+      </div>
+
+      <div class="thumbnail custom-thumb">
+        <img src="./Assets/edi-3.jpg" alt="Health & wellness community">
+        <div class="divider"></div>
+        <h5 class="pure">Health & wellness community:</h5>
+        <p>Focused on promoting employee well-being through fitness programs, 
+          mental health resources, and nutritional education inspired by Pure Finest Inc. products.
+        </p>
+      </div>
     </div>
-    <div class="thumbnail custom-thumb">
-      <img src="./Assets/edi-2.jpg" alt="">
-      <div class="divider"></div>
-      <h5 class="pure">Leadership & mentorship program:</h5>
-      <p style="font-size: 18px;text-align: justify;">Pairing experienced leaders with team members to
-         nurture professional growth and build future 
-         leaders within the company.</p>
+
+    <div class="row thumbnails-rows">
+      <div class="thumbnail custom-thumb custom-end">
+        <img src="./Assets/edi-1.jpg" alt="Diversity & inclusion council">
+        <div class="divider"></div>
+        <h5 class="pure">Diversity & inclusion council:</h5>
+        <p>A platform to celebrate cultural diversity,
+           provide equal opportunities, and create
+           an inclusive workplace for all employees.
+        </p>
+      </div>
+
+      <div class="thumbnail custom-thumb move-left">
+        <img src="./Assets/edi-2.jpg" alt="Leadership & mentorship program">
+        <div class="divider"></div>
+        <h5 class="pure">Leadership & mentorship program:</h5>
+        <p>Pairing experienced leaders with team members to
+           nurture professional growth and build future 
+           leaders within the company.
+        </p>
+      </div>
+
+    <!-----  <div class="thumbnail custom-thumb">
+        <img src="./Assets/edi-3.jpg" alt="Community engagement team">
+        <div class="divider"></div>
+        <h5 class="pure">Community engagement team:</h5>
+        <p>Driving outreach programs, local partnerships, 
+           and social impact initiatives that align 
+           with our company’s mission and values.
+        </p>
+      </div>-->
     </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
    <!---- <div class="thumbnail custom-thumb">
       <img src="./Assets/edi-3.jpg" alt="">
       <div class="divider"></div>
@@ -1804,8 +1881,9 @@ left:0;
 </div>
 <div class="container core-networks-section">
   <div class="row">
-    <div class="col-sm-6 network-2" >
-      <h3 style="text-transform: uppercase;font-weight: 900 !important;">hispanic inclusion network (hin)</h3>
+    <div class="col-sm-6 network-1" >
+      <h2 style="text-transform: uppercase;font-weight: 900 !important;">
+        hispanic inclusion network (hin)</h2>
       <p style="font-size: 18px;text-align: justify;">To empower and elevate Hispanic and Latino employees by fostering 
         leadership opportunities, promoting cultural awareness, and driving
          inclusion within the organization. HLIN seeks to create a space
@@ -1822,18 +1900,18 @@ left:0;
 <!-- Existing content above -->
 
 <!-- Diversity Headship Section -->
-<div class="container" style="margin-top: 40px; width:70%">
+<div class="container-fluid" style="margin-top: 40px; width:80%">
   <div class="row">
     <div class="col-sm-12">
       <h2 style="font-weight: 900;">DIVERSITY HEADSHIP TEAM</h2>
-      <p style="font-size: 18px;text-align: justify;">
+      <p style="font-size: 18px;text-align: justify;font-weight: 900;">
         At Pure Finest Inc., the leadership of our Equality, Diversity,
         and Inclusion (EDI) initiatives is dedicated to fostering
         a workplace where every individual feels valued, respected,
         and empowered to contribute their best. By embedding EDI as a core organizational
         value, the headship team is committed to creating a culture where belonging and inclusion thrive.
       </p>
-      <p style="font-size: 18px;text-align: justify;">
+      <p style="font-size: 18px;text-align: justify;font-weight: 900;">
         Our vision is to establish Pure Finest Inc. as a benchmark for
         EDI, cultivating an environment where individuality is celebrated,
         opportunities are equitable, and innovation flourishes through diverse perspectives.
@@ -1845,9 +1923,9 @@ left:0;
 </div>
 <div class="container core-networks-section">
   <div class="row">
-    <div class="col-sm-6 network-2" >
-      <h3 >GLOBAL WOMEN'S LEADERSHIP TEAM (GWLT)</h3>
-      <p style="font-size: 18px;text-align: justify;">To empower women leaders across the organization and beyond by 
+    <div class="col-sm-6 network-1" >
+      <h2 >GLOBAL WOMEN'S LEADERSHIP TEAM (GWLT)</h2>
+      <p style="font-size: 18px;text-align: justify;font-weight: 900;font-weight: 900;">To empower women leaders across the organization and beyond by 
         fostering an inclusive environment that champions gender equity
          builds leadership capacity, and supports professional growth. 
         The GWLT is dedicated to creating pathways for women to excel,
