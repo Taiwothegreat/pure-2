@@ -18,7 +18,8 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==
   " crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
+ <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
   <title>PURE FINEST</title>
  
 
@@ -29,7 +30,7 @@
 
  .container {
       max-width: 1200px;
-      margin: 0 auto;
+     /* margin: 0 auto;*/
       padding: 20px;
     }
 /*
@@ -111,7 +112,7 @@
     }
 
     .custom-thumb h5.pure {
-      text-align: left;
+      text-align: center;
       width: 100%;
       margin: 10px 0;
       font-weight: bold;
@@ -120,11 +121,16 @@
     }
 
     .custom-thumb p {
-      text-align: justify;
+      position: relative;
+      top:30px;
+      text-align: center;
       font-size: 18px;
       margin: 0;
       color: #333;
+      width: 100%;
     }
+  
+
 .custom-thumb {
   transition: transform 0.3s ease;
 }
@@ -182,6 +188,7 @@
     .dropdown-content li:focus-within span {
       display: block;
     }
+    
   }
 /******************/
 .network{
@@ -268,7 +275,7 @@
   .network-1 h2{
     /*  margin-top:100px;
       margin-right: 0;*/
-      max-width: 500px;
+      width: 600px;
       text-align: justify;
       margin-left: 50px;
       font-weight: 900 !important;
@@ -277,7 +284,7 @@
     .network-1 p{
       /*  margin-top:100px;
         margin-right: 0;*/
-        max-width: 500px;
+        width: 500px;
         text-align: justify;
         margin-left: 50px;
       /*  font-weight: 900;*/
@@ -434,7 +441,7 @@ z-index: 1;
     .network-1 p{
       /*  margin-top:100px;
         margin-right: 0;*/
-        max-width: 800px;
+        width: 500px;
         text-align: justify;
         margin-right: 100px;
         font-weight: 900;
@@ -450,12 +457,15 @@ z-index: 1;
         top:80%;
         left: 120px;*/
         color: #fff;
-       font-family: Cinzel Decorative, serif;
+     font-family: Cinzel Decorative, serif;
+       font-weight: 900;
         /*font-family: 'Tangerine', serif;*/
         /*text-transform:uppercase;
         font-weight: 900;
         font-size: 50px;*/
         margin-left: -25px;
+        text-transform: uppercase;
+     /*   font-family: 'Saira Stencil One', sans-serif;*/
       }
  
     /*END OF PURE-1*/
@@ -514,12 +524,17 @@ h1,h2,h5 {
   color: #000;
    font-family: 'Saira Stencil One', sans-serif;
 }
+.pure{
+   font-family: Cinzel Decorative, serif;
+    font-weight: 900 !important;
+}
 h1,h5,.mobile-version-6 a,.mobile-version-7 a,
 .mobile-version-8 a,.mobile-version-9 a,
 .mobile-version-10 a{
   font-size: 20px;
   color: #000;
-   font-family: 'Saira Stencil One', sans-serif;
+  font-family: 'Saira Stencil One', sans-serif;
+   
 }
 .nav-container {
 max-width: 1200px;
@@ -1444,8 +1459,23 @@ left:0;
   body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
   }
+  
 }
+/*********THIS IS FOR ALL THE BANNERS********/
+/* ✅ Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .image-container img {
+    height: 70vh; /* smaller image height for mobile */
+  }
 
+  .image-container .centered-text {
+    padding: 0 10px;
+  }
+
+  .image-container .centered-text .globally {
+    font-size: 24px; /* reduce text size on small screens */
+  }
+}
 
   </style>
   <!-------------->
@@ -1731,14 +1761,15 @@ left:0;
     <img src="./Assets/edi-banner-1.jpg" alt="Equity Diversity Inclusion Banner">
 
     <!-- Dark Overlay -->
-    <div class="overlay"></div>
+    <!------<div class="overlay"></div>-->
 
     <!-- Centered Text -->
     <div class="centered-text">
       <div class="globally">
         Equity Diversity Inclusion (EDI)
       </div>
-      <p style="font-size: 18px;font-weight: 900px;font-family: 'Saira Stencil One', sans-serif;">Connect with Us: Be Part of the PureFinest Community.</p>
+      <p style="font-size: 20px;font-weight: 900px;font-family: 'Saira Stencil One', sans-serif;">
+       <span style="font-size: 30px;"> Connect With Us:</span> Be Part of the PureFinest Community.</p>
     </div>
   </div>
 
@@ -1775,9 +1806,9 @@ left:0;
  <div class="container">
     <div class="row thumbnails-row">
       <div class="thumbnail custom-thumb">
-        <img src="./Assets/edi-1.jpg" alt="Innovation hub">
+        <img src="./Assets/edi-1.jpg" alt="Innovation Hub">
         <div class="divider"></div>
-        <h5 class="pure">Innovation hub:</h5>
+        <h5 class="pure">Innovation Hub:</h5>
         <p>A network focused on sharing ideas 
           and driving creativity for product development,
           process improvement, and customer satisfaction.
@@ -1785,9 +1816,9 @@ left:0;
       </div>
 
       <div class="thumbnail custom-thumb">
-        <img src="./Assets/edi-2.jpg" alt="Sustainability champions">
+        <img src="./Assets/edi-2.jpg" alt="Sustainability Champions">
         <div class="divider"></div>
-        <h5 class="pure">Sustainability champions:</h5>
+        <h5 class="pure">Sustainability Champions:</h5>
         <p>A group dedicated to promoting eco-friendly practices,
            reducing waste, and advocating for sustainable initiatives
            across all levels of the company.
@@ -1795,20 +1826,19 @@ left:0;
       </div>
 
       <div class="thumbnail custom-thumb">
-        <img src="./Assets/edi-3.jpg" alt="Health & wellness community">
+        <img src="./Assets/edi-3.jpg" alt="Health & Wellness Community">
         <div class="divider"></div>
-        <h5 class="pure">Health & wellness community:</h5>
+        <h5 class="pure">Health & Wellness Community:</h5>
         <p>Focused on promoting employee well-being through fitness programs, 
           mental health resources, and nutritional education inspired by Pure Finest Inc. products.
-        </p>
-      </div>
+        </p>      </div>
     </div>
 
     <div class="row thumbnails-rows">
       <div class="thumbnail custom-thumb custom-end">
-        <img src="./Assets/edi-1.jpg" alt="Diversity & inclusion council">
+        <img src="./Assets/edi-1.jpg" alt="Diversity & Inclusion Council">
         <div class="divider"></div>
-        <h5 class="pure">Diversity & inclusion council:</h5>
+        <h5 class="pure">Diversity & Inclusion Council:</h5>
         <p>A platform to celebrate cultural diversity,
            provide equal opportunities, and create
            an inclusive workplace for all employees.
@@ -1816,9 +1846,9 @@ left:0;
       </div>
 
       <div class="thumbnail custom-thumb move-left">
-        <img src="./Assets/edi-2.jpg" alt="Leadership & mentorship program">
+        <img src="./Assets/edi-2.jpg" alt="Leadership & Mentorship Program">
         <div class="divider"></div>
-        <h5 class="pure">Leadership & mentorship program:</h5>
+        <h5 class="pure" >Leadership & Mentorship Program:</h5>
         <p>Pairing experienced leaders with team members to
            nurture professional growth and build future 
            leaders within the company.
@@ -1859,6 +1889,21 @@ left:0;
     
   </div>
 </div>
+<div class="container-fluid image-container">
+    <!-- Background Image -->
+    <img src="./Assets/edi-black-employee.jpg" alt="Equity Diversity Inclusion Banner">
+
+    <!-- Dark Overlay -->
+    <!-----<div class="overlay"></div>-->
+
+    <!-- Centered Text -->
+    <!-----<div class="centered-text">
+      <div class="globally">
+        Equity Diversity Inclusion (EDI)
+      </div>
+      <p style="font-size: 18px;font-weight: 900px;font-family: 'Saira Stencil One', sans-serif;">Connect with Us: Be Part of the PureFinest Community.</p>
+    </div>-->
+  </div>
 <div class="container core-networks-section">
   <div class="row">
     <div class="col-sm-6 network-1"  style="max-width: 900px;">
@@ -1867,7 +1912,7 @@ left:0;
          and empowering workplace where everyone can thrive.</p>
     </div>
     <div class="col-sm-6 logo-edi">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
+      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img" style="position:absolute; left:100px;">
     </div>
     
   </div>
@@ -1900,13 +1945,28 @@ left:0;
         culture of equity and representation.</p>
     </div>
     <div class="col-sm-6 logo-edi">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
+      <img src="./Assets/edi-logo.jpg"
+       alt="Core Networks Logo" class="img-responsive core-networks-img" style="position:absolute; left:200px;">
     </div>
     
   </div>
 </div>
 <!-- Existing content above -->
+<div class="container-fluid image-container">
+    <!-- Background Image -->
+    <img src="./Assets/edi-headship.jpg" alt="Equity Diversity Inclusion Banner">
 
+    <!-- Dark Overlay -->
+    <!-----<div class="overlay"></div>-->
+
+    <!-- Centered Text -->
+    <!-----<div class="centered-text">
+      <div class="globally">
+        Equity Diversity Inclusion (EDI)
+      </div>
+      <p style="font-size: 18px;font-weight: 900px;font-family: 'Saira Stencil One', sans-serif;">Connect with Us: Be Part of the PureFinest Community.</p>
+    </div>-->
+  </div>
 <!-- Diversity Headship Section -->
 <div class="container-fluid" style="margin-top: 40px; width:80%">
   <div class="row">
@@ -1932,7 +1992,7 @@ left:0;
 <div class="container core-networks-section">
   <div class="row">
     <div class="col-sm-6 network-1" >
-      <h2 >GLOBAL WOMEN'S LEADERSHIP TEAM (GWLT)</h2>
+      <h2 style="text-align:left" >GLOBAL WOMEN'S LEADERSHIP TEAM (GWLT)</h2>
       <p style="font-size: 18px;text-align: justify;font-weight: 900;font-weight: 900;">To empower women leaders across the organization and beyond by 
         fostering an inclusive environment that champions gender equity
          builds leadership capacity, and supports professional growth. 
@@ -1940,7 +2000,7 @@ left:0;
          inspire, and lead with confidence.</p>
     </div>
     <div class="col-sm-6 logo-edi">
-      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img">
+      <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" class="img-responsive core-networks-img" style="position:absolute; left:200px;">
     </div>
     
   </div>
