@@ -2259,7 +2259,7 @@ function closeOverlay() {
  
 <!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 -->
-    <nav>
+   <nav>
   <div class="nav-container">
   
     <div class="brand">
@@ -2272,7 +2272,7 @@ function closeOverlay() {
     </div>
 
     <ul class="nav" id="main-nav">
-    <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
+ <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
         
 <div class="dropdown-menu" style="border-top: 10px solid #6ccb35;">
   <div class="dropdown-content company-1">
@@ -2316,9 +2316,11 @@ function closeOverlay() {
         <li>
           <a href="who-we-are.html#milestones">Autobiography</a>
           <span>
-            Pure Finest Inc.® stand at the forefront of the food and beverage industry,
-             under the umbrella of Pure Finest Inc.®, known for its unwavering commitment to innovation, quality, and sustainability. Since its inception, the company has been dedicated to creating products that meet consumers' needs and exceed their expectations 'Taste Me! Feel Me!®'. With a rich history of successful product launches, Pure Finest Inc.® has consistently
-             pushed the boundaries of what is possible in the beverage and food industries.
+          Early 2010s
+
+PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and beverage industry, 
+under the umbrella of Pure Finest Inc.®, known for its unwavering commitment to innovation, quality, and sustainability. Since its inception, the company has been dedicated to creating products that meet consumers' needs and exceed their expectations 'Taste Me! Feel Me!®'. With a rich history of successful product launches, Pure Finest Inc.® 
+has consistently pushed the boundaries of what is possible in the beverage and food industries.
           </span>
         </li>
       </ul>
@@ -2342,42 +2344,8 @@ function closeOverlay() {
     </div>
   </div>
 </div>
-       </li>
-
-    <!-------  <li class="mobile-version-7">
-        <a href="#">Labels<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-menu">
-      
-        <div class="dropdown-content labels-1">
-  <div>
-    <img src="./Assets/labels-logo.jpg" alt="" width="200px" height="200px">
-  </div>
-  <div>
-    <div class="vision">
-      <h2>10+ <br> BRANDS, ONE VISION</h2>
-      <p>Pure Finest Inc. has built a portfolio of 10 premium brands designed to thrive in today’s dynamic marketplace.</p>
-      <button style="background: #ffa500;border-radius:10px">DISCOVER OUR BRANDS</button>
-    </div>
-    <div class="hydration">
-      <h5  style="text-decoration: underline;">Hydration & Vitality</h5>
-      <ul><li>PureFinest®</li><li>Elysium Alps®</li><li>AlpineGlow®</li></ul>
-    </div>
-    <div class="juice">
-      <h5 style="text-decoration: underline;">Juice & Dairy</h5>
-      <ul><li>PureLife</li></ul>
-    </div>
-    <div class="snacks">
-      <h5>Snacks</h5>
-      <ul><li>PureLife</li><li>Taste Me! - Feel Me!®</li></ul>
-    </div>
-    <div class="alcohol">
-      <h5>Alcohol</h5>
-      <ul><li>Gin</li><li>Vodka</li><li>Wine</li></ul>
-    </div>
-  </div>
-</div>
-
-      </li>-->
+       </li>  
+  
 <li class="mobile-version-7">
   <a href="#">Labels <i class="fa fa-caret-down"></i></a>
   <div class="dropdown-menu" style="border-top: 10px solid #ffa500 ;">
@@ -2391,31 +2359,32 @@ function closeOverlay() {
       <!-- Vision Section -->
       <div class="visions">
         <h2 class="one">10+ <br> LABELS, ONE VISION</h2>
-        <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive 
-          in today’s dynamic marketplace.</p>
-        <button style="background: #ffa500; border-radius:10px;width:300px;
-        text-decoration:none;text-decoration: none;"><a href="discover-our-labels.html">DISCOVER OUR LABELS</a></button>
+        <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive in today’s dynamic marketplace.</p>
+        <button style="background: #ffa500; border-radius:10px;width:300px; text-decoration:none;">
+          <a href="discover-our-labels.html">DISCOVER OUR LABELS</a></button>
       </div>
 
       <!-- Other Categories -->
       <div class="hydrations">
-        <h5 ><a href="labels.html">Hydration & Vitality</a></h5>
+        <h5 ><a href="discover-our-labels.html#radio-hydration" onclick="selectFilter('radio-hydration')" >Hydration & Vitality</a></h5>
         <ul>
-          <li><a href="finest.html">PureFinest<sup>&reg;</sup></a></li>
+          <li><a href="purelife.html">PureFinest</a></li>
           <li><a href="elysium-alps.html">Elysium Alps<sup>&reg;</sup></a></li>
           <li><a href="alpine-glow.html">AlpineGlow<sup>&reg;</sup></a></li>
         </ul>
       </div>
 
+
+
       <div class="juices">
-        <h5 ><a href="labels.html">Juice & Dairy</a></h5>
+        <h5 ><a href="discover-our-labels.html#radio-juice " onclick="selectFilter('radio-juice')">Juice & Dairy</a></h5>
         <ul>
           <li><a href="purelife.html">PureLife<sup>&trade;</sup></a></li>
         </ul>
       </div>
 
       <div class="snackss">
-        <h5><a href="labels.html">Snacks</a></h5>
+        <h5><a href="discover-our-labels.html#radio-snacks" onclick="selectFilter('radio-snacks')">Snacks</a></h5>
         <ul>
           <li><a href="purelife.html">PureLife<sup>&trade;</sup></a></li>
           <li><a href="tasteme-feelme.html">Taste Me! - Feel Me!<sup>&reg;</sup></a></li>
@@ -2423,7 +2392,10 @@ function closeOverlay() {
       </div>
 
       <div class="alcohols">
-        <h5><a href="labels.html">Alcohol</a></h5>
+        <h5><a href="discover-our-labels.html#radio-alcohol" onclick="selectFilter('radio-alcohol')">Alcohol</a></h5>
+
+
+
         <ul>
           <li><a href="gin.html">Gin</a></li>
           <li><a href="vodka.html">Vodka</a></li>
@@ -2446,11 +2418,12 @@ function closeOverlay() {
               <p class="peev">At Pure Finest Inc., we believe that people are our greatest asset. 
                  From empowering our employees to fostering meaningful connections with partners and supporting the communities 
                 we call home, we are committed to improving lives and creating a positive impact wherever we operate.</p>
-              <button style="background-color: #c04141;border-radius:10px;"><a href="#">PEOPLE FIRST</a></button>
+              <button style="background-color: #c04141;border-radius:10px;"><a href="people-first.html">PEOPLE FIRST</a></button>
             </div>
           <div class="edi">
               <h5 ><a href="edi.html">EDI</a></h5>
-              <ul><li><a href="edi.html#employee">Employee</a></li><li><a href="edi.html#network">Network</a></li>
+              <ul><li><a href="edi.html#employee">Employee</a></li>
+                <li><a href="edi.html#network">Network</a></li>
                 <li><a href="edi.html#headship">Headship</a></li></ul>
             </div>
            <div class="human">
@@ -2470,8 +2443,7 @@ function closeOverlay() {
           </div>
         </div>
       </li>
-
-    <li class="mobile-version-9">
+<li class="mobile-version-9">
         <a href="#">Media Center<i class="fa fa-caret-down"></i></a>
         <div class="dropdown-menu" style="border-top:10px solid #755353 ;">
           <!-- repeat content as above -->
@@ -2501,7 +2473,6 @@ function closeOverlay() {
           </div>
         </div>
       </li>
-
       <li class="mobile-version-10">
         <a href="#">Careers<i class="fa fa-caret-down"></i></a>
         <div class="dropdown-menu" style="border-top: 10px solid #0000ff;">
@@ -2526,6 +2497,72 @@ function closeOverlay() {
     </ul>
   </div>
 </nav>
+<!-------<script>
+  function selectFilter(id) {
+    const input = document.getElementById(id);
+    if (input) {
+      input.checked = true;
+      input.dispatchEvent(new Event('change'));
+    }
+  }
+
+  function filterImages() {
+    const selected = document.querySelector('input[name="filter"]:checked').value;
+    const images = document.querySelectorAll('#imageContainer img');
+
+    images.forEach(img => {
+      if (selected === 'all' || img.dataset.category.includes(selected)) {
+        img.classList.remove('hidden');
+      } else {
+        img.classList.add('hidden');
+      }
+    });
+  }
+  window.onload = filterImages;
+</script> -->  
+<div id="filters" style="display:none;">
+  <input type="radio" name="filter" id="radio-hydration" value="hydration" />
+  <input type="radio" name="filter" id="radio-juice" value="juice" />
+  <input type="radio" name="filter" id="radio-snacks" value="snacks" />
+  <input type="radio" name="filter" id="radio-alcohol" value="alcohol" />
+  <input type="radio" name="filter" id="radio-all" value="all" checked />
+</div>
+<script>
+  function filterImages() {
+    const selectedValue = document.querySelector('input[name="filter"]:checked')?.value;
+    document.querySelectorAll('.image').forEach(img => {
+      const match = selectedValue === "all" || img.dataset.category === selectedValue;
+      img.classList.toggle("show", match);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    const params = new URLSearchParams(window.location.search);
+    const queryFilter = params.get('filter');
+
+    const targetId = hash.replace('#', '') || queryFilter;
+
+    if (targetId) {
+      const input = document.getElementById(targetId);
+      if (input && input.type === 'radio') {
+        input.checked = true;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    } else {
+      // fallback to default filter
+      filterImages();
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
 
 <!-- Fullscreen-width video section -->
 <section style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0;">
