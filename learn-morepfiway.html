@@ -23,6 +23,11 @@
  
 
   <style>
+    .thumbnail-box{
+          background-color: #f9f9f9;
+          border: 2px solid #8B4513 !important;
+    }
+    /*****************/
     .dropdown-content span {
     display: none;
     position: absolute;
@@ -73,17 +78,7 @@ body {
   padding: 0;
 }
 
-/*.custom-banner-overlay-wrapper {
-  position: relative;
-  left: 0;
-  width: 100vw;
-  height: 200vh; /* Full screen height, no extra space */
- /* background: url('./Assets/thepfiway-4-section-banner.jpg') center center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}*/
+
 
 .custom-banner-overlay {
   position: absolute;
@@ -122,24 +117,14 @@ top:500px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 }
-/*.custom-banner-message {
-  position: absolute;
-  bottom: 80px; 
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  color: #000;
-  text-align: center;
-  padding: 20px;
-  max-width: 800px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}*/
+
 
 
 .custom-banner-message h1 {
  /* font-size: 2.8rem;*/
  color:#ffffff;
-  font-size:34px;
+  font-size:40px;
+  font-weight: 900;
   margin-bottom: 20px;
   letter-spacing: 1px;
    /*  font-family: 'Saira Stencil One', sans-serif !important;*/
@@ -178,8 +163,9 @@ font-size: 24px;
   width: 100%;
   max-width: 450px; /* ✅ wider thumbnail */
   height: 460px;
-  background: #ffffff;
-  border: 1px solid brown;
+   background-color: #f9f9f9;
+ /* background: #ffffff;*/
+  border: 2px solid brown;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   overflow: hidden;
@@ -201,10 +187,11 @@ font-size: 24px;
   height: auto;
   max-height: 220px;
   object-fit: contain; /* shows full image without cropping */
-  border-bottom: 1px solid brown;
+  border-bottom: 2px solid brown;
   transition: transform 0.4s ease-in-out;
   display: block;
-  background-color: #fff;
+/*  background-color: #fff;*/
+    background-color: #afabab !important;
 }
 
 .pfi-thumbnail-section .thumbnail-box:hover img,
@@ -251,6 +238,7 @@ font-size: 24px;
   .pfi-thumbnail-sec {
     margin-left: 0;
     padding: 30px 10px;
+    
   }
 
   .pfi-thumbnail-section .thumbnail-box,
@@ -284,40 +272,6 @@ font-size: 24px;
 
 
 
-   /*End of thumbnails*/
-/*third banner*/
-/*.full-banner {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .full-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  body, html {
-    margin: 0;
-    padding: 0;
-  }*/
-/*.full-banner {
-  position: relative;
-  top:300px;
- 
-  background-image: url("./Assets/thepfiway-3-section-banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
-  height: 200vh;
-  margin: 0;
-  padding: 0;
-}*/
 .full-banner {
   position: relative;
   background-image: url("./Assets/thepfiway-3-section-banner.jpg");
