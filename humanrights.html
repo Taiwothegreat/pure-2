@@ -45,47 +45,14 @@
   .logo-overlay { position: absolute; top: 8px; right: 8px; width: 50px; height: 50px; }
   .pagination { margin-top: 30px; }
   .page-numbers button { margin: 0 5px; }
- /* .news-img {
-  position: relative;
-  width: 200px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 8px;
-}*/
 
-/*.news-img img:first-child {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}*/
 
 .news-img:hover img:first-child {
 /*  transform: scale(1.1);*/
   transform: none;
 }
 
-/*.logo-overlay {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 50px;
-  height: 50px;
-  z-index: 2;
-}
-.logo-overlay {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 50px;
-  height: 50px;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 5px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  object-fit: contain;
-}*/
+
 .news-img {
   position: relative;
   width: 200px;
@@ -135,6 +102,73 @@
      /* margin: 0 auto;*/
       padding: 20px;
     }
+    /* === MOBILE STYLES === */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+    width: 95%;
+    padding: 10px;
+  }
+
+  .news-item a {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .news-desc {
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+.news-item h2{
+  font-weight:900; 
+  text-align:left;
+   margin-top:50px;
+          text-transform: uppercase;
+          font-size:18px !important;
+          font-family: 'Saira Stencil One', sans-serif;
+}
+.news-item p{
+ 
+  text-align:left;
+   margin-top:50px;
+       text-align: left;
+      max-width: 300px;
+}
+ /* .news-img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 15px;
+  }*/
+ .news-img {
+    width: 200px;
+    height: 150px;
+    margin-left: 0 !important;
+  }
+ /* .news-img img:first-child {
+    height: auto;
+  }
+
+  .logo-overlay {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .radios {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }*/
+
+  .sort-container {
+    width: 100%;
+    text-align: center;
+  }
+}
 /*
     .thumbnails-row {
       display: flex;
