@@ -23,6 +23,113 @@
  
 
   <style>
+    /*last section table*/
+                /* Scoped styles for the back link */
+  
+/************************************/
+  #media-center { text-align: center; padding: 30px; }
+  .sort-container { display: inline-block; margin: 20px 0; position: relative; }
+  .caret { cursor: pointer; font-size: 20px; margin-left: 10px; transition: transform 0.3s ease; }
+  .caret.open { transform: rotate(180deg); }
+  
+  .radios { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 10px; display: flex; justify-content: center; gap: 20px; }
+  .radios.open { max-height: 50px; }
+  .news-item { display: flex; justify-content: space-between; align-items: center; 
+    border: 5px solid #ddd; padding: 15px; 
+    margin: 15px auto; width: 80%; text-align: left; flex-wrap: wrap; transition: all 0.3s ease; }
+  .news-item a { display: flex; width: 100%; color: inherit; text-decoration: none; }
+  .news-desc { flex: 1; padding-right: 20px; }
+  .news-img { position: relative; width: 200px; height: 150px; }
+/*  .news-img img:first-child { width: 200px; height: 150px; object-fit: cover; }*/
+  .news-img img:first-child { width: 100%; height: 100%; object-fit: contain; }
+  .logo-overlay { position: absolute; top: 8px; right: 8px; width: 50px; height: 50px; }
+  .pagination { margin-top: 30px; }
+  .page-numbers button { margin: 0 5px; }
+ /* .news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+}*/
+
+/*.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}*/
+
+.news-img:hover img:first-child {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+/*.logo-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
+.logo-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  object-fit: contain;
+}*/
+.news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.news-img:hover {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px; /* Bigger logo */
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Make sure logo zooms along with image */
+.news-img:hover .logo-overlay {
+  transform: scale(1.05);
+}
+
+  @media (max-width: 600px) {
+    .news-item a { flex-direction: column; text-align: center; }
+    .news-desc { padding: 0; margin-bottom: 10px; }
+  }
+    /*last section table*/
     .container {
       max-width: 1200px;
      /* margin: 0 auto;*/
@@ -1484,8 +1591,7 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
       <p style=" text-align:justify; margin:15px;font-size:18px">A robust policy framework governs
          our approach to human rights, including clear
          guidelines for due diligence, reporting, and remediation.</p>
-            <h2 style="font-weight: 900;  font-family: 'Saira Stencil One', sans-serif;
-      font-size: 24px;text-align:center">DUE DILIGENCE AND RISK ASSESSMENT</h2>
+            <h2 style="font-weight:900; text-align:center; margin-top:50px;">DUE DILIGENCE AND RISK ASSESSMENT</h2>
       <p style="text-align:justify; margin:15px;font-size:18px">We conduct regular human rights
          impact assessments across our operations 
          and supply chains to identify and mitigate potential risks.</p>
@@ -1615,11 +1721,11 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
   </div>
 
 <!------------------------------------------------>
- <div class="container-fluid" style="padding:0; margin:0;">
+<!----- <div class="container-fluid" style="padding:0; margin:0;">
   <div class="row">
     <div class="col-sm-6" style="padding:15px;">
-      <h2 style="font-weight: 900;  font-family: 'Saira Stencil One', sans-serif;
-      font-size: 24px;margin-left:100px;text-transform: uppercase;">reporting and accountability</h2>
+      <h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">
+        reporting and accountability</h2>
       <p style="text-align: justify;width: 500px;font-size: 18px;margin-left:100px;">
         Pure Finest Inc. is committed to transparency in our human rights practices. We publish regular reports
          outlining our progress, challenges, and areas for improvement to ensure accountability to stakeholders.
@@ -1636,20 +1742,20 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
 
 <div style="width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto;
  margin-left: auto;margin-top: 50px;">
-  <div style="margin-right: -15px; margin-left: -15px; display: flex; flex-wrap: wrap;">
+  <div style="margin-right: -15px; margin-left: -15px; display: flex; flex-wrap: wrap;">-->
     
     <!-- First Column (col-sm-6) -->
-    <div style="position: relative; min-height: 1px; padding-right: 15px; 
+   <!----- <div style="position: relative; min-height: 1px; padding-right: 15px; 
     padding-left: 15px; width: 100%; max-width: 50%; box-sizing: border-box;">
       <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" style="display: block;
        max-width: 50%; height: auto;margin-left: 70px;margin-top: 0;">
-    </div>
+    </div>-->
     
     <!-- Second Column (col-sm-6) -->
-    <div style="position: relative;left: 100px; min-height: 1px; padding-right: 15px; padding-left: 15px;
+ <!-------   <div style="position: relative;left: 100px; min-height: 1px; padding-right: 15px; padding-left: 15px;
      width: 100%; max-width: 50%; box-sizing: border-box;">
-      <h2 style="font-weight: 900;  
-      font-family: 'Saira Stencil One', sans-serif;font-size: 24px;text-transform: uppercase;">advancing sustainability</h2>
+      <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;">
+        advancing sustainability</h2>
       <p style="text-align: justify;width: 500px;font-size: 18px;">
        Pure Finest Inc. has significantly reduced its environmental footprint by transitioning to eco-friendly packaging and implementing sustainable sourcing practices. By partnering with local suppliers who adhere to environmentally conscious farming methods, Pure Finest inc. supports both
         the planet and local economies, showcasing its commitment to sustainability and ethical practices.
@@ -1661,11 +1767,14 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
 <div class="container-fluid" style="padding:0; margin:0;">
   <div class="row">
     <div class="col-sm-6" style="padding:15px;">
-      <h2 style="font-weight: 900;  font-family: 'Saira Stencil One', sans-serif;
-      font-size: 24px;margin-left:100px;text-transform: uppercase;">empowering communities</h2>
+      <h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">
+        empowering communities</h2>
       <p style="text-align: justify;width: 500px;font-size: 18px;margin-left:100px;">
-        Through its outreach programs, Pure Finest Inc. has positively impacted underserved communities by providing access to clean drinking water and nutrition education. For example, the company collaborated with grassroots organizations to fund
-         water purification projects in regions facing scarcity, ensure clean water for thousands of families.
+        Through its outreach programs, Pure Finest Inc. has positively impacted underserved communities 
+        by providing access to clean drinking water and nutrition education. For example, the company
+         collaborated with grassroots organizations to fund
+         water purification projects in regions facing scarcity, ensure clean water for thousands 
+         of families.
       </p>
     </div>
     <div class="col-sm-6" style="padding:15px;">
@@ -1677,22 +1786,23 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
 
 <div style="width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto;
  margin-left: auto;margin-top: 50px;">
-  <div style="margin-right: -15px; margin-left: -15px; display: flex; flex-wrap: wrap;">
+  <div style="margin-right: -15px; margin-left: -15px; display: flex; flex-wrap: wrap;">-->
     
     <!-- First Column (col-sm-6) -->
-    <div style="position: relative; min-height: 1px; padding-right: 15px; 
+   <!-------- <div style="position: relative; min-height: 1px; padding-right: 15px; 
     padding-left: 15px; width: 100%; max-width: 50%; box-sizing: border-box;">
       <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" style="display: block;
        max-width: 50%; height: auto;margin-left: 70px;margin-top: 0;">
-    </div>
+    </div>-->
     
     <!-- Second Column (col-sm-6) -->
-    <div style="position: relative;left: 100px; min-height: 1px; padding-right: 15px; padding-left: 15px;
+  <!---------  <div style="position: relative;left: 100px; min-height: 1px; padding-right: 15px; padding-left: 15px;
      width: 100%; max-width: 50%; box-sizing: border-box;">
-      <h2 style="font-weight: 900; 
-       font-family: 'Saira Stencil One', sans-serif;font-size: 24px;text-transform: uppercase;">elevating women in leadership</h2>
+      <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;">
+        elevating women in leadership</h2>
       <p style="text-align: justify;width: 500px;font-size: 18px;">
-   Pure Finest Inc. has created mentorship programs that have directly led to a 30% increase in women taking up leadership roles within the company. These initiatives have not only 
+   Pure Finest Inc. has created mentorship programs that have directly led to a 30% increase
+    in women taking up leadership roles within the company. These initiatives have not only 
    empowered employees but have also inspired other organizations to adopt similar equity-driven models.
       </p>
     </div>
@@ -1705,8 +1815,8 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
 <div class="container-fluid" style="padding:0; margin:0;">
   <div class="row">
     <div class="col-sm-6" style="padding:15px;">
-      <h2 style="font-weight: 900;  font-family: 'Saira Stencil One', sans-serif;
-      font-size: 24px;margin-left:100px;text-transform: uppercase;">promoting innovation</h2>
+      <h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">
+        promoting innovation</h2>
       <p style="text-align: justify;width: 500px;font-size: 18px;margin-left:100px;">The launch of its 3-in-1 premium drink brand, “Taste Me, Feel Me, ”demonstrated Pure Finest Inc.’s commitment to innovation. Using cutting-edge technology and 
         premium ingredients, the product redefined consumer expectations, delivering
          wellness benefits while m</p>
@@ -1720,23 +1830,25 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
 
 <div style="width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto;
  margin-left: auto;margin-top: 50px;">
-  <div style="margin-right: -15px; margin-left: -15px; display: flex; flex-wrap: wrap;">
+  <div style="margin-right: -15px; margin-left: -15px; display: flex; flex-wrap: wrap;">-->
     
     <!-- First Column (col-sm-6) -->
-    <div style="position: relative; min-height: 1px; padding-right: 15px; 
+   <!------ <div style="position: relative; min-height: 1px; padding-right: 15px; 
     padding-left: 15px; width: 100%; max-width: 50%; box-sizing: border-box;">
       <img src="./Assets/edi-logo.jpg" alt="Core Networks Logo" style="display: block;
        max-width: 50%; height: auto;margin-left: 70px;margin-top: 0;">
-    </div>
+    </div>-->
     
     <!-- Second Column (col-sm-6) -->
-    <div style="position: relative;left: 100px; min-height: 1px; padding-right: 15px; padding-left: 15px;
+   <!---------------- <div style="position: relative;left: 100px; min-height: 1px; padding-right: 15px; padding-left: 15px;
      width: 100%; max-width: 50%; box-sizing: border-box;">
-      <h2 style="font-weight: 900;  font-family: 
-      'Saira Stencil One', sans-serif;font-size: 24px;text-transform: uppercase;">supporting diversity and inclusion
+      <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;">
+        supporting diversity and inclusion
 </h2>
       <p style="text-align: justify;width: 500px;font-size: 18px;">
-       Through employee networks such as the Black Employee Network and Asian Inclusion Network, Pure Finest Inc. has created platforms for employees to connect, grow, and contribute meaningfully. These networks have fostered 
+       Through employee networks such as the Black Employee Network and Asian Inclusion Network, 
+       Pure Finest Inc. has created platforms for employees to connect, grow, and contribute
+        meaningfully. These networks have fostered 
        a more inclusive workplace, with measurable improvements in employee satisfaction and awareness
       </p>
     </div>
@@ -1746,9 +1858,11 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
 <div class="container-fluid" style="padding:0; margin:0;">
   <div class="row">
     <div class="col-sm-6" style="padding:15px;">
-      <h2 style="font-weight: 900;  font-family: 'Saira Stencil One', sans-serif;
-      font-size: 24px;margin-left:100px;text-transform: uppercase;">inspiring future leaders</h2>
-      <p style="text-align: justify;width: 500px;font-size: 18px;margin-left:100px;">Pure Finest Inc. sponsors educational scholarships for young talents pursuing studies in sustainability and food technology. This investment in future generations highlights 
+      <h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">
+        inspiring future leaders</h2>
+      <p style="text-align: justify;width: 500px;font-size: 18px;margin-left:100px;">Pure Finest Inc.
+        sponsors educational scholarships for young talents pursuing studies in sustainability and 
+        food technology. This investment in future generations highlights 
         the company's dedication to building a pipeline of changemakers aligned with its values.</p>
     </div>
     <div class="col-sm-6" style="padding:15px;">
@@ -1756,7 +1870,200 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
        max-width: 50%; height: auto;position: relative;left: 230px;margin-top:0px;">
     </div>
   </div>
+</div>-->
+<!----------------------------------------------------------------------------------------------->
+
+   <!------News and Press Release-->
+<!-- Scoped styles for the back link (styles retained from your CSS) -->
+
+<div id="media-center">
+<!-------  <h1>Media Center</h1>
+  <p>Select an option to apply sort order</p>
+
+  <div class="sort-container">
+    <h4 id="sortHeader" style="display:inline;">News</h4>
+    <span class="caret">&#x25BC;</span>
+    <div class="radios">
+      <label><input type="radio" name="filter" id="all" value="all" checked> All</label>
+      <label><input type="radio" name="filter" id="news" value="news"> News</label>
+      <label><input type="radio" name="filter" id="press" value="press"> Press Release</label>
+    </div>
+  </div>-->
+
+  <div id="news-container">
+
+    <!-- Repeated News Items -->
+    <!-- Item 1 -->
+    <div class="news-item" data-type="news">
+   <!--------------   <a href="#" target="_blank">-->
+        <div class="news-desc">
+          <h2 style="font-weight:900; text-align:left; margin-top:50px;
+          text-transform: uppercase;font-size:24px;font-family: 'Saira Stencil One', sans-serif;">
+        reporting and accountability</h2>
+        <p style="text-align: justify;width: 700px;font-size: 18px;margin-left:0;">
+        Pure Finest Inc. is committed to transparency in our human rights practices. We publish regular reports
+         outlining our progress, challenges, and areas for improvement to ensure accountability to stakeholders.
+      </p>
+         
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+   <!--------------------------       <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Items 2–8 (duplicates) -->
+    <!-- Item 2 -->
+    <div class="news-item" data-type="news">
+   <!--------------------   <a href="#" target="_blank">-->
+        <div class="news-desc">
+           <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;font-family: 'Saira Stencil One', sans-serif;">
+        advancing sustainability</h2>
+      <p style="text-align: justify;width: 700px;font-size: 18px;">
+       Pure Finest Inc. has significantly reduced its environmental footprint by transitioning to eco-friendly packaging and implementing sustainable sourcing practices. By partnering with local suppliers who adhere to environmentally conscious farming methods, Pure Finest inc. supports both
+        the planet and local economies, showcasing its commitment to sustainability and ethical practices.
+      </p>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+     <!--------------------------------------     <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="news-item" data-type="news">
+     <!---------------- <a href="#" target="_blank">-->
+        <div class="news-desc">
+        <h2 style="font-weight:900; text-align:left; margin-top:50px;text-transform: uppercase;font-family: 'Saira Stencil One', sans-serif;">
+        empowering communities</h2>
+      <p style="text-align: justify;width: 700px;font-size: 18px;margin-left:0;">
+        Through its outreach programs, Pure Finest Inc. has positively impacted underserved communities 
+        by providing access to clean drinking water and nutrition education. For example, the company
+         collaborated with grassroots organizations to fund
+         water purification projects in regions facing scarcity, ensure clean water for thousands 
+         of families.
+      </p>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+<!---------------------------------          <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="news-item" data-type="news">
+     <!------ <a href="#" target="_blank">-->
+        <div class="news-desc">
+         <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;font-family: 'Saira Stencil One', sans-serif;">
+        elevating women in leadership</h2>
+      <p style="text-align: justify;width: 700px;font-size: 18px;">
+   Pure Finest Inc. has created mentorship programs that have directly led to a 30% increase
+    in women taking up leadership roles within the company. These initiatives have not only 
+   empowered employees but have also inspired other organizations to adopt similar equity-driven models.
+      </p>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+   <!-------------------------------------       <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="news-item" data-type="news">
+   <!---------   <a href="https://www.bevnet.com/pr/2024/09/04/pure-finest-inc-set-to
+      -launch-a-revolutionary-3in1-taste-me-feel-me-beverage-brand-set-with-premium-ingredients" target="_blank">-->
+        <div class="news-desc">
+         <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;font-family: 'Saira Stencil One', sans-serif;">
+        supporting diversity and inclusion
+</h2>
+      <p style="text-align: justify;width: 700px;font-size: 18px;">
+       Through employee networks such as the Black Employee Network and Asian Inclusion Network, 
+       Pure Finest Inc. has created platforms for employees to connect, grow, and contribute
+        meaningfully. These networks have fostered 
+       a more inclusive workplace, with measurable improvements in employee satisfaction and awareness
+      </p>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+     <!--------------------------     <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="news-item" data-type="news">
+     <!------- <a href="https://www.bevnet.com/pr/2024/09/04/pure-finest-inc-set-to-launch-a-revolutionary-3in1-
+     taste-me-feel-me-beverage-brand-set-with-premium-ingredients" target="_blank">-->
+        <div class="news-desc">
+           <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;font-family: 'Saira Stencil One', sans-serif;">
+        inspiring future leaders</h2>
+      <p style="text-align: justify;width: 700px;font-size: 18px;margin-left:0;">Pure Finest Inc.
+        sponsors educational scholarships for young talents pursuing studies in sustainability and 
+        food technology. This investment in future generations highlights 
+        the company's dedication to building a pipeline of changemakers aligned with its values.</p>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+  <!----------------------------        <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="news-item" data-type="news">
+<!------      <a href="https://www.bevnet.com/pr/2024/09/04/pure-finest-inc-set-to-launch
+      -a-revolutionary-3in1-taste-me-feel-me-beverage-brand-set-with-premium-ingredients" target="_blank">-->
+        <div class="news-desc">
+        <h2 style="font-weight:900; text-align:justify; margin-top:50px;text-transform: uppercase;">
+        promoting innovation</h2>
+      <p style="text-align: justify;width: 700px;font-size: 18px;margin-left:0;">The launch of its 3-in-1 premium drink brand, “Taste Me, Feel Me, ”demonstrated Pure Finest Inc.’s commitment to innovation. Using cutting-edge technology and 
+        premium ingredients, the product redefined consumer expectations, delivering
+         wellness benefits while m</p>
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">
+    <!----------------------      <img src="./Assets/newsLogo 4.png" class="logo-overlay" alt="Bevnet Logo">-->
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 8 -->
+ <!----<div class="news-item" data-type="news">
+      <a href="https://www.bevnet.com/pr/2024/09/04/pure-finest-inc-set-to-launch-a-revolutionary-3in1-taste-me-feel-me-beverage-brand-set-with-premium-ingredients" target="_blank">
+        <div class="news-desc">
+        
+        </div>
+        <div class="news-img">
+          <img src="./Assets/edi-logo.jpg" alt="Pure Finest Beverage">---->
+    
+       <!-----   <img src="./Assets/edi-logo.jpg" class="logo-overlay" alt="Bevnet Logo">-->
+ <!-----------------       </div>
+      </a>
+    </div>-->
+
+  </div><!-- /#news-container -->
+
+  <!-- Pagination (if needed) -->
+ <!----- <div class="pagination">
+    <div class="page-numbers">
+      <button type="button">1</button>
+      <button type="button">2</button>
+      <button type="button">3</button>
+    
+    </div>
+  </div>-->
 </div>
+
+
+
+
+
+
+
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
   <!-- SVG Wave -->
