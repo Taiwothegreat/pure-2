@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ <!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+
+<!-----  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+ <link href="https://fonts.googleapis.com/css2?family=Open Sans&display=swap" rel="stylesheet">
+<!----- <link href="https://fonts.googleapis.com/css2?family=Playfair Display&display=swap" rel="stylesheet">-->
+ <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+   integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==
+  " crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <title>PURE FINEST</title>
+ 
+
+  <style>
+    /*RELATED LINKS*/
+     
+    .pfi-layout-container {
+      position: relative;
+      max-width: 800px;
+      min-height: 700px;
+      margin: 100px auto;
+     /* padding: 0 15px;*/
+    }
+
+    .pfi-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: static;
+      margin-top: 30px;
+    }
+
+    .pfi-thumb {
+      width: 48%;
+      padding: 0 20px 20px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      z-index: 1;
+      border: 2px solid brown;
+      border-radius: 12px;
+      color: brown;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .pfi-thumb:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
+    }
+
+    .pfi-thumb img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid brown;
+      display: block;
+      margin-top: 0;
+    }
+
+    .pfi-thumb h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #000000 !important;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .pfi-thumb p {
+      font-size: 16px;
+      color: #000000 !important;
+      text-align: justify;
+    }
+
+    @media (max-width: 991px) {
+      .pfi-thumb {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pfi-thumb {
+        width: 90%;
+      }
+    }
+    /*last section table*/
+                /* Scoped styles for the back link */
+  
+/************************************/
+  #media-center { text-align: center; padding: 30px; }
+  .sort-container { display: inline-block; margin: 20px 0; position: relative; }
+  .caret { cursor: pointer; font-size: 20px; margin-left: 10px; transition: transform 0.3s ease; }
+  .caret.open { transform: rotate(180deg); }
+  
+  .radios { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 10px; display: flex; justify-content: center; gap: 20px; }
+  .radios.open { max-height: 50px; }
+  .news-item { display: flex; justify-content: space-between; align-items: center; 
+    border: 5px solid #8B4513; padding: 15px; 
+    margin: 15px auto; width: 80%; text-align: left; flex-wrap: wrap; transition: all 0.3s ease; }
+  .news-item a { display: flex; width: 100%; color: inherit; text-decoration: none; }
+  .news-desc { flex: 1; padding-right: 20px; }
+  .news-img { position: relative; width: 200px; height: 150px; }
+/*  .news-img img:first-child { width: 200px; height: 150px; object-fit: cover; }*/
+  .news-img img:first-child { width: 100%; height: 100%; object-fit: contain; }
+  .logo-overlay { position: absolute; top: 8px; right: 8px; width: 50px; height: 50px; }
+  .pagination { margin-top: 30px; }
+  .page-numbers button { margin: 0 5px; }
+
+
+.news-img:hover img:first-child {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+
+.news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.news-img:hover {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px; /* Bigger logo */
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Make sure logo zooms along with image */
+.news-img:hover .logo-overlay {
+  transform: scale(1.05);
+}
+
+  @media (max-width: 600px) {
+    .news-item a { flex-direction: column; text-align: center; }
+    .news-desc { padding: 0; margin-bottom: 10px; }
+  }
+    /*last section table*/
+    .container {
+      max-width: 1200px;
+     /* margin: 0 auto;*/
+      padding: 20px;
+    }
+    /* === MOBILE STYLES === */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+    width: 95%;
+    padding: 10px;
+  }
+
+  .news-item a {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .news-desc {
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+.news-item h2{
+  font-weight:900; 
+  text-align:left;
+   margin-top:50px;
+          text-transform: uppercase;
+          font-size:18px !important;
+          font-family: 'Saira Stencil One', sans-serif;
+}
+.news-item p{
+ 
+  text-align:left;
+   margin-top:50px;
+       text-align: left;
+      max-width: 300px;
+}
+ /* .news-img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 15px;
+  }*/
+ .news-img {
+    width: 200px;
+    height: 150px;
+    margin-left: 0 !important;
+  }
+ /* .news-img img:first-child {
+    height: auto;
+  }
+
+  .logo-overlay {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .radios {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }*/
+
+  .sort-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+/*
+    .thumbnails-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }*/
+
+  /* ... previous styles unchanged ... */
+
+ /* .thumbnails-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 50px; /* closes space between items */
+  /*}*/
+.thumbnails-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ✅ centers the thumbnails */
+  margin: 0;
+  gap: 50px;
+}
+.thumbnails-rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start; /* ✅ centers the thumbnails */
+    margin: 0;
+
+  gap: 50px;
+}
+  @media (min-width: 768px) {
+    .custom-thumb {
+      width: calc(100% / 3); /* ensures no space between 3 items */
+      aspect-ratio: 3 / 4;
+    }
+  }
+
+  /* ... rest of your styles remain exactly as you had them ... */
+
+
+    .custom-thumb {
+      border: 2px solid #8B4513;
+      border-radius: 12px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      background-color: #f9f9f9;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .custom-thumb {
+        width: 27%;
+        aspect-ratio: 3 / 4;
+      }
+    }
+
+    .custom-thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      border-top: 2px solid #8B4513;
+      width: 100vw;
+      margin: 0;
+    }
+
+    .custom-thumb h5.pure {
+      text-align: center;
+      width: 100%;
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 20px;
+      color: #000;
+      font-family: Cinzel Decorative, serif;
+    }
+
+    .custom-thumb p {
+      position: relative;
+      top:30px;
+      text-align: center;
+      font-size: 18px;
+      margin: 0;
+      color: #333;
+      width: 100%;
+    }
+  
+
+.custom-thumb {
+  transition: transform 0.3s ease;
+}
+
+.custom-thumb:hover {
+  transform: scale(1.05); /* Zoom in slightly */
+}
+    /*******/
+    .dropdown-content span {
+    display: none;
+    position: absolute;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    width: 300px;
+    z-index: 999;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    line-height: 1.4;
+  text-align: justify;
+  }
+
+  .dropdown-content li {
+    position: relative;
+    
+  }
+
+  .dropdown-content li:hover span,
+  .dropdown-content li:focus-within span {
+    display: block;
+    top: 100%;
+    left: 0;
+    
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-content span {
+      position: static;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .dropdown-content li:hover span,
+    .dropdown-content li:focus-within span {
+      display: block;
+    }
+  }
+/************************************/
+  
+
+
+
+    
+
+   
+
+/*For labels*/
+ 
+    h2 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+
+
+   
+
+    @media screen and (max-width: 768px) {
+     
+
+      
+    }
+
+
+/*End of glyphicon animation*/
+
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+}
+.mobile-version-6 a:hover{
+  background-color: red;
+}
+
+.dropdown-content p,li{
+  font-size: 17px;
+  
+}
+
+
+h1,h2,h5 {
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}
+h1,h5,.mobile-version-6 a,.mobile-version-7 a,
+.mobile-version-8 a,.mobile-version-9 a,
+.mobile-version-10 a{
+  font-size: 20px;
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 10px 15px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+
+/*Brand from another file*/
+.brand a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-right: auto;
+}
+/*.logo{
+/* padding: -10px;*/
+/*}*/
+.brand .logo {
+  height: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+/*Brand logo with text*/
+
+/*Brand logo with text*/
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/*End of the file*/
+
+.menu-toggle {
+display: none;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+}
+
+.menu-toggle span {
+display: block;
+width: 25px;
+height: 3px;
+background-color: #000;
+}
+
+
+ul.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Add this to make dropdown positioning relative to this nav block */
+}
+
+ul.nav > li {
+  position: static; /* Remove positioning so it doesn't anchor the dropdown */
+}
+.we h5 a:hover{
+  background-color: #6ccb35;
+  text-decoration:none;
+}
+.we ul li a{
+  font-family: Arial, sans-serif;
+}
+.we ul li a:hover{
+   background-color: #6ccb35;
+  text-decoration:none;
+  font-weight: 100;
+ 
+}
+.peef ul li a{
+  font-family: Arial, sans-serif;
+}
+.peef h5 a:hover{
+  background-color: #6ccb35;
+  text-decoration: none;
+}
+.peef ul li a:hover{
+  background-color: #6ccb35;
+  text-decoration: none;
+}
+.hydrations h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.hydrations ul li a{
+  font-family: Arial, sans-serif;
+}
+.hydrations ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.visions button a{
+  background-color: #ffa500;
+}
+.juices h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.snackss h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.alcohols h5 a:hover{
+  background: #ffa500;
+   text-decoration: none;
+}
+.juices ul li a{
+  font-family: Arial, sans-serif;
+}
+.juices ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.snackss ul li a{
+  font-family: Arial, sans-serif;
+}
+.snackss ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.alcohols ul li a{
+  font-family: Arial, sans-serif;
+}
+.alcohols ul li a:hover{
+  background-color: #ffa500;
+  text-decoration: none;
+}
+.edi h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.edi ul li a{
+  font-family: Arial, sans-serif;
+}
+.edi ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.human h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.ben ul li a,.watch ul li a,.listen ul li a{
+   font-family: Arial, sans-serif;
+}
+.ben ul li a:hover,.watch ul li a:hover,.listen ul li a:hover{
+   text-decoration: none;
+}
+.human ul li a{
+  font-family: Arial, sans-serif;
+}
+.human ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.sports h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.sports ul li a{
+  font-family: Arial, sans-serif;
+}
+.sports ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.foundation h5 a:hover{
+  background: #c04141;
+   text-decoration: none;
+}
+.foundation ul li a{
+  font-family: Arial, sans-serif;
+}
+.foundation ul li a:hover{
+  background-color: #c04141;
+  text-decoration: none;
+}
+.recruit h5 a:hover{
+  background:#0000ff;
+   text-decoration: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 300px ;
+  left: 0;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.follow-us{
+  color: rgb(139, 204, 139);
+}
+
+li.active .dropdown-menu {
+  display: block;
+}
+
+.dropdown-content {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.dropdown-content > div {
+flex: 1 1 180px;
+}
+
+.dropdown-content h2 {
+margin-top: 0;
+font-size: 20px;
+}
+
+.dropdown-content button {
+background-color: #d9534f;
+border: none;
+padding: 10px 15px;
+color: white;
+cursor: pointer;
+margin-top: 10px;
+}
+
+
+
+/* Right column - text and links */
+.dropdown-content.labelss-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Individual blocks */
+.dropdown-content.labelss-1 > div {
+  flex-shrink: 0;
+}
+
+.label-images img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.visions {
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.hydrations, .juices, .snackss, .alcohols {
+  flex: 1 1 150px;
+  min-width: 120px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .dropdown-content.labelss-1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label-images,
+  .visions,
+  .hydrations,
+  .juices,
+  .snackss,
+  .alcohols {
+    flex: 1 1 100%;
+  }
+
+  .label-imagse img {
+    margin: 0 auto;
+  }
+
+  .visions {
+    text-align: center;
+  }
+}
+
+
+/*New Hover Effect*/
+.mobile-version-6 a:hover {
+  color: #fff;
+  background-color: #6ccb35 !important;
+}
+.mobile-version-7 a:hover{
+  color:#fff;
+  background: orange !important;
+}
+.mobile-version-8 a:hover{
+  color:#fff;
+  background: rgb(192, 65, 65) !important;
+}
+.mobile-version-9 a:hover{
+  color:#fff;
+  background: rgb(117, 83, 83) !important;
+}
+.mobile-version-10 a:hover{
+  color:#fff;
+  background: #0000ff !important;
+}
+  
+
+
+
+
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.form-control{
+  margin-top: 50px !important;
+}
+.social-icons{
+  margin-top: 0;
+}
+
+.img-2,.img-3{
+    width:100%;
+    object-fit: contain;
+}
+
+
+.foot2 h4,ul li a,i{
+  margin-left: 0px;
+
+   }
+
+*/
+.footer-logo img {
+  width: 200px;
+  height: auto;
+  margin-left: -10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.social-icons :hover{
+  background-color: #6ccb35;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.facebook-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px; /* Adjust as needed */
+    height: 33px;
+    background-color: white;
+    border-radius: 50%; /* Circle */
+    border: 1px solid #ccc; /* Optional */
+  }
+
+  .facebook-icon i {
+    color: black;
+    font-size: 20px;
+  }
+.social-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  color: #000;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+}
+
+.footee {
+  font-size: 20px;
+  text-align: center !important;
+}
+.form-control{
+  margin-left: 15px !important;
+}
+body {
+ /* font-family: 'Roboto', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 0;
+}
+.container-fluid video{
+  margin-left: 25px;
+  width:100%;
+}
+
+
+.foot2 h4,ul li a,i{
+/*margin-left:10px;*/
+position: relative;
+left:0px;
+  }
+body {
+margin: 0;
+/*font-family: Arial, sans-serif;*/
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+margin: 10px !important;
+}
+
+
+
+
+/* Make container stretch full width */
+/*.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.brew-1{
+  margin-top: 200px;
+}
+
+li a{
+  font-size: 16px;
+}*/
+
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-img {
+  height: 100px; /* Adjust as needed */
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+/* Continuous scrolling animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+.news{
+  margin-top: 30px;
+}
+
+.footer-select{
+  margin-top: 100px;
+}
+/*Footer new*/
+.footer-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-wave {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+.footer-wave svg {
+  display: block;
+  width: 100%;
+height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
+}
+
+
+ .footer-logo img {
+ 
+    position: relative;
+    left: -100px !important;
+  }
+.language-selector {
+  width: 200px;
+  background-color: #29226b;
+  color: #ffffff;
+  margin-left: auto;
+  margin-top: 120px;
+}
+
+.follow-us {
+  font-size: 20px;
+}
+.list-unstyled{
+  margin-top: 70px !important;
+  margin-left: 60px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.list-unstyled li a:hover{
+  color: #6ccb35 !important;
+  list-style: none;
+  text-decoration: none;
+
+}
+@media(max-width:1500px){
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -480px;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+}
+
+@media (max-width: 1300px) {
+  
+  /* Right column - text and links */
+.dropdown-content.labelss-1 > div:nth-child(2) {
+  flex: 1; /* take up the remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.dropdown-content.labelss-1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* reduce space between inner content sections if needed */
+}
+ .dropdown-content.visions{
+  width: 200px;
+  margin-left: 0 !important;
+}
+
+.mobile-version-6,.mobile-version-7,
+.mobile-version-8,.mobile-version-9,.mobile-version-10{
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+.menu-toggle {
+  display: flex;
+}
+
+ul.nav {
+  flex-direction: column;
+  width: 100%;
+  display: none;
+  
+}
+
+ul.nav.active {
+  display: flex;
+}
+
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+.dropdown-menu {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+}
+/*From another file*/
+.brand {
+  align-items: flex-start;
+}
+
+
+.brand .logo {
+  height: 100px;
+  margin-left: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 300;
+font-family: Arial, sans-serif;
+/*  overflow-x: hidden;*/
+}  }
+@media (max-width: 768px) {
+  /* Right column - text and links */
+.dropdown-content.labelss-1 > div:nth-child(2) {
+  flex: 1; /* take up the remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+  .dropdown-content.labelss {
+    flex-direction: row;
+  }
+}
+
+    /*-----------------------------------------------------------------*/
+@media (max-width: 1024px) {
+
+
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .footer-logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
+.language-selector {
+  width: 100%;
+  padding: 0.5rem;
+}
+.social-icons{
+  margin-bottom: -10px;
+}
+
+/* ========== Desktop Styles (≥ 1200px) ========== */
+@media (min-width: 1200px) {
+  .crafting {
+    min-width: 200px;
+   position: relative;
+   left:-140px;
+    text-align: justify;
+  }
+  .we{
+position: relative;
+left: -100px;
+  }
+  .peef{
+position: relative;
+left: -80px;
+  }
+   .med {
+    position: relative;
+    left:-60px;
+    min-width: 400px;
+    text-align: justify;
+  }
+  .ben{
+    position: relative;
+    left: 30px;
+  }
+  .watch {
+    margin-left: -100px;
+  }
+  .listen {
+    margin-left: -100px;
+  }
+ 
+  .visions{
+    position: relative;
+    left: 0;
+      min-width: 350px;
+    text-align: justify;
+  }
+  .one{
+    text-align: left;
+  }
+  .med{
+    text-align: justify;
+  }
+  .recruit{
+margin-left: -200px;
+  }
+  .purpose{
+    position: relative;
+    left: -270px;
+    min-width: 100px;
+    text-align: justify;
+  }
+  .edi{
+     position: relative;
+    left:55px;
+  }
+  .foundation {
+  margin-left: -195px;
+  }
+  .sports {
+     position: relative;
+    left:-120px;
+  }
+ .human {
+    position: relative;
+    left:-60px;
+  
+  }
+  .people,.peev{
+      min-width: 400px;
+    text-align: justify;
+
+  }
+  .peef{
+    margin-left: -200px;
+  }
+  .alcohols{
+    margin-left: -58px;
+  }
+  .snackss{
+  position: relative;
+  left: -20px !important;
+  }
+  .juices{
+  position: relative;
+  left: 50px;
+  }
+  .hydrations{
+     position: relative;
+  left:70px;
+  }
+  }
+
+  
+@media (max-width: 1024px) {
+
+
+
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+
+.foot1, .footer-select, .foot2{
+  margin-left: 100px;
+}  
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+
+font-family: Arial, sans-serif;
+
+} 
+
+
+.foot-2{
+position: absolute;
+top:18px;
+}
+
+
+.cut-text p{
+margin-left: 40px ;
+}
+.brew-1{
+  margin-top: 0;
+}
+.container-fluid video{
+position: relative;
+left:0;
+  width:100%;
+}
+
+.foot2 h4,ul li a,i{
+  margin-left: 0;
+   }
+   .container-fluid video{
+    margin-left: 25px;
+    width:100%;
+  }
+  .gold{
+    margin-left:40px;
+  }
+}
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  
+  .foot-svg{
+    position: relative;
+    top:125px;
+    width: 100vw;
+    
+  }
+  .text-right{
+    text-align: center;
+  }
+
+  .follow-us{
+    color: green;
+  }
+ 
+  
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+  
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+
+/* ========== Tablet & Mobile Styles (< 992px) ========== */
+@media screen and (max-width: 991px) {
+ 
+
+ 
+
+  
+
+/*---------------------------*/
+
+  /* Footer Adjustments */
+  .footer .row {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer .col-sm-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-logo {
+    justify-content: center;
+    margin-left: 80px;
+  }
+
+  .footer .list-unstyled {
+    padding: 0;
+  }
+
+  .footer select.language-selector {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .footer .social-icons {
+    margin-top: 10px;
+  }
+
+  .form-control {
+    margin-left: 85px;
+  }
+
+  .footer-logo img {
+    max-width: 200px;
+    height: auto;
+    left: 0;
+  }
+
+  body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+}
+
+
+  </style>
+  <!-------------->
+</head>
+<body>
+ 
+
+<!--------Cookies instruction-->
+
+  <div class="marquee-wrapper">
+    <div class="marquee-inner" id="marquee-track">
+      <!-- Duplicated set of images for seamless loop -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+  
+      <!-- Duplicate for seamless scroll -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+    </div>
+  </div>
+ 
+<!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
+    <nav>
+  <div class="nav-container">
+  
+    <div class="brand">
+       <a href="index.html"> <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" class="logo" alt="Spinning Logo" >
+        <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px"></a>
+        
+      </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav" id="main-nav">
+       <li class="mobile-version-6 "><a href="#">Our Company <i class="fa fa-caret-down"></i></a>
+        
+<div class="dropdown-menu" style="border-top: 10px solid #6ccb35;">
+  <div class="dropdown-content company-1">
+    <div>
+      <img src="./Assets/Our-company-logo.jpg" alt="" width="200px" height="200px">
+    </div>
+    <div class="crafting">
+      <h2>15+ <br>Years of Crafting Excellence</h2>
+      <p>Since 2010, Pure Finest Inc. has been redefining food and beverage standards, making a difference with premium products
+        that inspire wellness, sustainability, and innovation. Explore our Story, Purpose, and Vision and more</p>
+      <button style="background-color: #6ccb35;border-radius:10px;"><a href="learn-morepfiway.html">LEARN MORE</a></button>
+    </div>
+    <div style="margin-left: 30px;" class="we">
+      <h5><a href="who-we-are.html">Who We Are</a></h5>
+      <ul>
+        <li>
+          <a href="who-we-are.html#overview">Overview</a>
+          <span>We are focused on foods and beverages creating premium, plant-based, and natural foods and drinks. Offerings include REDEFINING REFRESHMENT WITH INTEGRITY AND INNOVATION vitality, vitamins, sports, drinks, and well-being foods made with organic ingredients to promote health and well-being. The company is known for using high-quality premium ingredients, alongside other carefully selected components designed to revitalize both body and soul. We ensure our brands are sustainable and beneficial for overall vitality, appealing to health-conscious consumers.</span>
+        </li>
+        <li>
+          <a href="who-we-are.html#origin">Origin</a>
+          <span>
+            Founded in the early 2010s, Pure Finest Inc.® has grown from a small startup into
+             a globally recognized brand. The company began with a simple mission: to create beverages that are as beneficial to the body as they are delightful to the taste buds. Over the years, the PureFinest® brand has been dedicated to creating innovative and health-focused products that enhance the lives of consumers. With a commitment to quality, sustainability, and customer satisfaction, PureFinest® continues to lead the way in developing food and beverages that
+             not only taste great but also provide essential health benefits.
+          </span>
+        </li>
+        <li>
+          <a href="who-we-are.html#our-drive">Our Drive</a>
+          <span>Inspired by the holistic wellness traditions of the plant-based finest ingredients,
+             PureFinest® Natural Vitamin, Sports, and Vitality Drinks were born from the vision of
+              Beulah Group Inc. in early 2016. Driven by a passion for organic ingredients and
+               cutting-edge nutritional science, BGI crafted a line of beverages that not only
+                revitalize the body but also nourish the soul. Pre-launched in the heart of London,
+                 England, on March 15, 2023, PureFinest® redefined the functional drink market by
+                  introducing a range that enhances everyday health with superior, organically 
+                  sourced ingredients. Committed to purity and performance, PureFinest®
+                   has ushered in a new era of wellness beverages, seamlessly blending
+                    ancient wisdom with modern vitality.</span>
+        </li>
+        <li>
+          <a href="who-we-are.html#milestones">Autobiography</a>
+          <span>
+PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and beverage industry, under the umbrella of Pure Finest Inc.®, known for its unwavering commitment to innovation, quality, and sustainability. Since its inception, the company has been dedicated to creating products that meet consumers' needs and exceed their expectations 'Taste Me! Feel Me!®'. With a rich history of successful product launches, Pure Finest Inc.®
+ has consistently pushed the boundaries of what is possible in the beverage and food industries.
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="peef">
+      <h5><a href="thepfiway.html">The PFI Way</a></h5>
+      <ul>
+        <li>
+          <a href="thepfiway.html#purpose">Our Purpose</a>
+          <span>Our mission is to enhance lives by offering high-quality food and beverages that inspire joy, promote well-being, and deliver satisfaction to the body and soul. We strive to be a reliable provider of innovative, wholesome products, thoughtfully created with care and excellence.</span>
+        </li>
+        <li>
+          <a href="thepfiway.html#vision">Our Vision</a>
+          <span>A vision of a future where every bite and sip support sustainability, exceptional quality, and well-being. We aspire to create a world where our food and beverages not only satisfy but also foster healthier lifestyles and contribute to a more sustainable planet.</span>
+        </li>
+        <li>
+          <a href="thepfiway.html#approach">Our Approach</a>
+          <span>With a commitment to quality and a focus on customer satisfaction, we blend premium ingredients, innovative technology, and eco-friendly methods to create food and beverages that excel in flavor and leave a lasting positive impact. This holistic approach ensures that everything we create not only delights the palate but also aligns with our values of wellness, sustainability, and innovation.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+       </li>
+
+  
+<li class="mobile-version-7">
+  <a href="labels.html">Labels <i class="fa fa-caret-down"></i></a>
+  <div class="dropdown-menu" style="border-top: 10px solid #ffa500 ;">
+    <div class="dropdown-content labels-1">
+      
+      <!-- Image -->
+      <div class="label-image">
+        <img src="./Assets/labels-logo.jpg" alt="Labels Logo" width="200px" height="200px">
+      </div>
+
+      <!-- Vision Section -->
+      <div class="visions">
+        <h2 class="one">10+ <br> LABELS, ONE VISION</h2>
+        <p>Pure Finest Inc. has built a portfolio of 10 premium labels designed to thrive in today’s dynamic marketplace.</p>
+        <button style="background: #ffa500; border-radius:10px;width:350px; 
+        font-family: Arial, sans-serif;text-decoration:none;font-weight:100"><a href="discover-our-labels.html">DISCOVER OUR LABELS</a></button>
+      </div>
+
+      <!-- Other Categories -->
+      <div class="hydrations">
+       <h5 ><a href="discover-our-labels.html#radio-hydration" onclick="selectFilter('radio-hydration')" >Hydration & Vitality</a></h5>
+        <ul>
+          <li><a href="finest.html">PureFinest</a></li>
+          <li><a href="elysium-alps.html">Elysium Alps<sup>&reg;</sup></a></li>
+          <li><a href="alpine-glow.html">AlpineGlow<sup>&reg;</sup></a></li>
+        </ul>
+      </div>
+<div class="juices">
+        <h5 ><a href="discover-our-labels.html#radio-juice " onclick="selectFilter('radio-juice')">Juice & Dairy</a></h5>
+        <ul>
+          <li><a href="purelife.html">PureLife<sup>&trade;</sup></a></li>
+        </ul>
+      </div>
+
+      <div class="snackss">
+        <h5><a href="discover-our-labels.html#radio-snacks" onclick="selectFilter('radio-snacks')">Snacks</a></h5>
+        <ul>
+          <li><a href="purelife.html">PureLife<sup>&trade;</sup></a></li>
+          <li><a href="tasteme-feelme.html">Taste Me! - Feel Me!<sup>&reg;</sup></a></li>
+        </ul>
+      </div>
+
+      <div class="alcohols">
+        <h5><a href="discover-our-labels.html#radio-alcohol" 
+          onclick="selectFilter('radio-alcohol')">Alcohol</a></h5>
+        <ul>
+          <li><a href="finest.html">Gin</a></li>
+          <li><a href="finest.html">Vodka</a></li>
+          <li><a href="finest.html">Wine</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+      <li class="mobile-version-8">
+        <a href="#">Social<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu " style="border-top: 10px solid #c04141;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content social-1">
+            <div><img src="./Assets/social-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="people ">
+              <h2>PEOPLE AT THE HEART OF WHAT WE DO </h2>
+              <p class="peev">At Pure Finest Inc., we believe that people are our greatest asset. 
+                 From empowering our employees to fostering meaningful connections with partners and supporting the communities 
+                we call home, we are committed to improving lives and creating a positive impact wherever we operate.</p>
+              <button style="background-color: #c04141;border-radius:10px;"><a href="people-first.html">PEOPLE FIRST</a></button>
+            </div>
+          <div class="edi">
+              <h5 ><a href="edi.html">EDI</a></h5>
+              <ul><li><a href="edi.html#employee">Employee</a>
+<span>
+
+The Black, Asian, and Hispanic (BAH) Employee Networks celebrate and support 
+their communities by promoting inclusion, equity, and cultural awareness. 
+They offer learning forums, workshops, and events to boost personal and professional growth. Each network—BEN (Black), AIN (Asian), and HLIN (Hispanic/Latino)—empowers employees to embrace their identity, develop leadership, and help build a thriving, inclusive workplace.
+
+</span>
+              </li>
+                <li><a href="edi.html#network">Network</a>
+<span>
+  We foster strong employment networks to empower and connect talent both within and beyond our organization. Our goal is to create a collaborative and inclusive community where individuals can access opportunities for professional growth, mentorship, and skill development. By nurturing meaningful relationships, we strive to build an environment
+   that supports career advancement and enables everyone to reach their full potential.
+   This network will strengthen employee engagement while aligning with Pure Finest Inc.’s brand ethos of innovation, sustainability, and wellness.
+</span>
+                </li>
+                <li><a href="edi.html#headship">Headship</a>
+  <span>
+                  At Pure Finest Inc., the leadership of our Equality, Diversity, and Inclusion (EDI) initiatives is dedicated to fostering a workplace where every individual feels valued, respected, and empowered to contribute their best. By embedding EDI as a core organizational value, the headship team is committed to creating a culture where belonging and inclusion thrive.
+
+Our vision is to establish Pure Finest Inc. as a benchmark for EDI, cultivating an environment where individuality is celebrated, opportunities are equitable, and innovation flourishes through diverse perspectives. By championing these principles, the leadership enables employees to bring their authentic selves to work and actively contribute to the company’s 
+success, ensuring EDI is woven into every aspect of our operations and culture.
+                </span>
+                </li></ul>
+            </div>
+           <div class="human">
+              <h5 ><a href="humanrights.html">Human Rights</a></h5>
+              <ul><li><a href="humanrights.html#rights">Human Rights</a>
+               <span>
+      At Pure Finest Inc., we are firmly committed to upholding 
+      and promoting human rights across all aspects of our operations and value chain. Guided by
+       international frameworks such as the United Nations Guiding Principles on Business and Human Rights and the Universal Declaration of Human
+       Rights, we strive to ensure that respect for human rights is at the core of everything we do.
+       This framework ensures that Pure Finest Inc. continues to lead responsibly,
+        protecting and advancing human rights in every sphere of influence.
+          </span></li>
+              <li><a href="humanrights.html#governance">Governance</a>
+               <span>
+           The Pure Finest Inc. Board of Directors ensures that human rights policies are integrated into the company’s overall strategy and decision-making.
+           A dedicated committee oversees the implementation and monitoring of human rights policies, engaging with stakeholders to address risks and opportunities.
+           A robust policy framework governs our approach to human rights, including clear guidelines for due diligence, reporting, and remediation.
+           We conduct regular human rights impact assessments across our operations and supply chains to identify and mitigate potential risks.
+           All employees and partners receive training on human rights policies 
+           and practices to build a culture of awareness and accountability.
+          </span></li>
+            <li><a href="humanrights.html#stories">Stories of Impact</a>
+             <span>
+           Through its outreach programs, Pure Finest Inc. has positively impacted underserved communities by providing access to clean drinking water and nutrition education. For example, the company collaborated with grassroots organizations to fund water purification projects in regions facing scarcity, ensure clean water for thousands of families.
+           Pure Finest Inc. has created mentorship programs that have directly led 
+           to a 30% increase in women taking up leadership roles within the company. 
+           These initiatives have not only empowered employees but have also 
+           inspired other organizations to adopt similar equity-driven models.
+          </span></li></ul>
+            </div>
+             <div class="sports">
+              <h5 ><a href="sports-and-ent.html">Sports and <br>Entertainment</a></h5>
+              <ul><li><a href="sports-and-ent.html">Sponsorship</a></li></ul>
+            </div>
+             <div class="foundation">
+              <h5 ><a href="pffoundation.html">The Pure Finest Foundation</a></h5>
+              <ul><li><a href="pffoundation.html">Partnership</a></li><li><a href="pffoundation.html">Communities</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </li>
+
+     <li class="mobile-version-9">
+        <a href="#">Media Center<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu" style="border-top:10px solid #755353 ;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content media-center-1">
+            <div><img src="./Assets/media-center-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="med">
+              <h2>STAY UPDATED </h2>
+              <p>Discover the latest from Pure Finest Inc. — from groundbreaking brand
+                 innovations to impactful 
+                sustainability initiatives. Explore how we’re shaping the future of food and beverages around the globe.</p>
+              <button style="background: #755353;border-radius:10px;"><a href="news-and-press.html">GET THE LATEST</a></button>
+            </div>
+            <div class="ben">
+              <h5>Being Read</h5>
+              <ul><li ><a href="news-and-press.html">News & Press</a></li></ul>
+            </div>
+            <div class="watch">
+              <h5>Being Watched</h5>
+              <ul><li><a href="#">Live Stream</a></li>
+              <li><a href="#">TV</a></li><li><a href="#">Gallery</a></li></ul>
+            </div>
+            <div class="listen">
+              <h5>Being Listened</h5>
+              <ul><li><a href="#">Radio</a></li><li><a href="#">Podcast</a></li></ul>
+            </div>
+            
+          </div>
+        </div>
+      </li> 
+      <li class="mobile-version-10">
+        <a href="#">Careers<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-menu" style="border-top: 10px solid #0000ff;">
+          <!-- repeat content as above -->
+          <div class="dropdown-content careers-1">
+            <div><img src="./Assets/careers-logo.jpg" alt="" width="200px" height="200px"></div>
+            <div class="purpose">
+              <h2>CAREER WITH PURPOSE</h2>
+              <p>At Pure Finest Inc., building your career means more than just a job—it’s a chance
+                 to make a meaningful impact on a global scale. Join us to grow,
+                  innovate, and help shape a brighter future."</p>
+              <button style="background: #0000ff;border-radius:10px;">HUMAN POTENTIAL</button>
+            </div>
+            <div class="recruit">
+              <h5 ><a href="careers.html">RECRUITMENT PROCESS</a></h5>
+              <ul><li>Application Pathway</li><li>Assessment</li><li>Offers</li></ul>
+            </div>
+            
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
+
+
+<div style="position: relative; padding: 0; width: 100%; margin: 0 auto;">
+ <img src="./Assets/Pffoundations-banner.png" alt="" style="width: 100%; display: block;">
+  
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </div>
+
+  <div style="position: absolute; top: 20%; left: 10%; color: white; z-index: 2;">
+    <h3 style="margin-top: -100px; width: 100%; font-weight: bold; font-size: 40px; 
+    line-height: 1.4;font-family: Cinzel Decorative, serif;text-align: center;">
+    Pure Finest Foundation: Empowering Communities, Inspiring Change.</h3>
+    <p style="margin-top: 50px; font-size: 28px; margin-left: 10px; 
+     font-family: 'Saira Stencil One', sans-serif;">
+    Through partnerships, community initiatives, and sustainability efforts, we create a lasting positive impact worldwide.
+
+
+     </p>
+    <button type="button" style="margin-top: 100px; background-color: #96BB36; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+      <span style="color: white;font-size: 24px;">EDI Initiatives</span>
+    </button>
+  </div>
+</div>
+
+<!-- HUMAN RIGHTS COMMITMENT  Section -->
+
+<div class="container-fluid" style="padding:0; margin-top: 50px;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/Pffoundation-foundation.jpg" alt="Employee Network" class="img-responsive" style="width:100%; height:auto; display:block;">
+    </div>
+    <div class="col-sm-6" style="padding:20px;">
+     <!-------------- <h2 style="font-weight:900; text-align:center; margin-top:50px;">BOARD OVERSIGHT</h2>
+      <p style="text-align:justify; margin:15px;font-size:18px">The Pure Finest Inc. Board 
+        of Directors ensures 
+        that human rights policies are integrated into the company’s overall 
+        strategy and decision-making.</p>-->
+      <h2 style="font-weight:900; text-align:center; margin-top:50px;" id="governance">
+         PURE FINEST FOUNDATION</h2>
+      <p style="text-align:justify; margin:15px;font-size:18px">
+       The Pure Finest Foundation is deeply committed to creating a lasting
+             positive impact in the communities it serves. Built on the pillars 
+             of sustainability, education, and community development, the foundation
+              works to drive meaningful change through targeted initiatives and 
+              strategic partnerships. By collaborating with local and global 
+              organizations, the foundation supports programs that align with
+               its core values, from advancing environmental sustainability
+                to empowering underserved communities with access to education
+                 and resources. These efforts aim to uplift individuals, nurture
+                  growth, and promote equitable opportunities for all. Pure Finest
+                   Inc. believes that true progress stems from collective action. 
+                   Through its partnerships with like-minded foundations, the organization
+             seeks to empower individuals, foster innovation, and build a brighter,
+              more inclusive future for generations to come.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:20px;">
+    <!---------------  <h2 style="font-weight:900; text-align:center; margin-top:100px;">POLICY FRAMEWORK</h2>
+      <p style=" text-align:justify; margin:15px;font-size:18px">A robust policy framework governs
+         our approach to human rights, including clear
+         guidelines for due diligence, reporting, and remediation.</p>-->
+            <h2 style="font-weight:900; text-align:center; margin-top:100px;">
+              GRIEVANCE MECHANISMS
+            </h2>
+      <p style="text-align:justify; margin:15px;font-size:18px">
+      We provide accessible, transparent, and confidential channels 
+          for reporting and addressing human rights concerns.
+      </p>
+    </div>
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sport-and-ent-ladies.jpg" alt="Employee Network" class="img-responsive" style="width:100%; height:auto; display:block;">
+    </div>
+  </div>
+</div>
+   <!-- TRAINING AND AWARENESS -->
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/Pffoundation-equitability.mp4" alt="Training" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:40px;">EQUITABILITY</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+        Through these efforts, Pure Finest Inc. works tirelessly to create communities where every individual, regardless of their background or past challenges, has the opportunity to lead a fulfilling and dignified life. By addressing 
+        injustices and fostering collaboration, we aim to build a more equitable and hopeful future for all.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- GRIEVANCE MECHANISMS -->
+<!----------------<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:100px;">GRIEVANCE MECHANISMS</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">We provide accessible, transparent, and confidential channels for reporting and addressing human rights concerns.</p>
+    </div>
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/human-rights-grievance.jpg" alt="Grievance Mechanism" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+  </div>
+</div>-->
+
+<!-- COLLABORATION AND ADVOCACY -->
+<!-------------------<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/human-rights-advocacy.jpg" alt="Collaboration" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:100px;">COLLABORATION AND ADVOCACY</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+        We build strong partnerships and champion causes that drive meaningful change. Through collaboration with stakeholders and advocacy for human rights, 
+        sustainability, and inclusion, we create a positive impact across communities and industries.
+      </p>
+    </div>
+  </div>
+</div>-->
+
+<!-- GRIEVANCE MECHANISMS -->
+<!----------------------<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:100px;" id="rights">HUMAN RIGHTS COMMITMENT</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+         At Pure Finest Inc., we are firmly committed to upholding and promoting human rights across all aspects of our operations and value chain. Guided by international frameworks such as the United Nations Guiding Principles on Business and Human Rights and the Universal Declaration of Human Rights,
+  we strive to ensure that respect for human rights is at the core of everything we do.
+      </p>
+      <h2 style="font-weight:900; text-align:center; margin-top:50px;">CORE PRINCIPLES</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+     This framework ensures that Pure Finest Inc. continues to lead responsibly,
+      protecting and advancing human rights in every sphere of influence.
+      </p>
+    </div>
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/human-rights-core.jpg" alt="Grievance Mechanism" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+  </div>
+</div>-->
+ 
+
+ <!-----thumbnail-->
+
+
+<!------------------------------------------------>
+
+
+
+<!---------------RELATED LINKS------------------------>
+<div><h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">RELATED LINKS</h2></div>
+<div class="container-fluid pfi-layout-container">
+  <div class="pfi-row">
+    <!-- Thumbnail 1 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/sport-and-ent-matter.png" alt="Premium Ingredients">
+      <h3>PEOPLE MATTER</h3>
+      <p>
+Celebrating the heart of pure finest
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="people-first.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 2 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/foundation-thumb.png" alt="Sustainability">
+      <h3>PURE FINEST FOUNDATION</h3>
+      <p>Learn about our partnerships and community initiatives.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="pffoundation.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 3 -->
+   <div class="pfi-thumb">
+      <img src="./Assets/Sports-foundation.jpg" alt="Customer Focus">
+      <h3>SPORTS AND ENTERTAINMENT</h3>
+      <p>
+        Discover our sponsorships and contributions to sports and entertainment.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Sports & Entertainment</span>
+        <a href="sports-and-ent.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 4 -->
+ <!-----  <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-innovation.png" alt="Innovation">
+      <h3>Innovation</h3>
+      <p>Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>----->
+
+    <!-- Thumbnail 5 -->
+   <div class="pfi-thumb">
+      <img src="./Assets/sport-and-ent-humanrights.png" alt="Craftsmanship">
+      <h3>HUMAN RIGHTS</h3>
+      <p>
+        Upholding Integrity and Equality
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Human Rights</span>
+        <a href="humanrights.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Footer Section (Full width, isolated, no side effects) -->
+<div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
+  <!-- SVG Wave -->
+  <div style="width: 100%; line-height: 0; overflow: hidden; margin-bottom: -5px;">
+    <svg viewBox="0 0 1440 320"
+         xmlns="http://www.w3.org/2000/svg"
+         preserveAspectRatio="none"
+         style="display: block; width: 100%; height: 80px;">
+      <path fill="#254125" d="M0,192 C360,96 1080,288 1440,192 L1440,320 L0,320 Z"></path>
+    </svg>
+  </div>
+
+  <!-- Footer Content -->
+
+ <footer class="footer" style="background-color:#254125;">
+  <div class="container">
+    <div class="row text-white align-items-center">
+      
+      <!-- Logo -->
+      <div class="col-sm-3 text-center text-sm-left mb-3 footer-logo">
+       <!------ <img src="/Assets/Footer logo.png" alt="Footer Logo" class="img-responsive" style="width: 500px; margin-left: -10px;">-->
+       <a href="index.html"> <img src="/Assets/Footer logo.png" alt="Footer Logo" class="footer-logo img-responsive"
+         style="max-width: 270px; height: auto;"></a>
+
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-sm-3 mb-3 text-center text-sm-left">
+        <ul class="list-unstyled mb-0" style="text-align:left !important;">
+          <li><a href="#" class="text-white">Sustainability</a></li>
+          <li><a href="#" class="text-white">Responsibility</a></li>
+          <li><a href="#" class="text-white">Terms Of Use</a></li>
+          <li><a href="#" class="text-white">Labels Protection</a></li>
+           <li><a href="index.html" class="text-white">The Company</a></li>
+        </ul>
+      </div>
+
+      <!-- Info Links -->
+      <div class="col-sm-3 b mb-3 text-center text-sm-left ">
+        <ul class="list-unstyled mb-0 " style="text-align:left;">
+          <li><a href="#" class="text-white">Cookies Setting</a></li>
+          <li><a href="#" class="text-white">Imprint</a></li>
+          <li><a href="#" class="text-white">Fraud Warning</a></li>
+          <li><a href="#" class="text-white">Privacy Policy</a></li>
+           <li style="width: 500px;"><a href="#" class="text-white">The Pure Finest Foundation</a></li>
+        </ul>
+      </div>
+
+      <!-- Language, Icons, Copyright -->
+      <div class="col-sm-3 mb-3 d-flex flex-column align-items-start " >
+        <select class="form-control language-selector mb-3 w-100" style="margin-left: -1px !important;">
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="dt">Dutch</option>
+          <option value="ar">Arabic</option>
+          <option value="ch">Chinese</option>
+          <option value="pt">Portuguese</option>
+          <option value="rs">Russian</option>
+          <option value="tr">Turkish</option>
+          <option value="yr">Yoruba</option>
+          <option value="ig">Igbo</option>
+          <option value="ha">Hausa</option>
+        </select>
+
+        <!-- Icons + Copyright wrapper -->
+        <div class="d-flex flex-column" style="margin-top: 40px;">
+          <div class="social-icons d-flex gap-2 mb-2" style="margin-left: 25px;">
+           <a href="https://www.tiktok.com/@purefinest?lang=en&is_from_webapp=1&sender_device=mobile&sender_web_id=7501937624288151062"> <i class="fab fa-tiktok fa-2x social-icon"></i></a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FPurefinestdrink"><i class="fab fa-x-twitter fa-2x social-icon"></i></a>
+           <a href="https://www.instagram.com/purefinestofficial?igsh=dTV1N2p1Z2libnI3"> <i class="fab fa-instagram fa-2x social-icon"></i></a>
+         <a href="https://www.threads.net/@purefinestofficial">   <i class="fab fa-threads fa-2x social-icon"></i></a>
+      <a href="https://www.facebook.com/share/1KMkUBojpm/">   <span class="facebook-icon"><i class="fab fa-facebook-f"></i></span></a>
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+    <div style="text-align: center;"><p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center !important;" > 
+            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p></div>
+  </div>
+</footer>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!----End of Footer Section-->
+<script>
+ 
+/*This is for Labels*/
+   let dropdownVisible = true;
+
+    function toggleDropdown() {
+      const radioBox = document.getElementById('radioContainer');
+      dropdownVisible = !dropdownVisible;
+      radioBox.style.display = dropdownVisible ? 'flex' : 'none';
+    }
+
+    function filterImages() {
+      const selected = document.querySelector('input[name="filter"]:checked').value;
+      const allImages = document.querySelectorAll('#imageContainer a');
+
+      allImages.forEach(img => {
+        const categories = img.querySelector('img').dataset.category.split(' ');
+        img.style.display = (selected === 'all' || categories.includes(selected)) ? 'inline-block' : 'none';
+      });
+    }
+    /*End of Labels*/
+ /*New JavaScript*/
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+  const dropdownTriggers = document.querySelectorAll(".nav > li");
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("main-nav");
+  const isDesktop = () => window.innerWidth > 1200;
+
+  // Toggle mobile menu
+  menuToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    nav.classList.toggle("active");
+
+    // Close all dropdowns on toggle for mobile
+    if (!isDesktop()) {
+      dropdownTriggers.forEach(item => item.classList.remove("active"));
+    }
+  });
+
+  dropdownTriggers.forEach(item => {
+    const link = item.querySelector("a");
+    const dropdownMenu = item.querySelector(".dropdown-menu");
+
+    // MOBILE CLICK TOGGLE
+    link.addEventListener("click", function (e) {
+      if (!isDesktop()) {
+        const hasDropdown = item.querySelector(".dropdown-menu");
+        if (hasDropdown) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const isActive = item.classList.contains("active");
+
+          // Close other dropdowns
+          dropdownTriggers.forEach(el => el.classList.remove("active"));
+
+          // Toggle current
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        }
+      }
+    });
+
+    // DESKTOP HOVER BEHAVIOR
+    if (dropdownMenu) {
+      let hoverTimeout;
+
+      item.addEventListener("mouseenter", () => {
+        if (isDesktop()) {
+          clearTimeout(hoverTimeout);
+          item.classList.add("active");
+        }
+      });
+
+      item.addEventListener("mouseleave", () => {
+        if (isDesktop()) {
+          hoverTimeout = setTimeout(() => {
+            item.classList.remove("active");
+          }, 200); // slight delay to allow cursor to reach dropdown
+        }
+      });
+
+      dropdownMenu.addEventListener("mouseenter", () => {
+        if (isDesktop()) {
+          clearTimeout(hoverTimeout);
+        }
+      });
+
+      dropdownMenu.addEventListener("mouseleave", () => {
+        if (isDesktop()) {
+          item.classList.remove("active");
+        }
+      });
+    }
+  });
+
+  // Click outside to close (mobile only)
+  document.addEventListener("click", function (e) {
+    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+      dropdownTriggers.forEach(item => item.classList.remove("active"));
+      nav.classList.remove("active");
+    }
+  });
+
+  // Optional: handle window resize to remove active states if switching to desktop
+  window.addEventListener("resize", () => {
+    if (isDesktop()) {
+      dropdownTriggers.forEach(item => item.classList.remove("active"));
+      nav.classList.remove("active");
+    }
+  });
+});
+
+ 
+/*For Mobile*/
+ 
+
+
+
+
+
+ /*Third party website*/
+    $(document).ready(function () {
+      $('.external-link').click(function (e) {
+        e.preventDefault();
+        var url = $(this).data('url');
+        $('#proceedBtn').attr('href', url);
+        $('#securityModal').modal('show');
+      });
+    
+      $('#proceedBtn').click(function () {
+        $('#securityModal').modal('hide');
+      });
+    });
+ 
+    
+
+</script>
+<!-------For cookies-->
+
+
+
+</body>
+</html>
