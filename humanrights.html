@@ -23,6 +23,81 @@
  
 
   <style>
+    /*RELATED LINKS*/
+     
+    /*.pfi-layout-container {
+      position: relative;
+      max-width: 1200px;
+      min-height: 700px;
+      margin: 100px auto;
+      padding: 0 15px;
+    }*/
+
+    .pfi-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: static;
+      margin-top: 30px;
+    }
+
+    .pfi-thumb {
+      width: 25%;
+      padding: 0 20px 20px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      z-index: 1;
+      border: 2px solid brown;
+      border-radius: 12px;
+      color: brown;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .pfi-thumb:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
+    }
+
+    .pfi-thumb img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid brown;
+      display: block;
+      margin-top: 0;
+    }
+
+    .pfi-thumb h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #000000 !important;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .pfi-thumb p {
+      font-size: 16px;
+      color: #000000 !important;
+      text-align: justify;
+    }
+
+    @media (max-width: 991px) {
+      .pfi-thumb {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pfi-thumb {
+        width: 90%;
+      }
+    }
     /*last section table*/
                 /* Scoped styles for the back link */
   
@@ -2139,8 +2214,70 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
   </div>-->
 </div>
 
+<!---------------RELATED LINKS------------------------>
+<div><h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">RELATED LINKS</h2></div>
+<div class="container-fluid pfi-layout-container">
+  <div class="pfi-row">
+    <!-- Thumbnail 1 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/people-first-banner.png" alt="Premium Ingredients">
+      <h3>PEOPLE MATTER</h3>
+      <p>
+Celebrating the heart of pure finest
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="people-first.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
 
+    <!-- Thumbnail 2 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/foundation-thumb.png" alt="Sustainability">
+      <h3>PURE FINEST FOUNDATION</h3>
+      <p>Learn about our partnerships and community initiatives.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
 
+    <!-- Thumbnail 3 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/Sports-foundation.jpg" alt="Customer Focus">
+      <h3>SPORTS AND ENTERTAINMENT</h3>
+      <p>
+        Discover our sponsorships and contributions to sports and entertainment.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Sports & Entertainment</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 4 -->
+   <!----------------------- <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-innovation.png" alt="Innovation">
+      <h3>Innovation</h3>
+      <p>Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+
+    <!-- Thumbnail 5 -->
+   <!----------------- <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-excellence.png" alt="Craftsmanship">
+      <h3>Excellence in <br> Craftsmanship</h3>
+      <p>Each product is created with care and attention to detail, blending expertise and passion to ensure superior taste and a memorable experience.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+  </div>
+</div>
 
 
 
