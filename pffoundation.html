@@ -23,7 +23,82 @@
  
 
   <style>
-    
+      /*RELATED LINKS*/
+     
+    /*.pfi-layout-container {
+      position: relative;
+      max-width: 1200px;
+      min-height: 700px;
+      margin: 100px auto;
+      padding: 0 15px;
+    }*/
+
+    .pfi-row-1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: static;
+      margin-top: 30px;
+    }
+
+    .pfi-thumb-1 {
+      width: 25%;
+      padding: 0 20px 20px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      z-index: 1;
+      border: 2px solid brown;
+      border-radius: 12px;
+      color: brown;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .pfi-thumb-1:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
+    }
+
+    .pfi-thumb-1 img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid brown;
+      display: block;
+      margin-top: 0;
+    }
+
+    .pfi-thumb-1 h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #000000 !important;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .pfi-thumb-1 p {
+      font-size: 16px;
+      color: #000000 !important;
+      text-align: justify;
+    }
+
+    @media (max-width: 991px) {
+      .pfi-thumb-1 {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pfi-thumb-1 {
+        width: 90%;
+      }
+    }
+    /*******************************/
     /*************************/
      .container {
       max-width: 1200px;
@@ -1836,16 +1911,16 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
   <div style="position: absolute; top: 20%; left: 10%; color: white; z-index: 2;">
     <h3 style="margin-top: -100px; width: 100%; font-weight: bold; font-size: 40px; 
     line-height: 1.4;font-family: Cinzel Decorative, serif;text-align: center;">
-    Pure Finest Foundation: Empowering Communities, Inspiring Change.</h3>
+    Empowering Communities, Inspiring Change.</h3>
     <p style="margin-top: 50px; font-size: 28px; margin-left: 10px; 
      font-family: 'Saira Stencil One', sans-serif;">
     Through partnerships, community initiatives, and sustainability efforts, we create a lasting positive impact worldwide.
 
 
      </p>
-    <button type="button" style="margin-top: 100px; background-color: #96BB36; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
-      <span style="color: white;font-size: 24px;">EDI Initiatives</span>
-    </button>
+ <!------------------   <button type="button" style="margin-top: 100px; background-color: #96BB36; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+     <span style="color: white;font-size: 24px;">EDI Initiatives</span>
+    </button>-->
   </div>
 </div>
 
@@ -1892,11 +1967,12 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
          our approach to human rights, including clear
          guidelines for due diligence, reporting, and remediation.</p>-->
             <h2 style="font-weight:900; text-align:center; margin-top:100px;">
-              GRIEVANCE MECHANISMS
+       PARTNERSHIPS
             </h2>
       <p style="text-align:justify; margin:15px;font-size:18px">
-      We provide accessible, transparent, and confidential channels 
-          for reporting and addressing human rights concerns.
+   The Pure Finest Foundation partners with a diverse range of local and global organizations
+    to amplify its mission of creating sustainable, equitable, and thriving communities. These partnerships are carefully aligned with the foundation's key focus areas: sustainability, education, and community development. Through these partnerships, the Pure Finest Inc. Foundation strives to empower individuals, address systemic challenges, and create a positive ripple effect that extends far beyond the communities it directly serves. By leveraging the expertise and passion of its partners,
+    the foundation continues to advance its vision for a brighter, more sustainable future for all.
       </p>
     </div>
     <div class="col-sm-6" style="padding:0;">
@@ -2119,7 +2195,7 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
   </div>
 <!-------------------------------------------->
 <div><h2 style="font-weight:900; text-align:center; 
-  margin-top:50px;text-transform: uppercase;">KEY AREAS OF COLLABORATION</h2></div>
+  margin-top:50px;text-transform: uppercase;">OUR FOCUS AREAS IN COMMUNITIES</h2></div>
 <div style="max-width:700px;height:auto;padding:20px;margin:0 auto;">
 
   <!-- Row 1 -->
@@ -2135,7 +2211,8 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
       </h5>
         <p style="position:relative;top:30px;text-align:center;
         font-size:18px;margin-top:-30px;">
-      Pure Finest Inc. supports women, youth, and marginalized groups—especially the wrongfully imprisoned—through rehabilitation, legal aid, and advocacy to promote justice and equity.
+      Pure Finest Inc. supports women, youth, and marginalized groups—especially 
+      the wrongfully imprisoned—through rehabilitation, legal aid, and advocacy to promote justice and equity.
         </p>
         <!-------------- Pure Finest Inc. is deeply committed to addressing systemic injustices and inequalities. We partner with organizations to support women, youth, and marginalized communities, including those who have been falsely imprisoned or subjected to social injustices. By funding rehabilitation programs, legal aid initiatives, and advocacy efforts,
          we strive to restore dignity and create equitable opportunities for those who have faced unjust treatment.---------------->
@@ -2223,6 +2300,74 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
 <div><p style="text-align: center;font-size:18px;font-weight:900;">Through these efforts, Pure Finest Inc. works tirelessly to create communities where every individual, regardless of their background or past challenges, has the opportunity to lead a fulfilling and dignified life. 
   By addressing injustices and fostering collaboration, we aim to build a more equitable and hopeful future for all.</p></div>
 
+<!---------------RELATED LINKS------------------------>
+<div><h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">RELATED LINKS</h2></div>
+<!------------------<div class="container-fluid pfi-layout-container">-->
+  <div class="pfi-row-1">
+    <!-- Thumbnail 1 -->
+    <div class="pfi-thumb-1">
+      <img src="./Assets/people-first-advancing-sustainability.jpg" alt="Premium Ingredients">
+      <h3>SUSTAINABILITY</h3>
+      <p>
+ADVANCING SUSTAINABILITY
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Sustainability</span>
+        <a href="people-first.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 2 -->
+    <div class="pfi-thumb-1">
+      <img src="./Assets/people-first-banner.png" alt="Sustainability">
+      <h3>PEOPLE FIRST</h3>
+      <p>CELEBRATING THE HEART OF PURE FINEST</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People First</span>
+        <a href="people-first.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 3 -->
+    <div class="pfi-thumb-1">
+      <img src="./Assets/Sports-foundation.jpg" alt="Customer Focus">
+      <h3>FID</h3>
+      <p>
+        Discover our sponsorships and contributions to sports and entertainment.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Sports & Entertainment</span>
+        <a href="sports-and-ent.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 4 -->
+   <!----------------------- <div class="pfi-thumb-1">
+      <img src="./Assets/thepfiway-innovation.png" alt="Innovation">
+      <h3>Innovation</h3>
+      <p>Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+
+    <!-- Thumbnail 5 -->
+   <!----------------- <div class="pfi-thumb-1">
+      <img src="./Assets/thepfiway-excellence.png" alt="Craftsmanship">
+      <h3>Excellence in <br> Craftsmanship</h3>
+      <p>Each product is created with care and attention to detail, blending expertise and passion to ensure superior taste and a memorable experience.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+  </div>
+<!-----------</div>-->
+
+
+
+  
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
   <!-- SVG Wave -->
