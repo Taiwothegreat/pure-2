@@ -23,6 +23,161 @@
  
 
   <style>
+      /*slides*/
+     .no-gap-wrapper {
+      position: relative;
+      width: 100%;
+      height: 150vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    .slide.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+
+    .edge-to-edge-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .refresh, .refresh-1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 90%;
+      text-align: center;
+      font-family: 'Saira Stencil One', sans-serif;
+    }
+
+    .refresh {
+      top: 40%;
+      /*font-size: 2em;*/
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+          font-family: Cinzel Decorative, serif;
+    }
+
+    .refresh-1 {
+      top: 55%;
+      font-size: 28px;
+      color: white;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .animated-icon {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 50px;
+      animation: bounce 2s infinite;
+      text-shadow: 2px 2px 5px black;
+      z-index: 2;
+    }
+
+    .slide:nth-child(1) .animated-icon {
+      color: #8BC34A; /* Green */
+    }
+
+    .slide:nth-child(2) .animated-icon {
+      color: #4CAF50; /* Deep Green */
+    }
+
+    .slide:nth-child(3) .animated-icon {
+      color: #03A9F4; /* Blue */
+    }
+
+    .slide:nth-child(4) .animated-icon {
+      color: #E91E63; /* Pink/Red */
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
+
+   /* @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }*/
+
+    @media (max-width: 768px) {
+      .refresh {
+        top: 35%;
+        font-size: 1.5em;
+      }
+      .refresh-1 {
+        top: 50%;
+        font-size: 1em;
+      }
+      .animated-icon {
+        top: 20%;
+        font-size: 40px;
+      }
+    }
+
+    .slide-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      z-index: 3;
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .slide-control.left {
+      left: 15px;
+    }
+
+    .slide-control.right {
+      right: 15px;
+    }
+
+    .slide-control:hover {
+      background: rgba(0,0,0,0.5);
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .dot {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: white;
+    }
+    /*End of slides*/
       /*RELATED LINKS*/
      
     /*.pfi-layout-container {
@@ -1903,11 +2058,94 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
   </div>
 </nav>
  
+<div class="no-gap-wrapper" id="slideshow">
+  <!-- Slide 1 -->
+  <div class="slide active">
+  <!----------------  <span class="glyphicon glyphicon-leaf animated-icon"></span>-->
+    <img src="./Assets/Pffoundation-ban-1.jpg" alt="" class="edge-to-edge-img">
+   <!---------- <h1 class="refresh">REDEFINING REFRESHMENT, NATURALLY.</h1>
+    <p class="refresh-1">Crafting Premium, Plant-Based Foods And 
+        <br>Drinks For Vitality And Well-Being.</p>-->
+  </div>
 
+  <!-- Slide 2 -->
+  <div class="slide">
+    <!------------<span class="glyphicon glyphicon-tree-deciduous animated-icon"></span>-->
+    <img src="./Assets/Pffoundation-ban-2.jpg" alt="" class="edge-to-edge-img">
+<!--------------------    <h1 class="refresh">SUSTAINABILITY AT HEART</h1>
+    <p class="refresh-1">Our eco-conscious process protects nature from seed to sip.</p>-->
+  </div>
 
-<div style="position: relative; padding: 0; width: 100%; margin: 0 auto;">
+  <!-- Slide 3 -->
+  <div class="slide">
+<!--------------------    <span class="glyphicon glyphicon-tint animated-icon"></span>-->
+    <img src="./Assets/Pffoundation-ban-3.jpg" alt="" class="edge-to-edge-img">
+<!-----------------------    <h1 class="refresh">PURITY IN EVERY DROP</h1>
+    <p class="refresh-1">Infused with natural ingredients to support a vibrant life.</p>-->
+  </div>
+
+  <!-- Slide 4 -->
+ <!------------ <div class="slide">
+    <span class="glyphicon glyphicon-heart animated-icon"></span>
+    <img src="./Assets/who-we-are-slide-3.jpg" alt="" class="edge-to-edge-img">
+    <h1 class="refresh">BOOST YOUR WELLNESS</h1>
+    <p class="refresh-1">Plant-powered blends crafted to energize and uplift.</p>
+  </div>-->
+
+  <!-- Controls -->
+  <span class="slide-control left glyphicon glyphicon-chevron-left" onclick="prevSlide()"></span>
+  <span class="slide-control right glyphicon glyphicon-chevron-right" onclick="nextSlide()"></span>
+
+  <!-- Dots -->
+  <div class="dots" id="dot-container"></div>
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll("#slideshow .slide");
+  const dotContainer = document.getElementById("dot-container");
+
+  // Create dots dynamically
+  slides.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      resetInterval();
+    });
+    dotContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index) {
+    slides[current].classList.remove("active");
+    dots[current].classList.remove("active");
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add("active");
+    dots[current].classList.add("active");
+  }
+
+  function nextSlide() {
+    showSlide(current + 1);
+  }
+
+  function prevSlide() {
+    showSlide(current - 1);
+  }
+
+  let interval = setInterval(nextSlide, 5000);
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 5000);
+  }
+</script>
+
+<!-------------<div style="position: relative; padding: 0; width: 100%; margin: 0 auto;">-->
 <!-------------- <img src="./Assets/Pffoundations-banner.png" alt="" style="width: 100%; display: block;">-->
-  <video src="./Assets/Pffoundation-banner-1.mp4" autoplay muted loop playsinline
+<!-----------  <video src="./Assets/Pffoundation-banner-1.mp4" autoplay muted loop playsinline
       style="width: 100%; height: 150vh; object-fit: cover; display: block;">
     </video>
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
@@ -1921,13 +2159,13 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
      font-family: 'Saira Stencil One', sans-serif;">
     Through partnerships, community initiatives, and sustainability efforts, we create a lasting positive impact worldwide.
 
-
-     </p>
+-->
+  <!-------   </p>-->
  <!------------------   <button type="button" style="margin-top: 100px; background-color: #96BB36; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
      <span style="color: white;font-size: 24px;">EDI Initiatives</span>
     </button>-->
-  </div>
-</div>
+  <!---------</div>
+</div>-->
 
 <!-- HUMAN RIGHTS COMMITMENT  Section -->
 
@@ -1983,7 +2221,9 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
 <div class="container-fluid" style="padding:0; margin:0;">
   <div class="row" style="margin:0;">
     <div class="col-sm-6" style="padding:0; margin:0;">
-      <video src="./Assets/Pffoundation-equitability-1.mp4" style="width:100%; height:auto; display:block; margin:0; padding:0;" class="img-responsive" controls></video>
+<!--------------      <video src="./Assets/Pffoundation-equitability-1.mp4" style="width:100%; height:auto; display:block; margin:0; padding:0;" class="img-responsive" controls="0"></video>-->
+<video src="./Assets/Pffoundation-equitability-1.mp4" style="width:100%; height:auto; display:block; margin:0; padding:0;" class="img-responsive"></video>
+
     </div>
     <div class="col-sm-6" style="padding:0; margin:0;">
       <div style="padding:40px;">
