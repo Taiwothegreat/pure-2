@@ -23,6 +23,151 @@
  
 
   <style>
+         /*RELATED LINKS*/
+     
+    /*.pfi-layout-container {
+      position: relative;
+      max-width: 1200px;
+      min-height: 700px;
+      margin: 100px auto;
+      padding: 0 15px;
+    }*/
+
+    .pfi-row-1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: static;
+      margin-top: 30px;
+    }
+
+    .pfi-thumb-1 {
+      width: 25%;
+      padding: 0 20px 20px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      z-index: 1;
+      border: 2px solid brown;
+      border-radius: 12px;
+      color: brown;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .pfi-thumb-1:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
+    }
+
+    .pfi-thumb-1 img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid brown;
+      display: block;
+      margin-top: 0;
+    }
+
+    .pfi-thumb-1 h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #000000 !important;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .pfi-thumb-1 p {
+      font-size: 16px;
+      color: #000000 !important;
+      text-align: justify;
+    }
+
+    @media (max-width: 991px) {
+      .pfi-thumb-1 {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pfi-thumb-1 {
+        width: 90%;
+      }
+    }
+    /*last section table*/
+                /* Scoped styles for the back link */
+  
+/************************************/
+  #media-center { text-align: center; padding: 30px; }
+  .sort-container { display: inline-block; margin: 20px 0; position: relative; }
+  .caret { cursor: pointer; font-size: 20px; margin-left: 10px; transition: transform 0.3s ease; }
+  .caret.open { transform: rotate(180deg); }
+  
+  .radios { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 10px; display: flex; justify-content: center; gap: 20px; }
+  .radios.open { max-height: 50px; }
+  .news-item { display: flex; justify-content: space-between; align-items: center; 
+    border: 5px solid #8B4513; padding: 15px; 
+    margin: 15px auto; width: 80%; text-align: left; flex-wrap: wrap; transition: all 0.3s ease; }
+  .news-item a { display: flex; width: 100%; color: inherit; text-decoration: none; }
+  .news-desc { flex: 1; padding-right: 20px; }
+  .news-img { position: relative; width: 200px; height: 150px; }
+/*  .news-img img:first-child { width: 200px; height: 150px; object-fit: cover; }*/
+  .news-img img:first-child { width: 100%; height: 100%; object-fit: contain; }
+  .logo-overlay { position: absolute; top: 8px; right: 8px; width: 50px; height: 50px; }
+  .pagination { margin-top: 30px; }
+  .page-numbers button { margin: 0 5px; }
+
+
+.news-img:hover img:first-child {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+
+.news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.news-img:hover {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px; /* Bigger logo */
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Make sure logo zooms along with image */
+.news-img:hover .logo-overlay {
+  transform: scale(1.05);
+}
+
+/*****************************************/
     .dropdown-content span {
     display: none;
     position: absolute;
@@ -1422,7 +1567,8 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
     z-index: 2;">
     <div style="display: flex; gap: 30px; font-size: 40px; 
     font-weight: bold; font-family: Cinzel Decorative, serif;">
-      CELEBRATING THE HEART OF PURE FINEST 
+   <!--------------------   CELEBRATING THE HEART OF PURE FINEST -->
+      CREATING A SUSTAINABLE FUTURE
     </div>
     <p style="font-size: 28px; margin-left: 100px !important;
      font-family: 'Saira Stencil One', sans-serif;margin-top: 60px;">
@@ -1494,6 +1640,72 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
   </div>
 </div>
    
+
+<!---------------RELATED LINKS------------------------>
+<div><h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">RELATED CONTENT</h2></div>
+<div class="container-fluid pfi-layout-container-1">
+  <div class="pfi-row-1">
+    <!-- Thumbnail 1 -->
+    <div class="pfi-thumb-1">
+      <img src="./Assets/human-rights-main.jpg" alt="Premium Ingredients">
+      <h3>HUMAN RIGHTS</h3>
+      <p>
+Upholding Integrity and Equality
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Human Rights</span>
+        <a href="humanrights.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 2 -->
+    <div class="pfi-thumb-1">
+      <img src="./Assets/responsibility-banner.jpg" alt="responsibility">
+      <h3>RESPONSIBILITY</h3>
+      <p>  Committed to people, planet, and purpose</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Responsibility</span>
+        <a href="responsibility.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 3 -->
+    <div class="pfi-thumb-1">
+      <img src="./Assets/sustainability-banner.jpg" alt="sustainability">
+      <h3>Sustainability</h3>
+      <p>
+        Refreshing the World, Nourishing Lives and Driving Positive Change For a Sustainable Future
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Sustainability</span>
+        <a href="sustainability.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 4 -->
+   <!----------------------- <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-innovation.png" alt="Innovation">
+      <h3>Innovation</h3>
+      <p>Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+
+    <!-- Thumbnail 5 -->
+   <!----------------- <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-excellence.png" alt="Craftsmanship">
+      <h3>Excellence in <br> Craftsmanship</h3>
+      <p>Each product is created with care and attention to detail, blending expertise and passion to ensure superior taste and a memorable experience.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+  </div>
+</div>
+
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
   <!-- SVG Wave -->
