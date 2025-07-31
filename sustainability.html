@@ -23,6 +23,334 @@
  
 
   <style>
+    /*RELATED LINKS*/
+     
+    /*.pfi-layout-container {
+      position: relative;
+      max-width: 1200px;
+      min-height: 700px;
+      margin: 100px auto;
+      padding: 0 15px;
+    }*/
+
+    .pfi-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: static;
+      margin-top: 30px;
+    }
+
+    .pfi-thumb {
+      width: 25%;
+      padding: 0 20px 20px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      z-index: 1;
+      border: 2px solid brown;
+      border-radius: 12px;
+      color: brown;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .pfi-thumb:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(165, 42, 42, 0.4);
+    }
+
+    .pfi-thumb img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid brown;
+      display: block;
+      margin-top: 0;
+    }
+
+    .pfi-thumb h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #000000 !important;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .pfi-thumb p {
+      font-size: 16px;
+      color: #000000 !important;
+      text-align: justify;
+    }
+
+    @media (max-width: 991px) {
+      .pfi-thumb {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pfi-thumb {
+        width: 90%;
+      }
+    }
+    /*last section table*/
+                /* Scoped styles for the back link */
+  
+/************************************/
+  #media-center { text-align: center; padding: 30px; }
+  .sort-container { display: inline-block; margin: 20px 0; position: relative; }
+  .caret { cursor: pointer; font-size: 20px; margin-left: 10px; transition: transform 0.3s ease; }
+  .caret.open { transform: rotate(180deg); }
+  
+  .radios { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 10px; display: flex; justify-content: center; gap: 20px; }
+  .radios.open { max-height: 50px; }
+  .news-item { display: flex; justify-content: space-between; align-items: center; 
+    border: 5px solid #8B4513; padding: 15px; 
+    margin: 15px auto; width: 80%; text-align: left; flex-wrap: wrap; transition: all 0.3s ease; }
+  .news-item a { display: flex; width: 100%; color: inherit; text-decoration: none; }
+  .news-desc { flex: 1; padding-right: 20px; }
+  .news-img { position: relative; width: 200px; height: 150px; }
+/*  .news-img img:first-child { width: 200px; height: 150px; object-fit: cover; }*/
+  .news-img img:first-child { width: 100%; height: 100%; object-fit: contain; }
+  .logo-overlay { position: absolute; top: 8px; right: 8px; width: 50px; height: 50px; }
+  .pagination { margin-top: 30px; }
+  .page-numbers button { margin: 0 5px; }
+
+
+.news-img:hover img:first-child {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+
+.news-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.news-img:hover {
+/*  transform: scale(1.1);*/
+  transform: none;
+}
+
+.news-img img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px; /* Bigger logo */
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Make sure logo zooms along with image */
+.news-img:hover .logo-overlay {
+  transform: scale(1.05);
+}
+
+  @media (max-width: 600px) {
+    .news-item a { flex-direction: column; text-align: center; }
+    .news-desc { padding: 0; margin-bottom: 10px; }
+  }
+    /*last section table*/
+    .container {
+      max-width: 1200px;
+     /* margin: 0 auto;*/
+      padding: 20px;
+    }
+    /* === MOBILE STYLES === */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+    width: 95%;
+    padding: 10px;
+  }
+
+  .news-item a {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .news-desc {
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+.news-item h2{
+  font-weight:900; 
+  text-align:left;
+   margin-top:50px;
+          text-transform: uppercase;
+          font-size:18px !important;
+          font-family: 'Saira Stencil One', sans-serif;
+}
+.news-item p{
+ 
+  text-align:left;
+   margin-top:50px;
+       text-align: left;
+      max-width: 300px;
+}
+ /* .news-img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 15px;
+  }*/
+ .news-img {
+    width: 200px;
+    height: 150px;
+    margin-left: 0 !important;
+  }
+ /* .news-img img:first-child {
+    height: auto;
+  }
+
+  .logo-overlay {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .radios {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }*/
+
+  .sort-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+/*
+    .thumbnails-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }*/
+
+  /* ... previous styles unchanged ... */
+
+ /* .thumbnails-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 50px; /* closes space between items */
+  /*}*/
+.thumbnails-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ✅ centers the thumbnails */
+  margin: 0;
+  gap: 50px;
+}
+.thumbnails-rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start; /* ✅ centers the thumbnails */
+    margin: 0;
+
+  gap: 50px;
+}
+  @media (min-width: 768px) {
+    .custom-thumb {
+      width: calc(100% / 3); /* ensures no space between 3 items */
+      aspect-ratio: 3 / 4;
+    }
+  }
+
+  /* ... rest of your styles remain exactly as you had them ... */
+
+
+    .custom-thumb {
+      border: 2px solid #8B4513;
+      border-radius: 12px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      background-color: #f9f9f9;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .custom-thumb {
+        width: 27%;
+        aspect-ratio: 3 / 4;
+      }
+    }
+
+    .custom-thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      border-top: 2px solid #8B4513;
+      width: 100vw;
+      margin: 0;
+    }
+
+    .custom-thumb h5.pure {
+      text-align: center;
+      width: 100%;
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 20px;
+      color: #000;
+      font-family: Cinzel Decorative, serif;
+    }
+
+    .custom-thumb p {
+      position: relative;
+      top:30px;
+      text-align: center;
+      font-size: 18px;
+      margin: 0;
+      color: #333;
+      width: 100%;
+    }
+  
+
+.custom-thumb {
+  transition: transform 0.3s ease;
+}
+
+.custom-thumb:hover {
+  transform: scale(1.05); /* Zoom in slightly */
+}
+    /*******/
     .dropdown-content span {
     display: none;
     position: absolute;
@@ -1251,7 +1579,7 @@ PureFinest® and Taste Me!-Feel Me!® stand at the forefront of the food and bev
           <div class="edi">
               <h5 ><a href="edi.html">EDI</a></h5>
               <ul><li><a href="edi.html#employee">Employee</a>
-                     <span>
+<span>
 
 The Black, Asian, and Hispanic (BAH) Employee Networks celebrate and support 
 their communities by promoting inclusion, equity, and cultural awareness. 
@@ -1260,14 +1588,14 @@ They offer learning forums, workshops, and events to boost personal and professi
 </span>
               </li>
                 <li><a href="edi.html#network">Network</a>
-                             <span>
+<span>
   We foster strong employment networks to empower and connect talent both within and beyond our organization. Our goal is to create a collaborative and inclusive community where individuals can access opportunities for professional growth, mentorship, and skill development. By nurturing meaningful relationships, we strive to build an environment
    that supports career advancement and enables everyone to reach their full potential.
    This network will strengthen employee engagement while aligning with Pure Finest Inc.’s brand ethos of innovation, sustainability, and wellness.
 </span>
                 </li>
                 <li><a href="edi.html#headship">Headship</a>
-                    <span>
+  <span>
                   At Pure Finest Inc., the leadership of our Equality, Diversity, and Inclusion (EDI) initiatives is dedicated to fostering a workplace where every individual feels valued, respected, and empowered to contribute their best. By embedding EDI as a core organizational value, the headship team is committed to creating a culture where belonging and inclusion thrive.
 
 Our vision is to establish Pure Finest Inc. as a benchmark for EDI, cultivating an environment where individuality is celebrated, opportunities are equitable, and innovation flourishes through diverse perspectives. By championing these principles, the leadership enables employees to bring their authentic selves to work and actively contribute to the company’s 
@@ -1278,32 +1606,31 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
            <div class="human">
               <h5 ><a href="humanrights.html">Human Rights</a></h5>
               <ul><li><a href="humanrights.html#rights">Human Rights</a>
-                    <span>   At Pure Finest Inc., we are firmly committed to upholding 
+               <span>
+      At Pure Finest Inc., we are firmly committed to upholding 
       and promoting human rights across all aspects of our operations and value chain. Guided by
        international frameworks such as the United Nations Guiding Principles on Business and Human Rights and the Universal Declaration of Human
        Rights, we strive to ensure that respect for human rights is at the core of everything we do.
        This framework ensures that Pure Finest Inc. continues to lead responsibly,
-        protecting and advancing human rights in every sphere of influence.</span>
-            </li>
+        protecting and advancing human rights in every sphere of influence.
+          </span></li>
               <li><a href="humanrights.html#governance">Governance</a>
-                   <span>
+               <span>
            The Pure Finest Inc. Board of Directors ensures that human rights policies are integrated into the company’s overall strategy and decision-making.
            A dedicated committee oversees the implementation and monitoring of human rights policies, engaging with stakeholders to address risks and opportunities.
            A robust policy framework governs our approach to human rights, including clear guidelines for due diligence, reporting, and remediation.
            We conduct regular human rights impact assessments across our operations and supply chains to identify and mitigate potential risks.
            All employees and partners receive training on human rights policies 
            and practices to build a culture of awareness and accountability.
-          </span>
-            </li>
+          </span></li>
             <li><a href="humanrights.html#stories">Stories of Impact</a>
-                 <span>
+             <span>
            Through its outreach programs, Pure Finest Inc. has positively impacted underserved communities by providing access to clean drinking water and nutrition education. For example, the company collaborated with grassroots organizations to fund water purification projects in regions facing scarcity, ensure clean water for thousands of families.
            Pure Finest Inc. has created mentorship programs that have directly led 
            to a 30% increase in women taking up leadership roles within the company. 
            These initiatives have not only empowered employees but have also 
            inspired other organizations to adopt similar equity-driven models.
-          </span>
-            </li></ul>
+          </span></li></ul>
             </div>
              <div class="sports">
               <h5 ><a href="sports-and-ent.html">Sports & <br>Entertainment</a></h5>
@@ -1314,7 +1641,8 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
               <h5 ><a href="pffoundation.html">The Pure Finest Foundation</a></h5>
               <ul><li><a href="pffoundation.html#partnerships">Partnership</a></li>
                 <li><a href="pffoundation.html#communities">Communities</a></li>
-                  <li><a href="pffoundation.html#foundation">Foundation</a></li></ul>
+                  <li><a href="pffoundation.html#foundation">Foundation</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1361,11 +1689,11 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
               <p>At Pure Finest Inc., building your career means more than just a job—it’s a chance
                  to make a meaningful impact on a global scale. Join us to grow,
                   innovate, and help shape a brighter future."</p>
-              <button style="background: #0000ff;border-radius:10px;">HUMAN POTENTIAL</button>
+              <button style="background: #0000ff;border-radius:10px;"><a href="#">HUMAN POTENTIAL</a></button>
             </div>
             <div class="recruit">
               <h5 ><a href="careers.html">RECRUITMENT PROCESS</a></h5>
-   <ul><li><a href="careers.html#application">Application Pathway</a></li>
+           <ul><li><a href="careers.html#application">Application Pathway</a></li>
                 <li><a href="careers.html#assessment">Assessment</a></li>
                 <li><a href="careers.html#offers">Offers</a></li>
               </ul>
@@ -1378,12 +1706,248 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
   </div>
 </nav>
  
- 
+
+
+<div style="position: relative; padding: 0; width: 100%; margin: 0 auto;">
+  <img src="./Assets/sustainability-banner.jpg" alt="" style="width: 100%; display: block;">
+  
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </div>
+
+  <div style="position: absolute; top: 20%; left: 5%; color: white; z-index: 2;">
+    <h3 style="margin-top: 30px; width: 100%; font-weight: bold; font-size: 40px; 
+    line-height: 1.4;font-family: Cinzel Decorative, serif;text-align: center;">SUSTAINABILITY</h3>
+    <p style="margin-top: 50px; font-size: 28px; margin-left: 10px; 
+     font-family: 'Saira Stencil One', sans-serif;">
+     <!-----At Pure Finest, we are committed to safeguarding 
+     human rights, fostering equality, and making a lasting impact.------>
+     Refreshing the World, Nourishing Lives—Driving Positive Change For a Sustainable Future.
+    </p>
+     <h3 style="margin-top: -100px; width: 100%; font-weight: bold; font-size: 40px; 
+    line-height: 1.4;font-family: Cinzel Decorative, serif;text-align: center;">
+    PEOPLE FIRST: CREATING A SUSTAINABLE FUTURE
+    </h3>
+   <!---------------- <button type="button" style="margin-top: 100px; background-color: #96BB36; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+ <span style="color: white;font-size: 24px;">EDI Initiatives</span>
+    </button>-->
+  </div>
+</div>
+
+<!-- HUMAN RIGHTS COMMITMENT  Section -->
+
+<div class="container-fluid" style="padding:0; margin-top: 50px;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sustainability-caring-for-life.jpg" alt="Employee Network" class="img-responsive" style="width:100%; height:auto; display:block;">
+    </div>
+    <div class="col-sm-6" style="padding:20px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:10px;">CARING FOR LIFE</h2>
+      <p style="text-align:justify; margin:15px;font-size:18px">At Pure Finest Inc., sustainability is at the core of everything we do. From sourcing premium ingredients responsibly to implementing eco-friendly production processes,
+         we are committed to reducing our environmental footprint while delivering high-quality food and beverage products.</p>
+<!---------------------      <h2 style="font-weight:900; text-align:center; margin-top:50px;" id="governance">HUMAN RIGHTS STEERING COMMITTEE</h2>
+      <p style="text-align:justify; margin:15px;font-size:18px">A dedicated committee oversees the implementation
+         and monitoring of human rights policies, engaging with
+         stakeholders to address risks and opportunities.</p>-->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:20px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:20px;">ENVIRONMENT</h2>
+      <p style=" text-align:justify; margin:15px;font-size:18px">
+       <span style="font-weight: 900;"> Sustainable Sourcing: </span>We partner with ethical suppliers to ensure that every ingredient in our products is cultivated with respect for nature and communities. <br>
+
+<span style="font-weight: 900;">Eco-Friendly Packaging:</span> Our packaging solutions prioritize recyclability and biodegradability, reducing waste and promoting a circular economy. <br>
+<span style="font-weight: 900;">
+Energy Efficiency:</span> We continuously invest in innovative technologies to minimize energy consumption and carbon emissions across our operations. <br>
+      </p>
+         <!---------------   <h2 style="font-weight:900; text-align:center; margin-top:50px;">DUE DILIGENCE AND RISK ASSESSMENT</h2>
+      <p style="text-align:justify; margin:15px;font-size:18px">We conduct regular human rights
+         impact assessments across our operations 
+         and supply chains to identify and mitigate potential risks.</p>-->
+    </div>
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sustainability-environment.jpg" alt="Employee Network" class="img-responsive" style="width:100%; height:auto; display:block;">
+    </div>
+  </div>
+</div>
+   <!-- TRAINING AND AWARENESS -->
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sustainability-people-matter.jpg" alt="Training" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:40px;"> PEOPLE MATTER</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+     <span style="font-weight: 900;">   Supporting Underrepresented Groups:</span> We partner
+      with ethical suppliers to ensure that every ingredient in
+       our products is cultivated with respect for nature and communities. <br>
+
+<span style="font-weight: 900;">Foundation & Partnerships:</span> Through
+ collaborations with local and global organizations,
+  we drive meaningful change in education, sustainability, and community development. <br>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- GRIEVANCE MECHANISMS -->
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:100px;">PURITY</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+        We believe that healthier choices today create a better future. By continuously improving our practices and embracing sustainable solutions, we are shaping a world where every Sip and Bite contribute to well-being and environmental
+         responsibility in which we ensure in every of our Bite and Sip are powered by nature and don't compromised.
+      </p>
+    </div>
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sustainability-purity.jpg" alt="Grievance Mechanism" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+  </div>
+</div>
+
+<!-- COLLABORATION AND ADVOCACY -->
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <div><h2 style="font-weight:900; text-align:center; margin-top:-0px;">AREAS OF FOCUS</h2></div>
+      <img src="./Assets/sustainability-our-products.jpg" alt="Collaboration" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:20px;">OUR PRODUCTS</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+       We are committed to nutritious, natural, and functional beverages that promote well-being.
+
+Our R&D teams work to reduce sugar content, artificial additives, and environmental impact without compromising quality.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- GRIEVANCE MECHANISMS -->
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:100px;" id="rights">WATER</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+      We take an active role in protecting water resources, ensuring responsible usage and replenishment. We aim to treat and return safe water to communities.
+
+Our water sustainability initiatives focus on clean water access, conservation, and purification efforts.
+      </p>
+   <!-----------------   <h2 style="font-weight:900; text-align:center; margin-top:50px;">CORE PRINCIPLES</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+     This framework ensures that Pure Finest Inc. continues to lead responsibly,
+      protecting and advancing human rights in every sphere of influence.
+      </p>-->
+    </div>
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sustainability-water.jpg" alt="Grievance Mechanism" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+  </div>
+</div>
+ <!-- COLLABORATION AND ADVOCACY -->
+<div class="container-fluid" style="padding:0; margin:0;">
+  <div class="row" style="margin:0;">
+    <div class="col-sm-6" style="padding:0;">
+      <img src="./Assets/sustainability-agriculture.jpg" alt="Collaboration" class="img-responsive" style="width:100%; height:auto;">
+    </div>
+    <div class="col-sm-6" style="padding:40px;">
+      <h2 style="font-weight:900; text-align:center; margin-top:100px;">AGRICULTURE</h2>
+      <p style="text-align:justify; font-size:18px; margin-top:20px;">
+      At Pure Finest Inc., our commitment to sustainability extends deeply into our agricultural practices. Recognizing that responsible farming is  <br>
+      pivotal to environmental stewardship and community well-being, we have integrated sustainable agriculture into the core of our operations <br>
+
+Our approach to sustainable agriculture involves methods that protect the environment, enhance soil fertility, and promote biodiversity. By adopting these practices, we aim to produce high-quality products while preserving natural resources for future generations. <br>
+      </p>
+    </div>
+  </div>
+</div>
 
 
 
 
-       
+
+  <div><p style="word-spacing: 10px; font-size: 28px; text-align: center !important;
+ padding: 20px;margin-left:0;font-weight: 900;">Join us on our journey toward a more sustainable and equitable future.</p></div>  
+    <div><p style="word-spacing: 10px; font-size: 28px; text-align: center !important;
+ padding: 20px;margin-left:0;font-weight: 900;">Together, we can create a more sustainable, inclusive, and impactful future.</p></div>
+ <div><p style="word-spacing: 10px; font-size: 28px; text-align: center !important;
+ padding: 20px;margin-left:0;font-weight: 900;">#SustainabilityWithPurpose</p></div>  
+  <div><p style="word-spacing: 10px; font-size: 28px; text-align: center !important;
+ padding: 20px;margin-left:0;font-weight: 900;">#PureFinestForTheFuture</p></div>  
+
+<!---------------RELATED LINKS------------------------>
+<div><h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">RELATED LINKS</h2></div>
+<div class="container-fluid pfi-layout-container">
+  <div class="pfi-row">
+    <!-- Thumbnail 1 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/people-first-banner.png" alt="Premium Ingredients">
+      <h3>PEOPLE MATTER</h3>
+      <p>
+Celebrating the heart of pure finest
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="people-first.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 2 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/foundation-thumb.png" alt="Sustainability">
+      <h3>PURE FINEST FOUNDATION</h3>
+      <p>Learn about our partnerships and community initiatives.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="pffoundation.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 3 -->
+    <div class="pfi-thumb">
+      <img src="./Assets/Sports-foundation.jpg" alt="Customer Focus">
+      <h3>SPORTS AND ENTERTAINMENT</h3>
+      <p>
+        Discover our sponsorships and contributions to sports and entertainment.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Sports & Entertainment</span>
+        <a href="sports-and-ent.html" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Thumbnail 4 -->
+   <!----------------------- <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-innovation.png" alt="Innovation">
+      <h3>Innovation</h3>
+      <p>Leveraging cutting-edge technology, we craft unique and innovative recipes that cater to evolving consumer needs while enhancing flavor and nutritional value.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">People Matter</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+
+    <!-- Thumbnail 5 -->
+   <!----------------- <div class="pfi-thumb">
+      <img src="./Assets/thepfiway-excellence.png" alt="Craftsmanship">
+      <h3>Excellence in <br> Craftsmanship</h3>
+      <p>Each product is created with care and attention to detail, blending expertise and passion to ensure superior taste and a memorable experience.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <span style="font-weight: bold;">Pure Finest Foundation</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>
+    </div>-->
+  </div>
+</div>
+
+
+
+
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
   <!-- SVG Wave -->
@@ -1414,7 +1978,7 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
       <div class="col-sm-3 mb-3 text-center text-sm-left">
         <ul class="list-unstyled mb-0" style="text-align:left !important;">
           <li><a href="sustainability.html" class="text-white">Sustainability</a></li>
-          <li><a href="#" class="text-white">Responsibility</a></li>
+          <li><a href="responsibility.html" class="text-white">Responsibility</a></li>
           <li><a href="#" class="text-white">Terms Of Use</a></li>
           <li><a href="#" class="text-white">Labels Protection</a></li>
            <li><a href="index.html" class="text-white">The Company</a></li>
@@ -1428,7 +1992,7 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
           <li><a href="#" class="text-white">Imprint</a></li>
           <li><a href="#" class="text-white">Fraud Warning</a></li>
           <li><a href="#" class="text-white">Privacy Policy</a></li>
-           <li style="width: 500px;"><a href="#" class="text-white">The Pure Finest Foundation</a></li>
+           <li style="width: 500px;"><a href="pffoundation.html" class="text-white">The Pure Finest Foundation</a></li>
         </ul>
       </div>
 
