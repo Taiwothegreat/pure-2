@@ -25,6 +25,82 @@
  
 
   <style>
+    .overlay {
+      position: fixed;
+      top: 0; left: 30% !important;
+      width: 100%; height: 100%;
+   /*   background: rgba(0,0,0,0.6);*/
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup {
+      background: #fff;
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 8px;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .cookie-section {
+      margin-top: 20px;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .toggle-switch input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    .toggle-switch input:checked + .slider {
+      background-color: #66bb6a;
+    }
+    .toggle-switch input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .buttons {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .buttons button {
+      margin-left: 10px;
+    }
+    /****************************/
       .dropdown-content span {
     display: none;
     position: absolute;
@@ -2596,7 +2672,8 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
       <!-- Info Links -->
       <div class="col-sm-3 b mb-3 text-center text-sm-left ">
         <ul class="list-unstyled mb-0 " style="text-align:left;">
-          <li><a href="#" class="text-white">Cookies Setting</a></li>
+<!--------------------------          <li><a href="#" class="text-white">Cookies Setting</a></li>-->
+            <li ><a href="" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>
           <li><a href="imprint.html" class="text-white">Imprint</a></li>
           <li><a href="fraud.html" class="text-white">Fraud Warning</a></li>
           <li><a href="privacy-policy.html" class="text-white">Privacy Policy</a></li>
