@@ -24,6 +24,82 @@
  
 
   <style>
+    .overlay {
+      position: fixed;
+      top: 0; left: 30% !important;
+      width: 100%; height: 100%;
+   /*   background: rgba(0,0,0,0.6);*/
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup {
+      background: #fff;
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 8px;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .cookie-section {
+      margin-top: 20px;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .toggle-switch input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    .toggle-switch input:checked + .slider {
+      background-color: #66bb6a;
+    }
+    .toggle-switch input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .buttons {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .buttons button {
+      margin-left: 10px;
+    }
+    /****************************/
     /*thicken thumbnail*/
 /* Layout and spacing */
 
@@ -1481,7 +1557,324 @@ left:0;
  
 
 <!--------Cookies instruction-->
+<!--------cookies instruction-->
 
+<div class="overlay" id="cookieOverlay">
+  <div class="popup">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+  
+    <h2>Privacy Preference Center</h2>
+    <p>
+  Pure Finest Inc. and Partners use cookies, 
+  to operate our website, to show you personalized 
+  content and manage our objectives as a business.
+   You can find out more about how we use cookies below.
+    You can allow all cookies, select them individually or decline them all.
+
+    </p>
+    <h5><a href="privacy-policy.html">Cookie Policy</a></h5>
+
+    <!-- Strictly Necessary Cookies -->
+    <!------<div class="cookie-section">
+      <div class="toggle-row always-active-toggle">
+        <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
+        <span class="always-active">Always Active</span>
+      </div>
+      <div class="cookie-description" id="strictlyDesc">
+        These cookies are necessary for the website to function 
+        and cannot be switched off in our systems. They are usually 
+        only set in response to actions made by you which amount to
+         a request for services, such as setting your privacy preferences,
+          logging in or filling in forms. You can set your browser to 
+          block or alert you about these cookies,
+         but some parts of the site will not then work. These cookies
+          do not store any personally identifiable information.
+      </div>
+    </div>-->
+<!-- Strictly Necessary Cookies -->
+<div class="cookie-section">
+  <!-- Toggle trigger (clickable) -->
+  <div id="alwaysActiveToggle" class="toggle-row" style="cursor: pointer; font-weight: bold;">
+    <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
+    <span class="always-active">Always Active &#9660;</span> <!-- down arrow to show it's expandable -->
+  </div>
+
+  <!-- Toggle target (hidden by default via CSS or inline style) -->
+  <div class="cookie-description" id="strictlyDesc" style="display: none;">
+    These cookies are necessary for the website to function 
+    and cannot be switched off in our systems. They are usually 
+    only set in response to actions made by you which amount to
+    a request for services, such as setting your privacy preferences,
+    logging in or filling in forms. You can set your browser to 
+    block or alert you about these cookies,
+    but some parts of the site will not then work. These cookies
+    do not store any personally identifiable information.
+  </div>
+</div>
+
+    <!-- Other Cookies -->
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="analyticsDesc">
+        <span class="toggle-label">ANALYTIC COOKIES</span>
+        <label class="toggle-switch">
+          <input type="checkbox" class="cookie-toggle" data-desc="analyticsDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="analyticsDesc">
+
+        These cookies help us understand how visitors interact with 
+        our website by collecting and reporting information anonymously.
+      </div>
+    </div>
+
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="advertisingDesc">
+        <span class="toggle-label">ADVERTISING</span>
+        <label class="toggle-switch">
+          <input type="checkbox" class="cookie-toggle" data-desc="advertisingDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="advertisingDesc">
+       These cookies are set by us and/or our partners and help us build
+        a profile of your interests based on your browsing behavior. 
+        If you accept these cookies,
+        you will be shown Pure Finest Inc. advertisements that match 
+        your interests as you browse other sites.
+      </div>
+    </div>
+
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="thirdPartyDesc">
+        <span class="toggle-label">THIRD PARTY CONSENT COOKIES</span>
+        <label class="toggle-switch">
+          <input type="checkbox" class="cookie-toggle" data-desc="thirdPartyDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="thirdPartyDesc">
+       These cookies allow third-party services to collect
+        data based on your consent, enabling features
+         such as personalized content or targeted advertising.
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="reject" id="allowAllBtn" onclick="allowAllCookies()">Allow All</button>
+      <button class="reject" onclick="confirmCookies()">Confirm My Choices</button>
+      <button class="reject" onclick="setCookies(false)">Reject All</button>
+    </div>
+  </div>
+</div>
+
+<!-------------------------<script>
+function setCookie(name, value, days = 365) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  if (getCookie("cookieConsentLifetime")) {
+    document.getElementById("cookieOverlay").style.display = "none";
+    return;
+  }
+
+  if (isHomepage) {
+    document.getElementById("cookieOverlay").style.display = "flex";
+  }
+
+  document.querySelectorAll('.cookie-toggle').forEach((input) => {
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = input.checked ? 'block' : 'none';
+      input.addEventListener('change', function () {
+        descElement.style.display = this.checked ? 'block' : 'none';
+      });
+    }
+  });
+
+  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
+  const strictlyDesc = document.getElementById("strictlyDesc");
+  if (alwaysActiveHeader && strictlyDesc) {
+    alwaysActiveHeader.addEventListener("click", function () {
+      const isVisible = strictlyDesc.style.display === "block";
+      strictlyDesc.style.display = isVisible ? "none" : "block";
+      alwaysActiveHeader.classList.toggle("open");
+    });
+  }
+});
+
+function allowAllCookies() {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = true;
+  });
+
+  setTimeout(() => {
+    if (confirm("All cookies allowed. Click OK to confirm.")) {
+      setCookie("cookieConsent", "accepted");
+      setCookie("cookieConsentLifetime", "true", 365);
+      document.getElementById("cookieOverlay").style.display = "none";
+    }
+  }, 300);
+}
+
+function confirmCookies() {
+  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
+  if (checkedCount > 0) {
+    alert("Your cookie preferences have been saved.");
+    setCookie("cookieConsent", "partial");
+    setCookie("cookieConsentLifetime", "true", 365);
+    document.getElementById("cookieOverlay").style.display = "none";
+  } else {
+    alert("Please select at least one cookie or click 'Reject All'.");
+  }
+}
+
+function setCookies(acceptAll) {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = false;
+  });
+  alert("All non-essential cookies rejected.");
+  setCookie("cookieConsent", "rejected");
+  setCookie("cookieConsentLifetime", "true", 365);
+  document.getElementById("cookieOverlay").style.display = "none";
+}
+
+function closeOverlay() {
+  setCookies(false);
+}
+</script>-->
+
+<script>
+function setCookie(name, value, days = 365) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  // Show cookie overlay if not already accepted
+  if (!getCookie("cookieConsentLifetime") && isHomepage) {
+    document.getElementById("cookieOverlay").style.display = "flex";
+  } else {
+    document.getElementById("cookieOverlay").style.display = "none";
+  }
+
+  // Hide all cookie descriptions by default
+  document.querySelectorAll('.cookie-description').forEach(desc => {
+    desc.style.display = "none";
+  });
+
+  // Handle dynamic toggle of descriptions based on checkboxes
+  document.querySelectorAll('.cookie-toggle').forEach((input) => {
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = input.checked ? 'block' : 'none';
+
+      input.addEventListener('change', function () {
+        descElement.style.display = this.checked ? 'block' : 'none';
+      });
+    }
+  });
+
+  // Strictly Necessary Cookies toggle visibility
+  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
+  const strictlyDesc = document.getElementById("strictlyDesc");
+  if (alwaysActiveHeader && strictlyDesc) {
+    strictlyDesc.style.display = "none";
+    alwaysActiveHeader.addEventListener("click", function () {
+      const isVisible = strictlyDesc.style.display === "block";
+      strictlyDesc.style.display = isVisible ? "none" : "block";
+      alwaysActiveHeader.classList.toggle("open");
+    });
+  }
+});
+
+function allowAllCookies() {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = true;
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = "block";
+    }
+  });
+
+  setTimeout(() => {
+    if (confirm("All cookies allowed. Click OK to confirm.")) {
+      setCookie("cookieConsent", "accepted");
+      setCookie("cookieConsentLifetime", "true", 365);
+      document.getElementById("cookieOverlay").style.display = "none";
+    }
+  }, 300);
+}
+
+function confirmCookies() {
+  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
+  if (checkedCount > 0) {
+    alert("Your cookie preferences have been saved.");
+    setCookie("cookieConsent", "partial");
+    setCookie("cookieConsentLifetime", "true", 365);
+    document.getElementById("cookieOverlay").style.display = "none";
+  } else {
+    alert("Please select at least one cookie or click 'Reject All'.");
+  }
+}
+
+function setCookies(acceptAll) {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = false;
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = "none";
+    }
+  });
+  alert("All non-essential cookies rejected.");
+  setCookie("cookieConsent", "rejected");
+  setCookie("cookieConsentLifetime", "true", 365);
+  document.getElementById("cookieOverlay").style.display = "none";
+}
+
+function closeOverlay() {
+  setCookies(false);
+}
+
+// ✅ Only keep these additional two functions:
+function openCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'block';
+}
+
+function closeCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'none';
+}
+</script>
   <div class="marquee-wrapper">
     <div class="marquee-inner" id="marquee-track">
       <!-- Duplicated set of images for seamless loop -->
@@ -2104,7 +2497,8 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
       <!-- Info Links -->
       <div class="col-sm-3 b mb-3 text-center text-sm-left ">
         <ul class="list-unstyled mb-0 " style="text-align:left;">
-          <li><a href="#" class="text-white">Cookies Setting</a></li>
+      <!---------------------------    <li><a href="#" class="text-white">Cookies Setting</a></li>-->
+            <li ><a href="" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>
           <li><a href="imprint.html" class="text-white">Imprint</a></li>
           <li><a href="fraud.html" class="text-white">Fraud Warning</a></li>
           <li><a href="privacy-policy.html" class="text-white">Privacy Policy</a></li>
