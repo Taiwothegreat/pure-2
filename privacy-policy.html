@@ -25,7 +25,7 @@
   <style>
       .overlay {
       position: fixed;
-      top: 0; left: 30%;
+      top: 0; left: 0;
       width: 100%; height: 100%;
     /*  background: rgba(0,0,0,0.6);*/
       display: none;
@@ -111,8 +111,9 @@
     height: auto;*/
     animation: spin 10s linear infinite;
     position: absolute;
-    top: 30px;
+    top: 50px;
     left: 125px;
+      filter: brightness(0) invert(1); /* turns black to white */
 }
 /*.text-logo {
     display: block;
@@ -131,7 +132,7 @@
   filter: brightness(0) invert(1); /* turns black to white */
  /* position: absolute;
   top: 10px;*/
-  margin-top: -20px;
+  margin-top: 0;
 }
     
 
@@ -1021,6 +1022,13 @@ function closeCookiePanel() {
   document.getElementById('cookieOverlay').style.display = 'none';
 }
 </script>
+<script>
+  window.onload = function () {
+    document.getElementById('cookieOverlay').style.display = 'flex';
+  }
+  
+</script>
+
 
 <div class="marquee-wrapper">
     <div class="marquee-inner" id="marquee-track">
@@ -1097,7 +1105,7 @@ function closeCookiePanel() {
         <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
           <li><a href="privacy-policy.html" style="color: white;">Privacy Policy</a></li>
           <li><a href="terms-of-service.html" style="color: white;">Terms of Use</a></li>
-          <li><a href="fraud.html" style="color: white;">Fraud Protection</a></li>
+          <li><a href="fraud.html" style="color: white;">Fraud Warning</a></li>
           <li><a href="brands-protection.html" style="color: white;">Brand Protection</a></li>
           <li><a href="imprint.html" style="color: white;">Imprint</a></li>
         </ul>
@@ -1113,17 +1121,17 @@ function closeCookiePanel() {
  ">Privacy Policy</h1>
   <p style="font-size: 20px; font-weight: 500; margin-bottom: 3%;">Scope of the Privacy Policy</p>
   <p style="margin-bottom: 3%;">
-    Pursuing the goals of PureFinest Inc. requires the processing of personal data. When processing such data, we are required to comply with the applicable laws and regulations. That goes for personal data pertaining to ‘you’ as our (potential) customer, consumer, prospect, job applicant, visitor of our plant(s) and business partner (supplier, agent or advisor). In the context of this Privacy Policy 
+    Pursuing the goals of Pure Finest Inc. requires the processing of personal data. When processing such data, we are required to comply with the applicable laws and regulations. That goes for personal data pertaining to ‘you’ as our (potential) customer, consumer, prospect, job applicant, visitor of our plant(s) and business partner (supplier, agent or advisor). In the context of this Privacy Policy 
     you and other natural persons of which we process personal data will be referred to as ‘external contacts’.
   </p>
 
   <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Organizations covered by this Privacy Policy</h2>
   <p style="margin-bottom: 3%;">
-    This Privacy Policy applies to PureFinest Inc., its parent company and its subsidiaries and other affiliated entities. All references in 
-    this Privacy Policy to PureFinest® Drinks", "we", "us", "our" and like terms should be interpreted accordingly.
+    This Privacy Policy applies to Pure Finest Inc., its parent company and its subsidiaries and other affiliated entities. All references in 
+    this Privacy Policy to Pure Finest Inc.", "we", "us", "our" and like terms should be interpreted accordingly.
   </p>
   <p style="margin-bottom: 3%;">
-    It is PureFinest Inc. policy to comply with the privacy legislation within each jurisdiction in which we operate. Sometimes the privacy legislation and / or an individual's right to privacy are different from 
+    It is Pure Finest Inc. policy to comply with the privacy legislation within each jurisdiction in which we operate. Sometimes the privacy legislation and / or an individual's right to privacy are different from 
     one jurisdiction to another. If you are unsure if or how this Privacy Policy applies to you, please contact HR.
   </p>
 
@@ -1146,20 +1154,20 @@ function closeCookiePanel() {
     <li>the books in which names and signatures of visitors of our factories are recorded;</li>
     <li>public sources (such as the Commercial Trade Registers);</li>
     <li>databases from third parties, including recruitment agencies;</li>
-    <li>supplier and/or customer events organized by PureFinest Inc.</li>
+    <li>supplier and/or customer events organized by Pure Finest Inc.</li>
   </ul>
   <p style="margin-bottom: 3%;">
     In addition to the examples listed above, personal data also includes information such as gender, date of birth,
      education and/or training details, bank details and any other information necessary to achieve 
-     PureFinest Inc. business purposes, which is
+     Pure Finest Inc. business purposes, which is
      disclosed in the context of having contact or doing business with, or applying for a job at, PureFinest Inc.
   </p>
   <p style="margin-bottom: 3%;">
-    Furthermore, in addition to the examples listed above personal data can also be processed in case PureFinest® Drinks’s Speak Up Policy is used. For further information
+    Furthermore, in addition to the examples listed above personal data can also be processed in case Pure Finest Inc. Speak Up Policy is used. For further information
      about our Speak Up Policy and what concerns are covered by this policy, we refer to the Speak Up Policy.
   </p>
   <p style="margin-bottom: 3%;">
-    As a general rule, PureFinest Inc. processes personal data directly provided by external contacts. From time to time, we may utilize the services of third parties in our business and may also receive personal data collected by those third parties in the course of the performance of their services for us or otherwise. Where this is applicable, we will take reasonable steps to ensure that such third
+    As a general rule, Pure Finest Inc. processes personal data directly provided by external contacts. From time to time, we may utilize the services of third parties in our business and may also receive personal data collected by those third parties in the course of the performance of their services for us or otherwise. Where this is applicable, we will take reasonable steps to ensure that such third
      parties have represented to us that they have the right to disclose the personal data of external contacts to us.
   </p>
   <p style="margin-bottom: 3%;">
@@ -1169,7 +1177,7 @@ function closeCookiePanel() {
 
   <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Why do we collect personal data?</h2>
   <p style="margin-bottom: 1.5%;">
-    PureFinest Inc. processes personal data of external contacts for its
+    Pure Finest Inc. processes personal data of external contacts for its
      business purposes only. We can inter alia process personal data of external contacts for the following purposes:
   </p>
   <ul style="margin-left: 30px; margin-bottom: 3%;">
@@ -1214,12 +1222,12 @@ function closeCookiePanel() {
      references before confirming your appointment. We will always ask for your consent before taking up a reference.
   </p>
   <p style="margin-bottom: 3%;">
-    When we do not employ you: if PureFinest® Drinks does not employ you, PureFinest® Drinks will nevertheless continue to retain and use your information which may include personal data in order to consider you for new positions. PureFinest® Drinks may refer back to an earlier application in case you submit a new application in the future. In this respect PureFinest® Drinks will retain your personal data for a period of one year following rejection of the job application procedure, unless otherwise required by applicable law. Furthermore, if you created an account on the PureFinest® Drinks career opportunities website, your account information will be retained for as long as you maintain an active account. Your account 
+    When we do not employ you: if Pure Finest Inc. does not employ you, Pure Finest Inc. will nevertheless continue to retain and use your information which may include personal data in order to consider you for new positions. Pure Finest Inc. may refer back to an earlier application in case you submit a new application in the future. In this respect Pure Finest Inc. will retain your personal data for a period of one year following rejection of the job application procedure, unless otherwise required by applicable law. Furthermore, if you created an account on the Pure Finest Inc. career opportunities website, your account information will be retained for as long as you maintain an active account. Your account 
     will be deemed inactive, and your account information will be automatically deleted, after one year of inactivity.
   </p>
   <p style="margin-bottom: 3%;">
     Please contact the local
-     HR department if you do not wish to be contacted anymore by PureFinest Inc. for new job vacancies.
+     HR department if you do not wish to be contacted anymore by Pure Finest Inc. for new job vacancies.
   </p>
   <p style="margin-bottom: 3%;">
     If you fail to provide information when requested, which
@@ -1250,13 +1258,13 @@ function closeCookiePanel() {
   <p style="margin-bottom: 3%;">
     As a principle, we do not disclose personal data to third parties. However, disclosing
      personal data of external contacts to third parties might be necessary in the performance of an 
-     agreement between PureFinest Inc. and the external contact. At all times, any
+     agreement between Pure Finest Inc. and the external contact. At all times, any
      third party must act on the instructions of PureFinest Inc. and ensure personal data is adequately protected.
   </p>
 
   <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">How is personal data protected?</h2>
   <p style="margin-bottom: 3%;">
-    PureFinest Inc. will take all reasonable precautions to keep your personal information
+    Pure Finest Inc. will take all reasonable precautions to keep your personal information
      secure, appropriate to our business and the amount of personal data that we own or maintain and identify risks.
   </p>
 
@@ -1281,11 +1289,11 @@ function closeCookiePanel() {
   <p style="margin-bottom: 3%;">
     It is important that all personal data in our records is both accurate and up-to-date. You can exercise your
      rights with respect to your personal data, such as the right of access, rectification, erasure and objection
-      through PureFinest Inc. data subject rights request. We strive to respond to your request within four (4) weeks. Occasionally it may takes us longer than four (4) weeks if your request is 
+      through Pure Finest Inc. data subject rights request. We strive to respond to your request within four (4) weeks. Occasionally it may takes us longer than four (4) weeks if your request is 
     particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.
   </p >
 <p style="margin-bottom: 3%;">We may need to request specific information from you to help us confirm your identity and ensure your right to access your personal data (or to exercise any of your other rights). This is a security measure to ensure that personal data is not disclosed to any person who has no right to receive it. We may also contact you to ask you for further information in relation to your request to speed up our response.</p>
-  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Other PureFinest Inc. privacy policies</h2>
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Other Pure Finest Inc. privacy policies</h2>
   <p style="margin-bottom: 3%;">
     Besides this Privacy Policy, specific campaigns or promotions may be governed by additional privacy terms. Please
      take a moment to familiarize yourself with such terms before participating in any such campaigns or promotions.
@@ -1301,7 +1309,7 @@ function closeCookiePanel() {
 
   <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Revisions to this Privacy Policy</h2>
   <p style="margin-bottom: 3%;">
-   PureFinest Inc. may from time to time make changes to this Privacy Policy to reflect changes in its legal or 
+   Pure Finest Inc. may from time to time make changes to this Privacy Policy to reflect changes in its legal or 
    regulatory obligations or in the manner in which we deal with the personal data of external contacts. 
    We will communicate any revised version of this Privacy Policy via our website(s). Any changes to this Privacy Policy
     will be effective from the time they are communicated. This Privacy Policy was last reviewed on April 17, 2024. 
@@ -1313,7 +1321,7 @@ function closeCookiePanel() {
     This Privacy Policy includes examples but is not intended to be restricted in its application to
      such examples, therefore where the word 'including' is used, it shall mean 'including without
       limitation. This Privacy Policy does not create or confer upon any individual any rights, or
-       impose upon PureFinest Inc. any rights or obligations outside of, or in addition to, any rights or obligations imposed by the privacy laws applicable to such individual's personal data. Should there be, in a specific case, any inconsistency between this Privacy Policy and such privacy laws, this 
+       impose upon Pure Finest Inc. any rights or obligations outside of, or in addition to, any rights or obligations imposed by the privacy laws applicable to such individual's personal data. Should there be, in a specific case, any inconsistency between this Privacy Policy and such privacy laws, this 
     Privacy Policy shall be interpreted, in respect of that case, to give effect to, and comply with,
      such privacy laws.
   </p>

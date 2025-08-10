@@ -1369,7 +1369,7 @@ left:0;
   </div>
 </div>
 
-<!-------------------------<script>
+<script>
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
@@ -1458,9 +1458,11 @@ function setCookies(acceptAll) {
 function closeOverlay() {
   setCookies(false);
 }
-</script>-->
+</script>
 
-<script>
+
+
+<!--------------------<script>
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
@@ -1575,7 +1577,10 @@ function openCookiePanel() {
 function closeCookiePanel() {
   document.getElementById('cookieOverlay').style.display = 'none';
 }
-</script>
+</script>-->
+
+
+
     <div class="marquee-wrapper">
     <div class="marquee-inner" id="marquee-track">
       <!-- Duplicated set of images for seamless loop -->
@@ -1739,8 +1744,8 @@ function closeCookiePanel() {
       <!-- Info Links -->
       <div class="col-sm-3 b mb-3 text-center text-sm-left ">
         <ul class="list-unstyled mb-0 " style="text-align:left;">
-      <!----------------------    <li><a href="#" class="text-white">Cookies Setting</a></li>-->
-            <li ><a href="" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>
+      <li><a href="privacy-policy.html" class="text-white">Cookies Setting</a></li>
+          <!---------------------  <li ><a href="" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>-->
           <li><a href="imprint.html" class="text-white">Imprint</a></li>
           <li><a href="fraud.html" class="text-white">Fraud Warning</a></li>
           <li><a href="privacy-policy.html" class="text-white">Privacy Policy</a></li>
