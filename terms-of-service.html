@@ -25,7 +25,7 @@
   <style>
       .overlay {
       position: fixed;
-      top: 0; left: 30%;
+      top: 0; left: 0;
       width: 100%; height: 100%;
    /*   background: rgba(0,0,0,0.6);*/
       display: none;
@@ -111,8 +111,9 @@
     height: auto;*/
     animation: spin 10s linear infinite;
     position: absolute;
-    top: 30px;
+    top: 50px;
     left: 125px;
+      filter: brightness(0) invert(1); /* turns black to white */
 }
 /*.text-logo {
     display: block;
@@ -131,7 +132,7 @@
   filter: brightness(0) invert(1); /* turns black to white */
  /* position: absolute;
   top: 10px;*/
-  margin-top: -20px;
+  margin-top: 0px;
 }
     
 
@@ -1095,7 +1096,7 @@ function closeCookiePanel() {
         <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
           <li><a href="privacy-policy.html" style="color: white;">Privacy Policy</a></li>
           <li><a href="terms-of-service.html" style="color: white;">Terms of Use</a></li>
-          <li><a href="fraud.html" style="color: white;">Fraud Protection</a></li>
+          <li><a href="fraud.html" style="color: white;">Fraud Warning</a></li>
           <li><a href="brands-protection.html" style="color: white;">Brand Protection</a></li>
           <li><a href="imprint.html" style="color: white;">Imprint</a></li>
         </ul>
@@ -1110,7 +1111,7 @@ function closeCookiePanel() {
   <h1 style="font-size: 48px; font-weight: bold; color: #96bb36; margin-bottom: 3%;">Terms of Use</h1>
 
   <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 3%;">1. Who is covered by these General Terms of Use</h2>
-  <p style="margin-bottom: 3%;">We at PureFinest Inc., as defined in this website’s 
+  <p style="margin-bottom: 3%;">We at Pure Finest Inc., as defined in this website’s 
     imprint (“We“ or “Our“ or “Us“) want to provide you – Our customers, fans and community – 
     the best products, content and services available at any time, on Our webpages and apps (“Platforms”) and to continue to develop these products, content and services with you. However, every cooperation needs a clear set of ground rules in order to guide how We interact with each other and to define core values. These General Terms of Use aim to set out the basic framework between you and Us for Our free products, content and services, and thus form the common basis for Us to work together (“Rules”).</p>
 
@@ -1141,7 +1142,8 @@ We believe that successful collaboration and social interaction online requires 
 
   <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 3%;">5.1 All rights to Content reserved by Us</h3>
   <p style="margin-bottom: 3%;">
-    All Content on Our Platforms, including content and services provided by you or any third parties, i.e., in particular all texts, logos, brands, graphics, artwork, sounds, music and software (including the access software) is protected by copyright, personal rights, registered designs, patents, trademarks, service marks, design rights, database rights, trade secrets, rights of confidence and other similar rights (“IPR”). All intellectual property rights existing on the Platforms and to the Content are either Our property or have been licensed to Us. All rights are reserved by Us or, if provided by a third party, they are reserved by the third party (and even if such content or service is not expressly marked as being legally protected or registered, this does not mean that We or third parties waive any applicable intellectual property rights, neither wholly nor partially with respect to such content or service). You are not permitted to reproduce, copy, post, republish, transmit, record, transfer or process any content, materials or portions thereof without Our express written permission in advance, nor are you permitted to do or attempt anything that violates Our intellectual property rights or any intellectual property rights licensed to Us or owned by third parties. This also applies to the ideas and concepts on which the Platforms or Content are based, even if they are not protected by intellectual property rights.
+    All Content on Our Platforms, including content and services provided by you or any third parties, i.e., in particular all texts, logos, brands, graphics, artwork, sounds, music and software (including the access software) is protected by copyright, personal rights, registered designs, patents, trademarks, service marks, design rights, database rights, trade secrets, rights of confidence and other similar rights (“IPR”). All intellectual property rights existing on the Platforms and to the Content are either Our property or have been licensed to Us. All rights are reserved by Us or, if provided by a third party, they are reserved by the third party (and even if such content or service is not expressly marked as being legally protected or registered, this does not mean that We or third parties waive any applicable intellectual property rights, neither wholly nor partially with respect to such content or service). You are not permitted to reproduce, copy, post, republish, transmit, record, transfer or process any content, materials or portions thereof without Our express written permission in advance, nor are you permitted to do or attempt anything that violates Our intellectual property rights or any intellectual property rights licensed to Us or owned by third parties. This also applies to the ideas and concepts on which the Platforms or 
+    Content are based, even if they are not protected by intellectual property rights.
   </p>
 
   <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 3%;">5.2 Your license for use of Our Platforms and Content</h3>
@@ -1162,7 +1164,7 @@ While We hold all rights to the Content on Our Platforms, We want to enable you 
 
   <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 1.5%;">6. Special features</h2>
 
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 3%;">6.1 PureFinest Inc. Account</h3>
+  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 3%;">6.1 Pure Finest Inc. Account</h3>
   <p style="margin-bottom: 3%;">
     To access or use account-accessible functionalities of the website, such as, but not limited to library, favorites, interests, video resume, recommendations etc., You may have to become a registered user. We may change, remove and/or add Our account-accessible functionalities from time to time.
   </p>
@@ -1314,8 +1316,8 @@ are authorized to exercise those rights at your own discretion and in the scope 
       <!-- Info Links -->
       <div class="col-sm-3 b mb-3 text-center text-sm-left ">
         <ul class="list-unstyled mb-0 " style="text-align:left;">
-<!---------------------------          <li><a href="cookie-setting.html" class="text-white">Cookies Setting</a></li>-->
-      <li ><a href="" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>
+        <li><a href="privacy-policy.html" class="text-white">Cookies Setting</a></li>
+ <!-----     <li ><a href="" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>-->
           <li><a href="imprint.html" class="text-white">Imprint</a></li>
           <li><a href="fraud.html" class="text-white">Fraud Warning</a></li>
           <li><a href="privacy-policy.html" class="text-white">Privacy Policy</a></li>
