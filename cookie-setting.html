@@ -183,118 +183,744 @@
 }
 
     /****************************/
+     p,ul li{
+      font-size: 18px;
+      text-align: justify;
+    }
+    /******************/
+       .logo {
+    display: block;
+    margin: 0 auto;
+   /* width: 100px;
+    height: auto;*/
+    animation: spin 10s linear infinite;
+    position: absolute;
+    top: 50px;
+    left: 125px;
+      filter: brightness(0) invert(1); /* turns black to white */
+}
+/*.text-logo {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 300px;
+    user-select: none;
+    color: white;
+}*/
+.text-logo {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 300px;
+  user-select: none;
+  filter: brightness(0) invert(1); /* turns black to white */
+ /* position: absolute;
+  top: 10px;*/
+  margin-top: 0;
+}
     
+
+/************************************/
+  
+
+
+
+    
+
+   
+
+/*For labels*/
+ 
+    h2 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+
+
+   
+
+    @media screen and (max-width: 768px) {
+     
+
+      
+    }
+
+
+/*End of glyphicon animation*/
+
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+}
+
+.dropdown-content p,li{
+  font-size: 17px;
+  
+}
+
+
+h1,h2,h5 {
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}
+
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 10px 15px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+
+/*Brand from another file*/
+.brand a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-right: auto;
+}
+/*.logo{
+/* padding: -10px;*/
+/*}*/
+.brand .logo {
+  height: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+/*Brand logo with text*/
+
+/*Brand logo with text*/
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/*End of the file*/
+
+
+
+ 
+
+.follow-us{
+  color: rgb(139, 204, 139);
+}
+
+ 
+
+/* Individual blocks */
+.dropdown-content.labelss-1 > div {
+  flex-shrink: 0;
+}
+
+.label-images img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.visions {
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.hydrations, .juices, .snackss, .alcohols {
+  flex: 1 1 150px;
+  min-width: 120px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .dropdown-content.labelss-1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label-images,
+  .visions,
+  .hydrations,
+  .juices,
+  .snackss,
+  .alcohols {
+    flex: 1 1 100%;
+  }
+
+  .label-imagse img {
+    margin: 0 auto;
+  }
+
+  .visions {
+    text-align: center;
+  }
+}
+
+
+/*New Hover Effect*/
+.mobile-version-6 a:hover {
+  color: #fff;
+  background-color: #6ccb35 !important;
+}
+.mobile-version-7 a:hover{
+  color:#fff;
+  background: orange !important;
+}
+.mobile-version-8 a:hover{
+  color:#fff;
+  background: rgb(192, 65, 65) !important;
+}
+.mobile-version-9 a:hover{
+  color:#fff;
+  background: rgb(117, 83, 83) !important;
+}
+.mobile-version-10 a:hover{
+  color:#fff;
+  background: #0000ff !important;
+}
+  
+
+
+
+/*****************************************/
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.form-control{
+  margin-top: 50px !important;
+}
+.social-icons{
+  margin-top: 0;
+}
+
+.img-2,.img-3{
+    width:100%;
+    object-fit: contain;
+}
+
+
+.foot2 h4,ul li a,i{
+  margin-left: 0px;
+
+   }
+
+*/
+.footer-logo img {
+  width: 200px;
+  height: auto;
+  margin-left: -10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.social-icons :hover{
+  background-color: #6ccb35;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.facebook-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px; /* Adjust as needed */
+    height: 33px;
+    background-color: white;
+    border-radius: 50%; /* Circle */
+    border: 1px solid #ccc; /* Optional */
+  }
+
+  .facebook-icon i {
+    color: black;
+    font-size: 20px;
+  }
+.social-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  color: #000;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+}
+
+.footee {
+  font-size: 20px;
+  text-align: center !important;
+}
+.form-control{
+  margin-left: 15px !important;
+}
+body {
+ /* font-family: 'Roboto', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 0;
+}
+.container-fluid video{
+  margin-left: 25px;
+  width:100%;
+}
+
+
+.foot2 h4,ul li a,i{
+/*margin-left:10px;*/
+position: relative;
+left:0px;
+  }
+body {
+margin: 0;
+/*font-family: Arial, sans-serif;*/
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+margin: 10px !important;
+}
+/*****************************************/
+
+
+
+/* Make container stretch full width */
+/*.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.brew-1{
+  margin-top: 200px;
+}
+
+li a{
+  font-size: 16px;
+}*/
+
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-img {
+  height: 100px; /* Adjust as needed */
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+/* Continuous scrolling animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+.news{
+  margin-top: 30px;
+}
+
+.footer-select{
+  margin-top: 100px;
+}
+/*Footer new*/
+.footer-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-wave {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+.footer-wave svg {
+  display: block;
+  width: 100%;
+height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
+}
+
+
+ .footer-logo img {
+ 
+    position: relative;
+    left: -100px !important;
+  }
+.language-selector {
+  width: 200px;
+  background-color: #29226b;
+  color: #ffffff;
+  margin-left: auto;
+  margin-top: 120px;
+}
+
+.follow-us {
+  font-size: 20px;
+}
+.list-unstyled{
+  margin-top: 70px !important;
+  margin-left: 60px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.list-unstyled li a:hover{
+  color: #6ccb35 !important;
+  list-style: none;
+  text-decoration: none;
+
+}
+@media(max-width:1500px){
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -480px;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+}
+
+ 
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+.dropdown-menu {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+}
+/*From another file*/
+.brand {
+  align-items: flex-start;
+}
+
+
+.brand .logo {
+  height: 100px;
+  margin-left: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 300;
+font-family: Arial, sans-serif;
+/*  overflow-x: hidden;*/
+}  
+
+
+    /*-----------------------------------------------------------------*/
+@media (max-width: 1024px) {
+
+
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .footer-logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
+.language-selector {
+  width: 100%;
+  padding: 0.5rem;
+}
+.social-icons{
+  margin-bottom: -10px;
+}
+
+/* ========== Desktop Styles (≥ 1200px) ========== */
+@media (min-width: 1200px) {
+  .crafting {
+    min-width: 200px;
+   position: relative;
+   left:-140px;
+    text-align: justify;
+  }
+  .we{
+position: relative;
+left: -100px;
+  }
+  .peef{
+position: relative;
+left: -80px;
+  }
+}
+
+  
+@media (max-width: 1024px) {
+
+
+
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+
+.foot1, .footer-select, .foot2{
+  margin-left: 100px;
+}  
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+
+font-family: Arial, sans-serif;
+
+} 
+
+
+.foot-2{
+position: absolute;
+top:18px;
+}
+
+
+.cut-text p{
+margin-left: 40px ;
+}
+.brew-1{
+  margin-top: 0;
+}
+.container-fluid video{
+position: relative;
+left:0;
+  width:100%;
+}
+
+.foot2 h4,ul li a,i{
+  margin-left: 0;
+   }
+   .container-fluid video{
+    margin-left: 25px;
+    width:100%;
+  }
+  .gold{
+    margin-left:40px;
+  }
+}
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  
+  .foot-svg{
+    position: relative;
+    top:125px;
+    width: 100vw;
+    
+  }
+  .text-right{
+    text-align: center;
+  }
+
+  .follow-us{
+    color: green;
+  }
+ 
+  
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+  
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+
+/* ========== Tablet & Mobile Styles (< 992px) ========== */
+@media screen and (max-width: 991px) {
+ 
+
+ 
+
+  
+
+/*---------------------------*/
+
+  /* Footer Adjustments */
+  .footer .row {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer .col-sm-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-logo {
+    justify-content: center;
+    margin-left: 80px;
+  }
+
+  .footer .list-unstyled {
+    padding: 0;
+  }
+
+  .footer select.language-selector {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .footer .social-icons {
+    margin-top: 10px;
+  }
+
+  .form-control {
+    margin-left: 85px;
+  }
+
+  .footer-logo img {
+    max-width: 200px;
+    height: auto;
+    left: 0;
+  }
+
+  body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+}
+
   </style>
 </head>
 <body>
 
-<!-- Content Placeholder -->
-<!--------------------<div class="container">
-  <h1>Page Content</h1>
-  <p>This page is a placeholder for: privacy policy, terms of use, brand protection, fraud protection, and imprint.</p>
-  <a href="#" onclick="document.getElementById('cookieOverlay').style.display='flex'">Cookie Settings</a>
-</div>-->
-
-<!-- Cookie Overlay -->
-<!-------------------------<div id="cookieOverlay" class="overlay">
-  <div class="popup">
-    <span class="close-btn" onclick="document.getElementById('cookieOverlay').style.display='none'">&times;</span>
-    <h4>Manage Cookie Settings</h4>
-    <div class="cookie-section">
-      <div class="toggle-row">
-        <label>Necessary Cookies</label>
-        <div class="toggle-switch">
-          <input type="checkbox" checked disabled>
-          <span class="slider"></span>
-        </div>
-      </div>
-      <div class="toggle-row">
-        <label>Performance Cookies</label>
-        <div class="toggle-switch">
-          <input type="checkbox">
-          <span class="slider"></span>
-        </div>
-      </div>
-      <div class="toggle-row">
-        <label>Functional Cookies</label>
-        <div class="toggle-switch">
-          <input type="checkbox">
-          <span class="slider"></span>
-        </div>
-      </div>
-    </div>
-    <div class="buttons">
-      <button class="btn btn-default" onclick="document.getElementById('cookieOverlay').style.display='none'">Reject All</button>
-      <button class="btn btn-primary" onclick="document.getElementById('cookieOverlay').style.display='none'">Save Settings</button>
-    </div>
-  </div>
-</div>-->
-<div class="overlay" id="cookieOverlay">
+<div class="overlay" id="cookieOverlay"> 
   <div class="popup">
     <span class="close-btn" onclick="closeOverlay()">&times;</span>
   
     <h2>Privacy Preference Center</h2>
     <p>
-  Pure Finest Inc. and Partners use cookies, 
-  to operate our website, to show you personalized 
-  content and manage our objectives as a business.
-   You can find out more about how we use cookies below.
-    You can allow all cookies, select them individually or decline them all.
-
+      Pure Finest Inc. and Partners use cookies, 
+      to operate our website, to show you personalized 
+      content and manage our objectives as a business.
+      You can find out more about how we use cookies in our
+      <span><a href="privacy-policy.html">(Privacy Policy Section)</a></span>
     </p>
-    <h5><a href="privacy-policy.html">Cookie Policy</a></h5>
 
     <!-- Strictly Necessary Cookies -->
-    <!------<div class="cookie-section">
-      <div class="toggle-row always-active-toggle">
+    <div class="cookie-section">
+      <div id="alwaysActiveToggle" class="toggle-row" style="cursor: pointer; font-weight: bold;">
         <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
-        <span class="always-active">Always Active</span>
+        <span class="always-active">Always Active &#9660;</span>
       </div>
-      <div class="cookie-description" id="strictlyDesc">
+
+      <div class="cookie-description" id="strictlyDesc" style="display: none;">
         These cookies are necessary for the website to function 
         and cannot be switched off in our systems. They are usually 
         only set in response to actions made by you which amount to
-         a request for services, such as setting your privacy preferences,
-          logging in or filling in forms. You can set your browser to 
-          block or alert you about these cookies,
-         but some parts of the site will not then work. These cookies
-          do not store any personally identifiable information.
+        a request for services, such as setting your privacy preferences,
+        logging in or filling in forms. You can set your browser to 
+        block or alert you about these cookies,
+        but some parts of the site will not then work. These cookies
+        do not store any personally identifiable information.
       </div>
-    </div>-->
-<!-- Strictly Necessary Cookies -->
-<div class="cookie-section">
-  <!-- Toggle trigger (clickable) -->
-  <div id="alwaysActiveToggle" class="toggle-row" style="cursor: pointer; font-weight: bold;">
-    <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
-    <span class="always-active">Always Active &#9660;</span> <!-- down arrow to show it's expandable -->
-  </div>
-
-  <!-- Toggle target (hidden by default via CSS or inline style) -->
-  <div class="cookie-description" id="strictlyDesc" style="display: none;">
-    These cookies are necessary for the website to function 
-    and cannot be switched off in our systems. They are usually 
-    only set in response to actions made by you which amount to
-    a request for services, such as setting your privacy preferences,
-    logging in or filling in forms. You can set your browser to 
-    block or alert you about these cookies,
-    but some parts of the site will not then work. These cookies
-    do not store any personally identifiable information.
-  </div>
-</div>
+    </div>
 
     <!-- Other Cookies -->
     <div class="cookie-section">
       <div class="toggle-row clickable-toggle" data-target="analyticsDesc">
         <span class="toggle-label">ANALYTIC COOKIES</span>
         <label class="toggle-switch">
-          <input type="checkbox" class="cookie-toggle" data-desc="analyticsDesc">
+          <input type="checkbox" id="myCheckbox" class="cookie-toggle" data-desc="analyticsDesc">
           <span class="slider"></span>
         </label>
       </div>
       <div class="cookie-description" id="analyticsDesc">
-
         These cookies help us understand how visitors interact with 
-        our website by collecting and reporting information anonymously.
+        our website by collecting and reporting information anonymously.
       </div>
     </div>
 
@@ -302,16 +928,16 @@
       <div class="toggle-row clickable-toggle" data-target="advertisingDesc">
         <span class="toggle-label">ADVERTISING</span>
         <label class="toggle-switch">
-          <input type="checkbox" class="cookie-toggle" data-desc="advertisingDesc">
+          <input type="checkbox" id="myCheckbox" class="cookie-toggle" data-desc="advertisingDesc">
           <span class="slider"></span>
         </label>
       </div>
       <div class="cookie-description" id="advertisingDesc">
-       These cookies are set by us and/or our partners and help us build
+        These cookies are set by us and/or our partners and help us build
         a profile of your interests based on your browsing behavior. 
         If you accept these cookies,
         you will be shown Pure Finest Inc. advertisements that match 
-        your interests as you browse other sites.
+        your interests as you browse other sites.
       </div>
     </div>
 
@@ -319,26 +945,26 @@
       <div class="toggle-row clickable-toggle" data-target="thirdPartyDesc">
         <span class="toggle-label">THIRD PARTY CONSENT COOKIES</span>
         <label class="toggle-switch">
-          <input type="checkbox" class="cookie-toggle" data-desc="thirdPartyDesc">
+          <input type="checkbox" id="myCheckbox" class="cookie-toggle" data-desc="thirdPartyDesc">
           <span class="slider"></span>
         </label>
       </div>
       <div class="cookie-description" id="thirdPartyDesc">
-       These cookies allow third-party services to collect
+        These cookies allow third-party services to collect
         data based on your consent, enabling features
-         such as personalized content or targeted advertising.
+        such as personalized content or targeted advertising.
       </div>
     </div>
 
     <div class="buttons">
-      <button class="reject" id="allowAllBtn" onclick="allowAllCookies()">Allow All</button>
-      <button class="reject" onclick="confirmCookies()">Confirm My Choices</button>
-      <button class="reject" onclick="setCookies(false)">Reject All</button>
+      <button class="reject" id="myButton" onclick="allowAllCookies()">Allow All</button>
+      <button class="reject" id="myButton" onclick="confirmCookies()">Confirm My Choices</button>
+      <button class="reject" id="myButton" onclick="setCookies(false)">Reject All</button>
     </div>
   </div>
 </div>
 
-<!--------------------------<script>
+  <script>
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
@@ -355,99 +981,22 @@ function getCookie(name) {
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 
-  if (getCookie("cookieConsentLifetime")) {
-    document.getElementById("cookieOverlay").style.display = "none";
-    return;
-  }
-
-  if (isHomepage) {
-    document.getElementById("cookieOverlay").style.display = "flex";
-  }
-
-  document.querySelectorAll('.cookie-toggle').forEach((input) => {
-    const descId = input.getAttribute('data-desc');
-    const descElement = document.getElementById(descId);
-    if (descElement) {
-      descElement.style.display = input.checked ? 'block' : 'none';
-      input.addEventListener('change', function () {
-        descElement.style.display = this.checked ? 'block' : 'none';
-      });
-    }
+  /* ✅ Disable and freeze all checkboxes */
+  document.querySelectorAll("input[type='checkbox']").forEach(cb => {
+    cb.disabled = true;
+    cb.style.opacity = "0.5";
+    cb.style.cursor = "not-allowed";
   });
 
-  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
-  const strictlyDesc = document.getElementById("strictlyDesc");
-  if (alwaysActiveHeader && strictlyDesc) {
-    alwaysActiveHeader.addEventListener("click", function () {
-      const isVisible = strictlyDesc.style.display === "block";
-      strictlyDesc.style.display = isVisible ? "none" : "block";
-      alwaysActiveHeader.classList.toggle("open");
-    });
-  }
-});
-
-function allowAllCookies() {
-  document.querySelectorAll(".cookie-toggle").forEach(input => {
-    input.checked = true;
+  /* ✅ Disable and freeze all buttons */
+  document.querySelectorAll("button").forEach(btn => {
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+    btn.style.pointerEvents = "none";
   });
 
-  setTimeout(() => {
-    if (confirm("All cookies allowed. Click OK to confirm.")) {
-      setCookie("cookieConsent", "accepted");
-      setCookie("cookieConsentLifetime", "true", 365);
-      document.getElementById("cookieOverlay").style.display = "none";
-    }
-  }, 300);
-}
-
-function confirmCookies() {
-  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
-  if (checkedCount > 0) {
-    alert("Your cookie preferences have been saved.");
-    setCookie("cookieConsent", "partial");
-    setCookie("cookieConsentLifetime", "true", 365);
-    document.getElementById("cookieOverlay").style.display = "none";
-  } else {
-    alert("Please select at least one cookie or click 'Reject All'.");
-  }
-}
-
-function setCookies(acceptAll) {
-  document.querySelectorAll(".cookie-toggle").forEach(input => {
-    input.checked = false;
-  });
-  alert("All non-essential cookies rejected.");
-  setCookie("cookieConsent", "rejected");
-  setCookie("cookieConsentLifetime", "true", 365);
-  document.getElementById("cookieOverlay").style.display = "none";
-}
-
-function closeOverlay() {
-  setCookies(false);
-}
-</script>-->
-
-
-
-<script>
-function setCookie(name, value, days = 365) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-}
-
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i].trim();
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
-  }
-  return null;
-}
-
-window.addEventListener("DOMContentLoaded", function () {
   const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 
   // Show cookie overlay if not already accepted
@@ -461,84 +1010,8 @@ window.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.cookie-description').forEach(desc => {
     desc.style.display = "none";
   });
-
-  // Handle dynamic toggle of descriptions based on checkboxes
-  document.querySelectorAll('.cookie-toggle').forEach((input) => {
-    const descId = input.getAttribute('data-desc');
-    const descElement = document.getElementById(descId);
-    if (descElement) {
-      descElement.style.display = input.checked ? 'block' : 'none';
-
-      input.addEventListener('change', function () {
-        descElement.style.display = this.checked ? 'block' : 'none';
-      });
-    }
-  });
-
-  // Strictly Necessary Cookies toggle visibility
-  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
-  const strictlyDesc = document.getElementById("strictlyDesc");
-  if (alwaysActiveHeader && strictlyDesc) {
-    strictlyDesc.style.display = "none";
-    alwaysActiveHeader.addEventListener("click", function () {
-      const isVisible = strictlyDesc.style.display === "block";
-      strictlyDesc.style.display = isVisible ? "none" : "block";
-      alwaysActiveHeader.classList.toggle("open");
-    });
-  }
 });
 
-function allowAllCookies() {
-  document.querySelectorAll(".cookie-toggle").forEach(input => {
-    input.checked = true;
-    const descId = input.getAttribute('data-desc');
-    const descElement = document.getElementById(descId);
-    if (descElement) {
-      descElement.style.display = "block";
-    }
-  });
-
-  setTimeout(() => {
-    if (confirm("All cookies allowed. Click OK to confirm.")) {
-      setCookie("cookieConsent", "accepted");
-      setCookie("cookieConsentLifetime", "true", 365);
-      document.getElementById("cookieOverlay").style.display = "none";
-    }
-  }, 300);
-}
-
-function confirmCookies() {
-  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
-  if (checkedCount > 0) {
-    alert("Your cookie preferences have been saved.");
-    setCookie("cookieConsent", "partial");
-    setCookie("cookieConsentLifetime", "true", 365);
-    document.getElementById("cookieOverlay").style.display = "none";
-  } else {
-    alert("Please select at least one cookie or click 'Reject All'.");
-  }
-}
-
-function setCookies(acceptAll) {
-  document.querySelectorAll(".cookie-toggle").forEach(input => {
-    input.checked = false;
-    const descId = input.getAttribute('data-desc');
-    const descElement = document.getElementById(descId);
-    if (descElement) {
-      descElement.style.display = "none";
-    }
-  });
-  alert("All non-essential cookies rejected.");
-  setCookie("cookieConsent", "rejected");
-  setCookie("cookieConsentLifetime", "true", 365);
-  document.getElementById("cookieOverlay").style.display = "none";
-}
-
-function closeOverlay() {
-  setCookies(false);
-}
-
-// ✅ Only keep these additional two functions:
 function openCookiePanel() {
   document.getElementById('cookieOverlay').style.display = 'block';
 }
@@ -547,7 +1020,6 @@ function closeCookiePanel() {
   document.getElementById('cookieOverlay').style.display = 'none';
 }
 </script>
-
 
 <!-- JavaScript Dependencies -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -558,6 +1030,410 @@ function closeCookiePanel() {
   }
   
 </script>
+<!--------------------------------------------->
+<div class="marquee-wrapper">
+    <div class="marquee-inner" id="marquee-track">
+      <!-- Duplicated set of images for seamless loop -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+  
+      <!-- Duplicate for seamless scroll -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+    </div>
+  </div>
+ 
+<!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
+<!-- Banner Section -->
+<div class="container-fluid" style="position: relative; padding: 0; margin: 0;">
+  <!-- Banner Image -->
+   
+  <img src="./Assets/terms-of-use-banner.png" alt="Banner" class="img-responsive" 
+  style="width: 100%; display: block;">
+
+ <!-- Text Overlay on Banner (Left-aligned) -->
+  <div style="position: absolute; top: 50%; left: 30px; transform: translateY(-50%); color: white; z-index: 10;">
+    <h2 style="font-size: 30px; line-height: 36px; margin: 0;color: white;">Policy Center</h2>
+    <p style="color: #96bb36;font-weight: 700;font-size: 48px;
+
+ ">Privacy Policy</p>
+    <p style="font-size: 18px; margin: 0;">Last Update <span style="color: #96bb36;">May 28, 2024</span></p>
+  </div>
+  
+  <!-- Sticky Top Menu -->
+  <nav class="navbar navbar-default" style="position: absolute; top: 5px; left: 0; right: 0; z-index: 1000; background: rgba(0, 0, 0, 0.6); border: none; margin: 0;">
+    <div class="container-fluid" style="padding: 5px 15px;">
+      
+      <!-- Mobile Hamburger -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pfi-top-menu">
+          <span class="icon-bar" style="background-color: white;"></span>
+          <span class="icon-bar" style="background-color: white;"></span>
+          <span class="icon-bar" style="background-color: white;"></span>
+        </button>
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html" style="padding: 5px 15px;">
+          <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" alt="Logo" style="height: 80px;" class="logo">
+          <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
+        </a>
+      </div>
+
+      <!-- Menu Items -->
+      <div class="collapse navbar-collapse" id="pfi-top-menu">
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
+          <li><a href="privacy-policy.html" style="color: white;">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html" style="color: white;">Terms of Use</a></li>
+          <li><a href="fraud.html" style="color: white;">Fraud Warning</a></li>
+          <li><a href="brands-protection.html" style="color: white;">Brand Protection</a></li>
+          <li><a href="imprint.html" style="color: white;">Imprint</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <h1 style="color: #96bb36;font-weight: 700;font-size: 48px;
+
+ ">Privacy Policy</h1>
+  <p style="font-size: 20px; font-weight: 500; margin-bottom: 3%;">Scope of the Privacy Policy</p>
+  <p style="margin-bottom: 3%;">
+    Pursuing the goals of Pure Finest Inc. requires the processing of personal data. When processing such data, we are required to comply with the applicable laws and regulations. That goes for personal data pertaining to ‘you’ as our (potential) customer, consumer, prospect, job applicant, visitor of our plant(s) and business partner (supplier, agent or advisor). In the context of this Privacy Policy 
+    you and other natural persons of which we process personal data will be referred to as ‘external contacts’.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Organizations covered by this Privacy Policy</h2>
+  <p style="margin-bottom: 3%;">
+    This Privacy Policy applies to Pure Finest Inc., its parent company and its subsidiaries and other affiliated entities. All references in 
+    this Privacy Policy to Pure Finest Inc.", "we", "us", "our" and like terms should be interpreted accordingly.
+  </p>
+  <p style="margin-bottom: 3%;">
+    It is Pure Finest Inc. policy to comply with the privacy legislation within each jurisdiction in which we operate. Sometimes the privacy legislation and / or an individual's right to privacy are different from 
+    one jurisdiction to another. If you are unsure if or how this Privacy Policy applies to you, please contact HR.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">What is personal data?</h2>
+  <p style="margin-bottom: 3%;">
+    Personal data is any information about an identifiable individual. Personal information does not include anonymous or non-personal 
+    information (i.e., information that cannot be associated with or tracked back to a specific individual).
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">What personal data do we process?</h2>
+  <p style="margin-bottom: 1.5%;">
+    In our business operation we process different types 
+    of personal data of our external contacts, including, but not limited to, the personal data contained in:
+  </p>
+  <ul style="margin-left: 30px; margin-bottom: 3%;">
+    <li>completed contact forms;</li>
+    <li>submitted complaints;</li>
+    <li>communications, via post, e-mail, phone, websites or social media platforms;</li>
+    <li>job application letters;</li>
+    <li>the books in which names and signatures of visitors of our factories are recorded;</li>
+    <li>public sources (such as the Commercial Trade Registers);</li>
+    <li>databases from third parties, including recruitment agencies;</li>
+    <li>supplier and/or customer events organized by Pure Finest Inc.</li>
+  </ul>
+  <p style="margin-bottom: 3%;">
+    In addition to the examples listed above, personal data also includes information such as gender, date of birth,
+     education and/or training details, bank details and any other information necessary to achieve 
+     Pure Finest Inc. business purposes, which is
+     disclosed in the context of having contact or doing business with, or applying for a job at, PureFinest Inc.
+  </p>
+  <p style="margin-bottom: 3%;">
+    Furthermore, in addition to the examples listed above personal data can also be processed in case Pure Finest Inc. Speak Up Policy is used. For further information
+     about our Speak Up Policy and what concerns are covered by this policy, we refer to the Speak Up Policy.
+  </p>
+  <p style="margin-bottom: 3%;">
+    As a general rule, Pure Finest Inc. processes personal data directly provided by external contacts. From time to time, we may utilize the services of third parties in our business and may also receive personal data collected by those third parties in the course of the performance of their services for us or otherwise. Where this is applicable, we will take reasonable steps to ensure that such third
+     parties have represented to us that they have the right to disclose the personal data of external contacts to us.
+  </p>
+  <p style="margin-bottom: 3%;">
+    Where permitted or required by applicable law 
+    or regulatory requirements, we may process information about external contacts without their knowledge or consent.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Why do we collect personal data?</h2>
+  <p style="margin-bottom: 1.5%;">
+    Pure Finest Inc. processes personal data of external contacts for its
+     business purposes only. We can inter alia process personal data of external contacts for the following purposes:
+  </p>
+  <ul style="margin-left: 30px; margin-bottom: 3%;">
+    <li>the entering and execution of an agreement in respect of the products and/or services we deliver;</li>
+    <li>the entering and execution of an agreement in respect of the products and/or services external contacts deliver;</li>
+    <li>to offer products and/or services from us and to adapt them to the needs and wishes of external contacts;</li>
+    <li>to be able to review the products and services that we obtain from you...</li>
+    <li>to be able to contact external contacts via applicable media;</li>
+    <li>to be able to handle complaints;</li>
+    <li>to be able to handle job application letters;</li>
+    <li>to be able to guarantee the safety of visitors and employees of our factories;</li>
+    <li>to protect us against error, fraud, theft and damage to our goods and property, including to verify your identity;</li>
+    <li>in case the external contact has given unambiguous consent: to send press releases...</li>
+    <li>in case the external contact has given unambiguous consent: to show ads (e.g. on social media);</li>
+    <li>to send the external contact user information and service messages;</li>
+    <li>to analyze, maintain, secure and optimize our websites and associated technologies;</li>
+    <li>for compiling user statics of our websites;</li>
+    <li>to comply with relevant laws and regulations;</li>
+    <li>organizing events and use on social media;</li>
+    <li>such other purposes as are reasonably required by PureFinest Inc.</li>
+  </ul>
+  <p style="margin-bottom: 3%;">Please note that personal data of external contacts may be exchanged...</p>
+
+  <h3 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Recruitment</h3>
+  <p style="margin-bottom: 1.5%;">In connection with your application to work with us...</p>
+  <ul style="margin-left: 30px; margin-bottom: 3%;">
+    <li>assess your skills, qualification, and suitability for the role;</li>
+    <li>carry out background and reference checks, where applicable;</li>
+    <li>communicate with you about the recruitment process;</li>
+    <li>keep records related to our hiring process;</li>
+    <li>comply with legal or regulatory requirements.</li>
+  </ul>
+  <p style="margin-bottom: 3%;">
+    We need to process your personal data to decide whether to enter into a contract of employment with you.
+     Having received your CV, cover letter and your application form and the results from the test, which you took, if applicable, we will
+     then process that information to decide whether you meet the basic requirements to be shortlisted for the role.
+  </p>
+  <p style="margin-bottom: 3%;">Should we decide to invite you to a job interview, we will
+     use the information you provide to us during this interview, to decide whether to consider you for the position.</p>
+  <p style="margin-bottom: 3%;">
+    If we decide to offer you the role, we might than take up
+     references before confirming your appointment. We will always ask for your consent before taking up a reference.
+  </p>
+  <p style="margin-bottom: 3%;">
+    When we do not employ you: if Pure Finest Inc. does not employ you, Pure Finest Inc. will nevertheless continue to retain and use your information which may include personal data in order to consider you for new positions. Pure Finest Inc. may refer back to an earlier application in case you submit a new application in the future. In this respect Pure Finest Inc. will retain your personal data for a period of one year following rejection of the job application procedure, unless otherwise required by applicable law. Furthermore, if you created an account on the Pure Finest Inc. career opportunities website, your account information will be retained for as long as you maintain an active account. Your account 
+    will be deemed inactive, and your account information will be automatically deleted, after one year of inactivity.
+  </p>
+  <p style="margin-bottom: 3%;">
+    Please contact the local
+     HR department if you do not wish to be contacted anymore by Pure Finest Inc. for new job vacancies.
+  </p>
+  <p style="margin-bottom: 3%;">
+    If you fail to provide information when requested, which
+     is necessary for us to consider your application, we will not be able to process your application successfully.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Cookies</h2>
+  <p style="margin-bottom: 3%;">
+    We use cookies to help us gather and store information about visitors to our website. For further information about the types of Cookies we use, why and how you can control cookies, please see our 
+    Cookie Policy. The Cookie Policy is displayed on our website and a link can be found in the footer of the website.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">How do we use your personal data?</h2>
+  <p style="margin-bottom: 1.5%;">We may use your personal data:</p>
+  <ul style="margin-left: 30px; margin-bottom: 3%;">
+    <li>for the purposes described in this Privacy Policy; or</li>
+    <li>for any additional purposes that we advise you of and where your 
+      consent is required by law and have obtained your consent in respect of the use or disclosure of your 
+      personal data.</li>
+  </ul>
+  <p style="margin-bottom: 3%;">
+    We may use your personal data without 
+    your knowledge or consent where we are permitted or required by applicable law or regulatory 
+    requirements to do so.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">When do we disclose your personal data</h2>
+  <p style="margin-bottom: 3%;">
+    As a principle, we do not disclose personal data to third parties. However, disclosing
+     personal data of external contacts to third parties might be necessary in the performance of an 
+     agreement between Pure Finest Inc. and the external contact. At all times, any
+     third party must act on the instructions of PureFinest Inc. and ensure personal data is adequately protected.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">How is personal data protected?</h2>
+  <p style="margin-bottom: 3%;">
+    Pure Finest Inc. will take all reasonable precautions to keep your personal information
+     secure, appropriate to our business and the amount of personal data that we own or maintain and identify risks.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">How long is personal data retained?</h2>
+   <p style="margin-bottom: 3%;">
+    PureFinest Inc. data retention policy applies in this respect.
+  </p>
+  <p style="margin-bottom: 3%;"> We may, instead of destroying or erasing your personal data, make it anonymous such that it cannot be associated with or tracked back to you.</p>
+ 
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Links to third party websites</h2>
+  <p style="margin-bottom: 3%;">
+    Our website(s) may contain hyperlinks to third party websites and social media platforms. Once you have used these links to leave our site, you should note that we do not have any control over that other website or social media platform. Therefore, we cannot be responsible for the protection and privacy of any 
+    information which you provide whilst visiting such sites and such sites are not governed by this Privacy Policy.
+  </p>
+  <p style="margin-bottom: 3%;">
+    You should exercise caution and look at the privacy statement applicable to the website
+     in question. Moreover, we are not responsible nor liable for the content of third party websites or platforms.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Access to your personal data</h2>
+  <p style="margin-bottom: 3%;">
+    It is important that all personal data in our records is both accurate and up-to-date. You can exercise your
+     rights with respect to your personal data, such as the right of access, rectification, erasure and objection
+      through Pure Finest Inc. data subject rights request. We strive to respond to your request within four (4) weeks. Occasionally it may takes us longer than four (4) weeks if your request is 
+    particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.
+  </p >
+<p style="margin-bottom: 3%;">We may need to request specific information from you to help us confirm your identity and ensure your right to access your personal data (or to exercise any of your other rights). This is a security measure to ensure that personal data is not disclosed to any person who has no right to receive it. We may also contact you to ask you for further information in relation to your request to speed up our response.</p>
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Other Pure Finest Inc. privacy policies</h2>
+  <p style="margin-bottom: 3%;">
+    Besides this Privacy Policy, specific campaigns or promotions may be governed by additional privacy terms. Please
+     take a moment to familiarize yourself with such terms before participating in any such campaigns or promotions.
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Inquiries or concerns?</h2>
+  <p style="margin-bottom: 3%;">
+    If you have any questions about this Privacy Policy or concerns about how we process and manage personal data of 
+    our external contacts, please contact [name department and/or contact person], in writing or by e-mail.
+     We will endeavor to answer your questions and advise you of any steps taken to address the issues raised by you.
+  </p>
+  <p style="margin-bottom: 3%;">We have appointed HR to oversee compliance with this Privacy Policy.</p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Revisions to this Privacy Policy</h2>
+  <p style="margin-bottom: 3%;">
+   Pure Finest Inc. may from time to time make changes to this Privacy Policy to reflect changes in its legal or 
+   regulatory obligations or in the manner in which we deal with the personal data of external contacts. 
+   We will communicate any revised version of this Privacy Policy via our website(s). Any changes to this Privacy Policy
+    will be effective from the time they are communicated. This Privacy Policy was last reviewed on April 17, 2024. 
+  </p>
+
+  <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 3%;">Interpretation of this Privacy Policy</h2>
+  <p style="margin-bottom: 3%;">
+    Any interpretation associated with this Privacy Policy will be made in accordance with Dutch law. 
+    This Privacy Policy includes examples but is not intended to be restricted in its application to
+     such examples, therefore where the word 'including' is used, it shall mean 'including without
+      limitation. This Privacy Policy does not create or confer upon any individual any rights, or
+       impose upon Pure Finest Inc. any rights or obligations outside of, or in addition to, any rights or obligations imposed by the privacy laws applicable to such individual's personal data. Should there be, in a specific case, any inconsistency between this Privacy Policy and such privacy laws, this 
+    Privacy Policy shall be interpreted, in respect of that case, to give effect to, and comply with,
+     such privacy laws.
+  </p>
+</div>
+
+
+<script>
+  // Make navbar sticky after scroll
+  $(window).scroll(function () {
+    var nav = $('.navbar');
+    var scrollTop = $(this).scrollTop();
+    if (scrollTop > $('.navbar').offset().top) {
+      nav.css({
+        'position': 'absolute',
+        'top': '0',
+        'left': '0',
+        'right': '0'
+      });
+    }
+  });
+</script>
+
+       
+<!-- Footer Section (Full width, isolated, no side effects) -->
+<div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
+  <!-- SVG Wave -->
+  <div style="width: 100%; line-height: 0; overflow: hidden; margin-bottom: -5px;">
+    <svg viewBox="0 0 1440 320"
+         xmlns="http://www.w3.org/2000/svg"
+         preserveAspectRatio="none"
+         style="display: block; width: 100%; height: 80px;">
+      <path fill="#254125" d="M0,192 C360,96 1080,288 1440,192 L1440,320 L0,320 Z"></path>
+    </svg>
+  </div>
+
+  <!-- Footer Content -->
+
+ <footer class="footer" style="background-color:#254125;">
+  <div class="container">
+    <div class="row text-white align-items-center">
+      
+      <!-- Logo -->
+      <div class="col-sm-3 text-center text-sm-left mb-3 footer-logo">
+       <!------ <img src="/Assets/Footer logo.png" alt="Footer Logo" class="img-responsive" style="width: 500px; margin-left: -10px;">-->
+       <a href="index.html"> <img src="/Assets/Footer logo.png" alt="Footer Logo" class="footer-logo img-responsive"
+         style="max-width: 270px; height: auto;"></a>
+
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-sm-3 mb-3 text-center text-sm-left">
+        <ul class="list-unstyled mb-0" style="text-align:left !important;">
+          <li><a href="sustainability.html" class="text-white">Sustainability</a></li>
+          <li><a href="responsibility.html" class="text-white">Responsibility</a></li>
+          <li><a href="terms-of-service.html" class="text-white">Terms Of Use</a></li>
+          <li><a href="brands-protection.html" class="text-white">Labels Protection</a></li>
+           <li><a href="index.html" class="text-white">The Company</a></li>
+        </ul>
+      </div>
+
+      <!-- Info Links -->
+      <div class="col-sm-3 b mb-3 text-center text-sm-left ">
+        <ul class="list-unstyled mb-0 " style="text-align:left;">
+    <!-----------------------------      <li><a href="cookie-setting.html" class="text-white">Cookies Setting</a></li>-->
+                <li ><a href="cookie-setting.html" onclick="openCookiePanel(); return false;" class="text-white" >Cookie Settings</a>
+          <li><a href="imprint.html" class="text-white">Imprint</a></li>
+          <li><a href="fraud.html" class="text-white">Fraud Warning</a></li>
+          <li><a href="privacy-policy.html" class="text-white">Privacy Policy</a></li>
+           <li style="width: 500px;"><a href="pffoundation.html" class="text-white">The Pure Finest Foundation</a></li>
+        </ul>
+      </div>
+
+      <!-- Language, Icons, Copyright -->
+      <div class="col-sm-3 mb-3 d-flex flex-column align-items-start " >
+        <select class="form-control language-selector mb-3 w-100" style="margin-left: -1px !important;">
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="dt">Dutch</option>
+          <option value="ar">Arabic</option>
+          <option value="ch">Chinese</option>
+          <option value="pt">Portuguese</option>
+          <option value="rs">Russian</option>
+          <option value="tr">Turkish</option>
+          <option value="yr">Yoruba</option>
+          <option value="ig">Igbo</option>
+          <option value="ha">Hausa</option>
+        </select>
+
+        <!-- Icons + Copyright wrapper -->
+        <div class="d-flex flex-column" style="margin-top: 40px;">
+          <div class="social-icons d-flex gap-2 mb-2" style="margin-left: 25px;">
+           <a href="https://www.tiktok.com/@purefinest?lang=en&is_from_webapp=1&sender_device=mobile&sender_web_id=7501937624288151062"> <i class="fab fa-tiktok fa-2x social-icon"></i></a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FPurefinestdrink"><i class="fab fa-x-twitter fa-2x social-icon"></i></a>
+           <a href="https://www.instagram.com/purefinestofficial?igsh=dTV1N2p1Z2libnI3"> <i class="fab fa-instagram fa-2x social-icon"></i></a>
+         <a href="https://www.threads.net/@purefinestofficial">   <i class="fab fa-threads fa-2x social-icon"></i></a>
+      <a href="https://www.facebook.com/share/1KMkUBojpm/">   <span class="facebook-icon"><i class="fab fa-facebook-f"></i></span></a>
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+    <div style="text-align: center;"><p class="footee text-white mb-0" style="margin-left: 10px;margin-top:10px;text-align:center !important;" > 
+            <span>&copy;</span><span style="word-spacing:0px;">2025 </span> Pure Finest Inc.<sup>&reg;</sup></p></div>
+  </div>
+</footer>
+
+  
+</div>
 </body>
 </html>
 
