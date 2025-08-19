@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 3 Header Conversion</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+     .logo {
+    display: block;
+ /*   margin: 0 auto;*/
+ margin-left:500px;
+   /* width: 100px;
+    height: auto;*/
+    animation: spin 10s linear infinite;
+    position: absolute;
+    top: 10px;
+    left: 125px;
+      filter: brightness(0) invert(1); /* turns black to white */
+}
+/*.text-logo {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 300px;
+    user-select: none;
+    color: white;
+}*/
+.text-logo {
+  display: block;
+   margin-left:500px;
+/*  margin: 0 auto;*/
+  height: auto;
+  width: 300px;
+  user-select: none;
+  filter: brightness(0) invert(1); /* turns black to white */
+ /* position: absolute;
+  top: 10px;*/
+  margin-top: -30px;
+}
+    /*Brand from another file*/
+.brand a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-right: auto;
+}
+/*.logo{
+/* padding: -10px;*/
+/*}*/
+.brand .logo {
+  height: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+/*Brand logo with text*/
+
+/*Brand logo with text*/
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media(max-width:991px){
+      .logo {
+    display: block;
+ /*   margin: 0 auto;*/
+ margin-left:60px;
+   /* width: 100px;
+    height: auto;*/
+    animation: spin 10s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 125px;
+      filter: brightness(0) invert(1); /* turns black to white */
+}
+/*.text-logo {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 300px;
+    user-select: none;
+    color: white;
+}*/
+.text-logo {
+  display: block;
+   margin-left:60px;
+/*  margin: 0 auto;*/
+  height: auto;
+  width: 300px;
+  user-select: none;
+  filter: brightness(0) invert(1); /* turns black to white */
+ /* position: absolute;
+  top: 10px;*/
+  margin-top: -50px;
+}
+}
+  </style>
+</head>
+<body>
+
+<a class="navbar-brand" href="index.html" style="padding: 5px 15px;">
+  <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" alt="Logo" style="height: 80px;" class="logo">
+  <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
+</a>
+
+<!-- Fullscreen Video Background -->
+<video autoplay muted loop playsinline style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
+  <source src="./Assets/age-restriction-banner.mp4" type="video/mp4">
+</video>
+
+<!-- Age Restriction Overlay on Video -->
+<div id="ageOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; z-index:1000;">
+  <div style="background:rgba(255,255,255,0.9); padding:20px; max-width:400px; width:90%; border-radius:10px; text-align:center;">
+    <h2 style="margin-bottom:15px; font-size:22px; color:#000;">Age Restriction</h2>
+    <p style="font-size:14px; margin-bottom:20px; color:#333;">
+      You must be at least <b>18 years old</b> to access this website. Please enter your date of birth:
+    </p>
+    
+    <!-- Date of Birth Form -->
+    <form id="ageForm" style="display:flex; justify-content:space-between; margin-bottom:20px;">
+      <input type="number" id="day" placeholder="DD" min="1" max="31" required 
+             style="width:30%; padding:10px; text-align:center; border:1px solid #ccc; border-radius:5px; color:#000; background:#fff;">
+      <input type="number" id="month" placeholder="MM" min="1" max="12" required 
+             style="width:30%; padding:10px; text-align:center; border:1px solid #ccc; border-radius:5px; color:#000; background:#fff;">
+      <input type="number" id="year" placeholder="YYYY" min="1900" max="2100" required 
+             style="width:35%; padding:10px; text-align:center; border:1px solid #ccc; border-radius:5px; color:#000; background:#fff;">
+    </form>
+
+    <button onclick="verifyAge()" style="padding:10px 20px; background:red; color:#fff; font-size:16px; border:none; border-radius:5px; cursor:pointer; width:100%;">Enter Website</button>
+    
+    <p id="errorMsg" style="color:red; margin-top:15px; display:none; font-size:14px;">Sorry, you must be 18+ to enter.</p>
+    <p style="margin-top:10px; font-size:12px; color:#333;">Current Time (GMT): 
+      <span id="gmtTime"></span>
+    </p>
+    <p style="margin-top:10px; font-size:12px;">
+      <a href="privacy-policy.html" style="color:blue; text-decoration:underline;">Read our Privacy Policy</a>
+    </p>
+  </div>
+</div>
+
+<script>
+function verifyAge() {
+  const day = parseInt(document.getElementById("day").value);
+  const month = parseInt(document.getElementById("month").value) - 1; 
+  const year = parseInt(document.getElementById("year").value);
+
+  if (!day || !month || !year) {
+    document.getElementById("errorMsg").style.display = "block";
+    document.getElementById("errorMsg").innerText = "Please enter a valid date of birth.";
+    return;
+  }
+
+  const today = new Date();
+  const dob = new Date(year, month, day);
+  let age = today.getFullYear() - dob.getFullYear();
+  const m = today.getMonth() - dob.getMonth();
+
+  if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+    age--;
+  }
+
+  if (age >= 18) {
+    window.location.href = "https://purefinestdrinks.com";
+  } else {
+    document.getElementById("errorMsg").style.display = "block";
+    document.getElementById("errorMsg").innerText = "Sorry, you must be 18+ to enter.";
+  }
+}
+
+// Show GMT time
+function updateGMT() {
+  const now = new Date();
+  document.getElementById("gmtTime").innerText = now.toUTCString();
+}
+setInterval(updateGMT, 1000);
+updateGMT();
+</script>
+
+
+</body>
+</html>
+
+
