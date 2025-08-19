@@ -138,7 +138,7 @@ div.overlay {
   filter: brightness(0) invert(1); /* turns black to white */
  /* position: absolute;
   top: 10px;*/
-  margin-top: -80px;
+  margin-top: -30px;
 }
     /*Brand from another file*/
 .brand a{
@@ -197,14 +197,155 @@ div.overlay {
   filter: brightness(0) invert(1); /* turns black to white */
  /* position: absolute;
   top: 10px;*/
-  margin-top: -90px;
+  margin-top: -50px;
 }
 }
   </style>
 </head>
 <body>
+<div class="overlay" id="cookieOverlay"> 
+  <div class="popup">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+  
+    <h2>Privacy Preference Center</h2>
+    <p>
+      Pure Finest Inc. and Partners use cookies, 
+      to operate our website, to show you personalized 
+      content and manage our objectives as a business.
+      You can find out more about how we use cookies in our
+      <span><a href="privacy-policy.html#cookie" >(Privacy Policy Section)</a></span>
+    </p>
 
+    <!-- Strictly Necessary Cookies -->
+    <div class="cookie-section">
+      <div id="alwaysActiveToggle" class="toggle-row" style="cursor: pointer; font-weight: bold;">
+        <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
+        <span class="always-active">Always Active &#9660;</span>
+      </div>
 
+      <div class="cookie-description" id="strictlyDesc" style="display: none;">
+        These cookies are necessary for the website to function 
+        and cannot be switched off in our systems. They are usually 
+        only set in response to actions made by you which amount to
+        a request for services, such as setting your privacy preferences,
+        logging in or filling in forms. You can set your browser to 
+        block or alert you about these cookies,
+        but some parts of the site will not then work. These cookies
+        do not store any personally identifiable information.
+      </div>
+    </div>
+
+    <!-- Other Cookies -->
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="analyticsDesc">
+        <span class="toggle-label">ANALYTIC COOKIES</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="myCheckbox" class="cookie-toggle" data-desc="analyticsDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="analyticsDesc">
+        These cookies help us understand how visitors interact with 
+        our website by collecting and reporting information anonymously.
+      </div>
+    </div>
+
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="advertisingDesc">
+        <span class="toggle-label">ADVERTISING</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="myCheckbox" class="cookie-toggle" data-desc="advertisingDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="advertisingDesc">
+        These cookies are set by us and/or our partners and help us build
+        a profile of your interests based on your browsing behavior. 
+        If you accept these cookies,
+        you will be shown Pure Finest Inc. advertisements that match 
+        your interests as you browse other sites.
+      </div>
+    </div>
+
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="thirdPartyDesc">
+        <span class="toggle-label">THIRD PARTY CONSENT COOKIES</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="myCheckbox" class="cookie-toggle" data-desc="thirdPartyDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="thirdPartyDesc">
+        These cookies allow third-party services to collect
+        data based on your consent, enabling features
+        such as personalized content or targeted advertising.
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="reject" id="myButton" onclick="allowAllCookies()">Allow All</button>
+      <button class="reject" id="myButton" onclick="confirmCookies()">Confirm My Choices</button>
+      <button class="reject" id="myButton" onclick="setCookies(false)">Reject All</button>
+    </div>
+  </div>
+</div>
+
+  <script>
+function setCookie(name, value, days = 365) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+
+  /* ✅ Disable and freeze all checkboxes */
+  document.querySelectorAll("input[type='checkbox']").forEach(cb => {
+    cb.disabled = true;
+    cb.style.opacity = "0.5";
+    cb.style.cursor = "not-allowed";
+  });
+
+  /* ✅ Disable and freeze all buttons */
+  document.querySelectorAll("button").forEach(btn => {
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+    btn.style.pointerEvents = "none";
+  });
+
+  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  // Show cookie overlay if not already accepted
+  if (!getCookie("cookieConsentLifetime") && isHomepage) {
+    document.getElementById("cookieOverlay").style.display = "flex";
+  } else {
+    document.getElementById("cookieOverlay").style.display = "none";
+  }
+
+  // Hide all cookie descriptions by default
+  document.querySelectorAll('.cookie-description').forEach(desc => {
+    desc.style.display = "none";
+  });
+});
+
+function openCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'block';
+}
+
+function closeCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'none';
+}
+</script>
 
 <!-- JavaScript Dependencies -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -216,18 +357,16 @@ div.overlay {
   
 </script>
 <!-------------------------------------------------->
-
 <a class="navbar-brand" href="index.html" style="padding: 5px 15px;">
-<!------------------  <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" alt="Logo" style="height: 80px;" class="logo">
-  <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">-->
- 
-  <img src="/Assets/DOB-logo-removebg-preview.png" class="text-logo" alt="Text Logo" width="300px">
+  <img src="./Assets/PFI_LOGO_SPIN_PNG-removebg-preview.png" alt="Logo" style="height: 80px;" class="logo">
+  <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
 </a>
 
 <!-- Fullscreen Video Background -->
 <video autoplay muted loop playsinline style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
   <source src="./Assets/age-restriction-banner.mp4" type="video/mp4">
 </video>
+
 <!-- Age Restriction Overlay on Video -->
 <div id="ageOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; z-index:1000;">
   <div style="background:rgba(255,255,255,0.9); padding:20px; max-width:400px; width:90%; border-radius:10px; text-align:center;">
@@ -237,7 +376,7 @@ div.overlay {
     </p>
     
     <!-- Date of Birth Form -->
-    <form id="ageForm" onsubmit="return false;" style="display:flex; justify-content:space-between; margin-bottom:20px;">
+    <form id="ageForm" style="display:flex; justify-content:space-between; margin-bottom:20px;">
       <input type="number" id="day" placeholder="DD" min="1" max="31" required 
              style="width:30%; padding:10px; text-align:center; border:1px solid #ccc; border-radius:5px; color:#000; background:#fff;">
       <input type="number" id="month" placeholder="MM" min="1" max="12" required 
@@ -246,27 +385,15 @@ div.overlay {
              style="width:35%; padding:10px; text-align:center; border:1px solid #ccc; border-radius:5px; color:#000; background:#fff;">
     </form>
 
-    <!-- Enter Website Button -->
-    <button id="enterBtn" onclick="verifyAge()" style="padding:10px 20px; background:red; color:#fff; font-size:16px; border:none; border-radius:5px; cursor:pointer; width:100%;">Enter Website</button>
+    <button onclick="verifyAge()" style="padding:10px 20px; background:red; color:#fff; font-size:16px; border:none; border-radius:5px; cursor:pointer; width:100%;">Enter Website</button>
     
     <p id="errorMsg" style="color:red; margin-top:15px; display:none; font-size:14px;">Sorry, you must be 18+ to enter.</p>
-    
-    <!-- Show Eastern Time -->
-    <p style="margin-top:10px; font-size:12px; color:#333;">Current Time (Eastern, US): 
-      <span id="estTime"></span>
+    <p style="margin-top:10px; font-size:12px; color:#333;">Current Time (GMT): 
+      <span id="gmtTime"></span>
     </p>
-    
-    <!-- Privacy Policy link opens in new tab -->
-<!--------------------    <p style="margin-top:10px; font-size:12px;">
-      <a href="privacy-policy.html#cookie" target="_blank" rel="noopener noreferrer" style="color:blue; text-decoration:underline;">Read our Privacy Policy</a>
-    </p>-->
-    <!-- Privacy Policy link opens cookie pop-up in new tab -->
-<p style="margin-top:10px; font-size:12px;">
-  <a href="cookie-setting.html" target="_blank" rel="noopener noreferrer" style="color:blue; text-decoration:underline;">
-    Read our Privacy Policy
-  </a>
-</p>
-
+    <p style="margin-top:10px; font-size:12px;">
+      <a href="privacy-policy.html" style="color:blue; text-decoration:underline;">Read our Privacy Policy</a>
+    </p>
   </div>
 </div>
 
@@ -292,10 +419,6 @@ function verifyAge() {
   }
 
   if (age >= 18) {
-    // ✅ Open cookie pop-up in new tab
-    window.open("https://www.purefinestdrinks.com/finest.html", "_blank");
-
-    // ✅ Then allow access to the website
     window.location.href = "finest.html";
   } else {
     document.getElementById("errorMsg").style.display = "block";
@@ -303,16 +426,14 @@ function verifyAge() {
   }
 }
 
-// Update EST (Eastern Time, e.g. Delaware USA)
-function updateEST() {
+// Show GMT time
+function updateGMT() {
   const now = new Date();
-  const estTime = now.toLocaleString("en-US", { timeZone: "America/New_York" });
-  document.getElementById("estTime").innerText = estTime;
+  document.getElementById("gmtTime").innerText = now.toUTCString();
 }
-setInterval(updateEST, 1000);
-updateEST();
+setInterval(updateGMT, 1000);
+updateGMT();
 </script>
-
 
 
 </body>
