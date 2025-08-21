@@ -271,58 +271,19 @@ div.overlay {
 </div>
 
 <script>
-
 function verifyAge() {
-  const dayInput = document.getElementById("day").value.trim();
-  const monthInput = document.getElementById("month").value.trim();
-  const yearInput = document.getElementById("year").value.trim();
+  const day = parseInt(document.getElementById("day").value);
+  const month = parseInt(document.getElementById("month").value) - 1; 
+  const year = parseInt(document.getElementById("year").value);
 
-  // ✅ Restrict input lengths (max 2 digits for day/month, 4 digits for year)
-  if (dayInput.length > 2 || monthInput.length > 2 || yearInput.length > 4) {
-    document.getElementById("errorMsg").style.display = "block";
-    document.getElementById("errorMsg").innerText = "Please enter a valid date of birth.";
-    return;
-  }
-
-  const day = parseInt(dayInput);
-  const month = parseInt(monthInput) - 1;
-  const year = parseInt(yearInput);
-
-  if (!day || isNaN(day) || !year || isNaN(year) || month < 0 || month > 11) {
-    document.getElementById("errorMsg").style.display = "block";
-    document.getElementById("errorMsg").innerText = "Please enter a valid date of birth.";
-    return;
-  }
-
-  const dob = new Date(year, month, day);
-
-  // ✅ Ensure entered values match the constructed date (avoids 35/14 issue)
-  if (
-    dob.getDate() !== day ||
-    dob.getMonth() !== month ||
-    dob.getFullYear() !== year
-  ) {
+  if (!day || !month || !year) {
     document.getElementById("errorMsg").style.display = "block";
     document.getElementById("errorMsg").innerText = "Please enter a valid date of birth.";
     return;
   }
 
   const today = new Date();
-
-  // ✅ Reject future dates
-  if (dob > today) {
-    document.getElementById("errorMsg").style.display = "block";
-    document.getElementById("errorMsg").innerText = "Date of birth cannot be in the future.";
-    return;
-  }
-
-  // ✅ Reject impossible years (too old / unrealistic)
-  if (year < 1900) {
-    document.getElementById("errorMsg").style.display = "block";
-    document.getElementById("errorMsg").innerText = "Please enter a realistic year of birth.";
-    return;
-  }
-
+  const dob = new Date(year, month, day);
   let age = today.getFullYear() - dob.getFullYear();
   const m = today.getMonth() - dob.getMonth();
 
@@ -341,7 +302,6 @@ function verifyAge() {
     document.getElementById("errorMsg").innerText = "Sorry, you must be 18+ to enter.";
   }
 }
-
 
 // Update EST (Eastern Time, e.g. Delaware USA)
 function updateEST() {
