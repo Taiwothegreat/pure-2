@@ -637,23 +637,6 @@ margin: 10px !important;
 
 
 
-/* Make container stretch full width */
-/*.container-fluid {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-
-
-.brew-1{
-  margin-top: 200px;
-}
-
-li a{
-  font-size: 16px;
-}*/
-
 
 .marquee-wrapper {
   overflow: hidden;
@@ -930,40 +913,60 @@ left: -80px;
   .med{
     text-align: justify;
   }
-  
+
   .recruit{
-margin-left: -170px;
+margin-left: -100px;
 
   }
-   .recruit h5 a{
-margin-left: 50px;
+   .recruit h5 {
+margin-left: 90px;
+
   }
    .recruit ul li a{
-margin-left: 50px;
+margin-left: 90px;
  font-family: Arial, sans-serif;
   }
-   .life h5 a{
+  .life{
+    margin-left: -60px;
+  }
+   .life h5 {
 margin-left: 50px;
   }
    .life ul li a{
-margin-left: 50px;
+margin-left: 30px;
  font-family: Arial, sans-serif;
+
   }
-   .jobs h5 a{
-margin-left: 40px;
+   .jobs h5 {
+margin-left: 50px;
   }
    .jobs ul li a{
-margin-left: 40px;
+margin-left: 30px;
  font-family: Arial, sans-serif;
   }
+  /*******************/
+  
+.life ul,
+.jobs ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-right:0px;
+}
+.recruit ul{
+    list-style: none;
+  padding-left: 0;
+
+}
+
+
   .purpose{
     position: relative;
-    left: -90px;
+    left: -60px;
     min-width: 100px;
     text-align: justify;
   }
   .purpose p{
-    max-width: 250px;
+    width: 300px;
   }
   .edi{
      position: relative;
@@ -1177,22 +1180,7 @@ left:0;
     <h5><a href="privacy-policy.html">Cookie Policy</a></h5>
 
     <!-- Strictly Necessary Cookies -->
-    <!------<div class="cookie-section">
-      <div class="toggle-row always-active-toggle">
-        <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
-        <span class="always-active">Always Active</span>
-      </div>
-      <div class="cookie-description" id="strictlyDesc">
-        These cookies are necessary for the website to function 
-        and cannot be switched off in our systems. They are usually 
-        only set in response to actions made by you which amount to
-         a request for services, such as setting your privacy preferences,
-          logging in or filling in forms. You can set your browser to 
-          block or alert you about these cookies,
-         but some parts of the site will not then work. These cookies
-          do not store any personally identifiable information.
-      </div>
-    </div>-->
+   
 <!-- Strictly Necessary Cookies -->
 <div class="cookie-section">
   <!-- Toggle trigger (clickable) -->
@@ -1270,96 +1258,7 @@ left:0;
   </div>
 </div>
 
-<!-------------------------<script>
-function setCookie(name, value, days = 365) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-}
 
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i].trim();
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
-  }
-  return null;
-}
-
-window.addEventListener("DOMContentLoaded", function () {
-  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
-
-  if (getCookie("cookieConsentLifetime")) {
-    document.getElementById("cookieOverlay").style.display = "none";
-    return;
-  }
-
-  if (isHomepage) {
-    document.getElementById("cookieOverlay").style.display = "flex";
-  }
-
-  document.querySelectorAll('.cookie-toggle').forEach((input) => {
-    const descId = input.getAttribute('data-desc');
-    const descElement = document.getElementById(descId);
-    if (descElement) {
-      descElement.style.display = input.checked ? 'block' : 'none';
-      input.addEventListener('change', function () {
-        descElement.style.display = this.checked ? 'block' : 'none';
-      });
-    }
-  });
-
-  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
-  const strictlyDesc = document.getElementById("strictlyDesc");
-  if (alwaysActiveHeader && strictlyDesc) {
-    alwaysActiveHeader.addEventListener("click", function () {
-      const isVisible = strictlyDesc.style.display === "block";
-      strictlyDesc.style.display = isVisible ? "none" : "block";
-      alwaysActiveHeader.classList.toggle("open");
-    });
-  }
-});
-
-function allowAllCookies() {
-  document.querySelectorAll(".cookie-toggle").forEach(input => {
-    input.checked = true;
-  });
-
-  setTimeout(() => {
-    if (confirm("All cookies allowed. Click OK to confirm.")) {
-      setCookie("cookieConsent", "accepted");
-      setCookie("cookieConsentLifetime", "true", 365);
-      document.getElementById("cookieOverlay").style.display = "none";
-    }
-  }, 300);
-}
-
-function confirmCookies() {
-  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
-  if (checkedCount > 0) {
-    alert("Your cookie preferences have been saved.");
-    setCookie("cookieConsent", "partial");
-    setCookie("cookieConsentLifetime", "true", 365);
-    document.getElementById("cookieOverlay").style.display = "none";
-  } else {
-    alert("Please select at least one cookie or click 'Reject All'.");
-  }
-}
-
-function setCookies(acceptAll) {
-  document.querySelectorAll(".cookie-toggle").forEach(input => {
-    input.checked = false;
-  });
-  alert("All non-essential cookies rejected.");
-  setCookie("cookieConsent", "rejected");
-  setCookie("cookieConsentLifetime", "true", 365);
-  document.getElementById("cookieOverlay").style.display = "none";
-}
-
-function closeOverlay() {
-  setCookies(false);
-}
-</script>-->
 
 <script>
 function setCookie(name, value, days = 365) {
@@ -1782,13 +1681,7 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
                   innovate, and help shape a brighter future.</p>
               <button style="background: #0000ff;border-radius:10px;"><a href="#">HUMAN POTENTIAL</a></button>
             </div>
-            <div class="recruit">
-              <h5 ><a href="careers.html">RECRUITMENT PROCESS</a></h5>
-   <ul><li><a href="careers.html#application">Application Pathway</a></li>
-                <li><a href="careers.html#assessment">Assessment</a></li>
-                <li><a href="careers.html#offers">Offers</a></li>
-              </ul>
-            </div>
+           
             <div class="life">
               <h5><a href="careers.html">RECRUITMENT PROCESS</a></h5>
    <ul><li><a href="careers.html#application">Application Pathway</a></li>
@@ -1796,11 +1689,19 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
                 <li><a href="careers.html#offers">Offers</a></li>
               </ul>
             </div>
+             <div class="recruit">
+              <h5 ><a href="careers.html">LIFE AT PURE FINEST INC.</a></h5>
+   <ul><li><a href="careers.html#application">Culture</a></li>
+                <li><a href="careers.html#assessment">Benefits</a></li>
+                <li><a href="careers.html#offers" >Career Development</a></li>
+              </ul>
+            </div>
             <div class="jobs">
-              <h5><a href="careers.html">RECRUITMENT PROCESS</a></h5>
-   <ul><li><a href="careers.html#application">Application Pathway</a></li>
-                <li><a href="careers.html#assessment">Assessment</a></li>
-                <li><a href="careers.html#offers">Offers</a></li>
+              <h5><a href="careers.html">JOB SEARCH</a></h5>
+   <ul><li><a href="careers.html#application">PFI Company Jobs
+</a></li>
+                <li><a href="careers.html#assessment">PFI Partner Jobs
+</a></li>
               </ul>
             </div>
             
