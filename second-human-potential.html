@@ -92,6 +92,82 @@
         width: 90%;
       }
     }
+    /**********************/
+
+    .pfi-thumb-2 img {
+    width: 100%;           
+    height: auto;          
+    object-fit: cover;     /* fills container */
+    object-position: top;  /* shows the top part of the image */
+    margin-top: 20px;      /* pushes the whole image down */
+  }
+      .pfi-row-2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      position: static;
+      margin-top: 30px;
+    }
+
+  .pfi-thumb-2 {
+  width: 25%;
+  padding: 0 20px 20px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  z-index: 1;
+  border-radius: 12px;
+  color: brown;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  border: none; /* removed brown border */
+}
+
+.pfi-thumb-2:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+}
+
+.pfi-thumb-2 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  margin: 0 auto;
+  border-bottom: none; /* removed brown border under image */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle image shadow */
+}
+
+
+    .pfi-thumb-2 h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #000000 !important;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .pfi-thumb-2 p {
+      font-size: 16px;
+      color: #000000 !important;
+      text-align: justify;
+    }
+
+    @media (max-width: 991px) {
+      .pfi-thumb-2 {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pfi-thumb-2 {
+        width: 90%;
+      }
+    }
+    /*last section table*/
+                /* Scoped styles for the back link */
     /*last section table*/
                 /* Scoped styles for the back link */
   
@@ -1957,6 +2033,8 @@ Our diverse, high-performing global team fuels a culture of inclusion, creativit
 <div><h2 style="font-weight:900; text-align:center; margin-top:50px;text-transform: uppercase;">
   FIND YOUR PATH TO PROFESSIONAL GROWTH
 </h2></div>
+
+
 <div class="container-fluid pfi-layout-container-1">
   <div class="pfi-row-1">
     <!-- Thumbnail 1 -->
@@ -1974,7 +2052,7 @@ Discover Opportunities
     </div>
 
     <!-- Thumbnail 2 -->
-    <div class="pfi-thumb-1">
+    <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-brand.jpg" alt="responsibility">
       <h3>BRAND MGT & MARKETING</h3>
       <p> At Pure Finest Inc., our marketing teams shape the future of our brands, focusing on growth strategies that design, execute, and track brand success across markets.
@@ -1986,7 +2064,7 @@ Discover Opportunities </p>
     </div>
 
     <!-- Thumbnail 3 -->
-    <div class="pfi-thumb-1">
+    <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-finance.jpg" alt="sustainability">
       <h3>FINANCE & ACCOUNTING</h3>
       <p>
@@ -2005,7 +2083,7 @@ Discover Opportunities
      <!-- Thumbnail 6 -->
   
      <!-- Thumbnail 7 -->
-   <div class="pfi-thumb-1">
+   <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-manu.jpg" alt="Innovation">
       <h3>MANUFACTURING</h3>
       <p>
@@ -2018,7 +2096,7 @@ Discover Opportunities
       </div>-->
     </div>
      <!-- Thumbnail 8 -->
-   <div class="pfi-thumb-1">
+   <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-information.jpg" alt="Innovation">
       <h3>INFORMATION TECHNOLOGY</h3>
       <p>Our innovative technology teams deliver seamless, reliable digital experiences—from developing software and powering our interactive drink stations to enabling smooth online orders straight to your doorstep.
@@ -2029,7 +2107,7 @@ Discover Opportunities</p>
       </div>-->
     </div>
      <!-- Thumbnail 9-->
-   <div class="pfi-thumb-1">
+   <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-PACS.jpg" alt="Innovation">
       <h3>PACS</h3>
       <p>
@@ -2041,7 +2119,7 @@ Discover Opportunities</p>
       </div>-->
     </div>
     <!-- Thumbnail 10-->
-   <div class="pfi-thumb-1">
+   <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-sales.jpg" alt="Innovation">
       <h3>SALES & COMMERCIAL</h3>
       <p>Our customer-focused commercial teams—covering sales, business development, and account management—drive growth through smart channel and category strategies. They deliver impact by combining strong account management, digital commerce expertise, and data-driven insights.
@@ -2052,7 +2130,7 @@ Discover Opportunities</p>
       </div>-->
     </div>
       <!-- Thumbnail 11-->
-   <div class="pfi-thumb-1">
+   <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-technical.jpg" alt="Innovation">
       <h3>TECHNICAL</h3>
       <p>
@@ -2065,7 +2143,7 @@ Discover Opportunities</p>
       </div>-->
     </div>
         <!-- Thumbnail 11-->
-   <div class="pfi-thumb-1">
+   <div class="pfi-thumb-1" id="jobss">
       <img src="./Assets/potential-revenue.jpg" alt="Innovation">
       <h3>REVENUE GROWTH MGT.</h3>
       <p>
@@ -2078,6 +2156,104 @@ Discover Opportunities</p>
       </div>-->
     </div>
     
+  </div>
+</div>
+
+<h1 style="font-weight: 900; margin-top: 40px; text-align: center !important; font-size: 28px; font-family: 'Saira Stencil One', sans-serif;">
+    START YOUR JOURNEY WITH US
+  </h1>
+  <p style="word-spacing: 10px; font-size: 20px; text-align: justify !important; padding: 20px; margin-left:0">
+    Starting your career with hands-on experience is a powerful way to grow your skills and prepare for future opportunities. At Pure Finest Inc., we provide internships that connect you with a global team of professionals who guide, mentor, and involve you in impactful projects. As an intern, you’ll gain the confidence to apply your talents while contributing to real business outcomes across areas such as IT,
+     marketing, retail sales, finance, technical innovation, supply chain, public affairs, and operations.
+  </p>
+<!-------------------------------------------------------------->
+
+<div class="container-fluid pfi-layout-container-2">
+  <div class="pfi-row-2">
+    <!-- Thumbnail 1 -->
+    <div class="pfi-thumb-2" >
+      <img src="./Assets/potential-project-based.jpg" alt="Premium Ingredients">
+      <h3>Project-Based Learning
+</h3>
+      <p>
+Work on real business projects that challenge you to apply your skills while driving impact.
+
+      </p>
+ 
+    </div>
+
+    <!-- Thumbnail 2 -->
+    <div class="pfi-thumb-2">
+      <img src="./Assets/potential-direct-access.jpg" alt="responsibility">
+      <h3>Direct Access to Leaders
+</h3>
+      <p> 
+Engage with senior leaders who provide insights, feedback, and career guidance.
+
+      </p>
+   
+    </div>
+
+    <!-- Thumbnail 3 -->
+    <div class="pfi-thumb-2">
+      <img src="./Assets/potential-mentorship.jpg" alt="sustainability">
+      <h3>Mentorship & Growth
+</h3>
+      <p>
+ Gain one-on-one mentorship and personalized career development support.
+
+      </p>
+    
+    </div>
+
+  
+     <!-- Thumbnail 7 -->
+   <div class="pfi-thumb-2">
+      <img src="./Assets/potential-workshops.jpg" alt="Innovation">
+      <h3> Workshops & Learning Events
+</h3>
+      <p>
+   Participate in training sessions and networking events designed to build your expertise.
+      </p>
+    
+    </div>
+     <!-- Thumbnail 8 -->
+   <div class="pfi-thumb-2">
+      <img src="./Assets/potential-intenship.jpg" alt="Innovation">
+      <h3>Internship Showcase
+ </h3>
+      <p>Present your achievements and contributions to the wider organization.
+</p>
+   
+    </div>
+     <!-- Thumbnail 9-->
+   <div class="pfi-thumb-2">
+      <img src="./Assets/potential-experience.jpg" alt="Innovation">
+      <h3>Experience the Pure Finest Inc. Culture
+</h3>
+      <p>
+    Immerse yourself in a diverse, innovative, and inclusive workplace culture.
+      </p>
+     <!----------- <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;" id="jobss">
+        <span style="font-weight: bold;">PACS</span>
+        <a href="#" style="color: brown; text-decoration: none; font-weight: bold;">Learn more &rarr;</a>
+      </div>-->
+    </div>
+   
+  
+    
+  </div>
+</div>
+
+
+
+<div class="container-fluid" style="text-align: center;margin-top: 20px;  ">
+  <div class="row">
+    <div class="col-sm-12" style="margin-top: 20px;">
+      <a href="#" style="display: inline-block; background-color: black; color: white; text-decoration: none; border: 1px solid white; border-radius: 12px; padding: 10px 20px; width: 200px;">
+        Explore
+      </a>
+    </div>
   </div>
 </div>
 
@@ -2122,17 +2298,43 @@ Discover Opportunities</p>
   <h1 style="font-weight: 900; margin-top: 0px; text-align: center !important; font-size: 28px; font-family: 'Saira Stencil One', sans-serif;">
     EVERYONE INCLUDED, EVERYONE VALUED
   </h1>
-  <img src="./Assets/potential-everyone-1.jpg" alt="" class="img-responsive" style="width: 100%; display: block; border-radius: 0;">
   
-  <div style="
+  <div class="container-fluid" id="disable" style="position: relative; padding: 0;"> 
+  <img src="./Assets/potential-everyone-1.jpg" alt="" class="img-responsive" style="width: 100%; display: block; border-radius: 0;">
+
+  <h1 style="
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* background: rgba(0, 0, 0, 0.4); */
-    pointer-events: none;">
-  </div>
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  ">
+    TOGETHER WE RISE! <br>
+    EVERY CONTRIBUTION MATTERS!
+  </h1>
+</div>
+
+  <!-----------<img src="./Assets/potential-everyone-1.jpg" alt="" class="img-responsive" style="width: 100%; display: block; border-radius: 0;">
+  <h1 style="
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', serif;
+    color: black;
+    text-align: center;
+    margin: 0;">
+    ACCESSIBILITY
+  </h1>-->
+  
   
   <p style="word-spacing: 10px; font-size: 20px; text-align: justify !important; padding: 20px; margin-left:0">
     By promoting disability awareness and fostering inclusion, we cultivate a workplace and culture where every employee can flourish.
@@ -2160,7 +2362,20 @@ Discover Opportunities</p>
     <li><strong>Language:</strong> As a global organization, we operate across diverse regions and cultures. Advanced language services and translation tools allow us to collaborate effectively on an international scale.</li>
   </ul>
 
-
+<div class="container-fluid" style="text-align: center;margin-top: 20px; margin: auto; ">
+  <div class="row">
+     <div class="col-sm-6" style="margin-top: 20px;" id="jobss">
+      <a href="second-human-potential.html#jobss" style="display: inline-block; background-color: black; color: white; text-decoration: none; border: 1px solid white; border-radius: 12px; padding: 10px 20px; width: 200px;">
+        Job Search
+      </a>
+    </div>
+    <div class="col-sm-6" style="margin-top: 20px;">
+      <a href="careers.html#offers" style="display: inline-block; background-color: black; color: white; text-decoration: none; border: 1px solid white; border-radius: 12px; padding: 10px 20px; width: 200px;">
+        Talent Hub
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- Footer Section (Full width, isolated, no side effects) -->
 <div class="footer-wrapper" style="margin: 0; padding: 0; width: 100%; overflow: hidden;">
