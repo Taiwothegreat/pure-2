@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auto Job Search + Map (Leaflet)</title>
+
+  <!-- Bootstrap 3 (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Leaflet (OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Inline CSS (keeps everything local to this file) -->
+  <style>
+    /* page base */
+    body { background: #fff; color:#222; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding-top:15px; }
+    .form-section { margin-top: 10px; }
+    .results-section { margin-top: 10px; }
+    .job-card { border: 1px solid #e0e0e0; padding: 12px; margin-bottom: 12px; border-radius: 4px; background: #fff; box-shadow: 0 0 0 rgba(0,0,0,0); }
+    .job-card h4 { margin-top: 0; font-size: 16px; }
+    #map { width: 100%; height: 420px; margin-top: 10px; border:1px solid #e6e6e6; border-radius:4px; }
+    .btn-map { margin-top: 8px; }
+    label { font-weight: 600; }
+    .select2-container .select2-selection--multiple { min-height: 34px; }
+    .small-clear { margin-top:6px; display:inline-block; }
+    .placeholder-opt { color: #999; }
+    .no-results { color:#888; padding: 10px 0; }
+    /* ensure selects full width */
+    .form-control, .select2-container { width:100% !important; }
+    .results-count { margin-bottom: 10px; color:#555; }
+    a.job-link { text-decoration: none; color: #337ab7; }
+    a.job-link:hover { text-decoration: underline; }
+    .footer-note { font-size:12px; color:#777; margin-top:6px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="row form-section">
+    <!-- Form column -->
+    <div class="col-sm-4">
+      <h3>Filter Results</h3>
+
+      <form id="job-search-form" autocomplete="off">
+        <!-- Job Category (multi-select) -->
+        <div class="form-group">
+          <label for="job-category">Job Category</label>
+          <select id="job-category" name="jobCategory[]" class="form-control" multiple="multiple">
+            <option></option>
+            <!-- Add many categories; user may click to select multiple -->
+            <option>Business Services</option>
+            <option>Finance</option>
+            <option>Human Resources</option>
+            <option>Information Technology</option>
+            <option>Marketing</option>
+            <option>Supply Chain</option>
+            <option>Sales</option>
+            <option>Legal</option>
+            <option>Public Affairs</option>
+            <option>Production & OPS</option>
+            <option>Engineering</option>
+            <option>Customer Service</option>
+            <option>Analytics</option>
+            <option>R&D</option>
+            <option>Retail</option>
+            <option>Internships</option>
+            <option>Quality Assurance</option>
+            <option>Logistics</option>
+            <option>Procurement</option>
+            <option>Design</option>
+          </select>
+          <!-- Clear button directly under the Job Category (beside other clear) -->
+          <div>
+            <button type="button" class="btn btn-default btn-xs small-clear" id="clear-job-category">Clear</button>
+        <!-----    <span class="footer-note">Click items to select/deselect. No need to hold Ctrl.</span>-->
+          </div>
+        </div>
+
+        <!-- Country (single select) -->
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" class="form-control">
+            <option></option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Mexico</option>
+            <option>Singapore</option>
+            <option>Ireland</option>
+            <option>Costa Rica</option>
+            <option>India</option>
+            <option>Argentina</option>
+            <option>Chile</option>
+          </select>
+        </div>
+
+        <!-- City (single select, dynamically filled) -->
+        <div class="form-group">
+          <label for="city">City</label>
+          <select id="city" class="form-control">
+            <option></option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Search</button>
+        <button type="button" class="btn btn-default btn-block" id="clear-btn">Clear All</button>
+      </form>
+    </div>
+
+    <!-- Results column -->
+    <div class="col-sm-8 results-section">
+      <h3>Search Results</h3>
+      <div id="results" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- Map (full width row) -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="map" role="application" aria-label="Map showing job locations"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- JS libs -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+/* ---------------------------
+   LOCATION DATA (with coords)
+   ---------------------------
+   USA (20), UK (20) + other countries' key cities with lat/lng
+   This dataset maps country -> array of city objects { name, lat, lng }
+   --------------------------- */
+
+const locationData = {
+  "USA": [
+    { name: "New York, NY", lat: 40.712776, lng: -74.005974 },
+    { name: "Los Angeles, CA", lat: 34.052235, lng: -118.243683 },
+    { name: "Chicago, IL", lat: 41.878113, lng: -87.629799 },
+    { name: "Houston, TX", lat: 29.760427, lng: -95.369804 },
+    { name: "Phoenix, AZ", lat: 33.448376, lng: -112.074036 },
+    { name: "Philadelphia, PA", lat: 39.952583, lng: -75.165222 },
+    { name: "San Antonio, TX", lat: 29.424122, lng: -98.493629 },
+    { name: "San Diego, CA", lat: 32.715736, lng: -117.161087 },
+    { name: "Dallas, TX", lat: 32.776665, lng: -96.796989 },
+    { name: "San Jose, CA", lat: 37.338207, lng: -121.886330 },
+    { name: "Austin, TX", lat: 30.267153, lng: -97.743057 },
+    { name: "Jacksonville, FL", lat: 30.332184, lng: -81.655651 },
+    { name: "San Francisco, CA", lat: 37.774929, lng: -122.419418 },
+    { name: "Columbus, OH", lat: 39.961176, lng: -82.998794 },
+    { name: "Charlotte, NC", lat: 35.227085, lng: -80.843124 },
+    { name: "Indianapolis, IN", lat: 39.768402, lng: -86.158066 },
+    { name: "Fort Worth, TX", lat: 32.755489, lng: -97.330765 },
+    { name: "Seattle, WA", lat: 47.606209, lng: -122.332069 },
+    { name: "Denver, CO", lat: 39.739236, lng: -104.990251 },
+    { name: "Boston, MA", lat: 42.360082, lng: -71.058880 }
+  ],
+  "UK": [
+    { name: "London", lat: 51.507351, lng: -0.127758 },
+    { name: "Birmingham", lat: 52.486244, lng: -1.890401 },
+    { name: "Leeds", lat: 53.800755, lng: -1.549077 },
+    { name: "Glasgow", lat: 55.864237, lng: -4.251806 },
+    { name: "Sheffield", lat: 53.381129, lng: -1.470085 },
+    { name: "Manchester", lat: 53.480759, lng: -2.242631 },
+    { name: "Liverpool", lat: 53.408371, lng: -2.991573 },
+    { name: "Nottingham", lat: 52.954783, lng: -1.158109 },
+    { name: "Bristol", lat: 51.454514, lng: -2.587910 },
+    { name: "Newcastle", lat: 54.978252, lng: -1.617780 },
+    { name: "Leicester", lat: 52.636878, lng: -1.139759 },
+    { name: "Coventry", lat: 52.406822, lng: -1.519693 },
+    { name: "Hull", lat: 53.744772, lng: -0.335754 },
+    { name: "Cardiff", lat: 51.481583, lng: -3.179090 },
+    { name: "Edinburgh", lat: 55.953252, lng: -3.188267 },
+    { name: "Belfast", lat: 54.597285, lng: -5.930120 },
+    { name: "Southampton", lat: 50.909700, lng: -1.404350 },
+    { name: "Portsmouth", lat: 50.819767, lng: -1.088099 },
+    { name: "Stoke-on-Trent", lat: 53.002666, lng: -2.179404 },
+    { name: "Derby", lat: 52.922531, lng: -1.474610 }
+  ],
+  "Mexico": [
+    { name: "Ciudad de México", lat: 19.432608, lng: -99.133209 },
+    { name: "Guadalajara", lat: 20.659698, lng: -103.349609 },
+    { name: "Monterrey", lat: 25.686615, lng: -100.316116 }
+  ],
+  "Singapore": [
+    { name: "Singapore", lat: 1.352083, lng: 103.819836 }
+  ],
+  "Ireland": [
+    { name: "Dublin", lat: 53.349805, lng: -6.260310 },
+    { name: "Ballina", lat: 54.111320, lng: -9.146130 }
+  ],
+  "Costa Rica": [
+    { name: "San José", lat: 9.928069, lng: -84.090725 },
+    { name: "Liberia", lat: 10.634244, lng: -85.440508 }
+  ],
+  "India": [
+    { name: "Mumbai", lat: 19.075983, lng: 72.877655 },
+    { name: "Ahmedabad", lat: 23.022505, lng: 72.571362 },
+    { name: "Bengaluru", lat: 12.971599, lng: 77.594566 }
+  ],
+  "Argentina": [
+    { name: "Buenos Aires", lat: -34.603722, lng: -58.381592 },
+    { name: "Córdoba", lat: -31.420083, lng: -64.188776 }
+  ],
+  "Chile": [
+    { name: "Santiago", lat: -33.448890, lng: -70.669266 },
+    { name: "San Bernardo", lat: -33.601286, lng: -70.699722 }
+  ]
+};
+
+/* ---------------------------
+   CATEGORY LIST (many options)
+   --------------------------- */
+const categories = [
+  "Business Services","Finance","Human Resources","Information Technology",
+  "Marketing","Supply Chain","Sales","Legal","Public Affairs","Production & OPS",
+  "Engineering","Customer Service","Analytics","R&D","Retail","Internships",
+  "Quality Assurance","Logistics","Procurement","Design"
+];
+
+/* ---------------------------
+   Utilities
+   --------------------------- */
+
+// Deterministic hash -> simple number from string (for deterministic generation)
+function strHashToNumber(s) {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < s.length; i++) {
+    h = Math.imul(h ^ s.charCodeAt(i), 16777619) >>> 0;
+  }
+  return h;
+}
+
+// Create deterministic job titles variations using category + city
+function generateJobsFor(category, cityObj) {
+  // produce between 2 and 3 jobs (deterministic)
+  const seed = strHashToNumber(category + "|" + cityObj.name);
+  const count = 2 + (seed % 2); // 2 or 3
+  const seniorities = ["Junior", "Mid", "Senior", "Lead", "Associate", "Coordinator", "Specialist"];
+  const modifiers = ["(Full-time)", "(Part-time)", "(Fixed-term)", "(Contract)", "(Remote eligible)"];
+
+  const jobs = [];
+  for (let i = 0; i < count; i++) {
+    const idx1 = (seed + i * 13) % seniorities.length;
+    const idx2 = (seed + i * 7) % modifiers.length;
+    const title = `${category} - ${seniorities[idx1]} ${i+1} ${modifiers[idx2]}`;
+    const company = ["Coca-Cola Co.", "Acme Corp", "GlobalTech", "BrightWorks"][ (seed + i) % 4 ];
+    const id = 'job-' + (strHashToNumber(title + "|" + cityObj.name) >>> 0);
+    jobs.push({
+      id,
+      title,
+      company,
+      category,
+      city: cityObj.name,
+      country: findCountryForCity(cityObj.name),
+      lat: cityObj.lat,
+      lng: cityObj.lng,
+      posted: `${(seed % 28) + 1} days ago`
+    });
+  }
+  return jobs;
+}
+
+function findCountryForCity(cityName) {
+  for (const c in locationData) {
+    if (locationData[c].some(z => z.name === cityName)) return c;
+  }
+  return "";
+}
+
+/* ---------------------------
+   Initialize UI: Select2 & city population
+   --------------------------- */
+$(document).ready(function() {
+  // initialize Select2 for job categories (multiple) and single selects for country & city
+  $('#job-category').select2({
+    placeholder: "Please Select...",
+    allowClear: true,
+    width: 'resolve'
+  });
+
+  $('#country').select2({
+    placeholder: "Please Select...",
+    allowClear: true,
+    width: 'resolve'
+  });
+
+  $('#city').select2({
+    placeholder: "Please Select...",
+    allowClear: true,
+    width: 'resolve'
+  });
+
+  // fill country options automatically (in case you add more in the dataset)
+  // (We already added countries in HTML, but this keeps them in sync if changed)
+  // populateCities when country changes:
+  $('#country').on('change', function() {
+    const country = $(this).val();
+    const citySelect = $('#city');
+    citySelect.empty().append('<option></option>');
+    if (country && locationData[country]) {
+      locationData[country].forEach(function(c) {
+        citySelect.append(`<option value="${c.name}">${c.name}</option>`);
+      });
+    }
+    // trigger select2 update
+    citySelect.trigger('change.select2');
+  });
+
+  // clear only job categories button
+  $('#clear-job-category').on('click', function() {
+    $('#job-category').val(null).trigger('change');
+  });
+
+  // Clear All button
+  $('#clear-btn').on('click', function() {
+    $('#job-category').val(null).trigger('change');
+    $('#country').val(null).trigger('change');
+    $('#city').val(null).trigger('change');
+    $('#results').empty();
+    clearMapMarkers();
+    map.setView([20,0], 2);
+  });
+
+  // initial map setup (center world)
+  initMap();
+});
+
+/* ---------------------------
+   MAP (Leaflet) Setup
+   --------------------------- */
+let map, markersLayer;
+
+function initMap() {
+  map = L.map('map', { preferCanvas: true }).setView([20, 0], 2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  markersLayer = L.layerGroup().addTo(map);
+}
+
+function clearMapMarkers() {
+  markersLayer.clearLayers();
+}
+
+/* ---------------------------
+   SEARCH handling: generate jobs on-the-fly
+   --------------------------- */
+$('#job-search-form').on('submit', function(e) {
+  e.preventDefault();
+
+  // get filters
+  const selectedCategories = $('#job-category').val() || []; // array or []
+  const selectedCountry = $('#country').val(); // or null
+  const selectedCity = $('#city').val(); // or null
+
+  // determine cities to search: if specific city chosen -> just that city; else if country chosen -> all cities in that country; else -> all cities in all countries
+  let citiesToSearch = [];
+  if (selectedCity) {
+    // find city object in dataset
+    for (const c in locationData) {
+      const found = locationData[c].find(x => x.name === selectedCity);
+      if (found) { citiesToSearch.push(found); break; }
+    }
+  } else if (selectedCountry) {
+    citiesToSearch = (locationData[selectedCountry] || []).slice();
+  } else {
+    // all cities across all countries
+    for (const c in locationData) {
+      citiesToSearch = citiesToSearch.concat(locationData[c]);
+    }
+  }
+
+  // if no categories chosen, treat as "all categories"
+  const categoriesToSearch = (selectedCategories.length === 0) ? categories : selectedCategories;
+
+  // Now generate jobs: for each city × each category produce 2-3 job postings deterministically
+  const results = [];
+  citiesToSearch.forEach(cityObj => {
+    categoriesToSearch.forEach(cat => {
+      const generated = generateJobsFor(cat, cityObj);
+      results.push(...generated);
+    });
+  });
+
+  // Render results and map markers
+  renderResults(results);
+});
+
+/* ---------------------------
+   RENDER results & map markers
+   --------------------------- */
+function renderResults(jobList) {
+  const resultsDiv = $('#results');
+  resultsDiv.empty();
+
+  if (!jobList || jobList.length === 0) {
+    resultsDiv.append('<div class="no-results">No results found. Try choosing a country or city and category.</div>');
+    clearMapMarkers();
+    map.setView([20,0],2);
+    return;
+  }
+
+  // show count
+  resultsDiv.append(`<div class="results-count"><strong>${jobList.length}</strong> job(s) found</div>`);
+
+  // show job cards
+  jobList.forEach(job => {
+    const card = $(`
+      <div class="job-card" id="${job.id}">
+        <h4><a class="job-link" href="job-details.html?title=${encodeURIComponent(job.title)}&city=${encodeURIComponent(job.city)}" target="_blank">${escapeHtml(job.title)}</a></h4>
+        <div><strong>${escapeHtml(job.company)}</strong> &mdash; ${escapeHtml(job.city)}, ${escapeHtml(job.country)}</div>
+        <div>Category: ${escapeHtml(job.category)} &nbsp; | &nbsp; Posted: ${escapeHtml(job.posted)}</div>
+        <div>
+          <button class="btn btn-info btn-xs btn-map" data-lat="${job.lat}" data-lng="${job.lng}" data-title="${escapeAttr(job.title)}">View on Map</button>
+          <a class="btn btn-default btn-xs" href="job-details.html?id=${encodeURIComponent(job.id)}" target="_blank">View Details</a>
+        </div>
+      </div>
+    `);
+    resultsDiv.append(card);
+  });
+
+  // place markers for unique cities (one marker per city, cluster markers if many)
+  clearMapMarkers();
+  const markers = {};
+  jobList.forEach(job => {
+    const key = `${job.lat},${job.lng}`;
+    if (!markers[key]) {
+      const m = L.marker([job.lat, job.lng]).bindPopup(`<strong>${escapeHtml(job.city)}</strong><div>${escapeHtml(job.country)}</div>`);
+      markersLayer.addLayer(m);
+      markers[key] = m;
+    }
+  });
+
+  // fit bounds to all markers or zoom to a single marker
+  const allLatLngs = Object.keys(markers).map(k => {
+    const [lat,lng] = k.split(',').map(Number);
+    return [lat,lng];
+  });
+  if (allLatLngs.length === 1) {
+    map.setView(allLatLngs[0], 10);
+    markersLayer.eachLayer(layer => layer.openPopup && layer.openPopup());
+  } else if (allLatLngs.length > 1) {
+    const bounds = L.latLngBounds(allLatLngs);
+    map.fitBounds(bounds.pad(0.2));
+  } else {
+    map.setView([20,0],2);
+  }
+}
+
+/* ---------------------------
+   Handle View on Map button (centers map on job location)
+   --------------------------- */
+$(document).on('click', '.btn-map', function() {
+  const lat = Number($(this).attr('data-lat'));
+  const lng = Number($(this).attr('data-lng'));
+  const title = $(this).attr('data-title') || '';
+  if (!isFinite(lat) || !isFinite(lng)) return;
+  map.setView([lat,lng], 12);
+  // add a temporary bounce marker (popup)
+  const temp = L.marker([lat,lng]).addTo(map);
+  temp.bindPopup(`<strong>${escapeHtml(title)}</strong>`).openPopup();
+  // remove after short delay
+  setTimeout(() => {
+    map.removeLayer(temp);
+  }, 3500);
+});
+
+/* ---------------------------
+   Small safety helpers
+   --------------------------- */
+function escapeHtml(s) {
+  if (!s) return '';
+  return s.replace(/[&<>"'\/]/g, function(c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','/':'&#47;'}[c];
+  });
+}
+function escapeAttr(s) { return escapeHtml(s).replace(/"/g, '&quot;'); }
+
+</script>
+</body>
+</html>

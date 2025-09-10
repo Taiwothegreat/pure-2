@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #ffffff; /* clean white */
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    .coming-soon-container {
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: 10%;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .subscribe-box input {
+      border-radius: 0;
+      height: 44px;
+    }
+    .subscribe-box .btn {
+      border-radius: 0;
+      height: 44px;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<div class="coming-soon-container">
+  <h1>Coming Soon</h1>
+  <p>We’re working hard to bring you something amazing. Stay tuned!</p>
+
+  <!-- Optional subscribe form -->
+  <form class="subscribe-box form-inline">
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Notify Me</button>
+  </form>
+
+  <!-- Countdown (optional) -->
+  <div id="countdown" style="margin-top:30px; font-size:20px; font-weight:600;"></div>
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Purefinestinc. All rights reserved.
+</footer>
+
+<script>
+  // Auto year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Simple countdown to a future date
+  var targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 365); // 30 days ahead
+
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var distance = targetDate - now;
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML = "We have launched!";
+      return;
+    }
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    var seconds = Math.floor((distance % (1000*60)) / 1000);
+    document.getElementById("countdown").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  }
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
