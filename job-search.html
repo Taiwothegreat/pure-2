@@ -1851,13 +1851,12 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
             <option></option>
             <option>USA</option>
             <option>UK</option>
-            <option>Mexico</option>
-            <option>Singapore</option>
-            <option>Ireland</option>
-            <option>Costa Rica</option>
-            <option>India</option>
-            <option>Argentina</option>
-            <option>Chile</option>
+            <option>Spain</option>
+            <option>France </option>
+            <option>Netherlands</option>
+            <option>Nigeria</option>
+            <option>South Africa</option>
+            <option>Tanzania</option>
           </select>
         </div>
 
@@ -1903,7 +1902,7 @@ success, ensuring EDI is woven into every aspect of our operations and culture.
    This dataset maps country -> array of city objects { name, lat, lng }
    --------------------------- */
 
-const locationData = {
+/*const locationData = {
   "USA": [
     { name: "New York, NY", lat: 40.712776, lng: -74.005974 },
     { name: "Los Angeles, CA", lat: 34.052235, lng: -118.243683 },
@@ -1977,6 +1976,284 @@ const locationData = {
     { name: "Santiago", lat: -33.448890, lng: -70.669266 },
     { name: "San Bernardo", lat: -33.601286, lng: -70.699722 }
   ]
+};
+*/
+const locationData = {
+"USA": [
+  // New York
+  { name: "New York, NY", lat: 40.712776, lng: -74.005974 },
+  { name: "Buffalo, NY", lat: 42.886447, lng: -78.878369 },
+  { name: "Rochester, NY", lat: 43.156578, lng: -77.608849 },
+
+  // California
+  { name: "Los Angeles, CA", lat: 34.052235, lng: -118.243683 },
+  { name: "San Diego, CA", lat: 32.715736, lng: -117.161087 },
+  { name: "San Jose, CA", lat: 37.338207, lng: -121.886330 },
+  { name: "San Francisco, CA", lat: 37.774929, lng: -122.419418 },
+  { name: "Sacramento, CA", lat: 38.581572, lng: -121.494400 },
+
+  // Illinois
+  { name: "Chicago, IL", lat: 41.878113, lng: -87.629799 },
+  { name: "Aurora, IL", lat: 41.760585, lng: -88.320072 },
+  { name: "Naperville, IL", lat: 41.750839, lng: -88.153535 },
+
+  // Texas
+  { name: "Houston, TX", lat: 29.760427, lng: -95.369804 },
+  { name: "San Antonio, TX", lat: 29.424122, lng: -98.493629 },
+  { name: "Dallas, TX", lat: 32.776665, lng: -96.796989 },
+  { name: "Austin, TX", lat: 30.267153, lng: -97.743057 },
+  { name: "Fort Worth, TX", lat: 32.755489, lng: -97.330765 },
+  { name: "El Paso, TX", lat: 31.761878, lng: -106.485022 },
+
+  // Arizona
+  { name: "Phoenix, AZ", lat: 33.448376, lng: -112.074036 },
+  { name: "Tucson, AZ", lat: 32.222607, lng: -110.974709 },
+  { name: "Mesa, AZ", lat: 33.415184, lng: -111.831472 },
+
+  // Pennsylvania
+  { name: "Philadelphia, PA", lat: 39.952583, lng: -75.165222 },
+  { name: "Pittsburgh, PA", lat: 40.440624, lng: -79.995888 },
+
+  // Florida
+  { name: "Miami, FL", lat: 25.761681, lng: -80.191788 },
+  { name: "Orlando, FL", lat: 28.538336, lng: -81.379234 },
+  { name: "Jacksonville, FL", lat: 30.332184, lng: -81.655651 },
+  { name: "Tampa, FL", lat: 27.950575, lng: -82.457178 },
+
+  // Ohio
+  { name: "Columbus, OH", lat: 39.961176, lng: -82.998794 },
+  { name: "Cleveland, OH", lat: 41.499321, lng: -81.694361 },
+  { name: "Cincinnati, OH", lat: 39.103118, lng: -84.512020 },
+
+  // Other Major Cities
+  { name: "Charlotte, NC", lat: 35.227085, lng: -80.843124 },
+  { name: "Indianapolis, IN", lat: 39.768402, lng: -86.158066 },
+  { name: "Seattle, WA", lat: 47.606209, lng: -122.332069 },
+  { name: "Denver, CO", lat: 39.739236, lng: -104.990251 },
+  { name: "Boston, MA", lat: 42.360082, lng: -71.058880 },
+  { name: "Detroit, MI", lat: 42.331429, lng: -83.045753 },
+  { name: "Minneapolis, MN", lat: 44.977753, lng: -93.265011 },
+  { name: "Las Vegas, NV", lat: 36.169941, lng: -115.139832 },
+  { name: "Portland, OR", lat: 45.515232, lng: -122.678385 },
+  { name: "Washington, DC", lat: 38.907192, lng: -77.036871 }
+],
+
+"UK": [
+  // England
+  { name: "London", lat: 51.507351, lng: -0.127758 },
+  { name: "Birmingham", lat: 52.486244, lng: -1.890401 },
+  { name: "Manchester", lat: 53.480759, lng: -2.242631 },
+  { name: "Liverpool", lat: 53.408371, lng: -2.991573 },
+  { name: "Leeds", lat: 53.800755, lng: -1.549077 },
+  { name: "Sheffield", lat: 53.381129, lng: -1.470085 },
+  { name: "Newcastle upon Tyne", lat: 54.978252, lng: -1.617439 },
+  { name: "Nottingham", lat: 52.954783, lng: -1.158109 },
+  { name: "Southampton", lat: 50.909698, lng: -1.404351 },
+  { name: "Portsmouth", lat: 50.819767, lng: -1.087977 },
+
+  // Scotland
+  { name: "Glasgow", lat: 55.864237, lng: -4.251806 },
+  { name: "Edinburgh", lat: 55.953252, lng: -3.188267 },
+  { name: "Aberdeen", lat: 57.149651, lng: -2.099075 },
+  { name: "Dundee", lat: 56.462018, lng: -2.970721 },
+  { name: "Inverness", lat: 57.477773, lng: -4.224721 },
+
+  // Wales
+  { name: "Cardiff", lat: 51.481583, lng: -3.179090 },
+  { name: "Swansea", lat: 51.621441, lng: -3.943646 },
+  { name: "Newport", lat: 51.584151, lng: -2.997664 },
+  { name: "Wrexham", lat: 53.045887, lng: -2.993499 },
+
+  // Northern Ireland
+  { name: "Belfast", lat: 54.597285, lng: -5.930120 },
+  { name: "Derry (Londonderry)", lat: 54.997056, lng: -7.309694 },
+  { name: "Lisburn", lat: 54.509189, lng: -6.036695 },
+  { name: "Newry", lat: 54.175033, lng: -6.341007 }
+],
+
+ "Spain": [
+  { name: "Madrid (Community of Madrid - Capital)", lat: 40.416775, lng: -3.703790 },
+  { name: "Barcelona (Catalonia)", lat: 41.385064, lng: 2.173404 },
+  { name: "Valencia (Valencian Community)", lat: 39.469907, lng: -0.376288 },
+  { name: "Seville (Andalusia)", lat: 37.388630, lng: -5.982330 },
+  { name: "Bilbao (Basque Country)", lat: 43.263013, lng: -2.934985 },
+
+  { name: "Zaragoza (Aragon)", lat: 41.648823, lng: -0.889085 },
+  { name: "Málaga (Andalusia)", lat: 36.721274, lng: -4.421399 },
+  { name: "Murcia (Region of Murcia)", lat: 37.992240, lng: -1.130654 },
+  { name: "Palma de Mallorca (Balearic Islands)", lat: 39.569600, lng: 2.650160 },
+  { name: "Las Palmas (Canary Islands - Gran Canaria)", lat: 28.123546, lng: -15.436257 },
+  { name: "Santa Cruz de Tenerife (Canary Islands)", lat: 28.463629, lng: -16.251846 },
+
+  { name: "Valladolid (Castile and León)", lat: 41.652251, lng: -4.724532 },
+  { name: "Salamanca (Castile and León)", lat: 40.970104, lng: -5.663540 },
+  { name: "Toledo (Castilla-La Mancha)", lat: 39.862832, lng: -4.027323 },
+  { name: "Oviedo (Asturias)", lat: 43.361915, lng: -5.849389 },
+  { name: "Santander (Cantabria)", lat: 43.462305, lng: -3.809980 },
+  { name: "Santiago de Compostela (Galicia)", lat: 42.880421, lng: -8.546303 },
+  { name: "Logroño (La Rioja)", lat: 42.466763, lng: -2.449995 },
+  { name: "Pamplona (Navarre)", lat: 42.812526, lng: -1.645774 },
+  { name: "Badajoz (Extremadura)", lat: 38.879449, lng: -6.970654 },
+
+  { name: "Ceuta (Autonomous City)", lat: 35.889387, lng: -5.321345 },
+  { name: "Melilla (Autonomous City)", lat: 35.292277, lng: -2.938097 }
+],
+
+ "France": [
+  { name: "Paris (Île-de-France - Capital)", lat: 48.856613, lng: 2.352222 },
+  { name: "Marseille (Provence-Alpes-Côte d'Azur)", lat: 43.296482, lng: 5.369780 },
+  { name: "Lyon (Auvergne-Rhône-Alpes)", lat: 45.764043, lng: 4.835659 },
+  { name: "Toulouse (Occitanie)", lat: 43.604652, lng: 1.444209 },
+  { name: "Nice (Provence-Alpes-Côte d'Azur)", lat: 43.710173, lng: 7.261953 },
+
+  { name: "Lille (Hauts-de-France - Capital)", lat: 50.629250, lng: 3.057256 },
+  { name: "Strasbourg (Grand Est - Capital)", lat: 48.573405, lng: 7.752111 },
+  { name: "Rennes (Brittany - Capital)", lat: 48.117266, lng: -1.677793 },
+  { name: "Nantes (Pays de la Loire - Capital)", lat: 47.218371, lng: -1.553621 },
+  { name: "Orléans (Centre-Val de Loire - Capital)", lat: 47.902496, lng: 1.909008 },
+  { name: "Dijon (Bourgogne-Franche-Comté - Capital)", lat: 47.322047, lng: 5.041480 },
+  { name: "Clermont-Ferrand (Auvergne-Rhône-Alpes - Secondary)", lat: 45.777222, lng: 3.087025 },
+  { name: "Bordeaux (Nouvelle-Aquitaine - Capital)", lat: 44.837789, lng: -0.579180 },
+  { name: "Ajaccio (Corsica - Capital)", lat: 41.919229, lng: 8.738635 },
+  { name: "Fort-de-France (Martinique - Overseas)", lat: 14.616065, lng: -61.058780 },
+  { name: "Pointe-à-Pitre (Guadeloupe - Overseas)", lat: 16.241469, lng: -61.533009 },
+  { name: "Saint-Denis (Réunion - Overseas)", lat: -20.878879, lng: 55.448104 },
+  { name: "Cayenne (French Guiana - Overseas)", lat: 4.922421, lng: -52.313453 }
+],
+
+"Netherlands": [
+  { name: "Amsterdam", state: "North Holland", lat: 52.367573, lng: 4.904139 },
+  { name: "Haarlem", state: "North Holland", lat: 52.3874, lng: 4.6462 },
+
+  { name: "Rotterdam", state: "South Holland", lat: 51.9225, lng: 4.47917 },
+  { name: "The Hague", state: "South Holland", lat: 52.0705, lng: 4.3007 },
+
+  { name: "Utrecht", state: "Utrecht", lat: 52.0907, lng: 5.1214 },
+
+  { name: "Eindhoven", state: "North Brabant", lat: 51.4416, lng: 5.4697 },
+  { name: "’s-Hertogenbosch (Den Bosch)", state: "North Brabant", lat: 51.6978, lng: 5.3037 },
+  { name: "Tilburg", state: "North Brabant", lat: 51.5606, lng: 5.0919 },
+
+  { name: "Maastricht", state: "Limburg", lat: 50.8514, lng: 5.6900 },
+  { name: "Heerlen", state: "Limburg", lat: 50.8882, lng: 5.9795 },
+
+  { name: "Arnhem", state: "Gelderland", lat: 51.9851, lng: 5.8987 },
+  { name: "Nijmegen", state: "Gelderland", lat: 51.8126, lng: 5.8372 },
+  { name: "Apeldoorn", state: "Gelderland", lat: 52.2112, lng: 5.9699 },
+
+  { name: "Zwolle", state: "Overijssel", lat: 52.5168, lng: 6.0830 },
+  { name: "Enschede", state: "Overijssel", lat: 52.2215, lng: 6.8937 },
+
+  { name: "Leeuwarden", state: "Friesland", lat: 53.2012, lng: 5.7999 },
+
+  { name: "Groningen", state: "Groningen", lat: 53.2194, lng: 6.5665 },
+
+  { name: "Assen", state: "Drenthe", lat: 52.9925, lng: 6.5622 },
+
+  { name: "Middelburg", state: "Zeeland", lat: 51.4988, lng: 3.6100 },
+  { name: "Vlissingen", state: "Zeeland", lat: 51.4429, lng: 3.5732 },
+
+  { name: "Lelystad", state: "Flevoland", lat: 52.5185, lng: 5.4714 },
+  { name: "Almere", state: "Flevoland", lat: 52.3508, lng: 5.2647 }
+],
+
+ "Nigeria": [
+    { name: "Aba", state: "Abia", lat: 5.1066, lng: 7.3667 },
+    { name: "Yola", state: "Adamawa", lat: 9.2035, lng: 12.4954 },
+    { name: "Uyo", state: "Akwa Ibom", lat: 5.0377, lng: 7.9128 },
+    { name: "Awka", state: "Anambra", lat: 6.2100, lng: 7.0700 },
+    { name: "Bauchi", state: "Bauchi", lat: 10.3158, lng: 9.8442 },
+    { name: "Yenagoa", state: "Bayelsa", lat: 4.9268, lng: 6.2676 },
+    { name: "Makurdi", state: "Benue", lat: 7.7337, lng: 8.5214 },
+    { name: "Maiduguri", state: "Borno", lat: 11.8469, lng: 13.1571 },
+    { name: "Calabar", state: "Cross River", lat: 4.9589, lng: 8.3269 },
+    { name: "Asaba", state: "Delta", lat: 6.1982, lng: 6.7319 },
+    { name: "Abakaliki", state: "Ebonyi", lat: 6.3249, lng: 8.1137 },
+    { name: "Benin City", state: "Edo", lat: 6.3379, lng: 5.6253 },
+    { name: "Ado-Ekiti", state: "Ekiti", lat: 7.6233, lng: 5.2209 },
+    { name: "Enugu", state: "Enugu", lat: 6.4483, lng: 7.5139 },
+    { name: "Abuja", state: "FCT", lat: 9.0765, lng: 7.3986 },
+    { name: "Gombe", state: "Gombe", lat: 10.2897, lng: 11.1673 },
+    { name: "Owerri", state: "Imo", lat: 5.4850, lng: 7.0350 },
+    { name: "Dutse", state: "Jigawa", lat: 11.7570, lng: 9.3389 },
+    { name: "Kaduna", state: "Kaduna", lat: 10.5060, lng: 7.4388 },
+    { name: "Kano", state: "Kano", lat: 12.0022, lng: 8.5919 },
+    { name: "Katsina", state: "Katsina", lat: 12.9882, lng: 7.6279 },
+    { name: "Birnin Kebbi", state: "Kebbi", lat: 12.4536, lng: 4.1979 },
+    { name: "Lokoja", state: "Kogi", lat: 7.7969, lng: 6.7400 },
+    { name: "Ilorin", state: "Kwara", lat: 8.5000, lng: 4.5500 },
+    { name: "Lagos", state: "Lagos", lat: 6.5244, lng: 3.3792 },
+    { name: "Ikeja", state: "Lagos", lat: 6.6050, lng: 3.3491 },
+    { name: "Lafia", state: "Nasarawa", lat: 8.4912, lng: 8.5150 },
+    { name: "Minna", state: "Niger", lat: 9.6139, lng: 6.5569 },
+    { name: "Abeokuta", state: "Ogun", lat: 7.1608, lng: 3.3481 },
+    { name: "Akure", state: "Ondo", lat: 7.2526, lng: 5.1931 },
+    { name: "Ibadan", state: "Oyo", lat: 7.3775, lng: 3.9470 },
+    { name: "Oshogbo", state: "Osun", lat: 7.7667, lng: 4.5667 },
+    { name: "Port Harcourt", state: "Rivers", lat: 4.8156, lng: 7.0498 },
+    { name: "Sokoto", state: "Sokoto", lat: 13.0624, lng: 5.2330 },
+    { name: "Jalingo", state: "Taraba", lat: 8.8937, lng: 11.3596 },
+    { name: "Damaturu", state: "Yobe", lat: 11.7470, lng: 11.9608 },
+    { name: "Gusau", state: "Zamfara", lat: 12.1628, lng: 6.6614 }
+  ],
+ "South Africa": [
+  { name: "Johannesburg", state: "Gauteng", lat: -26.204103, lng: 28.047305 },
+  { name: "Pretoria", state: "Gauteng", lat: -25.747868, lng: 28.229271 },
+
+  { name: "Cape Town", state: "Western Cape", lat: -33.924870, lng: 18.424055 },
+  { name: "George", state: "Western Cape", lat: -33.9640, lng: 22.4590 },
+
+  { name: "Durban", state: "KwaZulu-Natal", lat: -29.858681, lng: 31.021840 },
+  { name: "Pietermaritzburg", state: "KwaZulu-Natal", lat: -29.6006, lng: 30.3794 },
+
+  { name: "Port Elizabeth (Gqeberha)", state: "Eastern Cape", lat: -33.960838, lng: 25.602242 },
+  { name: "Bhisho", state: "Eastern Cape", lat: -32.8472, lng: 27.4422 },
+
+  { name: "Bloemfontein", state: "Free State", lat: -29.0852, lng: 26.1596 },
+
+  { name: "Kimberley", state: "Northern Cape", lat: -28.7282, lng: 24.7499 },
+
+  { name: "Polokwane", state: "Limpopo", lat: -23.9045, lng: 29.4689 },
+
+  { name: "Mbombela (Nelspruit)", state: "Mpumalanga", lat: -25.4753, lng: 30.9694 },
+
+  { name: "Mahikeng", state: "North West", lat: -25.8656, lng: 25.6442 }
+],
+
+"Tanzania": [
+  { name: "Dar es Salaam", state: "Dar es Salaam", lat: -6.792354, lng: 39.208328 },
+  { name: "Dodoma", state: "Dodoma", lat: -6.163040, lng: 35.751600 },
+  { name: "Arusha", state: "Arusha", lat: -3.386925, lng: 36.682995 },
+  { name: "Mwanza", state: "Mwanza", lat: -2.516432, lng: 32.917997 },
+  { name: "Zanzibar City", state: "Zanzibar Urban/West", lat: -6.165917, lng: 39.202641 },
+
+  { name: "Mbeya", state: "Mbeya", lat: -8.9096, lng: 33.4608 },
+  { name: "Morogoro", state: "Morogoro", lat: -6.8278, lng: 37.6591 },
+  { name: "Tanga", state: "Tanga", lat: -5.0713, lng: 39.0988 },
+  { name: "Kigoma", state: "Kigoma", lat: -4.8769, lng: 29.6260 },
+  { name: "Tabora", state: "Tabora", lat: -5.0210, lng: 32.8269 },
+  { name: "Shinyanga", state: "Shinyanga", lat: -3.6636, lng: 33.4212 },
+  { name: "Kilimanjaro (Moshi)", state: "Kilimanjaro", lat: -3.3480, lng: 37.3400 },
+  { name: "Iringa", state: "Iringa", lat: -7.7700, lng: 35.6900 },
+  { name: "Mtwara", state: "Mtwara", lat: -10.2681, lng: 40.1930 },
+  { name: "Lindi", state: "Lindi", lat: -9.9971, lng: 39.7160 },
+  { name: "Songea", state: "Ruvuma", lat: -10.6833, lng: 35.6500 },
+  { name: "Geita", state: "Geita", lat: -2.8667, lng: 32.1667 },
+  { name: "Njombe", state: "Njombe", lat: -9.3333, lng: 34.7667 },
+  { name: "Singida", state: "Singida", lat: -4.8163, lng: 34.7436 },
+  { name: "Manyara (Babati)", state: "Manyara", lat: -4.2167, lng: 35.7500 },
+  { name: "Pwani (Kibaha)", state: "Pwani", lat: -6.7667, lng: 38.9167 },
+  { name: "Katavi (Mpanda)", state: "Katavi", lat: -6.3569, lng: 31.0770 },
+  { name: "Simiyu (Bariadi)", state: "Simiyu", lat: -2.8000, lng: 33.9833 },
+  { name: "Mara (Musoma)", state: "Mara", lat: -1.5000, lng: 33.8000 },
+  { name: "Kagera (Bukoba)", state: "Kagera", lat: -1.3317, lng: 31.8122 },
+  { name: "Rukwa (Sumbawanga)", state: "Rukwa", lat: -7.9667, lng: 31.6167 },
+  { name: "Kaskazini Pemba (Wete)", state: "Pemba North", lat: -5.0500, lng: 39.7333 },
+  { name: "Kusini Pemba (Chake Chake)", state: "Pemba South", lat: -5.2333, lng: 39.7667 },
+  { name: "Kaskazini Unguja (Mkokotoni)", state: "Zanzibar North", lat: -5.8667, lng: 39.2500 },
+  { name: "Kusini Unguja (Koani)", state: "Zanzibar South", lat: -6.2167, lng: 39.3333 }
+]
+
 };
 
 /* ---------------------------

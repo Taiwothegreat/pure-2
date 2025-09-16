@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Finder</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    select { padding: 6px; margin: 5px; }
+    .jobs { margin-top: 20px; }
+    .job { border: 1px solid #ddd; padding: 10px; margin: 5px 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Find Jobs by Location</h2>
+
+  <label>Country:</label>
+  <select id="country">
+    <option value="">-- Select Country --</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="USA">USA</option>
+    <option value="UK">UK</option>
+    <option value="South Africa">South Africa</option>
+    <option value="Tanzania">Tanzania</option>
+    <option value="Spain">Spain</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="France">France</option>
+  </select>
+
+  <label>State:</label>
+  <select id="state" disabled>
+    <option value="">-- Select State --</option>
+  </select>
+
+  <label>City:</label>
+  <select id="city" disabled>
+    <option value="">-- Select City --</option>
+  </select>
+
+  <div class="jobs" id="jobs"></div>
+
+  <script>
+    const countrySelect = document.getElementById("country");
+    const stateSelect = document.getElementById("state");
+    const citySelect = document.getElementById("city");
+    const jobsDiv = document.getElementById("jobs");
+
+    let currentData = null;
+
+    // Load JSON when a country is picked
+    countrySelect.addEventListener("change", async () => {
+      const country = countrySelect.value;
+      stateSelect.innerHTML = '<option value="">-- Select State --</option>';
+      citySelect.innerHTML = '<option value="">-- Select City --</option>';
+      stateSelect.disabled = true;
+      citySelect.disabled = true;
+      jobsDiv.innerHTML = "";
+
+      if (country) {
+        const res = await fetch(`data/${country}.json`);
+        currentData = await res.json();
+        const states = Object.keys(currentData[country]);
+        states.forEach(st => {
+          const opt = document.createElement("option");
+          opt.value = st;
+          opt.textContent = st;
+          stateSelect.appendChild(opt);
+        });
+        stateSelect.disabled = false;
+      }
+    });
+
+    // When state is picked → load cities
+    stateSelect.addEventListener("change", () => {
+      const country = countrySelect.value;
+      const state = stateSelect.value;
+      citySelect.innerHTML = '<option value="">-- Select City --</option>';
+      citySelect.disabled = true;
+      jobsDiv.innerHTML = "";
+
+      if (state) {
+        const cities = currentData[country][state];
+        cities.forEach(c => {
+          const opt = document.createElement("option");
+          opt.value = c.name;
+          opt.textContent = c.name;
+          citySelect.appendChild(opt);
+        });
+        citySelect.disabled = false;
+      }
+    });
+
+    // When city is picked → show jobs
+    citySelect.addEventListener("change", () => {
+      const city = citySelect.value;
+      jobsDiv.innerHTML = "";
+
+      if (city) {
+        // Auto-generate 2–3 fake jobs for demo
+        const sampleJobs = [
+          `Software Engineer in ${city}`,
+          `Marketing Specialist in ${city}`,
+          `Sales Executive in ${city}`
+        ];
+        sampleJobs.forEach(j => {
+          const div = document.createElement("div");
+          div.className = "job";
+          div.textContent = j;
+          jobsDiv.appendChild(div);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -44,7 +44,7 @@
           <label for="country">Country</label>
           <select id="country" class="form-control">
             <option></option>
-            <option value="USA">USA</option>
+          <!----------- <option value="USA">USA</option>
             <option value="UK">UK</option>
             <option value="Mexico">Mexico</option>
             <option value="Singapore">Singapore</option>
@@ -52,17 +52,38 @@
             <option value="Costa Rica">Costa Rica</option>
             <option value="India">India</option>
             <option value="Argentina">Argentina</option>
-            <option value="Chile">Chile</option>
+            <option value="Chile">Chile</option>--> 
+             <option value="">-- Select Country --</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="USA">USA</option>
+    <option value="UK">UK</option>
+    <option value="South Africa">South Africa</option>
+    <option value="Tanzania">Tanzania</option>
+    <option value="Spain">Spain</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="France">France</option>
           </select>
+          <!-----------NEW-->
+            <label>State:</label>
+  <select id="state" disabled>
+    <option value="">-- Select State --</option>
+  </select>
+   <label>City:</label>
+  <select id="city" disabled>
+    <option value="">-- Select City --</option>
+  </select>
+
+  <div class="jobs" id="jobs"></div>
+  <!--------------END-->
         </div>
 
         <!-- City -->
-        <div class="form-group">
+    <!------    <div class="form-group">
           <label for="city">City</label>
           <select id="city" class="form-control">
             <option></option>
           </select>
-        </div>
+        </div>-->
 
         <button type="submit" class="btn btn-primary btn-block">Search</button>
         <button type="reset" class="btn btn-default btn-block" id="clear-btn">Clear All</button>
@@ -88,8 +109,78 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
+    const countrySelect = document.getElementById("country");
+    const stateSelect = document.getElementById("state");
+    const citySelect = document.getElementById("city");
+    const jobsDiv = document.getElementById("jobs");
+
+    let currentData = null;
+
+    // Load JSON when a country is picked
+    countrySelect.addEventListener("change", async () => {
+      const country = countrySelect.value;
+      stateSelect.innerHTML = '<option value="">-- Select State --</option>';
+      citySelect.innerHTML = '<option value="">-- Select City --</option>';
+      stateSelect.disabled = true;
+      citySelect.disabled = true;
+      jobsDiv.innerHTML = "";
+
+      if (country) {
+        const res = await fetch(`data/${country}.json`);
+        currentData = await res.json();
+        const states = Object.keys(currentData[country]);
+        states.forEach(st => {
+          const opt = document.createElement("option");
+          opt.value = st;
+          opt.textContent = st;
+          stateSelect.appendChild(opt);
+        });
+        stateSelect.disabled = false;
+      }
+    });
+
+    // When state is picked → load cities
+    stateSelect.addEventListener("change", () => {
+      const country = countrySelect.value;
+      const state = stateSelect.value;
+      citySelect.innerHTML = '<option value="">-- Select City --</option>';
+      citySelect.disabled = true;
+      jobsDiv.innerHTML = "";
+
+      if (state) {
+        const cities = currentData[country][state];
+        cities.forEach(c => {
+          const opt = document.createElement("option");
+          opt.value = c.name;
+          opt.textContent = c.name;
+          citySelect.appendChild(opt);
+        });
+        citySelect.disabled = false;
+      }
+    });
+
+    // When city is picked → show jobs
+    citySelect.addEventListener("change", () => {
+      const city = citySelect.value;
+      jobsDiv.innerHTML = "";
+
+      if (city) {
+        // Auto-generate 2–3 fake jobs for demo
+        const sampleJobs = [
+          `Software Engineer in ${city}`,
+          `Marketing Specialist in ${city}`,
+          `Sales Executive in ${city}`
+        ];
+        sampleJobs.forEach(j => {
+          const div = document.createElement("div");
+          div.className = "job";
+          div.textContent = j;
+          jobsDiv.appendChild(div);
+        });
+      }
+    });
   // Expanded Country -> Cities
-  const countryCities = {
+/*  const countryCities = {
     "USA": [
       "New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX", "Phoenix, AZ",
       "Philadelphia, PA", "San Antonio, TX", "San Diego, CA", "Dallas, TX", "San Jose, CA",
@@ -108,10 +199,10 @@
     "India": ["Ahmedabad"],
     "Argentina": ["Buenos Aires"],
     "Chile": ["San Bernardo"]
-  };
+  };*/
 
   // Job dataset
-  const jobs = [
+/*  const jobs = [
     { title: "Marketing Manager", category: "Marketing", city: "New York, NY", country: "USA" },
     { title: "Software Engineer", category: "Information Technology", city: "San Francisco, CA", country: "USA" },
     { title: "HR Coordinator", category: "Human Resources", city: "Chicago, IL", country: "USA" },
@@ -132,16 +223,16 @@
     { title: "Data Scientist", category: "Information Technology", city: "Singapore", country: "Singapore" },
     { title: "Budget Cost Analyst", category: "Finance", city: "Liberia", country: "Costa Rica" },
     { title: "Warehouse Tank Farm Owner", category: "Supply Chain", city: "Ahmedabad", country: "India" }
-  ];
+  ];*/
 
   // Initialize Select2
-  $(document).ready(function () {
+/*  $(document).ready(function () {
     $("#job-category").select2({ placeholder: "Please Select...", allowClear: true });
     $("#country").select2({ placeholder: "Please Select...", allowClear: true });
     $("#city").select2({ placeholder: "Please Select...", allowClear: true });
-
+*/
     // Populate cities dynamically
-    $("#country").on("change", function () {
+   /* $("#country").on("change", function () {
       const country = $(this).val();
       $("#city").empty().append('<option></option>');
       if (country && countryCities[country]) {
@@ -150,7 +241,7 @@
         });
       }
       $("#city").trigger("change");
-    });
+    });*/
 
     // Clear only job categories
     $("#clear-job-category").on("click", function () {
