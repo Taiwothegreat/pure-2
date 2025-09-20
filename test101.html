@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ <!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+
+<!-----  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+ <link href="https://fonts.googleapis.com/css2?family=Open Sans&display=swap" rel="stylesheet">
+<!----- <link href="https://fonts.googleapis.com/css2?family=Playfair Display&display=swap" rel="stylesheet">-->
+ <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+   integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==
+  " crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <title>PURE FINEST</title>
+ 
+
+  <style>
+      .overlay {
+      position: fixed;
+      top: 0; left: 0 !important;
+      width: 100%; height: 100%;
+   /*   background: rgba(0,0,0,0.6);*/
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup {
+      background: #fff;
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 8px;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .cookie-section {
+      margin-top: 20px;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .toggle-switch input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    .toggle-switch input:checked + .slider {
+      background-color: #66bb6a;
+    }
+    .toggle-switch input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .buttons {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .buttons button {
+      margin-left: 10px;
+    }
+    /****************************/
+    p,ul li{
+      font-size: 18px;
+      text-align: justify;
+    }
+    /******************/
+       .logo {
+    display: block;
+    margin: 0 auto;
+   /* width: 100px;
+    height: auto;*/
+    animation: spin 10s linear infinite;
+    position: absolute;
+    top: 50px;
+    left: 125px;
+ 
+}
+/*.text-logo {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 300px;
+    user-select: none;
+    color: white;
+}*/
+.text-logo {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 300px;
+  user-select: none;
+  filter: brightness(0) invert(1); /* turns black to white */
+ /* position: absolute;
+  top: 10px;*/
+  margin-top: 0;
+}
+    
+
+/************************************/
+  
+
+
+
+    
+
+   
+
+/*For labels*/
+ 
+    h2 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+
+
+   
+
+    @media screen and (max-width: 768px) {
+     
+
+      
+    }
+
+
+/*End of glyphicon animation*/
+
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+}
+
+.dropdown-content p,li{
+  font-size: 17px;
+  
+}
+
+
+h1,h2,h5 {
+  color: #000;
+   font-family: 'Saira Stencil One', sans-serif;
+}
+
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 10px 15px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+
+/*Brand from another file*/
+.brand a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-right: auto;
+}
+/*.logo{
+/* padding: -10px;*/
+/*}*/
+.brand .logo {
+  height: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+/*Brand logo with text*/
+
+/*Brand logo with text*/
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/*End of the file*/
+
+
+
+ 
+
+.follow-us{
+  color: rgb(139, 204, 139);
+}
+
+ 
+
+/* Individual blocks */
+.dropdown-content.labelss-1 > div {
+  flex-shrink: 0;
+}
+
+.label-images img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.visions {
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.hydrations, .juices, .snackss, .alcohols {
+  flex: 1 1 150px;
+  min-width: 120px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .dropdown-content.labelss-1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label-images,
+  .visions,
+  .hydrations,
+  .juices,
+  .snackss,
+  .alcohols {
+    flex: 1 1 100%;
+  }
+
+  .label-imagse img {
+    margin: 0 auto;
+  }
+
+  .visions {
+    text-align: center;
+  }
+}
+
+
+/*New Hover Effect*/
+.mobile-version-6 a:hover {
+  color: #fff;
+  background-color: #6ccb35 !important;
+}
+.mobile-version-7 a:hover{
+  color:#fff;
+  background: orange !important;
+}
+.mobile-version-8 a:hover{
+  color:#fff;
+  background: rgb(192, 65, 65) !important;
+}
+.mobile-version-9 a:hover{
+  color:#fff;
+  background: rgb(117, 83, 83) !important;
+}
+.mobile-version-10 a:hover{
+  color:#fff;
+  background: #0000ff !important;
+}
+  
+
+
+
+/*****************************************/
+  * {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.form-control{
+  margin-top: 50px !important;
+}
+.social-icons{
+  margin-top: 0;
+}
+
+.img-2,.img-3{
+    width:100%;
+    object-fit: contain;
+}
+
+
+.foot2 h4,ul li a,i{
+  margin-left: 0px;
+
+   }
+
+*/
+.footer-logo img {
+  width: 200px;
+  height: auto;
+  margin-left: -10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.social-icons :hover{
+  background-color: #6ccb35;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.facebook-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px; /* Adjust as needed */
+    height: 33px;
+    background-color: white;
+    border-radius: 50%; /* Circle */
+    border: 1px solid #ccc; /* Optional */
+  }
+
+  .facebook-icon i {
+    color: black;
+    font-size: 20px;
+  }
+.social-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  color: #000;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+}
+
+.footee {
+  font-size: 20px;
+  text-align: center !important;
+}
+.form-control{
+  margin-left: 15px !important;
+}
+body {
+ /* font-family: 'Roboto', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 0;
+}
+.container-fluid video{
+  margin-left: 25px;
+  width:100%;
+}
+
+
+.foot2 h4,ul li a,i{
+/*margin-left:10px;*/
+position: relative;
+left:0px;
+  }
+body {
+margin: 0;
+/*font-family: Arial, sans-serif;*/
+overflow-x: hidden;
+}
+.text-white {
+color: white !important;
+margin: 10px !important;
+}
+/*****************************************/
+
+
+
+/* Make container stretch full width */
+/*.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.brew-1{
+  margin-top: 200px;
+}
+
+li a{
+  font-size: 16px;
+}*/
+
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-img {
+  height: 100px; /* Adjust as needed */
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+/* Continuous scrolling animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+.news{
+  margin-top: 30px;
+}
+
+.footer-select{
+  margin-top: 100px;
+}
+/*Footer new*/
+.footer-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-wave {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+.footer-wave svg {
+  display: block;
+  width: 100%;
+height: 80px; /* ⬇️ Wave height reduced from 300px to 120px */
+}
+
+
+ .footer-logo img {
+ 
+    position: relative;
+    left: -100px !important;
+  }
+.language-selector {
+  width: 200px;
+  background-color: #29226b;
+  color: #ffffff;
+  margin-left: auto;
+  margin-top: 120px;
+}
+
+.follow-us {
+  font-size: 20px;
+}
+.list-unstyled{
+  margin-top: 70px !important;
+  margin-left: 60px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.list-unstyled li a:hover{
+  color: #6ccb35 !important;
+  list-style: none;
+  text-decoration: none;
+
+}
+@media(max-width:1500px){
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -480px;
+  width: 100vw;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+}
+
+ 
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+.dropdown-menu {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+}
+/*From another file*/
+.brand {
+  align-items: flex-start;
+}
+
+
+.brand .logo {
+  height: 100px;
+  margin-left: 100px;
+  animation: spin 5s linear infinite;
+}
+
+.brand .text-logo {
+  margin-top: -120px;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 300;
+font-family: Arial, sans-serif;
+/*  overflow-x: hidden;*/
+}  
+
+
+    /*-----------------------------------------------------------------*/
+@media (max-width: 1024px) {
+
+
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .footer-logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
+.language-selector {
+  width: 100%;
+  padding: 0.5rem;
+}
+.social-icons{
+  margin-bottom: -10px;
+}
+
+/* ========== Desktop Styles (≥ 1200px) ========== */
+@media (min-width: 1200px) {
+  .crafting {
+    min-width: 200px;
+   position: relative;
+   left:-140px;
+    text-align: justify;
+  }
+  .we{
+position: relative;
+left: -100px;
+  }
+  .peef{
+position: relative;
+left: -80px;
+  }
+}
+
+  
+@media (max-width: 1024px) {
+
+
+
+
+li a i{
+position: relative;
+top:-23px;
+  margin-left: 100%;
+}
+
+.foot1, .footer-select, .foot2{
+  margin-left: 100px;
+}  
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+}
+body {
+
+font-family: Arial, sans-serif;
+
+} 
+
+
+.foot-2{
+position: absolute;
+top:18px;
+}
+
+
+.cut-text p{
+margin-left: 40px ;
+}
+.brew-1{
+  margin-top: 0;
+}
+.container-fluid video{
+position: relative;
+left:0;
+  width:100%;
+}
+
+.foot2 h4,ul li a,i{
+  margin-left: 0;
+   }
+   .container-fluid video{
+    margin-left: 25px;
+    width:100%;
+  }
+  .gold{
+    margin-left:40px;
+  }
+}
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  
+  .foot-svg{
+    position: relative;
+    top:125px;
+    width: 100vw;
+    
+  }
+  .text-right{
+    text-align: center;
+  }
+
+  .follow-us{
+    color: green;
+  }
+ 
+  
+
+  .footer {
+   padding: 20px 15px 15px 15px;
+    text-align: center;
+
+  }
+
+  .row > div {
+    margin-bottom: 20px;
+  }
+  
+  .cut{
+    margin-top: 0 !important;
+  }
+}
+
+/* ========== Tablet & Mobile Styles (< 992px) ========== */
+@media screen and (max-width: 991px) {
+ 
+
+ 
+
+  
+
+/*---------------------------*/
+
+  /* Footer Adjustments */
+  .footer .row {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer .col-sm-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-logo {
+    justify-content: center;
+    margin-left: 80px;
+  }
+
+  .footer .list-unstyled {
+    padding: 0;
+  }
+
+  .footer select.language-selector {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .footer .social-icons {
+    margin-top: 10px;
+  }
+
+  .form-control {
+    margin-left: 85px;
+  }
+
+  .footer-logo img {
+    max-width: 200px;
+    height: auto;
+    left: 0;
+  }
+
+  body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+}
+
+
+  </style>
+  <!-------------->
+</head>
+<body>
+ <!--------cookies instruction-->
+
+<div class="overlay" id="cookieOverlay">
+  <div class="popup">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+  
+    <h2>Privacy Preference Center</h2>
+    <p>
+  Pure Finest Inc. and Partners use cookies, 
+  to operate our website, to show you personalized 
+  content and manage our objectives as a business.
+   You can find out more about how we use cookies below.
+    You can allow all cookies, select them individually or decline them all.
+
+    </p>
+    <h5><a href="privacy-policy.html">Cookie Policy</a></h5>
+
+    <!-- Strictly Necessary Cookies -->
+    <!------<div class="cookie-section">
+      <div class="toggle-row always-active-toggle">
+        <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
+        <span class="always-active">Always Active</span>
+      </div>
+      <div class="cookie-description" id="strictlyDesc">
+        These cookies are necessary for the website to function 
+        and cannot be switched off in our systems. They are usually 
+        only set in response to actions made by you which amount to
+         a request for services, such as setting your privacy preferences,
+          logging in or filling in forms. You can set your browser to 
+          block or alert you about these cookies,
+         but some parts of the site will not then work. These cookies
+          do not store any personally identifiable information.
+      </div>
+    </div>-->
+<!-- Strictly Necessary Cookies -->
+<div class="cookie-section">
+  <!-- Toggle trigger (clickable) -->
+  <div id="alwaysActiveToggle" class="toggle-row" style="cursor: pointer; font-weight: bold;">
+    <span class="toggle-label">STRICTLY NECESSARY COOKIES</span>
+    <span class="always-active">Always Active &#9660;</span> <!-- down arrow to show it's expandable -->
+  </div>
+
+  <!-- Toggle target (hidden by default via CSS or inline style) -->
+  <div class="cookie-description" id="strictlyDesc" style="display: none;">
+    These cookies are necessary for the website to function 
+    and cannot be switched off in our systems. They are usually 
+    only set in response to actions made by you which amount to
+    a request for services, such as setting your privacy preferences,
+    logging in or filling in forms. You can set your browser to 
+    block or alert you about these cookies,
+    but some parts of the site will not then work. These cookies
+    do not store any personally identifiable information.
+  </div>
+</div>
+
+    <!-- Other Cookies -->
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="analyticsDesc">
+        <span class="toggle-label">ANALYTIC COOKIES</span>
+        <label class="toggle-switch">
+          <input type="checkbox" class="cookie-toggle" data-desc="analyticsDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="analyticsDesc">
+
+        These cookies help us understand how visitors interact with 
+        our website by collecting and reporting information anonymously.
+      </div>
+    </div>
+
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="advertisingDesc">
+        <span class="toggle-label">ADVERTISING</span>
+        <label class="toggle-switch">
+          <input type="checkbox" class="cookie-toggle" data-desc="advertisingDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="advertisingDesc">
+       These cookies are set by us and/or our partners and help us build
+        a profile of your interests based on your browsing behavior. 
+        If you accept these cookies,
+        you will be shown Pure Finest Inc. advertisements that match 
+        your interests as you browse other sites.
+      </div>
+    </div>
+
+    <div class="cookie-section">
+      <div class="toggle-row clickable-toggle" data-target="thirdPartyDesc">
+        <span class="toggle-label">THIRD PARTY CONSENT COOKIES</span>
+        <label class="toggle-switch">
+          <input type="checkbox" class="cookie-toggle" data-desc="thirdPartyDesc">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-description" id="thirdPartyDesc">
+       These cookies allow third-party services to collect
+        data based on your consent, enabling features
+         such as personalized content or targeted advertising.
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="reject" id="allowAllBtn" onclick="allowAllCookies()">Allow All</button>
+      <button class="reject" onclick="confirmCookies()">Confirm My Choices</button>
+      <button class="reject" onclick="setCookies(false)">Reject All</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+function setCookie(name, value, days = 365) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  // Show cookie overlay if not already accepted
+  if (!getCookie("cookieConsentLifetime") && isHomepage) {
+    document.getElementById("cookieOverlay").style.display = "flex";
+  } else {
+    document.getElementById("cookieOverlay").style.display = "none";
+  }
+
+  // Hide all cookie descriptions by default
+  document.querySelectorAll('.cookie-description').forEach(desc => {
+    desc.style.display = "none";
+  });
+
+  // Handle dynamic toggle of descriptions based on checkboxes
+  document.querySelectorAll('.cookie-toggle').forEach((input) => {
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = input.checked ? 'block' : 'none';
+
+      input.addEventListener('change', function () {
+        descElement.style.display = this.checked ? 'block' : 'none';
+      });
+    }
+  });
+
+  // Strictly Necessary Cookies toggle visibility
+  const alwaysActiveHeader = document.getElementById("alwaysActiveToggle");
+  const strictlyDesc = document.getElementById("strictlyDesc");
+  if (alwaysActiveHeader && strictlyDesc) {
+    strictlyDesc.style.display = "none";
+    alwaysActiveHeader.addEventListener("click", function () {
+      const isVisible = strictlyDesc.style.display === "block";
+      strictlyDesc.style.display = isVisible ? "none" : "block";
+      alwaysActiveHeader.classList.toggle("open");
+    });
+  }
+});
+
+function allowAllCookies() {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = true;
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = "block";
+    }
+  });
+
+  setTimeout(() => {
+    if (confirm("All cookies allowed. Click OK to confirm.")) {
+      setCookie("cookieConsent", "accepted");
+      setCookie("cookieConsentLifetime", "true", 365);
+      document.getElementById("cookieOverlay").style.display = "none";
+    }
+  }, 300);
+}
+
+function confirmCookies() {
+  const checkedCount = Array.from(document.querySelectorAll('.cookie-toggle')).filter(cb => cb.checked).length;
+  if (checkedCount > 0) {
+    alert("Your cookie preferences have been saved.");
+    setCookie("cookieConsent", "partial");
+    setCookie("cookieConsentLifetime", "true", 365);
+    document.getElementById("cookieOverlay").style.display = "none";
+  } else {
+    alert("Please select at least one cookie or click 'Reject All'.");
+  }
+}
+
+function setCookies(acceptAll) {
+  document.querySelectorAll(".cookie-toggle").forEach(input => {
+    input.checked = false;
+    const descId = input.getAttribute('data-desc');
+    const descElement = document.getElementById(descId);
+    if (descElement) {
+      descElement.style.display = "none";
+    }
+  });
+  alert("All non-essential cookies rejected.");
+  setCookie("cookieConsent", "rejected");
+  setCookie("cookieConsentLifetime", "true", 365);
+  document.getElementById("cookieOverlay").style.display = "none";
+}
+
+function closeOverlay() {
+  setCookies(false);
+}
+
+// ✅ Only keep these additional two functions:
+function openCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'block';
+}
+
+function closeCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'none';
+}
+</script>
+<div class="marquee-wrapper">
+    <div class="marquee-inner" id="marquee-track">
+      <!-- Duplicated set of images for seamless loop -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+  
+      <!-- Duplicate for seamless scroll -->
+      <img src="./Assets/Vitamin.png" alt="Vitamin" class="marquee-img">
+      <img src="./Assets/Vegan.png" alt="Vegan" class="marquee-img">
+      <img src="./Assets/Spring Water 2.png" alt="Spring Water" class="marquee-img">
+      <img src="./Assets/Plant Based.png" alt="Plant Based" class="marquee-img">
+      <img src="./Assets/Organic.png" alt="Organic" class="marquee-img">
+      <img src="./Assets/No Preservatives.png" alt="No Preservatives" class="marquee-img">
+      <img src="./Assets/No Artificial Colour.png" alt="No Artificial Colour" class="marquee-img">
+      <img src="./Assets/Natural ingredients.png" alt="Natural Ingredients" class="marquee-img">
+      <img src="./Assets/Guten Free.png" alt="Gluten Free" class="marquee-img">
+      <img src="./Assets/GMO Free.png" alt="GMO Free" class="marquee-img">
+      <img src="./Assets/fair trade.png" alt="Fair Trade" class="marquee-img">
+      <img src="./Assets/Electrolytes.png" alt="Electrolytes" class="marquee-img">
+      <img src="./Assets/Antioxidant.png" alt="Antioxidant" class="marquee-img">
+    </div>
+  </div>
+ 
+<!-----<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
+<!-- Banner Section -->
+<div class="container-fluid" style="position: relative; padding: 0; margin: 0;">
+  <!-- Banner Image -->
+   
+  <img src="./Assets/terms-of-use-banner.png" alt="Banner" class="img-responsive" 
+  style="width: 100%; display: block;">
+
+ <!-- Text Overlay on Banner (Left-aligned) -->
+  <div style="position: absolute; top: 50%; left: 30px; transform: translateY(-50%); color: white; z-index: 10;">
+    <h2 style="font-size: 30px; line-height: 36px; margin: 0;color: white;">Policy Center</h2>
+    <p style="color: #96bb36;font-weight: 700;font-size: 48px;
+
+ ">Terms of Service</p>
+    <p style="font-size: 18px; margin: 0;">Last Update <span style="color: #96bb36;">May 28, 2024</span></p>
+  </div>
+  
+  <!-- Sticky Top Menu -->
+  <nav class="navbar navbar-default" style="position: absolute; top: 5px; left: 0; right: 0; z-index: 1000; background: rgba(0, 0, 0, 0.6); border: none; margin: 0;">
+    <div class="container-fluid" style="padding: 5px 15px;">
+      
+      <!-- Mobile Hamburger -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pfi-top-menu">
+          <span class="icon-bar" style="background-color: white;"></span>
+          <span class="icon-bar" style="background-color: white;"></span>
+          <span class="icon-bar" style="background-color: white;"></span>
+        </button>
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html" style="padding: 5px 15px;">
+          <img src="./Assets/The-P-Logo-removebg-preview.png" alt="Logo" style="height: 80px;" class="logo">
+          <img src="/Assets/blog4.png" class="text-logo" alt="Text Logo" width="300px">
+        </a>
+      </div>
+
+      <!-- Menu Items -->
+      <div class="collapse navbar-collapse" id="pfi-top-menu">
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
+          <li><a href="privacy-policy.html" style="color: white;">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html" style="color: white;">Terms of Use</a></li>
+          <li><a href="fraud.html" style="color: white;">Fraud Warning</a></li>
+          <li><a href="brands-protection.html" style="color: white;">Brand Protection</a></li>
+          <li><a href="imprint.html" style="color: white;">Imprint</a></li>
+             <li><a href="gapn.html" style="color: white;">GAPN</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
