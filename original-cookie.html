@@ -1,0 +1,56 @@
+ <script>
+function setCookie(name, value, days = 365) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+
+  /* ✅ Disable and freeze all checkboxes */
+  document.querySelectorAll("input[type='checkbox']").forEach(cb => {
+    cb.disabled = true;
+    cb.style.opacity = "0.5";
+    cb.style.cursor = "not-allowed";
+  });
+
+  /* ✅ Disable and freeze all buttons */
+  document.querySelectorAll("button").forEach(btn => {
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+    btn.style.pointerEvents = "none";
+  });
+
+  const isHomepage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  // Show cookie overlay if not already accepted
+  if (!getCookie("cookieConsentLifetime") && isHomepage) {
+    document.getElementById("cookieOverlay").style.display = "flex";
+  } else {
+    document.getElementById("cookieOverlay").style.display = "none";
+  }
+
+  // Hide all cookie descriptions by default
+  document.querySelectorAll('.cookie-description').forEach(desc => {
+    desc.style.display = "none";
+  });
+});
+
+function openCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'block';
+}
+
+function closeCookiePanel() {
+  document.getElementById('cookieOverlay').style.display = 'none';
+}
+</script>
