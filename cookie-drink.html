@@ -332,10 +332,12 @@ function verifyAge() {
 
   if (age >= 18) {
     // ✅ Open cookie pop-up in new tab
-    window.open("https://www.purefinestdrinks.com/finest.html", "_blank");
+    //window.open("https://www.purefinestdrinks.com/finest.html", "_blank");
 
     // ✅ Then allow access to the website
-    window.location.href = "finest.html";
+   // window.location.href = "finest.html";
+   //NEW LINE
+       window.location.href = "https://www.purefinestdrinks.com/finest.html";
   } else {
     document.getElementById("errorMsg").style.display = "block";
     document.getElementById("errorMsg").innerText = "Sorry, you must be 18+ to enter.";
